@@ -14,11 +14,12 @@ import { siteConfig, services } from '../../config';
   <Header slot="header" />
   
   <Hero 
+    heroImage="hero-services.jpg"
     title="Our Services"
     subtitle="Comprehensive garden and clearance solutions"
   />
   
-  <section class="py-16">
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-12">
         <p class="text-lg">
@@ -28,11 +29,10 @@ import { siteConfig, services } from '../../config';
     </div>
   </section>
 
-  <!-- Services - Stacked Layout -->
-  <section class="py-16 bg-white">
+  <!-- Service 1: Garden Renovations & Maintenance - Off-white background -->
+  <section class="py-16 bg-bg-light">
     <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto space-y-16">
-        <!-- Service 1: Garden Renovations & Maintenance - Image Right -->
+      <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-2xl font-bold mb-4">Garden Renovations and Maintenance</h2>
@@ -64,15 +64,37 @@ import { siteConfig, services } from '../../config';
               View Full Details
             </a>
           </div>
-          <div class="bg-gradient-to-br from-green-200 to-green-300 rounded-lg h-80 flex items-center justify-center">
-            <span class="text-gray-600 text-lg">Garden Services Image</span>
+          <div class="relative">
+            <img 
+              src="/DeezGarden/assets/images/service-garden-renovations.jpg" 
+              alt="Garden Renovations and Maintenance Services" 
+              class="rounded-lg shadow-lg w-full h-80 object-cover"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-green-200 to-green-300 rounded-lg shadow-lg w-full h-80">
+              <span class="text-gray-700 font-semibold">service-garden-renovations.jpg</span>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Service 2: Rubbish Clearance & Removals - Image Left -->
+  <!-- Service 2: Rubbish Clearance & Removals - Light green tint -->
+  <section class="py-16 bg-gradient-to-br from-light-green/10 to-fresh-green/5">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg h-80 flex items-center justify-center lg:order-first">
-            <span class="text-gray-600 text-lg">Clearance Services Image</span>
+          <div class="relative lg:order-first">
+            <img 
+              src="/DeezGarden/assets/images/service-rubbish-clearance.jpg" 
+              alt="Rubbish Clearance and Removals Services" 
+              class="rounded-lg shadow-lg w-full h-80 object-cover"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg shadow-lg w-full h-80">
+              <span class="text-gray-700 font-semibold">service-rubbish-clearance.jpg</span>
+            </div>
           </div>
           <div>
             <h2 class="text-2xl font-bold mb-4">Rubbish Clearance and Removals</h2>
@@ -105,8 +127,14 @@ import { siteConfig, services } from '../../config';
             </a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Service 3: Man with Van & Scrap Metal - Image Right -->
+  <!-- Service 3: Man with Van & Scrap Metal - Off-white background -->
+  <section class="py-16 bg-bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-2xl font-bold mb-4">Man with Van and Scrap Metal</h2>
@@ -138,8 +166,16 @@ import { siteConfig, services } from '../../config';
               View Full Details
             </a>
           </div>
-          <div class="bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg h-80 flex items-center justify-center">
-            <span class="text-gray-600 text-lg">Removals Service Image</span>
+          <div class="relative">
+            <img 
+              src="/DeezGarden/assets/images/service-man-van-scrap.jpg" 
+              alt="Man with Van and Scrap Metal Services" 
+              class="rounded-lg shadow-lg w-full h-80 object-cover"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg shadow-lg w-full h-80">
+              <span class="text-gray-700 font-semibold">service-man-van-scrap.jpg</span>
+            </div>
           </div>
         </div>
       </div>

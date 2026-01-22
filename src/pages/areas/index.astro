@@ -20,6 +20,7 @@ const allAreas = [
   <Header slot="header" />
   
   <Hero 
+    heroImage="hero-areas.jpg"
     title="Areas We Cover"
     subtitle="Serving Northampton and surrounding areas"
   />
@@ -34,6 +35,22 @@ const allAreas = [
           <p class="text-lg">
             We serve all the areas listed below, and if your location isn't shown, please get in touch - we may still be able to help!
           </p>
+        </div>
+        
+        <!-- Coverage Map Visual Placeholder -->
+        <div class="mb-12">
+          <div class="relative">
+            <img 
+              src="/DeezGarden/assets/images/areas-coverage-map.jpg" 
+              alt="Coverage Map - Northamptonshire and Surrounding Areas" 
+              class="rounded-lg shadow-lg w-full"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-light-green/20 to-fresh-green/30 rounded-lg shadow-lg w-full h-96">
+              <p class="text-gray-600 font-semibold text-lg">areas-coverage-map.jpg</p>
+              <p class="text-gray-500 text-sm mt-2">Coverage Map Placeholder</p>
+            </div>
+          </div>
         </div>
         
         <div class="space-y-12">
