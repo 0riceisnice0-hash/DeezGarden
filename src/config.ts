@@ -20,7 +20,7 @@ export const siteConfig = {
   
   // Service areas
   primaryAreas: ["Northampton", "Wellingborough", "Kettering", "Rushden", "Daventry"],
-  secondaryAreas: ["Towcester", "Brackley", "Milton Keynes", "Market Harborough", "Corby"],
+  secondaryAreas: ["Towcester", "Brackley", "Milton Keynes", "Market Harborough", "Corby", "Aylesbury"],
   extendedAreas: ["Bedford", "Rugby", "Leicester", "Peterborough", "Coventry"],
   
   // SEO
@@ -34,20 +34,20 @@ export const services = [
     title: "Garden Renovations and Maintenance",
     slug: "garden-maintenance",
     description: "Complete garden care including lawn mowing, hedge trimming, and general upkeep",
-    icon: "🌿",
+    icon: "",
   },
   {
     id: "clearance-removals",
     title: "Rubbish Clearance and Removals",
     slug: "clearance-removals",
     description: "House, garage, and garden clearances with licensed waste carrier service",
-    icon: "♻️",
+    icon: "",
   },
   {
     id: "man-with-van",
     title: "Man with Van and Scrap Metal",
     slug: "man-with-van",
     description: "Removals, delivery service, and scrap metal collection across Northamptonshire",
-    icon: "🚚",
+    icon: "",
   },
 ];

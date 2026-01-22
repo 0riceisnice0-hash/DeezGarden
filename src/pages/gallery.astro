@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { siteConfig } from '../config';
+---
+
+<BaseLayout 
+  title="Gallery - Before & After Garden Transformations"
+  description="View our gallery of garden clearances, landscaping renovations, and rubbish removal projects across Northampton and Northamptonshire."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Our Work Gallery"
+    subtitle="Transforming gardens and spaces across Northamptonshire"
+  />
+  
+  <!-- Gallery Introduction -->
+  <section class="py-16 bg-gradient-to-br from-light-green/10 to-fresh-green/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-lg mb-4">
+          Take a look at some of the transformations we've achieved for our clients across Northampton and the surrounding areas. From overgrown gardens to complete clearances, we take pride in delivering exceptional results.
+        </p>
+        <p class="text-lg">
+          Every project showcases our commitment to quality workmanship, attention to detail, and professional service.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Garden Clearances Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center">Garden Clearances</h2>
+        <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
+          Complete garden clearances removing overgrown vegetation, rubbish, and debris. We transform neglected spaces into clean, usable gardens ready for renovation or maintenance.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[1, 2, 3, 4, 5, 6].map(i => (
+            <div class="bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg shadow-md hover:shadow-xl transition h-64 flex items-center justify-center">
+              <div class="text-center p-6">
+                <p class="text-gray-600 font-semibold mb-2">Before & After</p>
+                <p class="text-gray-500 text-sm">Garden Clearance Project {i}</p>
+                <p class="text-gray-500 text-xs mt-2">Northamptonshire</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Get a Free Quote for Your Garden" />
+  
+  <!-- Renovations & Landscaping Section -->
+  <section class="py-16 bg-gradient-to-b from-light-green/5 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center">Renovations & Landscaping</h2>
+        <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
+          From complete garden renovations to landscape improvements, we create beautiful outdoor spaces. Our work includes lawn installation, planting, paving, and comprehensive garden redesigns.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[1, 2, 3, 4, 5, 6].map(i => (
+            <div class="bg-gradient-to-br from-green-200 to-green-300 rounded-lg shadow-md hover:shadow-xl transition h-64 flex items-center justify-center">
+              <div class="text-center p-6">
+                <p class="text-gray-700 font-semibold mb-2">Before & After</p>
+                <p class="text-gray-600 text-sm">Renovation Project {i}</p>
+                <p class="text-gray-600 text-xs mt-2">Northamptonshire</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Rubbish Removal & Clear-outs Section -->
+  <section class="py-16 bg-gradient-to-br from-fresh-green/5 to-light-green/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center">Rubbish Removal & Clear-outs</h2>
+        <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
+          Professional waste removal and clearance services for homes, gardens, and commercial properties. As a licensed waste carrier, we ensure all waste is disposed of responsibly and legally.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[1, 2, 3, 4, 5, 6].map(i => (
+            <div class="bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg shadow-md hover:shadow-xl transition h-64 flex items-center justify-center">
+              <div class="text-center p-6">
+                <p class="text-gray-700 font-semibold mb-2">Before & After</p>
+                <p class="text-gray-600 text-sm">Clearance Project {i}</p>
+                <p class="text-gray-600 text-xs mt-2">Northamptonshire</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <!-- Trust Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Space?</h2>
+        <p class="text-lg mb-8">
+          Whether you need a complete garden clearance, a renovation, or rubbish removal, we're here to help. All work is carried out by our experienced team, and we're fully insured with a valid waste carrier licence.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href={`tel:${siteConfig.phone}`}
+            class="inline-block bg-fresh-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition"
+          >
+            Call {siteConfig.phoneFormatted}
+          </a>
+          <a 
+            href="/DeezGarden/contact/"
+            class="inline-block bg-white border-2 border-fresh-green text-fresh-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-fresh-green hover:text-white transition"
+          >
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

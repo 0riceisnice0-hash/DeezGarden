@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig, services } from '../../config';
+---
+
+<BaseLayout 
+  title="Garden Maintenance & Clearance Services in Aylesbury"
+  description="Professional garden maintenance, clearance, and landscaping services in Aylesbury. Fully insured, licensed waste carrier. Call 07305 195098 for a free quote."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Garden Services in Aylesbury"
+    location="Aylesbury"
+    subtitle="Your local garden and clearance specialists"
+  />
+  
+  <section class="py-16 bg-gradient-to-br from-light-green/10 to-fresh-green/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Professional Garden Services in Aylesbury</h2>
+        <p class="text-lg mb-4">
+          {siteConfig.name} provides comprehensive garden maintenance, clearance, and landscaping services throughout Aylesbury and the surrounding areas in Buckinghamshire. We understand the needs of Aylesbury homeowners and pride ourselves on delivering reliable, professional service.
+        </p>
+        <p class="text-lg mb-6">
+          Whether you're in the town centre, Fairford Leys, Buckingham Park, or any other area of Aylesbury, we're here to help with all your garden and clearance needs.
+        </p>
+        
+        <h3 class="text-2xl font-bold mb-4">Our Services in Aylesbury</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map(service => (
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-fresh-green">
+              <h4 class="font-bold text-lg mb-2 text-center">{service.title}</h4>
+              <p class="text-sm text-gray-700 text-center mb-3">{service.description}</p>
+              <div class="text-center">
+                <a 
+                  href={`/DeezGarden/services/${service.slug}/`}
+                  class="text-fresh-green font-semibold hover:text-deep-green text-sm"
+                >
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6">Why Choose Us in Aylesbury?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-fresh-green/5 to-light-green/10 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">Local Knowledge</h4>
+            <p class="text-gray-700">We understand the local area and can provide reliable service throughout Aylesbury and Buckinghamshire.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-fresh-green/5 to-light-green/10 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">Fully Licensed</h4>
+            <p class="text-gray-700">As a licensed waste carrier, we ensure all waste is disposed of legally and responsibly.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-fresh-green/5 to-light-green/10 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">Fully Insured</h4>
+            <p class="text-gray-700">Complete peace of mind with comprehensive insurance coverage for all our work.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-fresh-green/5 to-light-green/10 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">Competitive Pricing</h4>
+            <p class="text-gray-700">Fair, transparent pricing with no hidden fees. Free quotes provided.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-gradient-to-b from-light-green/5 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+        <p class="text-lg mb-8">
+          Contact us today for a free, no-obligation quote for your garden or clearance project in Aylesbury.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href={`tel:${siteConfig.phone}`}
+            class="inline-block bg-fresh-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition"
+          >
+            Call {siteConfig.phoneFormatted}
+          </a>
+          <a 
+            href="/DeezGarden/contact/"
+            class="inline-block bg-white border-2 border-fresh-green text-fresh-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-fresh-green hover:text-white transition"
+          >
+            Request a Quote
+          </a>
+        </div>
+        
+        <div class="mt-8">
+          <a 
+            href="/DeezGarden/areas/"
+            class="text-fresh-green hover:text-deep-green font-semibold"
+          >
+            ← View All Coverage Areas
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
