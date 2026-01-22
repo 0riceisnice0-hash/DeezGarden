@@ -25,23 +25,123 @@ import { siteConfig, services } from '../../config';
           At {siteConfig.name}, we offer a comprehensive range of services to keep your outdoor spaces looking their best and help with all your clearance needs. From regular garden maintenance to complete renovations, rubbish clearance, and removals, we've got you covered.
         </p>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {services.map(service => (
-          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
-            <div class="text-5xl mb-6 text-center">{service.icon}</div>
-            <h2 class="text-2xl font-bold mb-4 text-center">{service.title}</h2>
-            <p class="text-gray-700 mb-6 text-center">{service.description}</p>
-            <div class="text-center">
-              <a 
-                href={`/DeezGarden/services/${service.slug}/`}
-                class="inline-block bg-fresh-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-green transition"
-              >
-                View Details
-              </a>
-            </div>
+    </div>
+  </section>
+
+  <!-- Services - Stacked Layout -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto space-y-16">
+        <!-- Service 1: Garden Renovations & Maintenance - Image Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Garden Renovations and Maintenance</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              Complete garden care including lawn mowing, hedge trimming, and general upkeep. We transform overgrown gardens and maintain beautiful outdoor spaces throughout Northamptonshire.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Regular lawn mowing and maintenance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Hedge trimming and pruning</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Garden clearances and tidy-ups</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Landscaping and garden design</span>
+              </li>
+            </ul>
+            <a 
+              href="/DeezGarden/services/garden-maintenance/"
+              class="inline-block bg-fresh-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-green transition"
+            >
+              View Full Details
+            </a>
           </div>
-        ))}
+          <div class="bg-gradient-to-br from-green-200 to-green-300 rounded-lg h-80 flex items-center justify-center">
+            <span class="text-gray-600 text-lg">Garden Services Image</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Rubbish Clearance & Removals - Image Left -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg h-80 flex items-center justify-center lg:order-first">
+            <span class="text-gray-600 text-lg">Clearance Services Image</span>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Rubbish Clearance and Removals</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              House, garage, and garden clearances with our licensed waste carrier service. We handle everything from garden waste to full property clearances, disposing of all waste responsibly.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Garden waste and rubbish removal</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>House and garage clearances</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Licensed waste carrier service</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Responsible waste disposal</span>
+              </li>
+            </ul>
+            <a 
+              href="/DeezGarden/services/clearance-removals/"
+              class="inline-block bg-fresh-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-green transition"
+            >
+              View Full Details
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 3: Man with Van & Scrap Metal - Image Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Man with Van and Scrap Metal</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              Removals, delivery service, and scrap metal collection across Northamptonshire. Whether you need items moved locally or scrap metal collected, we provide reliable, affordable service.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Local removals and deliveries</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Scrap metal collection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Furniture and appliance removal</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2">✓</span>
+                <span>Competitive rates</span>
+              </li>
+            </ul>
+            <a 
+              href="/DeezGarden/services/man-with-van/"
+              class="inline-block bg-fresh-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-green transition"
+            >
+              View Full Details
+            </a>
+          </div>
+          <div class="bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg h-80 flex items-center justify-center">
+            <span class="text-gray-600 text-lg">Removals Service Image</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
