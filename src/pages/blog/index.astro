@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import { siteConfig } from '../../config';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<BaseLayout 
+  title="Garden Tips and Advice Blog"
+  description="Expert gardening tips, seasonal advice, and maintenance guides for Northampton and Northamptonshire gardens from Dee'z Gardens."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Garden Tips & Advice"
+    subtitle="Expert guidance for your Northamptonshire garden"
+    showCTA={false}
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg text-center mb-12">
+          Welcome to our blog! Here you'll find helpful tips, seasonal advice, and expert guidance for maintaining beautiful gardens in Northampton and across Northamptonshire.
+        </p>
+        
+        {sortedPosts.length === 0 ? (
+          <div class="text-center py-12">
+            <p class="text-lg text-gray-600">No blog posts yet. Check back soon for gardening tips and advice!</p>
+          </div>
+        ) : (
+          <div class="space-y-8">
+            {sortedPosts.map(post => (
+              <article class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                <div class="flex items-center space-x-4 mb-4 text-sm text-gray-600">
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {post.data.pubDate.toLocaleDateString('en-GB', { 
+                      day: 'numeric', 
+                      month: 'long', 
+                      year: 'numeric' 
+                    })}
+                  </time>
+                  <span>•</span>
+                  <span class="capitalize">{post.data.category}</span>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-3">
+                  <a 
+                    href={`/DeezGarden/blog/${post.slug}/`}
+                    class="hover:text-fresh-green transition"
+                  >
+                    {post.data.title}
+                  </a>
+                </h2>
+                
+                <p class="text-gray-700 mb-4">{post.data.description}</p>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {post.data.tags.map(tag => (
+                    <span class="bg-light-green/20 text-deep-green px-3 py-1 rounded-full text-sm">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <a 
+                  href={`/DeezGarden/blog/${post.slug}/`}
+                  class="text-fresh-green font-semibold hover:text-deep-green transition"
+                >
+                  Read More →
+                </a>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Need Professional Help?</h2>
+        <p class="text-lg mb-8">
+          While DIY gardening can be rewarding, sometimes you need expert assistance. We provide professional garden maintenance and clearance services throughout Northampton and Northamptonshire.
+        </p>
+        <a 
+          href="/DeezGarden/contact/"
+          class="inline-block bg-fresh-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

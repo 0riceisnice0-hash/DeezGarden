@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout 
+  title="Man with Van and Scrap Metal Collection in Northampton"
+  description="Reliable man with van service for removals, deliveries, and scrap metal collection in Northampton. Competitive rates. Call 07305 195098 for a quote."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Man with Van and Scrap Metal"
+    subtitle="Reliable removals and scrap collection across Northamptonshire"
+    showCTA={true}
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose max-w-none">
+          <h2>Man with Van Service in Northampton</h2>
+          <p class="text-lg">
+            Need items moved, delivered, or collected? {siteConfig.name} provides a reliable man with van service across Northampton and Northamptonshire. Whether it's house removals, furniture delivery, or scrap metal collection, we're here to help.
+          </p>
+          
+          <h3>Our Man with Van Services Include:</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+            <div class="bg-bg-light p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-3 text-deep-green">Removals & Deliveries</h4>
+              <ul class="space-y-2">
+                <li>✓ Small house removals</li>
+                <li>✓ Flat and apartment moves</li>
+                <li>✓ Furniture delivery and collection</li>
+                <li>✓ eBay and Facebook Marketplace pickups</li>
+                <li>✓ Single item transport</li>
+              </ul>
+            </div>
+            
+            <div class="bg-bg-light p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-3 text-deep-green">Scrap Metal Collection</h4>
+              <ul class="space-y-2">
+                <li>✓ Scrap metal collection</li>
+                <li>✓ Old appliance removal</li>
+                <li>✓ Boiler and radiator removal</li>
+                <li>✓ Copper and brass collection</li>
+                <li>✓ Commercial scrap collection</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3>Why Choose Our Man with Van Service?</h3>
+          <p>
+            We understand that you need a reliable, trustworthy service when moving your belongings or having items delivered. Our team provides professional, careful handling of all items, whether it's valuable furniture or scrap metal.
+          </p>
+          
+          <div class="bg-fresh-green/10 p-6 rounded-lg not-prose">
+            <h4 class="font-bold text-lg mb-3 text-deep-green">What Sets Us Apart:</h4>
+            <ul class="space-y-2">
+              <li>✓ Reliable and punctual service</li>
+              <li>✓ Fully insured for your peace of mind</li>
+              <li>✓ Competitive, transparent pricing</li>
+              <li>✓ Careful handling of your items</li>
+              <li>✓ Local knowledge of Northamptonshire</li>
+              <li>✓ Friendly, professional service</li>
+            </ul>
+          </div>
+          
+          <h3>Scrap Metal Collection</h3>
+          <p>
+            We provide scrap metal collection services for both domestic and commercial customers. Whether you have old appliances, copper piping, brass fittings, or any other scrap metal, we'll collect it and ensure it's recycled properly.
+          </p>
+          <p>
+            Common items we collect:
+          </p>
+          <ul>
+            <li>Old boilers and radiators</li>
+            <li>Washing machines and tumble dryers</li>
+            <li>Cookers and ovens</li>
+            <li>Copper pipes and wiring</li>
+            <li>Brass taps and fittings</li>
+            <li>Steel and iron items</li>
+            <li>Aluminium</li>
+            <li>Commercial scrap metal</li>
+          </ul>
+          
+          <h3>Coverage Area</h3>
+          <p>
+            We cover Northampton and all surrounding areas, including trips to nearby towns and cities. Whether you're moving within Northampton or need items transported to or from Leicester, Milton Keynes, or Bedford, we can help.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Get Your Free Man with Van Quote" />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Man with Van Service Areas</h2>
+        <p class="text-center mb-8">
+          Serving Northampton and surrounding areas:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        <div class="text-center mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
+            View all areas →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Man with Van and Removals",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.name,
+    "telephone": siteConfig.phone,
+    "email": siteConfig.email
+  },
+  "areaServed": siteConfig.primaryAreas.map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  "description": "Reliable man with van service for removals, deliveries, and scrap metal collection in Northampton and surrounding areas."
+})} />

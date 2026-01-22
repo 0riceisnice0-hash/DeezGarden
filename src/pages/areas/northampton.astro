@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig, services } from '../../config';
+---
+
+<BaseLayout 
+  title="Garden Maintenance & Clearance Services in Northampton"
+  description="Professional garden maintenance, clearance, and landscaping services in Northampton. Fully insured, licensed waste carrier. Call 07305 195098 for a free quote."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Garden Services in Northampton"
+    location="Northampton"
+    subtitle="Your local garden and clearance specialists"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Professional Garden Services in Northampton</h2>
+        <p class="text-lg mb-4">
+          As a locally based company, {siteConfig.name} provides comprehensive garden maintenance, clearance, and landscaping services throughout Northampton and the surrounding areas. We understand the needs of Northampton homeowners and pride ourselves on delivering reliable, professional service.
+        </p>
+        <p class="text-lg mb-6">
+          Whether you're in the town centre, Kingsthorpe, Weston Favell, or any other area of Northampton, we're here to help with all your garden and clearance needs.
+        </p>
+        
+        <h3 class="text-2xl font-bold mb-4">Our Services in Northampton</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map(service => (
+            <div class="bg-bg-light p-6 rounded-lg">
+              <div class="text-4xl mb-3 text-center">{service.icon}</div>
+              <h4 class="font-bold text-lg mb-2 text-center">{service.title}</h4>
+              <p class="text-sm text-gray-700 text-center mb-3">{service.description}</p>
+              <div class="text-center">
+                <a 
+                  href={`/DeezGarden/services/${service.slug}/`}
+                  class="text-fresh-green font-semibold hover:text-deep-green text-sm"
+                >
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Why Choose {siteConfig.name} in Northampton?</h2>
+        
+        <div class="prose max-w-none">
+          <h3>Local Knowledge</h3>
+          <p>
+            Based in Northampton, we have extensive local knowledge and serve customers throughout the town. We understand the specific needs of Northampton properties, from Victorian terraces to modern housing estates.
+          </p>
+          
+          <h3>Fully Insured and Licensed</h3>
+          <p>
+            We're fully insured for your peace of mind and operate as a licensed waste carrier. This means all waste disposal is handled legally and responsibly - you'll never have to worry about fly-tipping or legal issues.
+          </p>
+          
+          <h3>Comprehensive Service Range</h3>
+          <p>
+            From regular lawn mowing to complete garden renovations, house clearances to scrap metal collection, we offer a wide range of services. This means you can rely on one trusted company for all your garden and clearance needs.
+          </p>
+          
+          <h3>Areas of Northampton We Cover</h3>
+          <p>
+            We serve all areas of Northampton, including:
+          </p>
+          <ul>
+            <li>Northampton Town Centre</li>
+            <li>Kingsthorpe</li>
+            <li>Abington</li>
+            <li>Weston Favell</li>
+            <li>Duston</li>
+            <li>Far Cotton</li>
+            <li>St James</li>
+            <li>Billing</li>
+            <li>Upton</li>
+            <li>Delapre</li>
+            <li>And all other Northampton areas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Get Your Free Northampton Quote" />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Nearby Areas We Also Serve</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {['Wellingborough', 'Kettering', 'Rushden', 'Daventry', 'Towcester', 'Brackley', 'Milton Keynes', 'Market Harborough'].map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": siteConfig.name,
+  "description": "Professional garden maintenance and clearance services in Northampton",
+  "areaServed": {
+    "@type": "City",
+    "name": "Northampton",
+    "containedIn": {
+      "@type": "AdministrativeArea",
+      "name": "Northamptonshire"
+    }
+  },
+  "telephone": siteConfig.phone,
+  "email": siteConfig.email
+})} />

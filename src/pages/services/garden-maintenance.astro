@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout 
+  title="Garden Renovations and Maintenance in Northampton"
+  description="Professional garden maintenance, lawn mowing, hedge trimming, and garden renovations in Northampton. Fully insured service with free quotes. Call 07305 195098."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Garden Renovations and Maintenance"
+    subtitle="Professional garden care across Northamptonshire"
+    showCTA={true}
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose max-w-none">
+          <h2>Professional Garden Maintenance in Northampton</h2>
+          <p class="text-lg">
+            Whether you need regular garden maintenance to keep your outdoor space looking its best, or a complete renovation to transform an overgrown or neglected garden, {siteConfig.name} provides professional, reliable service across Northampton and the surrounding areas.
+          </p>
+          
+          <h3>Our Garden Maintenance Services Include:</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+            <div class="bg-bg-light p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-3 text-deep-green">Regular Maintenance</h4>
+              <ul class="space-y-2">
+                <li>✓ Grass cutting and lawn care</li>
+                <li>✓ Hedge trimming and shaping</li>
+                <li>✓ Border maintenance and weeding</li>
+                <li>✓ Seasonal tidy-ups</li>
+                <li>✓ Leaf clearance</li>
+              </ul>
+            </div>
+            
+            <div class="bg-bg-light p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-3 text-deep-green">Garden Renovations</h4>
+              <ul class="space-y-2">
+                <li>✓ Overgrown garden clearance</li>
+                <li>✓ Landscaping and design</li>
+                <li>✓ Fencing and gates</li>
+                <li>✓ Patios and paving</li>
+                <li>✓ Turfing and lawn creation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3>Additional Garden Services</h3>
+          <ul>
+            <li>Jet washing for patios, driveways, and paths</li>
+            <li>Decking installation and maintenance</li>
+            <li>Artificial grass installation</li>
+            <li>Garden waste removal</li>
+            <li>Tree and shrub pruning</li>
+            <li>Planting and bedding</li>
+          </ul>
+          
+          <h3>Why Choose Us for Garden Maintenance?</h3>
+          <p>
+            Based in Northampton, we understand the local climate and what gardens need to thrive in Northamptonshire. Our team is fully insured and experienced in all aspects of garden care, from simple grass cutting to complete garden transformations.
+          </p>
+          <p>
+            We pride ourselves on reliable service, tidy work, and clear communication. Whether you need weekly grass cutting during the growing season or a one-off renovation project, we're here to help.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Get Your Free Garden Quote" />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Areas We Cover for Garden Maintenance</h2>
+        <p class="text-center mb-8">
+          We provide garden maintenance and renovation services throughout Northampton and the surrounding areas, including:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        <div class="text-center mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
+            View all areas →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Garden Maintenance and Renovation",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.name,
+    "telephone": siteConfig.phone,
+    "email": siteConfig.email
+  },
+  "areaServed": siteConfig.primaryAreas.map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  "description": "Professional garden maintenance, lawn care, hedge trimming, and garden renovations in Northampton and surrounding areas."
+})} />

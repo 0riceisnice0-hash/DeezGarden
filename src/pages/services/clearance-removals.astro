@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout 
+  title="Rubbish Clearance and Removals in Northampton"
+  description="Licensed waste carrier providing rubbish clearance, house clearances, garage clearances, and waste removal in Northampton. Fully insured. Call 07305 195098."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Rubbish Clearance and Removals"
+    subtitle="Licensed waste carrier serving Northamptonshire"
+    showCTA={true}
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose max-w-none">
+          <h2>Professional Waste Removal and Clearance Services</h2>
+          <p class="text-lg">
+            {siteConfig.name} is a fully licensed waste carrier providing professional rubbish clearance and removal services across Northampton and Northamptonshire. From garden waste to house clearances, we handle all types of waste disposal legally and responsibly.
+          </p>
+          
+          <h3>Our Clearance Services Include:</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+            <div class="bg-bg-light p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-3 text-deep-green">Residential Clearances</h4>
+              <ul class="space-y-2">
+                <li>✓ House clearances (full or partial)</li>
+                <li>✓ Garage clearances</li>
+                <li>✓ Shed and outbuilding clearance</li>
+                <li>✓ Loft clearances</li>
+                <li>✓ Garden waste removal</li>
+              </ul>
+            </div>
+            
+            <div class="bg-bg-light p-6 rounded-lg">
+              <h4 class="font-bold text-lg mb-3 text-deep-green">Waste Removal</h4>
+              <ul class="space-y-2">
+                <li>✓ General rubbish clearance</li>
+                <li>✓ Garden waste disposal</li>
+                <li>✓ Furniture removal</li>
+                <li>✓ White goods disposal</li>
+                <li>✓ Construction waste</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3>Licensed Waste Carrier</h3>
+          <p>
+            We are a fully licensed waste carrier, which means we handle all waste disposal legally and responsibly. We'll provide you with the proper documentation and ensure all waste is disposed of at licensed facilities.
+          </p>
+          <p>
+            Unlike unlicensed operators, you can have complete peace of mind that your waste won't end up fly-tipped, and you won't face any legal issues.
+          </p>
+          
+          <h3>What We Can Clear</h3>
+          <ul>
+            <li>General household rubbish and junk</li>
+            <li>Garden waste (grass, branches, soil, etc.)</li>
+            <li>Old furniture and appliances</li>
+            <li>White goods (fridges, washing machines, etc.)</li>
+            <li>Electrical items and electronics</li>
+            <li>Construction and renovation waste</li>
+            <li>Office clearances</li>
+            <li>Estate clearances</li>
+          </ul>
+          
+          <h3>How It Works</h3>
+          <ol>
+            <li><strong>Contact Us:</strong> Call or message us with details of what needs clearing</li>
+            <li><strong>Free Quote:</strong> We'll provide a no-obligation quote</li>
+            <li><strong>Book a Time:</strong> Choose a convenient time for the clearance</li>
+            <li><strong>We Clear:</strong> Our team arrives and clears everything away</li>
+            <li><strong>Legal Disposal:</strong> All waste disposed of properly at licensed facilities</li>
+          </ol>
+          
+          <h3>Why Choose {siteConfig.name} for Clearances?</h3>
+          <p>
+            With many years of experience in waste clearance across Northampton, we provide a professional, reliable service at competitive prices. We're fully insured and operate with all the necessary licences, giving you complete peace of mind.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Book Your Clearance Today" />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Clearance Services Throughout Northamptonshire</h2>
+        <p class="text-center mb-8">
+          We provide rubbish clearance and waste removal services across:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        <div class="text-center mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
+            View all areas →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Rubbish Clearance and Waste Removal",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.name,
+    "telephone": siteConfig.phone,
+    "email": siteConfig.email
+  },
+  "areaServed": siteConfig.primaryAreas.map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  "description": "Licensed waste carrier providing professional rubbish clearance, house clearances, and waste removal services in Northampton and surrounding areas."
+})} />

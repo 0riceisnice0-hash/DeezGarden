@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig, services } from '../../config';
+---
+
+<BaseLayout 
+  title="Garden Maintenance & Clearance Services in Kettering"
+  description="Professional garden maintenance, clearance, and landscaping services in Kettering, Northamptonshire. Fully insured. Call 07305 195098 for a free quote."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Garden Services in Kettering"
+    location="Kettering, Northamptonshire"
+    subtitle="Professional garden and clearance services"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Garden and Clearance Services in Kettering</h2>
+        <p class="text-lg mb-4">
+          {siteConfig.name} provides reliable garden maintenance, clearance, and man with van services throughout Kettering and the surrounding villages. We're your local choice for professional garden care and waste removal.
+        </p>
+        <p class="text-lg mb-6">
+          Serving all areas of Kettering including the town centre, Barton Seagrave, Burton Latimer, and nearby villages, we offer competitive prices and excellent service.
+        </p>
+        
+        <h3 class="text-2xl font-bold mb-4">Services Available in Kettering</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map(service => (
+            <div class="bg-bg-light p-6 rounded-lg">
+              <div class="text-4xl mb-3 text-center">{service.icon}</div>
+              <h4 class="font-bold text-lg mb-2 text-center">{service.title}</h4>
+              <p class="text-sm text-gray-700 text-center mb-3">{service.description}</p>
+              <div class="text-center">
+                <a 
+                  href={`/DeezGarden/services/${service.slug}/`}
+                  class="text-fresh-green font-semibold hover:text-deep-green text-sm"
+                >
+                  Details →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Why Kettering Residents Choose Us</h2>
+        
+        <div class="prose max-w-none">
+          <p>
+            We're proud to serve Kettering and the surrounding area with professional garden and clearance services. Whether you need regular garden maintenance for your Kettering property or a one-off clearance job, we provide the same high standard of service.
+          </p>
+          
+          <h3>Kettering Areas We Cover</h3>
+          <ul>
+            <li>Kettering Town Centre</li>
+            <li>Barton Seagrave</li>
+            <li>Burton Latimer</li>
+            <li>Rothwell</li>
+            <li>Desborough</li>
+            <li>Pytchley</li>
+            <li>Weekley</li>
+            <li>All surrounding villages</li>
+          </ul>
+          
+          <h3>Licensed and Insured</h3>
+          <p>
+            As a fully licensed waste carrier and insured operator, you can trust us to handle all aspects of garden maintenance and waste removal legally and professionally. We dispose of all waste at licensed facilities, giving you complete peace of mind.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Get Your Free Kettering Quote" />
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": siteConfig.name,
+  "description": "Professional garden maintenance and clearance services in Kettering",
+  "areaServed": {
+    "@type": "City",
+    "name": "Kettering",
+    "containedIn": {
+      "@type": "AdministrativeArea",
+      "name": "Northamptonshire"
+    }
+  },
+  "telephone": siteConfig.phone,
+  "email": siteConfig.email
+})} />
