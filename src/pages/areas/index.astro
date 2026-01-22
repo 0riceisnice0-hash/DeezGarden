@@ -20,59 +20,96 @@ const allAreas = [
   <Header slot="header" />
   
   <Hero 
+    heroImage="hero-areas.jpg"
     title="Areas We Cover"
     subtitle="Serving Northampton and surrounding areas"
   />
   
   <section class="py-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center mb-12">
-        <p class="text-lg">
-          Based in Northampton, {siteConfig.name} provides professional garden maintenance, clearance, and man with van services throughout Northamptonshire and the surrounding counties.
-        </p>
-        <p class="text-lg mt-4">
-          We serve all the areas listed below, and if your location isn't shown, please get in touch - we may still be able to help!
-        </p>
-      </div>
-      
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold mb-6 text-center">Primary Service Areas</h2>
-        <p class="text-center mb-6 text-gray-700">Our main coverage area where we operate daily</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-          {siteConfig.primaryAreas.map(area => (
-            <a 
-              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-fresh-green text-white p-4 rounded-lg hover:bg-deep-green transition text-center font-semibold shadow-md hover:shadow-lg"
-            >
-              {area}
-            </a>
-          ))}
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-12">
+          <p class="text-lg mb-4">
+            Based in Northampton, {siteConfig.name} provides professional garden maintenance, clearance, and man with van services throughout Northamptonshire and the surrounding counties.
+          </p>
+          <p class="text-lg">
+            We serve all the areas listed below, and if your location isn't shown, please get in touch - we may still be able to help!
+          </p>
         </div>
         
-        <h2 class="text-2xl font-bold mb-6 text-center">Extended Service Areas</h2>
-        <p class="text-center mb-6 text-gray-700">Additional areas we regularly serve</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-          {siteConfig.secondaryAreas.map(area => (
-            <a 
-              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-white border-2 border-fresh-green text-deep-green p-4 rounded-lg hover:bg-fresh-green hover:text-white transition text-center font-semibold"
-            >
-              {area}
-            </a>
-          ))}
+        <!-- Coverage Map Visual Placeholder -->
+        <div class="mb-12">
+          <div class="relative">
+            <img 
+              src="/DeezGarden/assets/images/areas-coverage-map.jpg" 
+              alt="Coverage Map - Northamptonshire and Surrounding Areas" 
+              class="rounded-lg shadow-lg w-full"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-light-green/20 to-fresh-green/30 rounded-lg shadow-lg w-full h-96">
+              <p class="text-gray-600 font-semibold text-lg">areas-coverage-map.jpg</p>
+              <p class="text-gray-500 text-sm mt-2">Coverage Map Placeholder</p>
+            </div>
+          </div>
         </div>
         
-        <h2 class="text-2xl font-bold mb-6 text-center">Wider Coverage Area</h2>
-        <p class="text-center mb-6 text-gray-700">We also cover these nearby towns and cities</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {siteConfig.extendedAreas.map(area => (
-            <a 
-              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-bg-light border border-gray-300 text-text-dark p-4 rounded-lg hover:bg-light-green hover:text-white transition text-center font-semibold"
-            >
-              {area}
-            </a>
-          ))}
+        <div class="space-y-12">
+          <!-- Primary Service Areas -->
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Primary Service Areas</h2>
+            <p class="text-gray-700 mb-4">Our main coverage area where we operate daily:</p>
+            <div class="text-lg">
+              {siteConfig.primaryAreas.map((area, index) => (
+                <>
+                  <a 
+                    href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline"
+                  >
+                    {area}
+                  </a>
+                  {index < siteConfig.primaryAreas.length - 1 && <span class="text-gray-600"> • </span>}
+                </>
+              ))}
+            </div>
+          </div>
+
+          <!-- Extended Service Areas -->
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Extended Service Areas</h2>
+            <p class="text-gray-700 mb-4">Additional areas we regularly serve:</p>
+            <div class="text-lg">
+              {siteConfig.secondaryAreas.map((area, index) => (
+                <>
+                  <a 
+                    href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline"
+                  >
+                    {area}
+                  </a>
+                  {index < siteConfig.secondaryAreas.length - 1 && <span class="text-gray-600"> • </span>}
+                </>
+              ))}
+            </div>
+          </div>
+
+          <!-- Wider Coverage Area -->
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Wider Coverage Area</h2>
+            <p class="text-gray-700 mb-4">We also cover these nearby towns and cities:</p>
+            <div class="text-lg">
+              {siteConfig.extendedAreas.map((area, index) => (
+                <>
+                  <a 
+                    href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline"
+                  >
+                    {area}
+                  </a>
+                  {index < siteConfig.extendedAreas.length - 1 && <span class="text-gray-600"> • </span>}
+                </>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

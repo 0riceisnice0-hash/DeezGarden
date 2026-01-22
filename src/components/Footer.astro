@@ -10,8 +10,8 @@ import { siteConfig } from '../config';
         <h3 class="text-xl font-bold mb-4 text-white">{siteConfig.name}</h3>
         <p class="mb-4">Professional garden maintenance and clearance services in {siteConfig.location}.</p>
         <div class="space-y-2">
-          <p>📞 <a href={`tel:${siteConfig.phone}`} class="hover:text-light-green transition">{siteConfig.phoneFormatted}</a></p>
-          <p>✉️ <a href={`mailto:${siteConfig.email}`} class="hover:text-light-green transition">{siteConfig.email}</a></p>
+          <p><a href={`tel:${siteConfig.phone}`} class="hover:text-light-green transition">Phone: {siteConfig.phoneFormatted}</a></p>
+          <p><a href={`mailto:${siteConfig.email}`} class="hover:text-light-green transition">Email: {siteConfig.email}</a></p>
           {siteConfig.facebook && (
             <p>
               <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-light-green transition">
@@ -19,6 +19,10 @@ import { siteConfig } from '../config';
               </a>
             </p>
           )}
+        </div>
+        <div class="mt-6">
+          <h4 class="font-semibold mb-2">Service Coverage</h4>
+          <p class="text-sm opacity-90">Serving Northamptonshire including Aylesbury and surrounding areas</p>
         </div>
       </div>
       
@@ -30,7 +34,7 @@ import { siteConfig } from '../config';
           <li><a href="/DeezGarden/services/" class="hover:text-light-green transition">Services</a></li>
           <li><a href="/DeezGarden/areas/" class="hover:text-light-green transition">Areas We Cover</a></li>
           <li><a href="/DeezGarden/reviews/" class="hover:text-light-green transition">Reviews</a></li>
-          <li><a href="/DeezGarden/blog/" class="hover:text-light-green transition">Blog</a></li>
+          <li><a href="/DeezGarden/gallery/" class="hover:text-light-green transition">Gallery</a></li>
           <li><a href="/DeezGarden/contact/" class="hover:text-light-green transition">Contact</a></li>
         </ul>
       </div>

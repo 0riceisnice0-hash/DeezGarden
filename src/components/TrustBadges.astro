@@ -4,27 +4,31 @@ import { siteConfig } from '../config';
 const badges = [];
 
 if (siteConfig.trust.insured) {
-  badges.push({ icon: '✅', text: 'Fully Insured' });
+  badges.push({ text: 'Fully Insured' });
 }
 
 if (siteConfig.trust.licensedWasteCarrier) {
-  badges.push({ icon: '♻️', text: 'Licensed Waste Carrier' });
+  badges.push({ text: 'Licensed Waste Carrier' });
 }
 
 if (siteConfig.trust.friendlyProfessional) {
-  badges.push({ icon: '⭐', text: 'Friendly Professional Service' });
+  badges.push({ text: 'Friendly Professional Service' });
 }
 
 // Only show component if there are badges
 if (badges.length === 0) return null;
 ---
 
-<div class="bg-white py-6 shadow-sm border-y border-gray-200">
+<div class="bg-gradient-to-r from-light-green/10 to-fresh-green/10 py-6 border-y border-fresh-green/20">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12">
       {badges.map(badge => (
         <div class="flex items-center space-x-2">
-          <span class="text-2xl">{badge.icon}</span>
+          <div class="w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
           <span class="text-sm md:text-base font-semibold text-deep-green">{badge.text}</span>
         </div>
       ))}

@@ -8,9 +8,14 @@ const currentPath = Astro.url.pathname;
   <div class="container mx-auto px-4">
     <nav class="flex items-center justify-between py-4">
       <!-- Logo -->
-      <a href="/DeezGarden/" class="flex items-center space-x-2">
-        <span class="text-2xl">🌿</span>
-        <span class="text-2xl font-bold text-deep-green">{siteConfig.name}</span>
+      <a href="/DeezGarden/" class="flex items-center">
+        <img 
+          src="/DeezGarden/assets/images/logo-main.png" 
+          alt="Dee'z Gardens" 
+          class="h-10"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <span class="hidden text-2xl font-bold text-deep-green tracking-tight logo-fallback">{siteConfig.name}</span>
       </a>
       
       <!-- Desktop Navigation -->
@@ -19,7 +24,7 @@ const currentPath = Astro.url.pathname;
         <a href="/DeezGarden/services/" class={`hover:text-fresh-green transition ${currentPath.includes('/services') ? 'text-fresh-green font-semibold' : ''}`}>Services</a>
         <a href="/DeezGarden/areas/" class={`hover:text-fresh-green transition ${currentPath.includes('/areas') ? 'text-fresh-green font-semibold' : ''}`}>Areas</a>
         <a href="/DeezGarden/reviews/" class={`hover:text-fresh-green transition ${currentPath.includes('/reviews') ? 'text-fresh-green font-semibold' : ''}`}>Reviews</a>
-        <a href="/DeezGarden/blog/" class={`hover:text-fresh-green transition ${currentPath.includes('/blog') ? 'text-fresh-green font-semibold' : ''}`}>Blog</a>
+        <a href="/DeezGarden/gallery/" class={`hover:text-fresh-green transition ${currentPath.includes('/gallery') ? 'text-fresh-green font-semibold' : ''}`}>Gallery</a>
         <a href="/DeezGarden/contact/" class={`hover:text-fresh-green transition ${currentPath.includes('/contact') ? 'text-fresh-green font-semibold' : ''}`}>Contact</a>
         <a href={`tel:${siteConfig.phone}`} class="bg-fresh-green text-white px-6 py-2 rounded-lg hover:bg-deep-green transition font-semibold">
           Call Now
@@ -29,7 +34,7 @@ const currentPath = Astro.url.pathname;
       <!-- Mobile Call Button -->
       <div class="md:hidden">
         <a href={`tel:${siteConfig.phone}`} class="bg-fresh-green text-white px-4 py-2 rounded-lg hover:bg-deep-green transition font-semibold">
-          📞 Call
+          Call
         </a>
       </div>
     </nav>
@@ -41,7 +46,7 @@ const currentPath = Astro.url.pathname;
         <a href="/DeezGarden/services/" class={`py-2 hover:text-fresh-green transition ${currentPath.includes('/services') ? 'text-fresh-green font-semibold' : ''}`}>Services</a>
         <a href="/DeezGarden/areas/" class={`py-2 hover:text-fresh-green transition ${currentPath.includes('/areas') ? 'text-fresh-green font-semibold' : ''}`}>Areas</a>
         <a href="/DeezGarden/reviews/" class={`py-2 hover:text-fresh-green transition ${currentPath.includes('/reviews') ? 'text-fresh-green font-semibold' : ''}`}>Reviews</a>
-        <a href="/DeezGarden/blog/" class={`py-2 hover:text-fresh-green transition ${currentPath.includes('/blog') ? 'text-fresh-green font-semibold' : ''}`}>Blog</a>
+        <a href="/DeezGarden/gallery/" class={`py-2 hover:text-fresh-green transition ${currentPath.includes('/gallery') ? 'text-fresh-green font-semibold' : ''}`}>Gallery</a>
         <a href="/DeezGarden/contact/" class={`py-2 hover:text-fresh-green transition ${currentPath.includes('/contact') ? 'text-fresh-green font-semibold' : ''}`}>Contact</a>
       </div>
     </div>
