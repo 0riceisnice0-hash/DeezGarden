@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { siteConfig, services } from '../config';
+---
+
+<BaseLayout 
+  title={siteConfig.name}
+  description="Professional garden maintenance, clearance, and landscaping services in Northampton. Fully insured with licensed waste carrier. Call 07305 195098 for a free quote."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Professional Garden & Clearance Services"
+    subtitle="Transforming gardens across Northamptonshire"
+  />
+  
+  <TrustBadges />
+  
+  <!-- Introduction Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Welcome to {siteConfig.name}</h2>
+        <p class="text-lg mb-4">
+          We're a local, trusted gardening and clearance company based in Northampton, providing professional services throughout Northamptonshire and the surrounding areas.
+        </p>
+        <p class="text-lg mb-4">
+          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or a reliable man with van service, we're here to help. Our team is fully insured and operates as a licensed waste carrier, giving you complete peace of mind.
+        </p>
+        <p class="text-lg">
+          We pride ourselves on tidy work, clear communication, and reliability. Get in touch today for a free, no-obligation quote.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Overview -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {services.map(service => (
+          <div class="bg-bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div class="text-4xl mb-4 text-center">{service.icon}</div>
+            <h3 class="text-xl font-bold mb-3 text-center">{service.title}</h3>
+            <p class="text-gray-700 mb-4 text-center">{service.description}</p>
+            <div class="text-center">
+              <a 
+                href={`/DeezGarden/services/${service.slug}/`}
+                class="text-fresh-green font-semibold hover:text-deep-green transition"
+              >
+                Learn More →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <!-- Service Areas -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Areas We Cover</h2>
+      <p class="text-center text-lg mb-8 max-w-2xl mx-auto">
+        We provide our services across Northampton and throughout Northamptonshire, including:
+      </p>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+          {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        
+        <div class="text-center mt-8">
+          <a 
+            href="/DeezGarden/areas/"
+            class="text-fresh-green font-semibold hover:text-deep-green transition text-lg"
+          >
+            View All Coverage Areas →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Get Your Free Quote Today" />
+  
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Choose {siteConfig.name}?</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="text-center">
+          <div class="text-4xl mb-4">🏆</div>
+          <h3 class="text-xl font-bold mb-2">Professional Service</h3>
+          <p class="text-gray-700">Experienced team delivering high-quality results every time</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-4xl mb-4">💷</div>
+          <h3 class="text-xl font-bold mb-2">Fair Pricing</h3>
+          <p class="text-gray-700">Competitive rates with no hidden fees or surprises</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-4xl mb-4">🚚</div>
+          <h3 class="text-xl font-bold mb-2">Licensed Waste Carrier</h3>
+          <p class="text-gray-700">Fully licensed for legal and responsible waste disposal</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-4xl mb-4">✅</div>
+          <h3 class="text-xl font-bold mb-2">Fully Insured</h3>
+          <p class="text-gray-700">Complete peace of mind with full insurance coverage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

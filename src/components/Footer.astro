@@ -1,0 +1,57 @@
+---
+import { siteConfig } from '../config';
+---
+
+<footer class="bg-deep-green text-white mt-16">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">{siteConfig.name}</h3>
+        <p class="mb-4">Professional garden maintenance and clearance services in {siteConfig.location}.</p>
+        <div class="space-y-2">
+          <p>📞 <a href={`tel:${siteConfig.phone}`} class="hover:text-light-green transition">{siteConfig.phoneFormatted}</a></p>
+          <p>✉️ <a href={`mailto:${siteConfig.email}`} class="hover:text-light-green transition">{siteConfig.email}</a></p>
+          {siteConfig.facebook && (
+            <p>
+              <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-light-green transition">
+                Join us on Facebook
+              </a>
+            </p>
+          )}
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/DeezGarden/" class="hover:text-light-green transition">Home</a></li>
+          <li><a href="/DeezGarden/services/" class="hover:text-light-green transition">Services</a></li>
+          <li><a href="/DeezGarden/areas/" class="hover:text-light-green transition">Areas We Cover</a></li>
+          <li><a href="/DeezGarden/reviews/" class="hover:text-light-green transition">Reviews</a></li>
+          <li><a href="/DeezGarden/blog/" class="hover:text-light-green transition">Blog</a></li>
+          <li><a href="/DeezGarden/contact/" class="hover:text-light-green transition">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Services -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">Our Services</h3>
+        <ul class="space-y-2">
+          <li><a href="/DeezGarden/services/garden-maintenance/" class="hover:text-light-green transition">Garden Maintenance</a></li>
+          <li><a href="/DeezGarden/services/clearance-removals/" class="hover:text-light-green transition">Clearance & Removals</a></li>
+          <li><a href="/DeezGarden/services/man-with-van/" class="hover:text-light-green transition">Man with Van</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-fresh-green mt-8 pt-8 text-center text-sm">
+      <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+      {siteConfig.trust.insured && siteConfig.trust.licensedWasteCarrier && (
+        <p class="mt-2">Fully Insured | Licensed Waste Carrier</p>
+      )}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig } from '../../config';
+
+const allAreas = [
+  ...siteConfig.primaryAreas,
+  ...siteConfig.secondaryAreas,
+  ...siteConfig.extendedAreas
+];
+---
+
+<BaseLayout 
+  title="Areas We Cover - Garden & Clearance Services Across Northamptonshire"
+  description="Dee'z Gardens provides professional garden maintenance and clearance services across Northampton, Kettering, Wellingborough, and throughout Northamptonshire."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Areas We Cover"
+    subtitle="Serving Northampton and surrounding areas"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <p class="text-lg">
+          Based in Northampton, {siteConfig.name} provides professional garden maintenance, clearance, and man with van services throughout Northamptonshire and the surrounding counties.
+        </p>
+        <p class="text-lg mt-4">
+          We serve all the areas listed below, and if your location isn't shown, please get in touch - we may still be able to help!
+        </p>
+      </div>
+      
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center">Primary Service Areas</h2>
+        <p class="text-center mb-6 text-gray-700">Our main coverage area where we operate daily</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+          {siteConfig.primaryAreas.map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-fresh-green text-white p-4 rounded-lg hover:bg-deep-green transition text-center font-semibold shadow-md hover:shadow-lg"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        
+        <h2 class="text-2xl font-bold mb-6 text-center">Extended Service Areas</h2>
+        <p class="text-center mb-6 text-gray-700">Additional areas we regularly serve</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+          {siteConfig.secondaryAreas.map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-white border-2 border-fresh-green text-deep-green p-4 rounded-lg hover:bg-fresh-green hover:text-white transition text-center font-semibold"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        
+        <h2 class="text-2xl font-bold mb-6 text-center">Wider Coverage Area</h2>
+        <p class="text-center mb-6 text-gray-700">We also cover these nearby towns and cities</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {siteConfig.extendedAreas.map(area => (
+            <a 
+              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light border border-gray-300 text-text-dark p-4 rounded-lg hover:bg-light-green hover:text-white transition text-center font-semibold"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Don't See Your Area?</h2>
+        <p class="text-lg mb-8">
+          We're constantly expanding our service area. If your location isn't listed above, please get in touch - we may still be able to help or can arrange a visit for larger jobs.
+        </p>
+        <a 
+          href="/DeezGarden/contact/"
+          class="inline-block bg-fresh-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig, services } from '../../config';
+---
+
+<BaseLayout 
+  title="Garden Maintenance & Clearance Services in Bedford"
+  description="Professional garden maintenance, clearance, and landscaping services in Bedford, Bedfordshire. Fully insured. Call 07305 195098 for a free quote."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Garden Services in Bedford"
+    location="Bedford, Bedfordshire"
+    subtitle="Professional garden and clearance services"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Garden and Clearance Services in Bedford</h2>
+        <p class="text-lg mb-4">
+          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout Bedford and the surrounding areas. Based locally in Northampton, we regularly serve customers in Bedford with reliable, high-quality service.
+        </p>
+        <p class="text-lg mb-6">
+          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in Bedford.
+        </p>
+        
+        <h3 class="text-2xl font-bold mb-4">Our Services in Bedford</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map(service => (
+            <div class="bg-bg-light p-6 rounded-lg">
+              <div class="text-4xl mb-3 text-center">{service.icon}</div>
+              <h4 class="font-bold text-lg mb-2 text-center">{service.title}</h4>
+              <p class="text-sm text-gray-700 text-center mb-3">{service.description}</p>
+              <div class="text-center">
+                <a 
+                  href={`/DeezGarden/services/${service.slug}/`}
+                  class="text-fresh-green font-semibold hover:text-deep-green text-sm"
+                >
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Why Choose {siteConfig.name} in Bedford?</h2>
+        
+        <div class="prose max-w-none">
+          <p>
+            We're proud to extend our services to Bedford, offering the same high standards we provide in Northampton and throughout the region. Our team is fully insured and operates as a licensed waste carrier, ensuring all work is completed legally and professionally.
+          </p>
+          
+          <h3>What We Offer</h3>
+          <ul>
+            <li>Garden maintenance and lawn care</li>
+            <li>Garden renovations and landscaping</li>
+            <li>Rubbish and garden waste clearance</li>
+            <li>House and garage clearances</li>
+            <li>Man with van removals</li>
+            <li>Scrap metal collection</li>
+            <li>Fully insured service</li>
+            <li>Licensed waste carrier</li>
+          </ul>
+          
+          <p>
+            Get in touch today for a free, no-obligation quote for any of our services in Bedford.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Get Your Free Bedford Quote" />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Nearby Areas We Also Serve</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {["Milton Keynes","Northampton","Luton","Wellingborough"].map((nearbyArea: string) => (
+            <a 
+              href={`/DeezGarden/areas/${nearbyArea.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm"
+            >
+              {nearbyArea}
+            </a>
+          ))}
+        </div>
+        <div class="mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
+            View all areas →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": siteConfig.name,
+  "description": "Professional garden maintenance and clearance services in Bedford",
+  "areaServed": {
+    "@type": "City",
+    "name": "Bedford",
+    "containedIn": {
+      "@type": "AdministrativeArea",
+      "name": "Bedfordshire"
+    }
+  },
+  "telephone": siteConfig.phone,
+  "email": siteConfig.email
+})} />

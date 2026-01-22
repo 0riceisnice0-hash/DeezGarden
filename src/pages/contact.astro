@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { siteConfig } from '../config';
+---
+
+<BaseLayout 
+  title="Contact Us - Free Quotes for Garden & Clearance Services"
+  description="Contact Dee'z Gardens for a free quote on garden maintenance, clearance, or removals in Northampton. Call 07305 195098 or email us today."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Contact Us"
+    subtitle="Get in touch for a free, no-obligation quote"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Contact Information -->
+          <div>
+            <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
+            <p class="mb-8 text-lg">
+              We'd love to hear from you! Whether you need a free quote, have questions about our services, or want to book a job, please get in touch using any of the methods below.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="text-3xl">📞</div>
+                <div>
+                  <h3 class="font-bold text-lg mb-1">Phone</h3>
+                  <p class="text-gray-700 mb-2">Our preferred contact method</p>
+                  <a 
+                    href={`tel:${siteConfig.phone}`}
+                    class="text-xl font-bold text-fresh-green hover:text-deep-green"
+                  >
+                    {siteConfig.phoneFormatted}
+                  </a>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="text-3xl">✉️</div>
+                <div>
+                  <h3 class="font-bold text-lg mb-1">Email</h3>
+                  <a 
+                    href={`mailto:${siteConfig.email}`}
+                    class="text-fresh-green hover:text-deep-green break-all"
+                  >
+                    {siteConfig.email}
+                  </a>
+                </div>
+              </div>
+              
+              {siteConfig.facebook && (
+                <div class="flex items-start space-x-4">
+                  <div class="text-3xl">👥</div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-1">Facebook</h3>
+                    <a 
+                      href={siteConfig.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-fresh-green hover:text-deep-green"
+                    >
+                      Join our Facebook group
+                    </a>
+                  </div>
+                </div>
+              )}
+              
+              <div class="flex items-start space-x-4">
+                <div class="text-3xl">📍</div>
+                <div>
+                  <h3 class="font-bold text-lg mb-1">Service Area</h3>
+                  <p class="text-gray-700">{siteConfig.location}</p>
+                  <a 
+                    href="/DeezGarden/areas/"
+                    class="text-fresh-green hover:text-deep-green"
+                  >
+                    View all areas we cover →
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8 bg-bg-light p-6 rounded-lg">
+              <h3 class="font-bold text-lg mb-3">Opening Hours</h3>
+              <p class="text-gray-700">Monday - Saturday: 8:00 AM - 6:00 PM</p>
+              <p class="text-gray-700 text-sm mt-2">Sunday: Closed</p>
+            </div>
+          </div>
+          
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+            <form 
+              action={`mailto:${siteConfig.email}`}
+              method="post"
+              enctype="text/plain"
+              class="space-y-4"
+            >
+              <div>
+                <label for="name" class="block font-semibold mb-2">Your Name *</label>
+                <input 
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green"
+                  placeholder="John Smith"
+                >
+              </div>
+              
+              <div>
+                <label for="email" class="block font-semibold mb-2">Your Email *</label>
+                <input 
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green"
+                  placeholder="john@example.com"
+                >
+              </div>
+              
+              <div>
+                <label for="phone" class="block font-semibold mb-2">Your Phone</label>
+                <input 
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green"
+                  placeholder="07XXX XXXXXX"
+                >
+              </div>
+              
+              <div>
+                <label for="service" class="block font-semibold mb-2">Service Required</label>
+                <select 
+                  id="service"
+                  name="service"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green"
+                >
+                  <option value="">Please select...</option>
+                  <option value="Garden Maintenance">Garden Maintenance</option>
+                  <option value="Garden Renovation">Garden Renovation</option>
+                  <option value="Clearance">Rubbish Clearance</option>
+                  <option value="Man with Van">Man with Van</option>
+                  <option value="Scrap Metal">Scrap Metal Collection</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block font-semibold mb-2">Your Message *</label>
+                <textarea 
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green"
+                  placeholder="Please provide details about the work you need..."
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit"
+                class="w-full bg-fresh-green text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition"
+              >
+                Send Message
+              </button>
+              
+              <p class="text-sm text-gray-600 text-center">
+                Note: This form uses your email client. Alternatively, call us directly on <a href={`tel:${siteConfig.phone}`} class="text-fresh-green font-semibold">{siteConfig.phoneFormatted}</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction text="Call Now for Immediate Assistance" />
+  
+  <Footer slot="footer" />
+</BaseLayout>

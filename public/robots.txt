@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://0riceisnice0-hash.github.io/DeezGarden/sitemap-index.xml

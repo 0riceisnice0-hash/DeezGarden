@@ -1,0 +1,89 @@
+---
+import { siteConfig } from '../config';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const { title, description = siteConfig.description, canonical, noindex = false } = Astro.props;
+const fullTitle = title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl).toString();
+---
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content={Astro.generator}>
+  
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalURL}>
+  
+  {noindex && <meta name="robots" content="noindex, nofollow">}
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:site_name" content={siteConfig.name}>
+  <meta property="og:locale" content="en_GB">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={fullTitle}>
+  <meta name="twitter:description" content={description}>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/DeezGarden/favicon.svg">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": siteConfig.baseUrl,
+    "name": siteConfig.name,
+    "description": siteConfig.description,
+    "url": siteConfig.baseUrl,
+    "telephone": siteConfig.phone,
+    "email": siteConfig.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northampton",
+      "addressRegion": "Northamptonshire",
+      "addressCountry": "GB"
+    },
+    "areaServed": [
+      ...siteConfig.primaryAreas.map(area => ({
+        "@type": "City",
+        "name": area
+      })),
+      ...siteConfig.secondaryAreas.map(area => ({
+        "@type": "City",
+        "name": area
+      }))
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "sameAs": [siteConfig.facebook],
+    "priceRange": "££"
+  })} />
+</head>
+<body>
+  <slot name="header" />
+  <main>
+    <slot />
+  </main>
+  <slot name="footer" />
+</body>
+</html>

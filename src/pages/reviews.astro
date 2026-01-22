@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { siteConfig } from '../config';
+---
+
+<BaseLayout 
+  title="Customer Reviews - Dee'z Gardens Northampton"
+  description="Read reviews from our satisfied customers across Northampton and Northamptonshire for garden maintenance, clearance, and removals services."
+>
+  <Header slot="header" />
+  
+  <Hero 
+    title="Customer Reviews"
+    subtitle="See what our customers say about us"
+  />
+  
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-center text-lg mb-12">
+          We're proud of the service we provide and the relationships we build with our customers. Here's what some of them have to say:
+        </p>
+        
+        <div class="space-y-8">
+          <!-- Placeholder Review 1 -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="text-3xl mr-4">⭐⭐⭐⭐⭐</div>
+              <div>
+                <h3 class="font-bold text-lg">Excellent Garden Maintenance</h3>
+                <p class="text-sm text-gray-600">Garden Maintenance - Northampton</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "Very professional service. They transformed our overgrown garden and now maintain it regularly. Always on time and tidy work. Highly recommend!"
+            </p>
+            <p class="text-sm text-gray-600">— Local Customer, Northampton</p>
+          </div>
+          
+          <!-- Placeholder Review 2 -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="text-3xl mr-4">⭐⭐⭐⭐⭐</div>
+              <div>
+                <h3 class="font-bold text-lg">Fantastic Clearance Service</h3>
+                <p class="text-sm text-gray-600">House Clearance - Kettering</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "Needed a full garage clearance and they made it so easy. Fair price, arrived when they said they would, and cleared everything quickly. Very pleased."
+            </p>
+            <p class="text-sm text-gray-600">— Local Customer, Kettering</p>
+          </div>
+          
+          <!-- Placeholder Review 3 -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="text-3xl mr-4">⭐⭐⭐⭐⭐</div>
+              <div>
+                <h3 class="font-bold text-lg">Reliable Man with Van</h3>
+                <p class="text-sm text-gray-600">Removals - Wellingborough</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "Used them for a house move and they were brilliant. Careful with our furniture, friendly, and made the whole process stress-free. Will definitely use again."
+            </p>
+            <p class="text-sm text-gray-600">— Local Customer, Wellingborough</p>
+          </div>
+          
+          <!-- Placeholder Review 4 -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="text-3xl mr-4">⭐⭐⭐⭐⭐</div>
+              <div>
+                <h3 class="font-bold text-lg">Professional Landscaping</h3>
+                <p class="text-sm text-gray-600">Landscaping - Rushden</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "Had a new patio installed and landscaping done. The quality of work is excellent and they finished on time. Garden looks amazing now!"
+            </p>
+            <p class="text-sm text-gray-600">— Local Customer, Rushden</p>
+          </div>
+          
+          <!-- Placeholder Review 5 -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="text-3xl mr-4">⭐⭐⭐⭐⭐</div>
+              <div>
+                <h3 class="font-bold text-lg">Great Communication</h3>
+                <p class="text-sm text-gray-600">Garden Clearance - Daventry</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "Really appreciate the clear communication throughout. They explained everything, arrived on time, and the price was exactly as quoted. Very trustworthy."
+            </p>
+            <p class="text-sm text-gray-600">— Local Customer, Daventry</p>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-fresh-green/10 p-8 rounded-lg text-center">
+          <h3 class="text-2xl font-bold mb-4">Join Our Satisfied Customers</h3>
+          <p class="text-lg mb-6">
+            We'd love to help with your garden or clearance needs. Get in touch today for a free, no-obligation quote.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction />
+  
+  <Footer slot="footer" />
+</BaseLayout>
