@@ -10,11 +10,11 @@ import { siteConfig } from '../config';
         <h3 class="text-xl font-bold mb-4 text-white">{siteConfig.name}</h3>
         <p class="mb-4">Professional garden maintenance and clearance services in {siteConfig.location}.</p>
         <div class="space-y-2">
-          <p><a href={`tel:${siteConfig.phone}`} class="text-white hover:text-light-green transition">Phone: {siteConfig.phoneFormatted}</a></p>
-          <p><a href={`mailto:${siteConfig.email}`} class="text-white hover:text-light-green transition">Email: {siteConfig.email}</a></p>
+          <p><a href={`tel:${siteConfig.phone}`} class="footer-link">Phone: {siteConfig.phoneFormatted}</a></p>
+          <p><a href={`mailto:${siteConfig.email}`} class="footer-link">Email: {siteConfig.email}</a></p>
           {siteConfig.facebook && (
             <p>
-              <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="text-white hover:text-light-green transition">
+              <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link">
                 Join us on Facebook
               </a>
             </p>
@@ -30,12 +30,12 @@ import { siteConfig } from '../config';
       <div>
         <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
         <ul class="space-y-2">
-          <li><a href="/DeezGarden/" class="text-white hover:text-light-green transition">Home</a></li>
-          <li><a href="/DeezGarden/services/" class="text-white hover:text-light-green transition">Services</a></li>
-          <li><a href="/DeezGarden/areas/" class="text-white hover:text-light-green transition">Areas We Cover</a></li>
-          <li><a href="/DeezGarden/reviews/" class="text-white hover:text-light-green transition">Reviews</a></li>
-          <li><a href="/DeezGarden/gallery/" class="text-white hover:text-light-green transition">Gallery</a></li>
-          <li><a href="/DeezGarden/contact/" class="text-white hover:text-light-green transition">Contact</a></li>
+          <li><a href="/DeezGarden/" class="footer-link">Home</a></li>
+          <li><a href="/DeezGarden/services/" class="footer-link">Services</a></li>
+          <li><a href="/DeezGarden/areas/" class="footer-link">Areas We Cover</a></li>
+          <li><a href="/DeezGarden/reviews/" class="footer-link">Reviews</a></li>
+          <li><a href="/DeezGarden/gallery/" class="footer-link">Gallery</a></li>
+          <li><a href="/DeezGarden/contact/" class="footer-link">Contact</a></li>
         </ul>
       </div>
       
@@ -43,9 +43,9 @@ import { siteConfig } from '../config';
       <div>
         <h3 class="text-xl font-bold mb-4 text-white">Our Services</h3>
         <ul class="space-y-2">
-          <li><a href="/DeezGarden/services/garden-maintenance/" class="text-white hover:text-light-green transition">Garden Maintenance</a></li>
-          <li><a href="/DeezGarden/services/clearance-removals/" class="text-white hover:text-light-green transition">Clearance & Removals</a></li>
-          <li><a href="/DeezGarden/services/man-with-van/" class="text-white hover:text-light-green transition">Man with Van</a></li>
+          <li><a href="/DeezGarden/services/garden-maintenance/" class="footer-link">Garden Maintenance</a></li>
+          <li><a href="/DeezGarden/services/clearance-removals/" class="footer-link">Clearance & Removals</a></li>
+          <li><a href="/DeezGarden/services/man-with-van/" class="footer-link">Man with Van</a></li>
         </ul>
       </div>
     </div>
@@ -59,3 +59,15 @@ import { siteConfig } from '../config';
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-link {
+    color: white !important;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .footer-link:hover {
+    color: #8bc34a !important; /* light-green */
+  }
+</style>
