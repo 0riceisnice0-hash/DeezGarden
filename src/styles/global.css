@@ -106,16 +106,6 @@ iframe {
     font-size: 1rem;
     line-height: 1.7;
   }
-  
-  /* Make buttons easier to tap on mobile */
-  .container a[class*="bg-fresh-green"],
-  .container a[class*="bg-white"],
-  .container button[type="submit"] {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 /* Extra small screens */

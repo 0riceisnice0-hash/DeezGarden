@@ -136,8 +136,8 @@ const currentPath = stripBase(Astro.url.pathname);
 
     // Close menu when clicking outside
     document.addEventListener('click', (event) => {
-      const target = event.target as Node;
-      if (!menuButton.contains(target) && !mobileMenu.contains(target)) {
+      const target = event.target;
+      if (target instanceof Node && !menuButton.contains(target) && !mobileMenu.contains(target)) {
         mobileMenu.classList.add('hidden');
         hamburgerIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
