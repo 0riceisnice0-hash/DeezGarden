@@ -17,15 +17,22 @@ const {
   heroImage 
 } = Astro.props;
 
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 // Determine background image URL based on heroImage prop
-const bgImageUrl = heroImage ? `/DeezGarden/assets/images/${heroImage}` : null;
+const bgImageUrl = heroImage ? `${baseUrl}assets/images/${heroImage}` : null;
 ---
 
-<section class="relative text-white py-20 hero-section" data-hero-image={heroImage}>
+<section class="relative text-white py-20 hero-section">
   <!-- Background image placeholder with fallback -->
   <div class="absolute inset-0 hero-bg">
     {bgImageUrl ? (
-      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${bgImageUrl}');`}></div>
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-gradient-to-r from-deep-green to-fresh-green"
+        style={`background-image: url('${bgImageUrl}');`}
+      ></div>
     ) : (
       <div class="absolute inset-0 bg-gradient-to-r from-deep-green to-fresh-green"></div>
     )}
@@ -60,17 +67,5 @@ const bgImageUrl = heroImage ? `/DeezGarden/assets/images/${heroImage}` : null;
   /* Placeholder styling for missing images */
   .hero-bg div[style*="background-image"] {
     position: relative;
-  }
-  
-  /* Show placeholder text if image fails to load */
-  .hero-section[data-hero-image]::before {
-    content: attr(data-hero-image) " placeholder";
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.3);
-    z-index: 5;
-    pointer-events: none;
   }
 </style>
