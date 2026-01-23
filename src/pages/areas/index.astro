@@ -20,7 +20,7 @@ const allAreas = [
   <Header slot="header" />
   
   <Hero 
-    heroImage="hero-areas.jpg"
+    heroImage="hero.jpg"
     title="Areas We Cover"
     subtitle="Serving Northampton and surrounding areas"
   />
@@ -37,20 +37,24 @@ const allAreas = [
           </p>
         </div>
         
-        <!-- Coverage Map Visual Placeholder -->
+        <!-- Coverage Map - Live Google Maps Embed -->
         <div class="mb-12">
           <div class="relative">
-            <img 
-              src="/DeezGarden/assets/images/areas-coverage-map.jpg" 
-              alt="Coverage Map - Northamptonshire and Surrounding Areas" 
-              class="rounded-lg shadow-lg w-full"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-light-green/20 to-fresh-green/30 rounded-lg shadow-lg w-full h-96">
-              <p class="text-gray-600 font-semibold text-lg">areas-coverage-map.jpg</p>
-              <p class="text-gray-500 text-sm mt-2">Coverage Map Placeholder</p>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155234.56789!2d-0.8971!3d52.2405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770f1bdb8b0f3b%3A0x7c9f8c8c8c8c8c8c!2sNorthampton!5e0!3m2!1sen!2suk!4v1234567890"
+              width="100%"
+              height="450"
+              style="border:0; border-radius: 0.5rem;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Service Coverage Area - Northamptonshire"
+              class="rounded-lg shadow-lg"
+            ></iframe>
           </div>
+          <p class="text-center text-sm text-gray-600 mt-4">
+            Interactive map showing our service coverage area centered on Northampton
+          </p>
         </div>
         
         <div class="space-y-12">

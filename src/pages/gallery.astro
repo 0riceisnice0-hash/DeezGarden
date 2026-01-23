@@ -14,7 +14,7 @@ import { siteConfig } from '../config';
   <Header slot="header" />
   
   <Hero 
-    heroImage="hero-gallery.jpg"
+    heroImage="hero.jpg"
     title="Our Work Gallery"
     subtitle="Transforming gardens and spaces across Northamptonshire"
   />
@@ -43,18 +43,15 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map(i => (
+          {[1, 2, 3].map(i => (
             <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
               <img 
-                src={`/DeezGarden/assets/images/gallery/garden-clearances/before-after-0${i}.jpg`}
-                alt={`Before and After - Garden Clearances ${i.toString().padStart(2, '0')}`}
+                src={`/DeezGarden/assets/images/${i === 1 ? 'service-garden-renovations.jpg' : i === 2 ? 'service-rubbish-clearance.jpg' : 'hero.jpg'}`}
+                alt={`Garden Clearances Project ${i}`}
                 class="w-full h-full object-cover"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
-              <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300 w-full h-full absolute inset-0">
-                <p class="text-gray-600 font-semibold mb-2">Before & After</p>
-                <p class="text-gray-500 text-sm">Garden Clearances {i.toString().padStart(2, '0')}</p>
-                <p class="text-gray-500 text-xs mt-2">Northamptonshire</p>
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p class="text-white font-semibold">Garden Clearances Project {i}</p>
               </div>
             </div>
           ))}
@@ -75,18 +72,15 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map(i => (
+          {[1, 2, 3].map(i => (
             <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
               <img 
-                src={`/DeezGarden/assets/images/gallery/renovations-landscaping/before-after-0${i}.jpg`}
-                alt={`Before and After - Renovations & Landscaping ${i.toString().padStart(2, '0')}`}
+                src={`/DeezGarden/assets/images/${i === 1 ? 'hero.jpg' : i === 2 ? 'service-garden-renovations.jpg' : 'service-rubbish-clearance.jpg'}`}
+                alt={`Renovations & Landscaping Project ${i}`}
                 class="w-full h-full object-cover"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
-              <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-green-200 to-green-300 w-full h-full absolute inset-0">
-                <p class="text-gray-700 font-semibold mb-2">Before & After</p>
-                <p class="text-gray-600 text-sm">Renovations & Landscaping {i.toString().padStart(2, '0')}</p>
-                <p class="text-gray-600 text-xs mt-2">Northamptonshire</p>
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p class="text-white font-semibold">Renovations & Landscaping Project {i}</p>
               </div>
             </div>
           ))}
@@ -106,18 +100,15 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map(i => (
+          {[1, 2, 3].map(i => (
             <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
               <img 
-                src={`/DeezGarden/assets/images/gallery/rubbish-clearouts/before-after-0${i}.jpg`}
-                alt={`Before and After - Rubbish Removal & Clear-outs ${i.toString().padStart(2, '0')}`}
+                src={`/DeezGarden/assets/images/${i === 1 ? 'service-rubbish-clearance.jpg' : i === 2 ? 'hero.jpg' : 'service-garden-renovations.jpg'}`}
+                alt={`Rubbish Removal & Clear-outs Project ${i}`}
                 class="w-full h-full object-cover"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
-              <div class="hidden flex-col items-center justify-center bg-gradient-to-br from-blue-200 to-blue-300 w-full h-full absolute inset-0">
-                <p class="text-gray-700 font-semibold mb-2">Before & After</p>
-                <p class="text-gray-600 text-sm">Rubbish Removal & Clear-outs {i.toString().padStart(2, '0')}</p>
-                <p class="text-gray-600 text-xs mt-2">Northamptonshire</p>
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p class="text-white font-semibold">Rubbish Removal Project {i}</p>
               </div>
             </div>
           ))}
