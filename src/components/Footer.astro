@@ -2,56 +2,56 @@
 import { siteConfig } from '../config';
 ---
 
-<footer class="bg-deep-green text-white mt-16">
-  <div class="container mx-auto px-4 py-12">
+<footer class="bg-deep-green text-white mt-8 md:mt-16">
+  <div class="container mx-auto px-4 py-8 md:py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Company Info -->
-      <div>
+      <div class="text-center md:text-left">
         <h3 class="text-xl font-bold mb-4 text-white">{siteConfig.name}</h3>
-        <p class="mb-4">Professional garden maintenance and clearance services in {siteConfig.location}.</p>
+        <p class="mb-4 text-sm md:text-base">Professional garden maintenance and clearance services in {siteConfig.location}.</p>
         <div class="space-y-2">
-          <p><a href={`tel:${siteConfig.phone}`} class="footer-link">Phone: {siteConfig.phoneFormatted}</a></p>
-          <p><a href={`mailto:${siteConfig.email}`} class="footer-link">Email: {siteConfig.email}</a></p>
+          <p><a href={`tel:${siteConfig.phone}`} class="footer-link text-base md:text-lg font-semibold">📞 {siteConfig.phoneFormatted}</a></p>
+          <p><a href={`mailto:${siteConfig.email}`} class="footer-link break-all text-sm md:text-base">✉️ {siteConfig.email}</a></p>
           {siteConfig.facebook && (
             <p>
-              <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link">
+              <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link text-sm md:text-base">
                 Join us on Facebook
               </a>
             </p>
           )}
         </div>
         <div class="mt-6">
-          <h4 class="font-semibold mb-2">Service Coverage</h4>
+          <h4 class="font-semibold mb-2 text-sm md:text-base">Service Coverage</h4>
           <p class="text-sm opacity-90">Serving Northamptonshire including Aylesbury and surrounding areas</p>
         </div>
       </div>
       
       <!-- Quick Links -->
-      <div>
+      <div class="text-center md:text-left">
         <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
         <ul class="space-y-2">
-          <li><a href="/DeezGarden/" class="footer-link">Home</a></li>
-          <li><a href="/DeezGarden/services/" class="footer-link">Services</a></li>
-          <li><a href="/DeezGarden/areas/" class="footer-link">Areas We Cover</a></li>
-          <li><a href="/DeezGarden/reviews/" class="footer-link">Reviews</a></li>
-          <li><a href="/DeezGarden/gallery/" class="footer-link">Gallery</a></li>
-          <li><a href="/DeezGarden/contact/" class="footer-link">Contact</a></li>
+          <li><a href="/DeezGarden/" class="footer-link py-1 inline-block">Home</a></li>
+          <li><a href="/DeezGarden/services/" class="footer-link py-1 inline-block">Services</a></li>
+          <li><a href="/DeezGarden/areas/" class="footer-link py-1 inline-block">Areas We Cover</a></li>
+          <li><a href="/DeezGarden/reviews/" class="footer-link py-1 inline-block">Reviews</a></li>
+          <li><a href="/DeezGarden/gallery/" class="footer-link py-1 inline-block">Gallery</a></li>
+          <li><a href="/DeezGarden/contact/" class="footer-link py-1 inline-block">Contact</a></li>
         </ul>
       </div>
       
       <!-- Services -->
-      <div>
+      <div class="text-center md:text-left">
         <h3 class="text-xl font-bold mb-4 text-white">Our Services</h3>
         <ul class="space-y-2">
-          <li><a href="/DeezGarden/services/garden-maintenance/" class="footer-link">Garden Maintenance</a></li>
-          <li><a href="/DeezGarden/services/clearance-removals/" class="footer-link">Clearance & Removals</a></li>
-          <li><a href="/DeezGarden/services/man-with-van/" class="footer-link">Man with Van</a></li>
+          <li><a href="/DeezGarden/services/garden-maintenance/" class="footer-link py-1 inline-block">Garden Maintenance</a></li>
+          <li><a href="/DeezGarden/services/clearance-removals/" class="footer-link py-1 inline-block">Clearance & Removals</a></li>
+          <li><a href="/DeezGarden/services/man-with-van/" class="footer-link py-1 inline-block">Man with Van</a></li>
         </ul>
       </div>
     </div>
     
     <!-- Bottom Bar -->
-    <div class="border-t border-fresh-green mt-8 pt-8 text-center text-sm">
+    <div class="border-t border-fresh-green mt-8 pt-6 md:pt-8 text-center text-sm">
       <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
       {siteConfig.trust.insured && siteConfig.trust.licensedWasteCarrier && (
         <p class="mt-2">Fully Insured | Licensed Waste Carrier</p>
@@ -65,9 +65,19 @@ import { siteConfig } from '../config';
     color: white !important;
     text-decoration: none;
     transition: color 0.2s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
   
   .footer-link:hover {
     color: #8bc34a !important; /* light-green */
+  }
+  
+  /* Improve tap targets on mobile */
+  @media (max-width: 768px) {
+    footer ul li {
+      padding: 0.25rem 0;
+    }
   }
 </style>
