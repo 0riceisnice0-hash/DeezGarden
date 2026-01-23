@@ -19,49 +19,49 @@ import { siteConfig } from '../../config';
     subtitle="Serving Northampton and surrounding areas"
   />
   
-  <section class="py-16">
+  <section class="py-10 md:py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <div class="mb-12">
-          <p class="text-lg mb-4">
+        <div class="mb-8 md:mb-12">
+          <p class="text-base md:text-lg mb-4">
             Based in Northampton, {siteConfig.name} provides professional garden maintenance, clearance, and man with van services throughout Northamptonshire and the surrounding counties.
           </p>
-          <p class="text-lg">
+          <p class="text-base md:text-lg">
             We serve all the areas listed below, and if your location isn't shown, please get in touch - we may still be able to help!
           </p>
         </div>
         
         <!-- Coverage Map - Live Google Maps Embed -->
-        <div class="mb-12">
-          <div class="relative">
+        <div class="mb-8 md:mb-12">
+          <div class="relative w-full overflow-hidden rounded-lg shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155234.567!2d-0.8971!3d52.2405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770f1bdb8b0f3b%3A0x2ace52a7c90a7840!2sNorthampton%2C%20UK!5e0!3m2!1sen!2suk!4v1640000000000"
               width="100%"
-              height="450"
-              style="border:0; border-radius: 0.5rem;"
+              height="300"
+              style="border:0; display: block;"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Service Coverage Area - Northamptonshire"
-              class="rounded-lg shadow-lg"
+              class="w-full h-64 md:h-[450px]"
             ></iframe>
           </div>
-          <p class="text-center text-sm text-gray-600 mt-4">
+          <p class="text-center text-xs md:text-sm text-gray-600 mt-3 md:mt-4">
             Interactive map showing our service coverage area centered on Northampton
           </p>
         </div>
         
-        <div class="space-y-12">
+        <div class="space-y-8 md:space-y-12">
           <!-- Primary Service Areas -->
           <div>
-            <h2 class="text-2xl font-bold mb-4">Primary Service Areas</h2>
-            <p class="text-gray-700 mb-4">Our main coverage area where we operate daily:</p>
-            <div class="text-lg">
+            <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Primary Service Areas</h2>
+            <p class="text-gray-700 mb-3 md:mb-4 text-sm md:text-base">Our main coverage area where we operate daily:</p>
+            <div class="text-base md:text-lg leading-relaxed">
               {siteConfig.primaryAreas.map((area, index) => (
                 <>
                   <a 
                     href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline"
+                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline inline-block py-1"
                   >
                     {area}
                   </a>
@@ -73,14 +73,14 @@ import { siteConfig } from '../../config';
 
           <!-- Extended Service Areas -->
           <div>
-            <h2 class="text-2xl font-bold mb-4">Extended Service Areas</h2>
-            <p class="text-gray-700 mb-4">Additional areas we regularly serve:</p>
-            <div class="text-lg">
+            <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Extended Service Areas</h2>
+            <p class="text-gray-700 mb-3 md:mb-4 text-sm md:text-base">Additional areas we regularly serve:</p>
+            <div class="text-base md:text-lg leading-relaxed">
               {siteConfig.secondaryAreas.map((area, index) => (
                 <>
                   <a 
                     href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline"
+                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline inline-block py-1"
                   >
                     {area}
                   </a>
@@ -92,14 +92,14 @@ import { siteConfig } from '../../config';
 
           <!-- Wider Coverage Area -->
           <div>
-            <h2 class="text-2xl font-bold mb-4">Wider Coverage Area</h2>
-            <p class="text-gray-700 mb-4">We also cover these nearby towns and cities:</p>
-            <div class="text-lg">
+            <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Wider Coverage Area</h2>
+            <p class="text-gray-700 mb-3 md:mb-4 text-sm md:text-base">We also cover these nearby towns and cities:</p>
+            <div class="text-base md:text-lg leading-relaxed">
               {siteConfig.extendedAreas.map((area, index) => (
                 <>
                   <a 
                     href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline"
+                    class="text-fresh-green hover:text-deep-green font-semibold hover:underline inline-block py-1"
                   >
                     {area}
                   </a>
@@ -115,16 +115,16 @@ import { siteConfig } from '../../config';
   
   <CallToAction />
   
-  <section class="py-16 bg-white">
+  <section class="py-10 md:py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Don't See Your Area?</h2>
-        <p class="text-lg mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Don't See Your Area?</h2>
+        <p class="text-base md:text-lg mb-6 md:mb-8">
           We're constantly expanding our service area. If your location isn't listed above, please get in touch - we may still be able to help or can arrange a visit for larger jobs.
         </p>
         <a 
           href="/DeezGarden/contact/"
-          class="inline-block bg-fresh-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition"
+          class="inline-block bg-fresh-green text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-deep-green transition w-full sm:w-auto"
         >
           Contact Us
         </a>

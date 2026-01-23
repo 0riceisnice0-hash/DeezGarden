@@ -16,6 +16,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal scrolling on mobile */
+  overflow-x: hidden;
 }
 
 body {
@@ -23,6 +25,9 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: 1.6;
+  /* Prevent horizontal scrolling on mobile */
+  overflow-x: hidden;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,22 +64,71 @@ a:hover {
   color: var(--color-fresh-green);
 }
 
+/* Ensure images don't overflow containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure iframes (like maps) are responsive */
+iframe {
+  max-width: 100%;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* Mobile optimizations */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   
   h3 {
     font-size: 1.25rem;
+  }
+  
+  /* Reduce excessive vertical gaps on mobile */
+  section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  /* Improve paragraph line lengths on mobile */
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  /* Make buttons easier to tap on mobile */
+  .container a[class*="bg-fresh-green"],
+  .container a[class*="bg-white"],
+  .container button[type="submit"] {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.35rem;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
   }
 }
