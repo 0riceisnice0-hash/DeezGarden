@@ -20,31 +20,31 @@ const {
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-
-// Determine background image URL based on heroImage prop
-const bgImageUrl = heroImage ? `${baseUrl}assets/images/${heroImage}` : null;
 ---
 
-<section class="relative text-white py-20 hero-section">
-  <!-- Background image placeholder with fallback -->
-  <div class="absolute inset-0 hero-bg">
-    {bgImageUrl ? (
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-gradient-to-r from-deep-green to-fresh-green"
-        style={`background-image: url('${bgImageUrl}');`}
-      ></div>
-    ) : (
-      <div class="absolute inset-0 bg-gradient-to-r from-deep-green to-fresh-green"></div>
-    )}
-    <!-- Dark overlay for text readability -->
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-  </div>
+<section class="relative text-white py-20 min-h-[400px] flex items-center">
+  <!-- Background Image -->
+  {heroImage && (
+    <img 
+      src={`${baseUrl}assets/images/${heroImage}`}
+      alt={title}
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  )}
+  
+  <!-- Fallback solid background if no image -->
+  {!heroImage && (
+    <div class="absolute inset-0 bg-gradient-to-r from-deep-green to-fresh-green"></div>
+  )}
+  
+  <!-- Dark overlay for text readability -->
+  <div class="absolute inset-0 bg-black/50"></div>
   
   <!-- Content -->
   <div class="container mx-auto px-4 text-center relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">{title}</h1>
-    {subtitle && <p class="text-xl md:text-2xl mb-4 text-white opacity-90 drop-shadow-md">{subtitle}</p>}
-    <p class="text-lg md:text-xl mb-8 text-white opacity-90 drop-shadow-md">Serving {location}</p>
+    {subtitle && <p class="text-xl md:text-2xl mb-4 text-white drop-shadow-md">{subtitle}</p>}
+    <p class="text-lg md:text-xl mb-8 text-white drop-shadow-md">Serving {location}</p>
     
     {showCTA && (
       <div class="mt-8">
@@ -58,14 +58,3 @@ const bgImageUrl = heroImage ? `${baseUrl}assets/images/${heroImage}` : null;
     )}
   </div>
 </section>
-
-<style>
-  .hero-section {
-    min-height: 400px;
-  }
-  
-  /* Placeholder styling for missing images */
-  .hero-bg div[style*="background-image"] {
-    position: relative;
-  }
-</style>

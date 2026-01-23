@@ -14,7 +14,7 @@ import { siteConfig } from '../config';
   <Header slot="header" />
   
   <Hero 
-    heroImage="hero.jpg"
+    heroImage="galary hero.jpg"
     title="Our Work Gallery"
     subtitle="Transforming gardens and spaces across Northamptonshire"
   />
@@ -43,15 +43,27 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map(i => (
-            <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
-              <img 
-                src={`/DeezGarden/assets/images/${i === 1 ? 'service-garden-renovations.jpg' : i === 2 ? 'service-rubbish-clearance.jpg' : 'hero.jpg'}`}
-                alt={i === 1 ? 'Professional garden clearance showing manicured lawn' : i === 2 ? 'Garden clearance before and after transformation' : 'Garden maintenance and clearance service example'}
-                class="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/before and after lawn 1.jpg"
+              alt="Garden clearance showing beautifully maintained lawn"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/renovation1.jpg"
+              alt="Garden clearance before renovation work"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/renovation1 after.jpg"
+              alt="Garden clearance after transformation"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -69,15 +81,27 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map(i => (
-            <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
-              <img 
-                src={`/DeezGarden/assets/images/${i === 1 ? 'hero.jpg' : i === 2 ? 'service-garden-renovations.jpg' : 'service-rubbish-clearance.jpg'}`}
-                alt={i === 1 ? 'Garden renovation project with lush green lawn' : i === 2 ? 'Landscaping work showing beautifully maintained garden' : 'Garden transformation before and after clearance'}
-                class="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/before after renovation 2.jpg"
+              alt="Garden renovation showing beautiful landscaping work"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/before after renovation 3.jpg"
+              alt="Landscaping transformation with new paving and plants"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/jet washing.jpg"
+              alt="Professional jet washing and garden maintenance"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
         </div>
       </div>
@@ -94,15 +118,27 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map(i => (
-            <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
-              <img 
-                src={`/DeezGarden/assets/images/${i === 1 ? 'service-rubbish-clearance.jpg' : i === 2 ? 'hero.jpg' : 'service-garden-renovations.jpg'}`}
-                alt={i === 1 ? 'Rubbish clearance before and after showing cleared garden space' : i === 2 ? 'Professional waste removal and garden clearance service' : 'Garden waste clearance and disposal service example'}
-                class="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/rubbish before and after 2.jpg"
+              alt="Rubbish clearance before and after showing cleared garden"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/rubbish before and after 3.jpg"
+              alt="Professional waste removal service transformation"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-64 overflow-hidden">
+            <img 
+              src="/DeezGarden/assets/images/rubbish before and after 4.jpg"
+              alt="Garden waste clearance and disposal completed"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
