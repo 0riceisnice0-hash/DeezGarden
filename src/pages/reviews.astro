@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
+import TrustBadges from '../components/TrustBadges.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 ---
 
@@ -13,9 +14,12 @@ import HeroCTA from '../components/HeroCTA.astro';
   <Header slot="header" />
   
   <Hero 
+    heroImage="hero.jpg"
     title="Customer Reviews"
     subtitle="See what our customers say about us"
   />
+  
+  <TrustBadges />
   
   <section class="py-4 md:py-16">
     <div class="container mx-auto px-4">
