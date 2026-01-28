@@ -1,0 +1,75 @@
+---
+// Compact mobile areas component with show more functionality
+import { siteConfig } from '../config';
+
+const primaryAreas = siteConfig.primaryAreas;
+const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas];
+---
+
+<div class="areas-compact md:hidden">
+  <!-- Initially visible areas (primary only) -->
+  <div class="flex flex-wrap justify-center gap-2 px-4" id="areas-visible">
+    {primaryAreas.map(area => (
+      <a 
+        href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+        class="bg-white px-3 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-200 hover:bg-fresh-green hover:text-white hover:border-fresh-green transition"
+      >
+        {area}
+      </a>
+    ))}
+  </div>
+  
+  <!-- Hidden areas (shown when expanded) -->
+  <div class="hidden flex-wrap justify-center gap-2 px-4 mt-2" id="areas-hidden">
+    {siteConfig.secondaryAreas.map(area => (
+      <a 
+        href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+        class="bg-white px-3 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-200 hover:bg-fresh-green hover:text-white hover:border-fresh-green transition"
+      >
+        {area}
+      </a>
+    ))}
+  </div>
+  
+  <!-- Show more button -->
+  <div class="text-center mt-3">
+    <button 
+      id="areas-toggle"
+      class="text-fresh-green font-semibold text-sm inline-flex items-center gap-1 hover:text-deep-green transition"
+      data-total-areas={allAreas.length}
+    >
+      <span id="toggle-text">View all {allAreas.length} areas</span>
+      <svg id="toggle-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('areas-toggle');
+  const hiddenAreas = document.getElementById('areas-hidden');
+  const toggleText = document.getElementById('toggle-text');
+  const toggleIcon = document.getElementById('toggle-icon');
+  
+  if (toggleBtn && hiddenAreas && toggleText && toggleIcon) {
+    const totalAreas = toggleBtn.dataset.totalAreas || '';
+    let expanded = false;
+    
+    toggleBtn.addEventListener('click', () => {
+      expanded = !expanded;
+      
+      if (expanded) {
+        hiddenAreas.classList.remove('hidden');
+        hiddenAreas.classList.add('flex');
+        toggleText.textContent = 'Show less';
+        toggleIcon.style.transform = 'rotate(180deg)';
+      } else {
+        hiddenAreas.classList.add('hidden');
+        hiddenAreas.classList.remove('flex');
+        toggleText.textContent = `View all ${totalAreas} areas`;
+        toggleIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+</script>

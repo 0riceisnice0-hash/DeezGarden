@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import CallToAction from '../components/CallToAction.astro';
+import HeroCTA from '../components/HeroCTA.astro';
 import { siteConfig } from '../config';
 ---
 
@@ -16,52 +17,49 @@ import { siteConfig } from '../config';
   <Hero 
     heroImage="gallery hero.jpg"
     title="Our Work Gallery"
-    subtitle="Transforming gardens and spaces across Northamptonshire"
+    subtitle="Transforming gardens across Northamptonshire"
   />
   
   <!-- Gallery Introduction -->
-  <section class="py-10 md:py-16 bg-gradient-to-br from-light-green/10 to-fresh-green/10">
+  <section class="py-4 md:py-16 bg-gradient-to-br from-light-green/10 to-fresh-green/10">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <p class="text-base md:text-lg mb-4">
-          Take a look at some of the transformations we've achieved for our clients across Northampton and the surrounding areas. From overgrown gardens to complete clearances, we take pride in delivering exceptional results.
-        </p>
-        <p class="text-base md:text-lg">
-          Every project showcases our commitment to quality workmanship, attention to detail, and professional service.
+        <p class="text-sm md:text-lg">
+          See the transformations we've achieved for our clients. From overgrown gardens to complete clearances, we deliver exceptional results.
         </p>
       </div>
     </div>
   </section>
   
   <!-- Garden Clearances Section -->
-  <section class="py-10 md:py-16 bg-white">
+  <section class="py-4 md:py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-center">Garden Clearances</h2>
-        <p class="text-center text-gray-700 mb-6 md:mb-12 max-w-2xl mx-auto text-sm md:text-base">
-          Complete garden clearances removing overgrown vegetation, rubbish, and debris. We transform neglected spaces into clean, usable gardens ready for renovation or maintenance.
+        <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-center">Garden Clearances</h2>
+        <p class="text-center text-gray-700 mb-4 md:mb-12 max-w-2xl mx-auto text-xs md:text-base">
+          Complete garden clearances removing overgrown vegetation and debris.
         </p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
             <img 
               src="/DeezGarden/assets/images/before and after lawn 1.jpg"
               alt="Garden clearance showing beautifully maintained lawn"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
             <img 
               src="/DeezGarden/assets/images/renovation1.jpg"
               alt="Garden clearance before renovation work"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1">
             <img 
               src="/DeezGarden/assets/images/renovation1 after.jpg"
               alt="Garden clearance after transformation"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -72,30 +70,30 @@ import { siteConfig } from '../config';
   <CallToAction text="Get a Free Quote for Your Garden" />
   
   <!-- Renovations & Landscaping Section -->
-  <section class="py-10 md:py-16 bg-gradient-to-b from-light-green/5 to-white">
+  <section class="py-4 md:py-16 bg-gradient-to-b from-light-green/5 to-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-center">Renovations & Landscaping</h2>
-        <p class="text-center text-gray-700 mb-6 md:mb-12 max-w-2xl mx-auto text-sm md:text-base">
-          From complete garden renovations to landscape improvements, we create beautiful outdoor spaces. Our work includes lawn installation, planting, paving, and comprehensive garden redesigns.
+        <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-center">Renovations & Landscaping</h2>
+        <p class="text-center text-gray-700 mb-4 md:mb-12 max-w-2xl mx-auto text-xs md:text-base">
+          Complete garden renovations including lawn installation, planting, and paving.
         </p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
             <img 
               src="/DeezGarden/assets/images/before after renovation 2.jpg"
               alt="Garden renovation showing beautiful landscaping work"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
             <img 
               src="/DeezGarden/assets/images/before after renovation 3.jpg"
               alt="Landscaping transformation with new paving and plants"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden col-span-2 md:col-span-1">
             <img 
               src="/DeezGarden/assets/images/jet washing.jpg"
               alt="Professional jet washing and garden maintenance"
@@ -109,34 +107,34 @@ import { siteConfig } from '../config';
   </section>
   
   <!-- Rubbish Removal & Clear-outs Section -->
-  <section class="py-10 md:py-16 bg-gradient-to-br from-fresh-green/5 to-light-green/10">
+  <section class="py-4 md:py-16 bg-gradient-to-br from-fresh-green/5 to-light-green/10">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-center">Rubbish Removal & Clear-outs</h2>
-        <p class="text-center text-gray-700 mb-6 md:mb-12 max-w-2xl mx-auto text-sm md:text-base">
-          Professional waste removal and clearance services for homes, gardens, and commercial properties. As a licensed waste carrier, we ensure all waste is disposed of responsibly and legally.
+        <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-center">Rubbish Removal & Clear-outs</h2>
+        <p class="text-center text-gray-700 mb-4 md:mb-12 max-w-2xl mx-auto text-xs md:text-base">
+          Professional waste removal services. Licensed waste carrier ensuring responsible disposal.
         </p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
             <img 
               src="/DeezGarden/assets/images/rubbish before and after 2.jpg"
               alt="Rubbish clearance before and after showing cleared garden"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
             <img 
               src="/DeezGarden/assets/images/rubbish before and after 3.jpg"
               alt="Professional waste removal service transformation"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-56 md:h-80 overflow-hidden bg-gray-100">
+          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1">
             <img 
               src="/DeezGarden/assets/images/rubbish before and after 4.jpg"
               alt="Garden waste clearance and disposal completed"
-              class="w-full h-full object-contain"
+              class="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -144,26 +142,24 @@ import { siteConfig } from '../config';
     </div>
   </section>
   
-  <CallToAction />
-  
   <!-- Trust Section -->
-  <section class="py-10 md:py-16 bg-white">
+  <section class="py-4 md:py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Ready to Transform Your Space?</h2>
-        <p class="text-base md:text-lg mb-6 md:mb-8">
-          Whether you need a complete garden clearance, a renovation, or rubbish removal, we're here to help. All work is carried out by our experienced team, and we're fully insured with a valid waste carrier licence.
+        <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-6">Ready to Transform Your Space?</h2>
+        <p class="text-sm md:text-lg mb-4 md:mb-8">
+          Whether you need a garden clearance, renovation, or rubbish removal, we're here to help.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-2 md:gap-4 justify-center">
           <a 
             href={`tel:${siteConfig.phone}`}
-            class="inline-block bg-fresh-green text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-deep-green transition w-full sm:w-auto text-center"
+            class="inline-block bg-fresh-green text-white px-4 py-2.5 md:px-8 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-deep-green transition w-full sm:w-auto text-center"
           >
             Call {siteConfig.phoneFormatted}
           </a>
           <a 
             href="/DeezGarden/contact/"
-            class="inline-block bg-white border-2 border-fresh-green text-fresh-green px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-fresh-green hover:text-white transition w-full sm:w-auto text-center"
+            class="inline-block bg-white border-2 border-fresh-green text-fresh-green px-4 py-2.5 md:px-8 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-fresh-green hover:text-white transition w-full sm:w-auto text-center"
           >
             Request a Quote
           </a>
@@ -171,6 +167,8 @@ import { siteConfig } from '../config';
       </div>
     </div>
   </section>
+  
+  <HeroCTA />
   
   <Footer slot="footer" />
 </BaseLayout>

@@ -1,0 +1,60 @@
+---
+// Compact grid-style "Why Choose Us" for mobile
+
+const reasons = [
+  {
+    icon: "⭐",
+    title: "Professional Service",
+    description: "Experienced team delivering high-quality results every time with attention to detail."
+  },
+  {
+    icon: "💰",
+    title: "Fair Pricing",
+    description: "Competitive rates with no hidden fees. Clear quotes upfront that we stick to."
+  },
+  {
+    icon: "📋",
+    title: "Licensed Waste Carrier",
+    description: "All waste disposed of legally and responsibly in accordance with regulations."
+  },
+  {
+    icon: "🛡️",
+    title: "Fully Insured",
+    description: "Complete peace of mind with full insurance coverage for all aspects of our work."
+  }
+];
+---
+
+<div class="why-choose-mobile md:hidden">
+  <div class="grid grid-cols-2 gap-2 px-4">
+    {reasons.map((reason) => (
+      <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+        <div class="text-2xl mb-1">{reason.icon}</div>
+        <h4 class="font-bold text-sm text-deep-green mb-1">{reason.title}</h4>
+        <p class="text-xs text-gray-600 leading-snug">{reason.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+<!-- Desktop version -->
+<div class="hidden md:block">
+  <div class="grid grid-cols-2 gap-12">
+    <div>
+      {reasons.slice(0, 2).map((reason, index) => (
+        <div class={index === 0 ? "mb-6" : ""}>
+          <h3 class="text-xl font-bold mb-3">{reason.title}</h3>
+          <p class="text-gray-700 text-base">{reason.description}</p>
+        </div>
+      ))}
+    </div>
+    <div>
+      {reasons.slice(2, 4).map((reason, index) => (
+        <div class={index === 0 ? "mb-6" : ""}>
+          <h3 class="text-xl font-bold mb-3">{reason.title}</h3>
+          <p class="text-gray-700 text-base">{reason.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
