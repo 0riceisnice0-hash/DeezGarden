@@ -3,49 +3,79 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig, services } from '../../config';
+
+const areaName = "Northampton";
+const nearbyAreas = ["Wellingborough", "Kettering", "Daventry", "Towcester"];
 ---
 
 <BaseLayout 
-  title="Garden Maintenance & Clearance Services in Northampton"
-  description="Professional garden maintenance, clearance, and landscaping services in Northampton. Fully insured, licensed waste carrier. Call 07305 195098 for a free quote."
+  title={`Garden Maintenance & Clearance Services in ${areaName}`}
+  description={`Professional garden maintenance, clearance, and landscaping services in ${areaName}. Fully insured, licensed waste carrier. Call ${siteConfig.phone} for a free quote.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title="Garden Services in Northampton"
-    location="Northampton"
-    subtitle="Your local garden and clearance specialists"
+    title={`Garden Services in ${areaName}`}
+    location={`${areaName}, Northamptonshire`}
+    subtitle="Professional garden and clearance services"
+    heroImage="hero.jpg"
   />
   
-  <section class="py-16">
+  <TrustBadges />
+  
+  <!-- Introduction Section -->
+  <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">Professional Garden Services in Northampton</h2>
-        <p class="text-lg mb-4">
-          As a locally based company, {siteConfig.name} provides comprehensive garden maintenance, clearance, and landscaping services throughout Northampton and the surrounding areas. We understand the needs of Northampton homeowners and pride ourselves on delivering reliable, professional service.
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Professional Garden Services in {areaName}</h2>
+        <p class="text-sm md:text-lg mb-2 md:mb-4">
+          As a locally based company, {siteConfig.name} provides comprehensive garden maintenance, clearance, and landscaping services throughout {areaName} and the surrounding areas. We understand the needs of {areaName} homeowners and pride ourselves on delivering reliable, professional service.
         </p>
-        <p class="text-lg mb-6">
-          Whether you're in the town centre, Kingsthorpe, Weston Favell, or any other area of Northampton, we're here to help with all your garden and clearance needs.
+        <p class="text-sm md:text-lg">
+          Whether you're in the town centre, Kingsthorpe, Weston Favell, or any other area of {areaName}, we're here to help with all your garden and clearance needs.
         </p>
-        
-        <h3 class="text-2xl font-bold mb-4">Our Services in Northampton</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map(service => (
-            <div class="bg-bg-light p-6 rounded-lg">
-              <h4 class="font-bold text-lg mb-2 text-center">{service.title}</h4>
-              <p class="text-sm text-gray-700 text-center mb-3">{service.description}</p>
-              <div class="text-center">
-                <a 
-                  href={`/DeezGarden/services/${service.slug}/`}
-                  class="text-fresh-green font-semibold hover:text-deep-green text-sm"
-                >
-                  Learn More →
-                </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="py-4 md:py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Our Services in {areaName}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {services.map((service, index) => {
+            const images = [
+              "/DeezGarden/assets/images/before and after lawn 1.jpg",
+              "/DeezGarden/assets/images/rubbish removal 1.jpg",
+              "/DeezGarden/assets/images/van scrap png.png"
+            ];
+            return (
+              <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                <div class="h-32 md:h-48 overflow-hidden">
+                  <img 
+                    src={images[index]} 
+                    alt={service.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="p-4 md:p-6">
+                  <h4 class="font-bold text-base md:text-lg mb-2 text-deep-green">{service.title}</h4>
+                  <p class="text-xs md:text-sm text-gray-700 mb-3">{service.description}</p>
+                  <a 
+                    href={`/DeezGarden/services/${service.slug}/`}
+                    class="inline-block bg-fresh-green text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-deep-green transition w-full text-center"
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
@@ -53,68 +83,83 @@ import { siteConfig, services } from '../../config';
   
   <CallToAction />
   
-  <section class="py-16 bg-white">
+  <!-- Why Choose Us Section -->
+  <section class="py-4 md:py-16 bg-gradient-to-b from-white to-light-green/5">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">Why Choose {siteConfig.name} in Northampton?</h2>
+        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-8 text-center">Why Choose {siteConfig.name} in {areaName}?</h2>
         
-        <div class="prose max-w-none">
-          <h3>Local Knowledge</h3>
-          <p>
-            Based in Northampton, we have extensive local knowledge and serve customers throughout the town. We understand the specific needs of Northampton properties, from Victorian terraces to modern housing estates.
-          </p>
-          
-          <h3>Fully Insured and Licensed</h3>
-          <p>
-            We're fully insured for your peace of mind and operate as a licensed waste carrier. This means all waste disposal is handled legally and responsibly - you'll never have to worry about fly-tipping or legal issues.
-          </p>
-          
-          <h3>Comprehensive Service Range</h3>
-          <p>
-            From regular lawn mowing to complete garden renovations, house clearances to scrap metal collection, we offer a wide range of services. This means you can rely on one trusted company for all your garden and clearance needs.
-          </p>
-          
-          <h3>Areas of Northampton We Cover</h3>
-          <p>
-            We serve all areas of Northampton, including:
-          </p>
-          <ul>
-            <li>Northampton Town Centre</li>
-            <li>Kingsthorpe</li>
-            <li>Abington</li>
-            <li>Weston Favell</li>
-            <li>Duston</li>
-            <li>Far Cotton</li>
-            <li>St James</li>
-            <li>Billing</li>
-            <li>Upton</li>
-            <li>Delapre</li>
-            <li>And all other Northampton areas</li>
-          </ul>
+        <p class="text-sm md:text-lg text-center mb-4 md:mb-8">
+          Based in {areaName}, we have extensive local knowledge and serve customers throughout the town. We understand the specific needs of {areaName} properties, from Victorian terraces to modern housing estates.
+        </p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">🛡️</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Fully Insured</h4>
+            <p class="text-xs md:text-sm text-gray-600">Complete peace of mind</p>
+          </div>
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">📋</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Licensed Carrier</h4>
+            <p class="text-xs md:text-sm text-gray-600">Legal waste disposal</p>
+          </div>
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">⭐</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Professional</h4>
+            <p class="text-xs md:text-sm text-gray-600">Quality workmanship</p>
+          </div>
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">💰</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Fair Pricing</h4>
+            <p class="text-xs md:text-sm text-gray-600">No hidden fees</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
-  <CallToAction text="Get Your Free Northampton Quote" />
-  
-  <section class="py-16">
+  <!-- Areas of Northampton Section -->
+  <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Nearby Areas We Also Serve</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {['Wellingborough', 'Kettering', 'Rushden', 'Daventry', 'Towcester', 'Brackley', 'Milton Keynes', 'Market Harborough'].map(area => (
-            <a 
-              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm"
-            >
-              {area}
-            </a>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-6 text-center">Areas of {areaName} We Cover</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 text-center">
+          {["Town Centre", "Kingsthorpe", "Abington", "Weston Favell", "Duston", "Far Cotton", "St James", "Billing", "Upton", "Delapre", "Moulton", "Boughton"].map(area => (
+            <div class="bg-white p-2 md:p-3 rounded-lg text-sm md:text-base">{area}</div>
           ))}
         </div>
       </div>
     </div>
   </section>
+  
+  <CallToAction text={`Get Your Free ${areaName} Quote`} />
+  
+  <!-- Nearby Areas Section -->
+  <section class="py-4 md:py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-6">Nearby Areas We Also Serve</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          {nearbyAreas.map((nearbyArea: string) => (
+            <a 
+              href={`/DeezGarden/areas/${nearbyArea.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
+            >
+              {nearbyArea}
+            </a>
+          ))}
+        </div>
+        <div class="mt-4 md:mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
+            View all areas →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <HeroCTA />
   
   <Footer slot="footer" />
 </BaseLayout>

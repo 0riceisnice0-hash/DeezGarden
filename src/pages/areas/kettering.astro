@@ -3,49 +3,79 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig, services } from '../../config';
+
+const areaName = "Kettering";
+const nearbyAreas = ["Corby", "Wellingborough", "Rushden", "Northampton"];
 ---
 
 <BaseLayout 
-  title="Garden Maintenance & Clearance Services in Kettering"
-  description="Professional garden maintenance, clearance, and landscaping services in Kettering, Northamptonshire. Fully insured. Call 07305 195098 for a free quote."
+  title={`Garden Maintenance & Clearance Services in ${areaName}`}
+  description={`Professional garden maintenance, clearance, and landscaping services in ${areaName}, Northamptonshire. Fully insured. Call ${siteConfig.phone} for a free quote.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title="Garden Services in Kettering"
-    location="Kettering, Northamptonshire"
+    title={`Garden Services in ${areaName}`}
+    location={`${areaName}, Northamptonshire`}
     subtitle="Professional garden and clearance services"
+    heroImage="hero.jpg"
   />
   
-  <section class="py-16">
+  <TrustBadges />
+  
+  <!-- Introduction Section -->
+  <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">Garden and Clearance Services in Kettering</h2>
-        <p class="text-lg mb-4">
-          {siteConfig.name} provides reliable garden maintenance, clearance, and man with van services throughout Kettering and the surrounding villages. We're your local choice for professional garden care and waste removal.
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <p class="text-sm md:text-lg mb-2 md:mb-4">
+          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
         </p>
-        <p class="text-lg mb-6">
-          Serving all areas of Kettering including the town centre, Barton Seagrave, Burton Latimer, and nearby villages, we offer competitive prices and excellent service.
+        <p class="text-sm md:text-lg">
+          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
         </p>
-        
-        <h3 class="text-2xl font-bold mb-4">Services Available in Kettering</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map(service => (
-            <div class="bg-bg-light p-6 rounded-lg">
-              <h4 class="font-bold text-lg mb-2 text-center">{service.title}</h4>
-              <p class="text-sm text-gray-700 text-center mb-3">{service.description}</p>
-              <div class="text-center">
-                <a 
-                  href={`/DeezGarden/services/${service.slug}/`}
-                  class="text-fresh-green font-semibold hover:text-deep-green text-sm"
-                >
-                  Details →
-                </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="py-4 md:py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Our Services in {areaName}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {services.map((service, index) => {
+            const images = [
+              "/DeezGarden/assets/images/before and after lawn 1.jpg",
+              "/DeezGarden/assets/images/rubbish removal 1.jpg",
+              "/DeezGarden/assets/images/van scrap png.png"
+            ];
+            return (
+              <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                <div class="h-32 md:h-48 overflow-hidden">
+                  <img 
+                    src={images[index]} 
+                    alt={service.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="p-4 md:p-6">
+                  <h4 class="font-bold text-base md:text-lg mb-2 text-deep-green">{service.title}</h4>
+                  <p class="text-xs md:text-sm text-gray-700 mb-3">{service.description}</p>
+                  <a 
+                    href={`/DeezGarden/services/${service.slug}/`}
+                    class="inline-block bg-fresh-green text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-deep-green transition w-full text-center"
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
@@ -53,38 +83,69 @@ import { siteConfig, services } from '../../config';
   
   <CallToAction />
   
-  <section class="py-16 bg-white">
+  <!-- Why Choose Us Section -->
+  <section class="py-4 md:py-16 bg-gradient-to-b from-white to-light-green/5">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">Why Kettering Residents Choose Us</h2>
+        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-8 text-center">Why Choose {siteConfig.name} in {areaName}?</h2>
         
-        <div class="prose max-w-none">
-          <p>
-            We're proud to serve Kettering and the surrounding area with professional garden and clearance services. Whether you need regular garden maintenance for your Kettering property or a one-off clearance job, we provide the same high standard of service.
-          </p>
-          
-          <h3>Kettering Areas We Cover</h3>
-          <ul>
-            <li>Kettering Town Centre</li>
-            <li>Barton Seagrave</li>
-            <li>Burton Latimer</li>
-            <li>Rothwell</li>
-            <li>Desborough</li>
-            <li>Pytchley</li>
-            <li>Weekley</li>
-            <li>All surrounding villages</li>
-          </ul>
-          
-          <h3>Licensed and Insured</h3>
-          <p>
-            As a fully licensed waste carrier and insured operator, you can trust us to handle all aspects of garden maintenance and waste removal legally and professionally. We dispose of all waste at licensed facilities, giving you complete peace of mind.
-          </p>
+        <p class="text-sm md:text-lg text-center mb-4 md:mb-8">
+          We're proud to extend our services to {areaName}, offering the same high standards we provide in Northampton and throughout the region.
+        </p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">🛡️</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Fully Insured</h4>
+            <p class="text-xs md:text-sm text-gray-600">Complete peace of mind</p>
+          </div>
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">📋</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Licensed Carrier</h4>
+            <p class="text-xs md:text-sm text-gray-600">Legal waste disposal</p>
+          </div>
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">⭐</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Professional</h4>
+            <p class="text-xs md:text-sm text-gray-600">Quality workmanship</p>
+          </div>
+          <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
+            <div class="text-2xl md:text-3xl mb-2">💰</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Fair Pricing</h4>
+            <p class="text-xs md:text-sm text-gray-600">No hidden fees</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
-  <CallToAction text="Get Your Free Kettering Quote" />
+  <CallToAction text={`Get Your Free ${areaName} Quote`} />
+  
+  <!-- Nearby Areas Section -->
+  <section class="py-4 md:py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-6">Nearby Areas We Also Serve</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          {nearbyAreas.map((nearbyArea: string) => (
+            <a 
+              href={`/DeezGarden/areas/${nearbyArea.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
+            >
+              {nearbyArea}
+            </a>
+          ))}
+        </div>
+        <div class="mt-4 md:mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
+            View all areas →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <HeroCTA />
   
   <Footer slot="footer" />
 </BaseLayout>
