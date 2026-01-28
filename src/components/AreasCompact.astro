@@ -36,6 +36,7 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas];
     <button 
       id="areas-toggle"
       class="text-fresh-green font-semibold text-sm inline-flex items-center gap-1 hover:text-deep-green transition"
+      data-total-areas={allAreas.length}
     >
       <span id="toggle-text">View all {allAreas.length} areas</span>
       <svg id="toggle-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,6 +53,7 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas];
   const toggleIcon = document.getElementById('toggle-icon');
   
   if (toggleBtn && hiddenAreas && toggleText && toggleIcon) {
+    const totalAreas = toggleBtn.dataset.totalAreas || '';
     let expanded = false;
     
     toggleBtn.addEventListener('click', () => {
@@ -65,7 +67,7 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas];
       } else {
         hiddenAreas.classList.add('hidden');
         hiddenAreas.classList.remove('flex');
-        toggleText.textContent = `View all areas`;
+        toggleText.textContent = `View all ${totalAreas} areas`;
         toggleIcon.style.transform = 'rotate(0deg)';
       }
     });

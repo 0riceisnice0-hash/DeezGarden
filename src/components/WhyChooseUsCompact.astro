@@ -1,5 +1,5 @@
 ---
-// Compact accordion-style "Why Choose Us" for mobile
+// Compact grid-style "Why Choose Us" for mobile
 
 const reasons = [
   {
@@ -37,31 +37,24 @@ const reasons = [
   </div>
 </div>
 
-<!-- Desktop version (original layout) -->
+<!-- Desktop version -->
 <div class="hidden md:block">
   <div class="grid grid-cols-2 gap-12">
     <div>
-      <h3 class="text-xl font-bold mb-3">Professional Service</h3>
-      <p class="text-gray-700 mb-6 text-base">
-        Our experienced team delivers high-quality results every time. We take pride in our work and treat every garden and clearance job with the same attention to detail and professionalism.
-      </p>
-      
-      <h3 class="text-xl font-bold mb-3">Fair Pricing</h3>
-      <p class="text-gray-700 text-base">
-        We offer competitive rates with no hidden fees or surprises. You'll receive a clear quote upfront, and we'll stick to it. Quality service doesn't have to break the bank.
-      </p>
+      {reasons.slice(0, 2).map((reason, index) => (
+        <div class={index === 0 ? "mb-6" : ""}>
+          <h3 class="text-xl font-bold mb-3">{reason.title}</h3>
+          <p class="text-gray-700 text-base">{reason.description}</p>
+        </div>
+      ))}
     </div>
-    
     <div>
-      <h3 class="text-xl font-bold mb-3">Licensed Waste Carrier</h3>
-      <p class="text-gray-700 mb-6 text-base">
-        As a fully licensed waste carrier, we ensure all waste is disposed of legally and responsibly. You can trust that your rubbish and garden waste is handled in accordance with all regulations.
-      </p>
-      
-      <h3 class="text-xl font-bold mb-3">Fully Insured</h3>
-      <p class="text-gray-700 text-base">
-        Complete peace of mind with full insurance coverage. We're covered for all aspects of our work, protecting both you and us should anything unexpected occur.
-      </p>
+      {reasons.slice(2, 4).map((reason, index) => (
+        <div class={index === 0 ? "mb-6" : ""}>
+          <h3 class="text-xl font-bold mb-3">{reason.title}</h3>
+          <p class="text-gray-700 text-base">{reason.description}</p>
+        </div>
+      ))}
     </div>
   </div>
 </div>

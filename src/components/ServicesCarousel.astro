@@ -1,25 +1,31 @@
 ---
 // Mobile-optimized services carousel component
+import { services as configServices } from '../config';
+
+// Extend config services with mobile-specific data
 const services = [
   {
+    ...configServices[0],
     title: "Garden Renovations & Maintenance",
     description: "Complete garden care including lawn mowing, hedge trimming, and general upkeep.",
     image: "/DeezGarden/assets/images/before and after lawn 1.jpg",
-    link: "/DeezGarden/services/garden-maintenance/",
+    link: `/DeezGarden/services/${configServices[0].slug}/`,
     features: ["Lawn mowing", "Hedge trimming", "Garden clearances", "Landscaping"]
   },
   {
+    ...configServices[1],
     title: "Rubbish Clearance & Removals",
     description: "House, garage, and garden clearances with our licensed waste carrier service.",
     image: "/DeezGarden/assets/images/rubbish removal 1.jpg",
-    link: "/DeezGarden/services/clearance-removals/",
+    link: `/DeezGarden/services/${configServices[1].slug}/`,
     features: ["Garden waste", "House clearances", "Licensed carrier", "Responsible disposal"]
   },
   {
+    ...configServices[2],
     title: "Man with Van & Scrap Metal",
     description: "Removals, delivery service, and scrap metal collection across Northamptonshire.",
     image: "/DeezGarden/assets/images/van scrap png.png",
-    link: "/DeezGarden/services/man-with-van/",
+    link: `/DeezGarden/services/${configServices[2].slug}/`,
     features: ["Local removals", "Scrap metal", "Furniture removal", "Competitive rates"]
   }
 ];
@@ -59,13 +65,17 @@ const services = [
     </div>
   </div>
   
-  <!-- Carousel indicators -->
-  <div class="flex justify-center gap-2 mt-2">
+  <!-- Carousel indicators with keyboard accessibility -->
+  <div class="flex justify-center gap-2 mt-2" role="tablist" aria-label="Service slides">
     {services.map((_, index) => (
       <button 
-        class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-colors"
+        type="button"
+        class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-fresh-green focus:ring-offset-1"
         data-index={index}
+        role="tab"
         aria-label={`Go to service ${index + 1}`}
+        aria-selected={index === 0 ? "true" : "false"}
+        tabindex={index === 0 ? 0 : -1}
       ></button>
     ))}
   </div>
@@ -94,36 +104,64 @@ const services = [
 </style>
 
 <script>
-  // Carousel scroll indicator
+  // Carousel scroll indicator with keyboard support
   const container = document.querySelector('.carousel-container') as HTMLElement | null;
   const dots = document.querySelectorAll('.carousel-dot');
   
-  if (container && dots.length) {
+  if (container && dots.length > 0) {
     // Set first dot as active initially
     dots[0]?.classList.add('active');
+    dots[0]?.setAttribute('aria-selected', 'true');
+    
+    const scrollToIndex = (index: number) => {
+      const card = container.querySelector('.service-card') as HTMLElement | null;
+      const cardWidth = card?.offsetWidth || 280;
+      const gap = 12;
+      container.scrollTo({
+        left: index * (cardWidth + gap),
+        behavior: 'smooth'
+      });
+      
+      // Update aria-selected and tabindex
+      dots.forEach((dot, i) => {
+        dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        dot.setAttribute('tabindex', i === index ? '0' : '-1');
+      });
+    };
     
     container.addEventListener('scroll', () => {
       const scrollLeft = container.scrollLeft;
       const card = container.querySelector('.service-card') as HTMLElement | null;
       const cardWidth = card?.offsetWidth || 280;
-      const gap = 12; // 0.75rem gap
+      const gap = 12;
       const activeIndex = Math.round(scrollLeft / (cardWidth + gap));
       
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === activeIndex);
+        dot.setAttribute('aria-selected', index === activeIndex ? 'true' : 'false');
       });
     });
     
-    // Click on dots to scroll
+    // Click and keyboard support for dots
     dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        const card = container.querySelector('.service-card') as HTMLElement | null;
-        const cardWidth = card?.offsetWidth || 280;
-        const gap = 12;
-        container.scrollTo({
-          left: index * (cardWidth + gap),
-          behavior: 'smooth'
-        });
+      dot.addEventListener('click', () => scrollToIndex(index));
+      
+      dot.addEventListener('keydown', (e) => {
+        const event = e as KeyboardEvent;
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          scrollToIndex(index);
+        } else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+          event.preventDefault();
+          const nextIndex = (index + 1) % dots.length;
+          (dots[nextIndex] as HTMLElement)?.focus();
+          scrollToIndex(nextIndex);
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          const prevIndex = (index - 1 + dots.length) % dots.length;
+          (dots[prevIndex] as HTMLElement)?.focus();
+          scrollToIndex(prevIndex);
+        }
       });
     });
   }
