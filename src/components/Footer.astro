@@ -2,60 +2,107 @@
 import { siteConfig } from '../config';
 ---
 
-<footer class="bg-deep-green text-white mt-8 md:mt-16">
-  <div class="container mx-auto px-4 py-8 md:py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Company Info -->
-      <div class="text-center md:text-left">
-        <h3 class="text-xl font-bold mb-4 text-white">{siteConfig.name}</h3>
-        <p class="mb-4 text-sm md:text-base">Professional garden maintenance and clearance services in {siteConfig.location}.</p>
-        <div class="space-y-2">
-          <p><a href={`tel:${siteConfig.phone}`} class="footer-link text-base md:text-lg font-semibold">📞 {siteConfig.phoneFormatted}</a></p>
-          <p><a href={`mailto:${siteConfig.email}`} class="footer-link break-all text-sm md:text-base">✉️ {siteConfig.email}</a></p>
+<footer class="bg-deep-green text-white mt-6 md:mt-16">
+  <div class="container mx-auto px-4 py-5 md:py-12">
+    <!-- Mobile: Compact layout -->
+    <div class="md:hidden">
+      <!-- Contact info at top on mobile -->
+      <div class="text-center mb-4">
+        <h3 class="text-lg font-bold mb-2 text-white">{siteConfig.name}</h3>
+        <div class="flex flex-wrap justify-center gap-3 text-sm">
+          <a href={`tel:${siteConfig.phone}`} class="footer-link font-semibold">📞 {siteConfig.phoneFormatted}</a>
+          <a href={`mailto:${siteConfig.email}`} class="footer-link">✉️ Email</a>
           {siteConfig.facebook && (
-            <p>
-              <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link text-sm md:text-base">
-                Join us on Facebook
-              </a>
-            </p>
+            <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a>
           )}
         </div>
-        <div class="mt-6">
-          <h4 class="font-semibold mb-2 text-sm md:text-base">Service Coverage</h4>
-          <p class="text-sm opacity-90">Serving Northamptonshire including Aylesbury and surrounding areas</p>
+      </div>
+      
+      <!-- Quick Links and Services side by side on mobile -->
+      <div class="grid grid-cols-2 gap-4 text-center text-xs border-t border-fresh-green/30 pt-4">
+        <div>
+          <h4 class="font-semibold mb-2 text-white text-sm">Quick Links</h4>
+          <ul class="space-y-1">
+            <li><a href="/DeezGarden/" class="footer-link">Home</a></li>
+            <li><a href="/DeezGarden/services/" class="footer-link">Services</a></li>
+            <li><a href="/DeezGarden/areas/" class="footer-link">Areas</a></li>
+            <li><a href="/DeezGarden/contact/" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2 text-white text-sm">Services</h4>
+          <ul class="space-y-1">
+            <li><a href="/DeezGarden/services/garden-maintenance/" class="footer-link">Gardens</a></li>
+            <li><a href="/DeezGarden/services/clearance-removals/" class="footer-link">Clearance</a></li>
+            <li><a href="/DeezGarden/services/man-with-van/" class="footer-link">Man with Van</a></li>
+          </ul>
         </div>
       </div>
       
-      <!-- Quick Links -->
-      <div class="text-center md:text-left">
-        <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
-        <ul class="space-y-2">
-          <li><a href="/DeezGarden/" class="footer-link py-1 inline-block">Home</a></li>
-          <li><a href="/DeezGarden/services/" class="footer-link py-1 inline-block">Services</a></li>
-          <li><a href="/DeezGarden/areas/" class="footer-link py-1 inline-block">Areas We Cover</a></li>
-          <li><a href="/DeezGarden/reviews/" class="footer-link py-1 inline-block">Reviews</a></li>
-          <li><a href="/DeezGarden/gallery/" class="footer-link py-1 inline-block">Gallery</a></li>
-          <li><a href="/DeezGarden/contact/" class="footer-link py-1 inline-block">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Services -->
-      <div class="text-center md:text-left">
-        <h3 class="text-xl font-bold mb-4 text-white">Our Services</h3>
-        <ul class="space-y-2">
-          <li><a href="/DeezGarden/services/garden-maintenance/" class="footer-link py-1 inline-block">Garden Maintenance</a></li>
-          <li><a href="/DeezGarden/services/clearance-removals/" class="footer-link py-1 inline-block">Clearance & Removals</a></li>
-          <li><a href="/DeezGarden/services/man-with-van/" class="footer-link py-1 inline-block">Man with Van</a></li>
-        </ul>
+      <!-- Bottom Bar Mobile -->
+      <div class="border-t border-fresh-green/30 mt-4 pt-3 text-center text-xs opacity-80">
+        <p>&copy; {new Date().getFullYear()} {siteConfig.name}</p>
+        {siteConfig.trust.insured && siteConfig.trust.licensedWasteCarrier && (
+          <p class="mt-1">Fully Insured | Licensed Waste Carrier</p>
+        )}
       </div>
     </div>
     
-    <!-- Bottom Bar -->
-    <div class="border-t border-fresh-green mt-8 pt-6 md:pt-8 text-center text-sm">
-      <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-      {siteConfig.trust.insured && siteConfig.trust.licensedWasteCarrier && (
-        <p class="mt-2">Fully Insured | Licensed Waste Carrier</p>
-      )}
+    <!-- Desktop: Original layout -->
+    <div class="hidden md:block">
+      <div class="grid grid-cols-3 gap-8">
+        <!-- Company Info -->
+        <div class="text-left">
+          <h3 class="text-xl font-bold mb-4 text-white">{siteConfig.name}</h3>
+          <p class="mb-4 text-base">Professional garden maintenance and clearance services in {siteConfig.location}.</p>
+          <div class="space-y-2">
+            <p><a href={`tel:${siteConfig.phone}`} class="footer-link text-lg font-semibold">📞 {siteConfig.phoneFormatted}</a></p>
+            <p><a href={`mailto:${siteConfig.email}`} class="footer-link break-all text-base">✉️ {siteConfig.email}</a></p>
+            {siteConfig.facebook && (
+              <p>
+                <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link text-base">
+                  Join us on Facebook
+                </a>
+              </p>
+            )}
+          </div>
+          <div class="mt-6">
+            <h4 class="font-semibold mb-2 text-base">Service Coverage</h4>
+            <p class="text-sm opacity-90">Serving Northamptonshire including Aylesbury and surrounding areas</p>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="text-left">
+          <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/DeezGarden/" class="footer-link py-1 inline-block">Home</a></li>
+            <li><a href="/DeezGarden/services/" class="footer-link py-1 inline-block">Services</a></li>
+            <li><a href="/DeezGarden/areas/" class="footer-link py-1 inline-block">Areas We Cover</a></li>
+            <li><a href="/DeezGarden/reviews/" class="footer-link py-1 inline-block">Reviews</a></li>
+            <li><a href="/DeezGarden/gallery/" class="footer-link py-1 inline-block">Gallery</a></li>
+            <li><a href="/DeezGarden/contact/" class="footer-link py-1 inline-block">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Services -->
+        <div class="text-left">
+          <h3 class="text-xl font-bold mb-4 text-white">Our Services</h3>
+          <ul class="space-y-2">
+            <li><a href="/DeezGarden/services/garden-maintenance/" class="footer-link py-1 inline-block">Garden Maintenance</a></li>
+            <li><a href="/DeezGarden/services/clearance-removals/" class="footer-link py-1 inline-block">Clearance & Removals</a></li>
+            <li><a href="/DeezGarden/services/man-with-van/" class="footer-link py-1 inline-block">Man with Van</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar Desktop -->
+      <div class="border-t border-fresh-green mt-8 pt-8 text-center text-sm">
+        <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+        {siteConfig.trust.insured && siteConfig.trust.licensedWasteCarrier && (
+          <p class="mt-2">Fully Insured | Licensed Waste Carrier</p>
+        )}
+      </div>
     </div>
   </div>
 </footer>

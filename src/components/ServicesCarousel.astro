@@ -1,0 +1,130 @@
+---
+// Mobile-optimized services carousel component
+const services = [
+  {
+    title: "Garden Renovations & Maintenance",
+    description: "Complete garden care including lawn mowing, hedge trimming, and general upkeep.",
+    image: "/DeezGarden/assets/images/before and after lawn 1.jpg",
+    link: "/DeezGarden/services/garden-maintenance/",
+    features: ["Lawn mowing", "Hedge trimming", "Garden clearances", "Landscaping"]
+  },
+  {
+    title: "Rubbish Clearance & Removals",
+    description: "House, garage, and garden clearances with our licensed waste carrier service.",
+    image: "/DeezGarden/assets/images/rubbish removal 1.jpg",
+    link: "/DeezGarden/services/clearance-removals/",
+    features: ["Garden waste", "House clearances", "Licensed carrier", "Responsible disposal"]
+  },
+  {
+    title: "Man with Van & Scrap Metal",
+    description: "Removals, delivery service, and scrap metal collection across Northamptonshire.",
+    image: "/DeezGarden/assets/images/van scrap png.png",
+    link: "/DeezGarden/services/man-with-van/",
+    features: ["Local removals", "Scrap metal", "Furniture removal", "Competitive rates"]
+  }
+];
+---
+
+<div class="services-carousel md:hidden">
+  <div class="carousel-container overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar">
+    <div class="flex gap-3 px-4 pb-4">
+      {services.map((service) => (
+        <div class="service-card snap-center flex-shrink-0 w-[85vw] max-w-[320px] bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="relative h-32 bg-gray-100">
+            <img 
+              src={service.image} 
+              alt={service.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-4">
+            <h3 class="text-base font-bold mb-2 text-deep-green">{service.title}</h3>
+            <p class="text-sm text-gray-600 mb-3 line-clamp-2">{service.description}</p>
+            <div class="flex flex-wrap gap-1 mb-3">
+              {service.features.slice(0, 3).map(feature => (
+                <span class="text-xs bg-light-green/20 text-deep-green px-2 py-0.5 rounded-full">
+                  ✓ {feature}
+                </span>
+              ))}
+            </div>
+            <a 
+              href={service.link}
+              class="block text-center bg-fresh-green text-white text-sm py-2 px-4 rounded-lg font-semibold hover:bg-deep-green transition"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <!-- Carousel indicators -->
+  <div class="flex justify-center gap-2 mt-2">
+    {services.map((_, index) => (
+      <button 
+        class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-colors"
+        data-index={index}
+        aria-label={`Go to service ${index + 1}`}
+      ></button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel-dot.active {
+    background-color: #4caf50;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  // Carousel scroll indicator
+  const container = document.querySelector('.carousel-container') as HTMLElement | null;
+  const dots = document.querySelectorAll('.carousel-dot');
+  
+  if (container && dots.length) {
+    // Set first dot as active initially
+    dots[0]?.classList.add('active');
+    
+    container.addEventListener('scroll', () => {
+      const scrollLeft = container.scrollLeft;
+      const card = container.querySelector('.service-card') as HTMLElement | null;
+      const cardWidth = card?.offsetWidth || 280;
+      const gap = 12; // 0.75rem gap
+      const activeIndex = Math.round(scrollLeft / (cardWidth + gap));
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+      });
+    });
+    
+    // Click on dots to scroll
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        const card = container.querySelector('.service-card') as HTMLElement | null;
+        const cardWidth = card?.offsetWidth || 280;
+        const gap = 12;
+        container.scrollTo({
+          left: index * (cardWidth + gap),
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+</script>
