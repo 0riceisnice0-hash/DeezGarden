@@ -6,6 +6,19 @@ import Hero from '../components/Hero.astro';
 import CallToAction from '../components/CallToAction.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 import { siteConfig } from '../config';
+
+// Define all gallery images for the lightbox
+const galleryImages = [
+  { src: "/DeezGarden/assets/images/before and after lawn 1.jpg", alt: "Garden clearance showing beautifully maintained lawn" },
+  { src: "/DeezGarden/assets/images/renovation1.jpg", alt: "Garden clearance before renovation work" },
+  { src: "/DeezGarden/assets/images/renovation1 after.jpg", alt: "Garden clearance after transformation" },
+  { src: "/DeezGarden/assets/images/before after renovation 2.jpg", alt: "Garden renovation showing beautiful landscaping work" },
+  { src: "/DeezGarden/assets/images/before after renovation 3.jpg", alt: "Landscaping transformation with new paving and plants" },
+  { src: "/DeezGarden/assets/images/jet washing.jpg", alt: "Professional jet washing and garden maintenance" },
+  { src: "/DeezGarden/assets/images/rubbish before and after 2.jpg", alt: "Rubbish clearance before and after showing cleared garden" },
+  { src: "/DeezGarden/assets/images/rubbish before and after 3.jpg", alt: "Professional waste removal service transformation" },
+  { src: "/DeezGarden/assets/images/rubbish before and after 4.jpg", alt: "Garden waste clearance and disposal completed" },
+];
 ---
 
 <BaseLayout 
@@ -25,7 +38,7 @@ import { siteConfig } from '../config';
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
         <p class="text-sm md:text-lg">
-          See the transformations we've achieved for our clients. From overgrown gardens to complete clearances, we deliver exceptional results.
+          See the transformations we've achieved for our clients. From overgrown gardens to complete clearances, we deliver exceptional results. <span class="text-fresh-green font-medium">Tap any image to view full size.</span>
         </p>
       </div>
     </div>
@@ -41,27 +54,36 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="0">
             <img 
               src="/DeezGarden/assets/images/before and after lawn 1.jpg"
               alt="Garden clearance showing beautifully maintained lawn"
               class="w-full h-full object-cover"
             />
-          </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="1">
             <img 
               src="/DeezGarden/assets/images/renovation1.jpg"
               alt="Garden clearance before renovation work"
               class="w-full h-full object-cover"
             />
-          </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1">
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="2">
             <img 
               src="/DeezGarden/assets/images/renovation1 after.jpg"
               alt="Garden clearance after transformation"
               class="w-full h-full object-cover"
             />
-          </div>
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -79,28 +101,36 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="3">
             <img 
               src="/DeezGarden/assets/images/before after renovation 2.jpg"
               alt="Garden renovation showing beautiful landscaping work"
               class="w-full h-full object-cover"
             />
-          </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="4">
             <img 
               src="/DeezGarden/assets/images/before after renovation 3.jpg"
               alt="Landscaping transformation with new paving and plants"
               class="w-full h-full object-cover"
             />
-          </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden col-span-2 md:col-span-1">
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden col-span-2 md:col-span-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="5">
             <img 
               src="/DeezGarden/assets/images/jet washing.jpg"
               alt="Professional jet washing and garden maintenance"
               class="w-full h-full object-cover"
             />
-          </div>
-        </div>
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -116,27 +146,36 @@ import { siteConfig } from '../config';
         </p>
         
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="6">
             <img 
               src="/DeezGarden/assets/images/rubbish before and after 2.jpg"
               alt="Rubbish clearance before and after showing cleared garden"
               class="w-full h-full object-cover"
             />
-          </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100">
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="7">
             <img 
               src="/DeezGarden/assets/images/rubbish before and after 3.jpg"
               alt="Professional waste removal service transformation"
               class="w-full h-full object-cover"
             />
-          </div>
-          <div class="relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1">
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="8">
             <img 
               src="/DeezGarden/assets/images/rubbish before and after 4.jpg"
               alt="Garden waste clearance and disposal completed"
               class="w-full h-full object-cover"
             />
-          </div>
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -171,4 +210,160 @@ import { siteConfig } from '../config';
   <HeroCTA />
   
   <Footer slot="footer" />
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <!-- Close button -->
+    <button 
+      id="lightbox-close" 
+      type="button"
+      class="absolute top-4 right-4 text-white text-3xl md:text-4xl w-12 h-12 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition z-10"
+      aria-label="Close image viewer"
+    >
+      ✕
+    </button>
+    
+    <!-- Previous button -->
+    <button 
+      id="lightbox-prev" 
+      type="button"
+      class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition z-10"
+      aria-label="Previous image"
+    >
+      ‹
+    </button>
+    
+    <!-- Next button -->
+    <button 
+      id="lightbox-next" 
+      type="button"
+      class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition z-10"
+      aria-label="Next image"
+    >
+      ›
+    </button>
+    
+    <!-- Image container -->
+    <div class="max-w-[90vw] max-h-[85vh] flex items-center justify-center">
+      <img 
+        id="lightbox-image" 
+        src="" 
+        alt="" 
+        class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+      />
+    </div>
+    
+    <!-- Image counter -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm md:text-base bg-black/50 px-4 py-2 rounded-full">
+      <span id="lightbox-counter">1 / 9</span>
+    </div>
+  </div>
 </BaseLayout>
+
+<script>
+  // Gallery lightbox functionality
+  const galleryImages = [
+    { src: "/DeezGarden/assets/images/before and after lawn 1.jpg", alt: "Garden clearance showing beautifully maintained lawn" },
+    { src: "/DeezGarden/assets/images/renovation1.jpg", alt: "Garden clearance before renovation work" },
+    { src: "/DeezGarden/assets/images/renovation1 after.jpg", alt: "Garden clearance after transformation" },
+    { src: "/DeezGarden/assets/images/before after renovation 2.jpg", alt: "Garden renovation showing beautiful landscaping work" },
+    { src: "/DeezGarden/assets/images/before after renovation 3.jpg", alt: "Landscaping transformation with new paving and plants" },
+    { src: "/DeezGarden/assets/images/jet washing.jpg", alt: "Professional jet washing and garden maintenance" },
+    { src: "/DeezGarden/assets/images/rubbish before and after 2.jpg", alt: "Rubbish clearance before and after showing cleared garden" },
+    { src: "/DeezGarden/assets/images/rubbish before and after 3.jpg", alt: "Professional waste removal service transformation" },
+    { src: "/DeezGarden/assets/images/rubbish before and after 4.jpg", alt: "Garden waste clearance and disposal completed" },
+  ];
+
+  let currentIndex = 0;
+  
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  function openLightbox(index: number) {
+    currentIndex = index;
+    updateLightboxImage();
+    lightbox?.classList.remove('hidden');
+    lightbox?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.add('hidden');
+    lightbox?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxImage() {
+    if (lightboxImage && lightboxCounter) {
+      const image = galleryImages[currentIndex];
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+    }
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateLightboxImage();
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateLightboxImage();
+  }
+
+  // Event listeners
+  galleryItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const index = parseInt(item.getAttribute('data-index') || '0', 10);
+      openLightbox(index);
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeLightbox);
+  prevBtn?.addEventListener('click', showPrev);
+  nextBtn?.addEventListener('click', showNext);
+
+  // Close on background click
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox?.classList.contains('hidden')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    }
+  });
+
+  // Touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox?.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        showNext(); // Swipe left
+      } else {
+        showPrev(); // Swipe right
+      }
+    }
+  }, { passive: true });
+</script>

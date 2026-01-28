@@ -3,7 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig } from '../../config';
 ---
 
@@ -16,23 +18,26 @@ import { siteConfig } from '../../config';
   <Hero 
     title="Rubbish Clearance and Removals"
     subtitle="Licensed waste carrier serving Northamptonshire"
+    heroImage="hero.jpg"
     showCTA={true}
   />
   
-  <section class="py-16">
+  <TrustBadges />
+  
+  <section class="py-4 md:py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <div class="prose max-w-none">
-          <h2>Professional Waste Removal and Clearance Services</h2>
-          <p class="text-lg">
+          <h2 class="text-lg md:text-2xl">Professional Waste Removal and Clearance Services</h2>
+          <p class="text-sm md:text-lg">
             {siteConfig.name} is a fully licensed waste carrier providing professional rubbish clearance and removal services across Northampton and Northamptonshire. From garden waste to house clearances, we handle all types of waste disposal legally and responsibly.
           </p>
           
-          <h3>Our Clearance Services Include:</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
-            <div class="bg-bg-light p-6 rounded-lg">
-              <h4 class="font-bold text-lg mb-3 text-deep-green">Residential Clearances</h4>
-              <ul class="space-y-2">
+          <h3 class="text-base md:text-xl">Our Clearance Services Include:</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 not-prose">
+            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
+              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Residential Clearances</h4>
+              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
                 <li>✓ House clearances (full or partial)</li>
                 <li>✓ Garage clearances</li>
                 <li>✓ Shed and outbuilding clearance</li>
@@ -41,9 +46,9 @@ import { siteConfig } from '../../config';
               </ul>
             </div>
             
-            <div class="bg-bg-light p-6 rounded-lg">
-              <h4 class="font-bold text-lg mb-3 text-deep-green">Waste Removal</h4>
-              <ul class="space-y-2">
+            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
+              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Waste Removal</h4>
+              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
                 <li>✓ General rubbish clearance</li>
                 <li>✓ Garden waste disposal</li>
                 <li>✓ Furniture removal</li>
@@ -53,7 +58,7 @@ import { siteConfig } from '../../config';
             </div>
           </div>
           
-          <h3>Licensed Waste Carrier</h3>
+          <h3 class="text-base md:text-xl">Licensed Waste Carrier</h3>
           <p>
             We are a fully licensed waste carrier, which means we handle all waste disposal legally and responsibly. We'll provide you with the proper documentation and ensure all waste is disposed of at licensed facilities.
           </p>
@@ -61,7 +66,7 @@ import { siteConfig } from '../../config';
             Unlike unlicensed operators, you can have complete peace of mind that your waste won't end up fly-tipped, and you won't face any legal issues.
           </p>
           
-          <h3>What We Can Clear</h3>
+          <h3 class="text-base md:text-xl">What We Can Clear</h3>
           <ul>
             <li>General household rubbish and junk</li>
             <li>Garden waste (grass, branches, soil, etc.)</li>
@@ -73,7 +78,7 @@ import { siteConfig } from '../../config';
             <li>Estate clearances</li>
           </ul>
           
-          <h3>How It Works</h3>
+          <h3 class="text-base md:text-xl">How It Works</h3>
           <ol>
             <li><strong>Contact Us:</strong> Call or message us with details of what needs clearing</li>
             <li><strong>Free Quote:</strong> We'll provide a no-obligation quote</li>
@@ -82,7 +87,7 @@ import { siteConfig } from '../../config';
             <li><strong>Legal Disposal:</strong> All waste disposed of properly at licensed facilities</li>
           </ol>
           
-          <h3>Why Choose {siteConfig.name} for Clearances?</h3>
+          <h3 class="text-base md:text-xl">Why Choose {siteConfig.name} for Clearances?</h3>
           <p>
             With many years of experience in waste clearance across Northampton, we provide a professional, reliable service at competitive prices. We're fully insured and operate with all the necessary licences, giving you complete peace of mind.
           </p>
@@ -93,31 +98,33 @@ import { siteConfig } from '../../config';
   
   <CallToAction text="Book Your Clearance Today" />
   
-  <section class="py-16 bg-white">
+  <section class="py-4 md:py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-center">Clearance Services Throughout Northamptonshire</h2>
-        <p class="text-center mb-8">
+        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-8 text-center">Clearance Services Throughout Northamptonshire</h2>
+        <p class="text-center text-sm md:text-base mb-4 md:mb-8">
           We provide rubbish clearance and waste removal services across:
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
           {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
             <a 
               href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-bg-light p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold"
+              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
             >
               {area}
             </a>
           ))}
         </div>
-        <div class="text-center mt-6">
-          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
+        <div class="text-center mt-4 md:mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
             View all areas →
           </a>
         </div>
       </div>
     </div>
   </section>
+  
+  <HeroCTA />
   
   <Footer slot="footer" />
 </BaseLayout>

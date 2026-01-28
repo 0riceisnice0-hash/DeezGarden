@@ -3,7 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig } from '../../config';
 ---
 
@@ -16,23 +18,26 @@ import { siteConfig } from '../../config';
   <Hero 
     title="Man with Van and Scrap Metal"
     subtitle="Reliable removals and scrap collection across Northamptonshire"
+    heroImage="hero.jpg"
     showCTA={true}
   />
   
-  <section class="py-16">
+  <TrustBadges />
+  
+  <section class="py-4 md:py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <div class="prose max-w-none">
-          <h2>Man with Van Service in Northampton</h2>
-          <p class="text-lg">
+          <h2 class="text-lg md:text-2xl">Man with Van Service in Northampton</h2>
+          <p class="text-sm md:text-lg">
             Need items moved, delivered, or collected? {siteConfig.name} provides a reliable man with van service across Northampton and Northamptonshire. Whether it's house removals, furniture delivery, or scrap metal collection, we're here to help.
           </p>
           
-          <h3>Our Man with Van Services Include:</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
-            <div class="bg-bg-light p-6 rounded-lg">
-              <h4 class="font-bold text-lg mb-3 text-deep-green">Removals & Deliveries</h4>
-              <ul class="space-y-2">
+          <h3 class="text-base md:text-xl">Our Man with Van Services Include:</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 not-prose">
+            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
+              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Removals & Deliveries</h4>
+              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
                 <li>✓ Small house removals</li>
                 <li>✓ Flat and apartment moves</li>
                 <li>✓ Furniture delivery and collection</li>
@@ -41,9 +46,9 @@ import { siteConfig } from '../../config';
               </ul>
             </div>
             
-            <div class="bg-bg-light p-6 rounded-lg">
-              <h4 class="font-bold text-lg mb-3 text-deep-green">Scrap Metal Collection</h4>
-              <ul class="space-y-2">
+            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
+              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Scrap Metal Collection</h4>
+              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
                 <li>✓ Scrap metal collection</li>
                 <li>✓ Old appliance removal</li>
                 <li>✓ Boiler and radiator removal</li>
@@ -53,14 +58,14 @@ import { siteConfig } from '../../config';
             </div>
           </div>
           
-          <h3>Why Choose Our Man with Van Service?</h3>
+          <h3 class="text-base md:text-xl">Why Choose Our Man with Van Service?</h3>
           <p>
             We understand that you need a reliable, trustworthy service when moving your belongings or having items delivered. Our team provides professional, careful handling of all items, whether it's valuable furniture or scrap metal.
           </p>
           
-          <div class="bg-fresh-green/10 p-6 rounded-lg not-prose">
-            <h4 class="font-bold text-lg mb-3 text-deep-green">What Sets Us Apart:</h4>
-            <ul class="space-y-2">
+          <div class="bg-fresh-green/10 p-4 md:p-6 rounded-lg not-prose">
+            <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">What Sets Us Apart:</h4>
+            <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
               <li>✓ Reliable and punctual service</li>
               <li>✓ Fully insured for your peace of mind</li>
               <li>✓ Competitive, transparent pricing</li>
@@ -70,7 +75,7 @@ import { siteConfig } from '../../config';
             </ul>
           </div>
           
-          <h3>Scrap Metal Collection</h3>
+          <h3 class="text-base md:text-xl">Scrap Metal Collection</h3>
           <p>
             We provide scrap metal collection services for both domestic and commercial customers. Whether you have old appliances, copper piping, brass fittings, or any other scrap metal, we'll collect it and ensure it's recycled properly.
           </p>
@@ -88,7 +93,7 @@ import { siteConfig } from '../../config';
             <li>Commercial scrap metal</li>
           </ul>
           
-          <h3>Coverage Area</h3>
+          <h3 class="text-base md:text-xl">Coverage Area</h3>
           <p>
             We cover Northampton and all surrounding areas, including trips to nearby towns and cities. Whether you're moving within Northampton or need items transported to or from Leicester, Milton Keynes, or Bedford, we can help.
           </p>
@@ -99,31 +104,33 @@ import { siteConfig } from '../../config';
   
   <CallToAction text="Get Your Free Man with Van Quote" />
   
-  <section class="py-16 bg-white">
+  <section class="py-4 md:py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-center">Man with Van Service Areas</h2>
-        <p class="text-center mb-8">
+        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-8 text-center">Man with Van Service Areas</h2>
+        <p class="text-center text-sm md:text-base mb-4 md:mb-8">
           Serving Northampton and surrounding areas:
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
           {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
             <a 
               href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-bg-light p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold"
+              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
             >
               {area}
             </a>
           ))}
         </div>
-        <div class="text-center mt-6">
-          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
+        <div class="text-center mt-4 md:mt-6">
+          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
             View all areas →
           </a>
         </div>
       </div>
     </div>
   </section>
+  
+  <HeroCTA />
   
   <Footer slot="footer" />
 </BaseLayout>
