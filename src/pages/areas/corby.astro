@@ -55,20 +55,20 @@ const nearbyAreas = ["Kettering", "Market Harborough", "Peterborough", "Wellingb
               "/DeezGarden/assets/images/van scrap png.png"
             ];
             return (
-              <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-                <div class="h-32 md:h-48 overflow-hidden">
+              <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
+                <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
                     src={images[index]} 
                     alt={service.title}
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="p-4 md:p-6">
-                  <h4 class="font-bold text-base md:text-lg mb-2 text-deep-green">{service.title}</h4>
-                  <p class="text-xs md:text-sm text-gray-700 mb-3">{service.description}</p>
+                <div class="p-4 md:p-6 flex flex-col flex-grow">
+                  <h4 class="font-bold text-base md:text-lg mb-2 text-deep-green min-h-[2.5rem] md:min-h-[3rem]">{service.title}</h4>
+                  <p class="text-xs md:text-sm text-gray-700 mb-3 flex-grow">{service.description}</p>
                   <a 
                     href={`/DeezGarden/services/${service.slug}/`}
-                    class="inline-block bg-fresh-green text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-deep-green transition w-full text-center"
+                    class="inline-block bg-fresh-green text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-deep-green transition w-full text-center mt-auto"
                   >
                     Learn More
                   </a>
