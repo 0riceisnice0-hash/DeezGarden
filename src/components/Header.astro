@@ -72,7 +72,7 @@ const currentPath = stripBase(Astro.url.pathname);
   </div>
   
   <!-- Mobile Menu (hidden by default) -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 mobile-menu-hidden">
     <div class="container mx-auto px-4 py-4">
       <div class="flex flex-col space-y-1">
         <a href={withBase('/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath === '/' ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Home</a>
@@ -81,7 +81,7 @@ const currentPath = stripBase(Astro.url.pathname);
         <a href={withBase('/reviews/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/reviews') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Reviews</a>
         <a href={withBase('/gallery/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/gallery') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Gallery</a>
         <a href={withBase('/contact/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/contact') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Contact</a>
-        <div class="pt-2 mt-2 border-t border-gray-100">
+        <div class="pt-2 mt-2 mb-2 border-t border-gray-100">
           <a 
             href={`tel:${siteConfig.phone}`} 
             class="flex items-center justify-center py-3 px-4 bg-fresh-green text-white rounded-lg font-semibold text-lg hover:bg-deep-green transition"
@@ -94,29 +94,75 @@ const currentPath = stripBase(Astro.url.pathname);
   </div>
 </header>
 
+<style>
+  /* Mobile menu animation */
+  #mobile-menu {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.25s ease-out;
+  }
+  
+  #mobile-menu.mobile-menu-visible {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.35s ease-in, opacity 0.25s ease-in;
+  }
+  
+  #mobile-menu.mobile-menu-hidden {
+    max-height: 0;
+    opacity: 0;
+  }
+  
+  /* Hamburger icon animation */
+  #hamburger-icon,
+  #close-icon {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  #hamburger-icon.icon-hidden {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  
+  #close-icon.icon-hidden {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+</style>
+
 <script>
-  // Mobile menu toggle functionality
+  // Mobile menu toggle functionality with animation
   const menuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const hamburgerIcon = document.getElementById('hamburger-icon');
   const closeIcon = document.getElementById('close-icon');
 
   if (menuButton && mobileMenu && hamburgerIcon && closeIcon) {
+    // Initialize close icon as hidden
+    closeIcon.classList.add('icon-hidden', 'hidden');
+    
     menuButton.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.contains('hidden');
+      const isHidden = mobileMenu.classList.contains('mobile-menu-hidden');
       
-      if (isOpen) {
-        // Open menu
-        mobileMenu.classList.remove('hidden');
-        hamburgerIcon.classList.add('hidden');
+      if (isHidden) {
+        // Open menu with animation
+        mobileMenu.classList.remove('mobile-menu-hidden');
+        mobileMenu.classList.add('mobile-menu-visible');
+        hamburgerIcon.classList.add('icon-hidden');
+        setTimeout(() => hamburgerIcon.classList.add('hidden'), 200);
         closeIcon.classList.remove('hidden');
+        setTimeout(() => closeIcon.classList.remove('icon-hidden'), 10);
         menuButton.setAttribute('aria-expanded', 'true');
         menuButton.setAttribute('aria-label', 'Close menu');
       } else {
-        // Close menu
-        mobileMenu.classList.add('hidden');
+        // Close menu with animation
+        mobileMenu.classList.remove('mobile-menu-visible');
+        mobileMenu.classList.add('mobile-menu-hidden');
+        closeIcon.classList.add('icon-hidden');
+        setTimeout(() => closeIcon.classList.add('hidden'), 200);
         hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        setTimeout(() => hamburgerIcon.classList.remove('icon-hidden'), 10);
         menuButton.setAttribute('aria-expanded', 'false');
         menuButton.setAttribute('aria-label', 'Open menu');
       }
@@ -126,9 +172,12 @@ const currentPath = stripBase(Astro.url.pathname);
     const menuLinks = mobileMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('mobile-menu-visible');
+        mobileMenu.classList.add('mobile-menu-hidden');
+        closeIcon.classList.add('icon-hidden');
+        setTimeout(() => closeIcon.classList.add('hidden'), 200);
         hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        setTimeout(() => hamburgerIcon.classList.remove('icon-hidden'), 10);
         menuButton.setAttribute('aria-expanded', 'false');
         menuButton.setAttribute('aria-label', 'Open menu');
       });
@@ -138,11 +187,16 @@ const currentPath = stripBase(Astro.url.pathname);
     document.addEventListener('click', (event) => {
       const target = event.target;
       if (target instanceof Node && !menuButton.contains(target) && !mobileMenu.contains(target)) {
-        mobileMenu.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', 'Open menu');
+        if (mobileMenu.classList.contains('mobile-menu-visible')) {
+          mobileMenu.classList.remove('mobile-menu-visible');
+          mobileMenu.classList.add('mobile-menu-hidden');
+          closeIcon.classList.add('icon-hidden');
+          setTimeout(() => closeIcon.classList.add('hidden'), 200);
+          hamburgerIcon.classList.remove('hidden');
+          setTimeout(() => hamburgerIcon.classList.remove('icon-hidden'), 10);
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Open menu');
+        }
       }
     });
   }
