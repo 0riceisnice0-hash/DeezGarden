@@ -17,20 +17,21 @@ import HeroCTA from '../components/HeroCTA.astro';
     heroImage="hero.jpg"
     title="Customer Reviews"
     subtitle="See what our customers say about us"
+    showQuoteButton={true}
   />
   
   <TrustBadges />
   
-  <section class="py-4 md:py-16">
+  <section class="py-6 md:py-16 bg-bg-sage">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <p class="text-center text-sm md:text-lg mb-4 md:mb-12">
+        <p class="text-center text-sm md:text-lg mb-6 md:mb-12 text-gray-700">
           We're proud of the service we provide. Here's what our customers say:
         </p>
         
         <div class="space-y-4 md:space-y-8">
           <!-- Review 1 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
+          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
             <div class="flex items-center mb-2 md:mb-4">
               <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
                 {[1,2,3,4,5].map(() => (
@@ -45,11 +46,11 @@ import HeroCTA from '../components/HeroCTA.astro';
             <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
               "Very professional service. They transformed our overgrown garden and now maintain it regularly. Always on time and tidy work. Highly recommend!"
             </p>
-            <p class="text-xs md:text-sm text-gray-600">— Local Customer, Northampton</p>
+            <p class="text-xs md:text-sm text-gray-600">— Zachery B., Northampton</p>
           </div>
           
           <!-- Review 2 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
+          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
             <div class="flex items-center mb-2 md:mb-4">
               <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
                 {[1,2,3,4,5].map(() => (
@@ -64,11 +65,11 @@ import HeroCTA from '../components/HeroCTA.astro';
             <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
               "Needed a full garage clearance and they made it so easy. Fair price, arrived when they said they would, and cleared everything quickly. Very pleased."
             </p>
-            <p class="text-xs md:text-sm text-gray-600">— Local Customer, Kettering</p>
+            <p class="text-xs md:text-sm text-gray-600">— Amber R., Kettering</p>
           </div>
           
           <!-- Review 3 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
+          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
             <div class="flex items-center mb-2 md:mb-4">
               <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
                 {[1,2,3,4,5].map(() => (
@@ -83,11 +84,11 @@ import HeroCTA from '../components/HeroCTA.astro';
             <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
               "Used them for a house move and they were brilliant. Careful with our furniture, friendly, and made the whole process stress-free."
             </p>
-            <p class="text-xs md:text-sm text-gray-600">— Local Customer, Wellingborough</p>
+            <p class="text-xs md:text-sm text-gray-600">— Marcus H., Wellingborough</p>
           </div>
           
           <!-- Review 4 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
+          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
             <div class="flex items-center mb-2 md:mb-4">
               <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
                 {[1,2,3,4,5].map(() => (
@@ -102,11 +103,11 @@ import HeroCTA from '../components/HeroCTA.astro';
             <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
               "Had a new patio installed and landscaping done. The quality of work is excellent and they finished on time. Garden looks amazing now!"
             </p>
-            <p class="text-xs md:text-sm text-gray-600">— Local Customer, Rushden</p>
+            <p class="text-xs md:text-sm text-gray-600">— Jennifer W., Rushden</p>
           </div>
           
           <!-- Review 5 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md">
+          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
             <div class="flex items-center mb-2 md:mb-4">
               <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
                 {[1,2,3,4,5].map(() => (
@@ -121,13 +122,13 @@ import HeroCTA from '../components/HeroCTA.astro';
             <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
               "Really appreciate the clear communication throughout. They explained everything, arrived on time, and the price was exactly as quoted."
             </p>
-            <p class="text-xs md:text-sm text-gray-600">— Local Customer, Daventry</p>
+            <p class="text-xs md:text-sm text-gray-600">— Daniel A., Daventry</p>
           </div>
         </div>
         
-        <div class="mt-6 md:mt-12 bg-fresh-green/10 p-4 md:p-8 rounded-lg text-center">
-          <h3 class="text-lg md:text-2xl font-bold mb-2 md:mb-4">Join Our Satisfied Customers</h3>
-          <p class="text-sm md:text-lg mb-4 md:mb-6">
+        <div class="mt-8 md:mt-12 bg-white p-6 md:p-10 rounded-2xl text-center shadow-md border border-light-green/20">
+          <h3 class="text-lg md:text-2xl font-bold mb-2 md:mb-4 text-deep-green">Join Our Satisfied Customers</h3>
+          <p class="text-sm md:text-lg mb-4 md:mb-6 text-gray-700">
             Get in touch today for a free, no-obligation quote.
           </p>
         </div>

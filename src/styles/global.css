@@ -1,11 +1,14 @@
 /* Global Styles */
 :root {
-  --color-deep-green: #2f6b3f;
-  --color-fresh-green: #4caf50;
-  --color-light-green: #8bc34a;
-  --color-background: #f7f9f6;
-  --color-text: #1f1f1f;
+  --color-deep-green: #1e5631;
+  --color-fresh-green: #3da349;
+  --color-light-green: #7cb342;
+  --color-background: #f8faf7;
+  --color-bg-cream: #fdfcf8;
+  --color-bg-sage: #f0f5ee;
+  --color-text: #1a1a1a;
   --color-accent-yellow: #f4c430;
+  --color-warm-white: #fcfcfa;
 }
 
 * {

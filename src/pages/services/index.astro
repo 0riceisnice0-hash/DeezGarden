@@ -19,16 +19,23 @@ import { siteConfig, services } from '../../config';
     heroImage="hero.jpg"
     title="Our Services"
     subtitle="Complete garden and clearance solutions"
+    showQuoteButton={true}
   />
   
   <TrustBadges />
   
-  <section class="py-4 md:py-16 bg-white">
+  <!-- Intro Section - Redesigned -->
+  <section class="py-8 md:py-16 bg-bg-sage border-b border-light-green/20">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-6 md:mb-12">
-        <p class="text-sm md:text-lg">
-          At {siteConfig.name}, we offer a comprehensive range of services to keep your outdoor spaces looking their best.
-        </p>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-md p-6 md:p-10 border border-light-green/20">
+          <div class="text-center">
+            <h2 class="text-lg md:text-2xl font-bold text-deep-green mb-3 md:mb-4">Professional Garden & Clearance Solutions</h2>
+            <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
+              At {siteConfig.name}, we offer a comprehensive range of services to keep your outdoor spaces looking their best. From regular garden maintenance to complete renovations, rubbish clearance, and reliable man with van services — we're your trusted local partner for all your outdoor needs.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -81,7 +88,7 @@ import { siteConfig, services } from '../../config';
   </section>
 
   <!-- Service 2: Rubbish Clearance & Removals -->
-  <section class="py-4 md:py-16 bg-gradient-to-br from-light-green/10 to-fresh-green/5">
+  <section class="py-4 md:py-16 bg-bg-sage">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
@@ -174,7 +181,7 @@ import { siteConfig, services } from '../../config';
     </div>
   </section>
   
-  <CallToAction />
+  <CallToAction showDualCTA={true} />
   
   <!-- All Services List -->
   <section class="py-4 md:py-16 bg-white">

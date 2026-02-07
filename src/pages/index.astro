@@ -64,9 +64,9 @@ import { siteConfig } from '../config';
   </section>
   
   <!-- Services Overview - Stacked Layout -->
-  <section class="py-4 md:py-16 bg-white">
+  <section class="py-2 md:py-6 bg-bg-sage border-b border-light-green/20">
     <div class="container mx-auto px-4">
-      <h2 class="text-xl md:text-3xl font-bold text-center mb-2 md:mb-8">Our Services</h2>
+      <h2 class="text-lg md:text-xl font-semibold text-center text-deep-green">Our Services</h2>
     </div>
     
     <!-- Mobile: Services Carousel -->
@@ -121,8 +121,8 @@ import { siteConfig } from '../config';
     </div>
   </section>
 
-  <!-- Service 2: Rubbish Clearance & Removals - Light green tint (hidden on mobile) -->
-  <section class="hidden md:block py-16 bg-gradient-to-br from-light-green/10 to-fresh-green/5">
+  <!-- Service 2: Rubbish Clearance & Removals - Light sage background (hidden on mobile) -->
+  <section class="hidden md:block py-16 bg-bg-sage">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
@@ -215,16 +215,16 @@ import { siteConfig } from '../config';
     </div>
   </section>
   
-  <CallToAction />
+  <CallToAction showDualCTA={true} />
   
   <!-- Customer Reviews Carousel -->
   <ReviewsCarousel />
   
   <!-- Service Areas -->
-  <section class="py-4 md:py-16 bg-gradient-to-b from-white to-light-green/5">
+  <section class="py-6 md:py-20 bg-bg-light border-t border-light-green/20">
     <div class="container mx-auto px-4">
-      <h2 class="text-xl md:text-3xl font-bold text-center mb-2 md:mb-8">Areas We Cover</h2>
-      <p class="text-center text-sm md:text-lg mb-4 md:mb-8 max-w-2xl mx-auto">
+      <h2 class="text-xl md:text-3xl font-bold text-center mb-2 md:mb-4">Areas We Cover</h2>
+      <p class="text-center text-sm md:text-lg mb-6 md:mb-10 max-w-2xl mx-auto text-gray-600">
         Serving Northampton and throughout Northamptonshire
       </p>
       
@@ -253,18 +253,41 @@ import { siteConfig } from '../config';
           </a>
         </div>
       </div>
+      
+      <!-- Dual CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-8 md:mt-12">
+        <a 
+          href={`tel:${siteConfig.phone}`}
+          class="inline-flex items-center gap-2 bg-fresh-green text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl hover:bg-deep-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg w-full sm:w-auto justify-center"
+        >
+          <span>📞</span>
+          <span>Call Now</span>
+        </a>
+        <button 
+          type="button"
+          class="quote-cta-btn inline-flex items-center gap-2 bg-deep-green text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl hover:bg-fresh-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg border-2 border-fresh-green w-full sm:w-auto justify-center cursor-pointer"
+        >
+          <span>💬</span>
+          <span>Get a Free Quote</span>
+        </button>
+      </div>
     </div>
   </section>
   
-  <CallToAction text="Get Your Free Quote Today" />
-  
-  <!-- Why Choose Us -->
-  <section class="py-4 md:py-16 bg-white">
+  <!-- Why Choose Us - Dee'z Gardens Information Section -->
+  <section class="py-8 md:py-20 bg-warm-white">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-4 md:mb-8 text-center">Why Choose {siteConfig.name}?</h2>
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-4">Why Choose {siteConfig.name}?</h2>
+          <p class="text-gray-600 text-sm md:text-lg max-w-2xl mx-auto">
+            Your local, trusted garden and clearance specialists serving Northamptonshire
+          </p>
+        </div>
         
-        <WhyChooseUsCompact />
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-light-green/20">
+          <WhyChooseUsCompact />
+        </div>
       </div>
     </div>
   </section>

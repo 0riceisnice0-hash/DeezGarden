@@ -18,19 +18,31 @@ import { siteConfig } from '../../config';
     heroImage="hero.jpg"
     title="Areas We Cover"
     subtitle="Serving Northampton and surrounding areas"
+    showQuoteButton={true}
   />
   
-  <section class="py-4 md:py-16">
+  <!-- Intro Section - Improved Typography -->
+  <section class="py-8 md:py-16 bg-bg-sage border-b border-light-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <div class="mb-4 md:mb-12">
-          <p class="text-sm md:text-lg mb-2 md:mb-4">
-            Based in Northampton, {siteConfig.name} provides professional garden maintenance, clearance, and man with van services throughout Northamptonshire.
-          </p>
-          <p class="text-sm md:text-lg">
-            We serve all the areas listed below, and if your location isn't shown, please get in touch!
-          </p>
+        <div class="bg-white rounded-2xl shadow-md p-6 md:p-10 border border-light-green/20">
+          <div class="text-center">
+            <h2 class="text-lg md:text-2xl font-bold text-deep-green mb-3 md:mb-4">Serving Northamptonshire & Beyond</h2>
+            <p class="text-sm md:text-lg text-gray-700 leading-relaxed mb-3">
+              Based in Northampton, {siteConfig.name} provides professional garden maintenance, clearance, and man with van services throughout Northamptonshire.
+            </p>
+            <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
+              We serve all the areas listed below, and if your location isn't shown, please get in touch — we're always happy to help!
+            </p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-6 md:py-16 bg-bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
         
         <!-- Coverage Map - Live Google Maps Embed -->
         <div class="mb-4 md:mb-12">
@@ -104,7 +116,7 @@ import { siteConfig } from '../../config';
     </div>
   </section>
   
-  <CallToAction />
+  <CallToAction showDualCTA={true} />
   
   <section class="py-4 md:py-16 bg-white">
     <div class="container mx-auto px-4">
