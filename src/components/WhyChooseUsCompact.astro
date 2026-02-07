@@ -39,22 +39,12 @@ const reasons = [
 
 <!-- Desktop version -->
 <div class="hidden md:block">
-  <div class="grid grid-cols-2 gap-10">
-    <div>
-      {reasons.slice(0, 2).map((reason, index) => (
-        <div class={`${index === 0 ? "mb-6" : ""} pl-4 border-l-4 border-fresh-green`}>
-          <h3 class="text-xl font-extrabold mb-2">{reason.title}</h3>
-          <p class="text-gray-700 text-base">{reason.description}</p>
-        </div>
-      ))}
-    </div>
-    <div>
-      {reasons.slice(2, 4).map((reason, index) => (
-        <div class={`${index === 0 ? "mb-6" : ""} pl-4 border-l-4 border-deep-green`}>
-          <h3 class="text-xl font-extrabold mb-2">{reason.title}</h3>
-          <p class="text-gray-700 text-base">{reason.description}</p>
-        </div>
-      ))}
-    </div>
+  <div class="space-y-5">
+    {reasons.map((reason, index) => (
+      <div class={`pl-4 border-l-4 ${index % 2 === 0 ? 'border-fresh-green' : 'border-deep-green'}`}>
+        <h3 class="text-lg font-extrabold mb-1">{reason.title}</h3>
+        <p class="text-gray-700 text-sm leading-relaxed">{reason.description}</p>
+      </div>
+    ))}
   </div>
 </div>
