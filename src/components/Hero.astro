@@ -8,6 +8,7 @@ interface Props {
   showCTA?: boolean;
   showQuoteButton?: boolean;
   heroImage?: string;
+  compact?: boolean;
 }
 
 const { 
@@ -16,7 +17,8 @@ const {
   subtitle,
   showCTA = true,
   showQuoteButton = false,
-  heroImage 
+  heroImage,
+  compact = false
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
@@ -24,7 +26,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : `${import.meta.env.BASE_URL}/`;
 ---
 
-<section class="relative text-white min-h-[60vh] md:min-h-[75vh] flex items-center">
+<section class={`relative text-white flex items-center ${compact ? 'min-h-[30vh] md:min-h-[35vh]' : 'min-h-[60vh] md:min-h-[75vh]'}`}>
   <!-- Background Image -->
   {heroImage && (
     <img 
