@@ -3,28 +3,35 @@
 import { siteConfig } from '../config';
 ---
 
-<section class="bg-deep-green py-10 md:py-16 relative overflow-hidden">
+<!-- Top border accent for section separation -->
+<div class="h-1 bg-gradient-to-r from-fresh-green via-light-green to-fresh-green"></div>
+
+<section class="bg-deep-green py-8 md:py-12 relative overflow-hidden">
   <!-- Decorative background pattern -->
-  <div class="absolute inset-0 opacity-10">
+  <div class="absolute inset-0 opacity-15">
     <div class="absolute top-0 left-0 w-32 h-32 bg-fresh-green rounded-full -translate-x-1/2 -translate-y-1/2"></div>
     <div class="absolute bottom-0 right-0 w-48 h-48 bg-light-green rounded-full translate-x-1/4 translate-y-1/4"></div>
+    <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-accent-yellow rounded-full opacity-20"></div>
   </div>
   
+  <!-- Subtle pattern overlay -->
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  
   <div class="container mx-auto px-4 text-center relative z-10">
-    <h2 class="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">Ready to Transform Your Garden?</h2>
-    <p class="text-white/90 text-sm md:text-lg mb-6 md:mb-8 max-w-xl mx-auto">Get in touch today for a free, no-obligation quote from our friendly team</p>
+    <h2 class="text-xl md:text-3xl font-extrabold text-white mb-2 md:mb-3 tracking-tight uppercase">Ready to Transform Your Garden?</h2>
+    <p class="text-white/90 text-sm md:text-lg mb-4 md:mb-6 max-w-xl mx-auto">Get in touch today for a free, no-obligation quote from our friendly team</p>
     
     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
       <a 
         href={`tel:${siteConfig.phone}`}
-        class="inline-flex items-center gap-2 bg-white text-deep-green px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-gray-100 transition shadow-lg w-full sm:w-auto justify-center"
+        class="inline-flex items-center gap-2 bg-white text-deep-green px-6 py-3 md:px-8 md:py-4 rounded-lg font-extrabold text-base md:text-lg hover:bg-accent-yellow hover:text-text-dark transition-all shadow-xl hover:shadow-2xl w-full sm:w-auto justify-center border-2 border-white hover:border-accent-yellow"
       >
         <span>📞</span>
         <span>Call {siteConfig.phoneFormatted}</span>
       </a>
       <button 
         type="button"
-        class="quote-cta-btn inline-flex items-center gap-2 bg-fresh-green text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-light-green transition shadow-lg border-2 border-white/30 w-full sm:w-auto justify-center cursor-pointer"
+        class="quote-cta-btn inline-flex items-center gap-2 bg-fresh-green text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-extrabold text-base md:text-lg hover:bg-light-green transition-all shadow-xl hover:shadow-2xl border-2 border-white w-full sm:w-auto justify-center cursor-pointer"
       >
         <span>💬</span>
         <span>Get a Free Quote</span>

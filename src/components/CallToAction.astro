@@ -18,7 +18,7 @@ const {
 const sizeClasses = {
   sm: 'px-4 py-2 text-sm',
   md: 'px-6 py-3 text-base',
-  lg: 'px-4 py-2.5 md:px-8 md:py-4 text-sm md:text-lg'
+  lg: 'px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg'
 };
 
 const variantClasses = {
@@ -27,31 +27,36 @@ const variantClasses = {
 };
 ---
 
-<div class="text-center my-6 md:my-10 px-4">
-  {showDualCTA ? (
-    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+<div class="bg-bg-sage border-y-2 border-fresh-green/30 py-4 md:py-6 px-4 relative">
+  <!-- Subtle decorative elements -->
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%231e5631&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  
+  <div class="text-center relative z-10">
+    {showDualCTA ? (
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <a 
+          href={`tel:${siteConfig.phone}`}
+          class="inline-flex items-center gap-2 bg-fresh-green text-white font-extrabold rounded-lg transition-all shadow-lg hover:shadow-xl hover:bg-deep-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg w-full sm:w-auto justify-center border-2 border-fresh-green hover:border-deep-green"
+        >
+          <span>📞</span>
+          <span>Call Now</span>
+        </a>
+        <button 
+          type="button"
+          class="quote-cta-btn inline-flex items-center gap-2 bg-deep-green text-white font-extrabold rounded-lg transition-all shadow-lg hover:shadow-xl hover:bg-fresh-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg border-2 border-deep-green hover:border-fresh-green w-full sm:w-auto justify-center cursor-pointer"
+        >
+          <span>💬</span>
+          <span>Get a Free Quote</span>
+        </button>
+      </div>
+    ) : (
       <a 
         href={`tel:${siteConfig.phone}`}
-        class="inline-flex items-center gap-2 bg-fresh-green text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl hover:bg-deep-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg w-full sm:w-auto justify-center"
+        class={`inline-block text-white font-extrabold rounded-lg transition-all shadow-lg hover:shadow-xl w-full sm:w-auto border-2 border-fresh-green ${variantClasses[variant]} ${sizeClasses[size]}`}
       >
-        <span>📞</span>
-        <span>Call Now</span>
+        {text}
       </a>
-      <button 
-        type="button"
-        class="quote-cta-btn inline-flex items-center gap-2 bg-deep-green text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl hover:bg-fresh-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg border-2 border-fresh-green w-full sm:w-auto justify-center cursor-pointer"
-      >
-        <span>💬</span>
-        <span>Get a Free Quote</span>
-      </button>
-    </div>
-  ) : (
-    <a 
-      href={`tel:${siteConfig.phone}`}
-      class={`inline-block text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl w-full sm:w-auto ${variantClasses[variant]} ${sizeClasses[size]}`}
-    >
-      {text}
-    </a>
-  )}
-  <p class="mt-2 md:mt-4 text-sm md:text-lg font-semibold text-deep-green">{siteConfig.phoneFormatted}</p>
+    )}
+    <p class="mt-2 md:mt-3 text-sm md:text-lg font-bold text-deep-green">{siteConfig.phoneFormatted}</p>
+  </div>
 </div>
