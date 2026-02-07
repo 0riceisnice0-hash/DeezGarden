@@ -1,3 +1,2 @@
-import { defineCollection, z } from 'astro:content';
-
+// No content collections are currently in use
 export const collections = {};

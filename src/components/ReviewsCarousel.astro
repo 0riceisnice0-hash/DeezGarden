@@ -150,7 +150,7 @@ const reviews = [
     const reviewCards = track.children;
     const totalReviews = reviewCards.length;
     let currentIndex = 0;
-    let autoScrollInterval = null;
+    let autoScrollInterval: ReturnType<typeof setInterval> | null = null;
     let touchStartX = 0;
     let touchEndX = 0;
     
@@ -203,7 +203,9 @@ const reviews = [
     }
     
     function stopAutoScroll() {
-      clearInterval(autoScrollInterval);
+      if (autoScrollInterval !== null) {
+        clearInterval(autoScrollInterval);
+      }
     }
     
     function resetAutoScroll() {
