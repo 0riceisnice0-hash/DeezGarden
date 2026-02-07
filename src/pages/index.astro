@@ -34,12 +34,12 @@ import { siteConfig } from '../config';
   <TrustBadges />
   
   <!-- Introduction Section -->
-  <section class="py-4 md:py-16 bg-bg-light">
+  <section class="py-4 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
           <div>
-            <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Welcome to {siteConfig.name}</h2>
+            <h2 class="text-xl md:text-3xl font-extrabold mb-3 md:mb-6 tracking-tight">Welcome to {siteConfig.name}</h2>
             <p class="text-sm md:text-lg mb-2 md:mb-4">
               We're a local, trusted gardening and clearance company based in Northampton, providing professional services throughout Northamptonshire.
             </p>
@@ -64,9 +64,9 @@ import { siteConfig } from '../config';
   </section>
   
   <!-- Services Overview - Stacked Layout -->
-  <section class="py-2 md:py-6 bg-bg-sage border-b border-light-green/20">
+  <section class="py-2 md:py-6 bg-bg-sage border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
-      <h2 class="text-lg md:text-xl font-semibold text-center text-deep-green">Our Services</h2>
+      <h2 class="text-lg md:text-xl font-bold text-center text-deep-green">Our Services</h2>
     </div>
     
     <!-- Mobile: Services Carousel -->
@@ -75,36 +75,36 @@ import { siteConfig } from '../config';
   
   <!-- Desktop: Full Service Sections (hidden on mobile) -->
   <!-- Service 1: Garden Renovations & Maintenance - Off-white background -->
-  <section class="hidden md:block py-16 bg-bg-light">
+  <section class="hidden md:block py-12 bg-bg-light border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <div>
-            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Garden Renovations and Maintenance</h3>
+            <h3 class="text-xl md:text-2xl font-extrabold mb-3 md:mb-4 tracking-tight">Garden Renovations and Maintenance</h3>
             <p class="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
               Complete garden care including lawn mowing, hedge trimming, and general upkeep. We transform overgrown gardens and maintain beautiful outdoor spaces throughout Northamptonshire.
             </p>
             <ul class="space-y-2 mb-4 md:mb-6 text-sm md:text-base">
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Regular lawn mowing and maintenance</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Hedge trimming and pruning</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Garden clearances and tidy-ups</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Landscaping and garden design</span>
               </li>
             </ul>
             <a 
               href="/DeezGarden/services/garden-maintenance/"
-              class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-green transition"
+              class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-bold hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
             >
               Learn More About Garden Services
             </a>
@@ -113,7 +113,7 @@ import { siteConfig } from '../config';
             <img 
               src="/DeezGarden/assets/images/before and after lawn 1.jpg" 
               alt="Garden Renovations and Maintenance Services" 
-              class="rounded-lg shadow-lg w-full h-48 md:h-80 object-contain bg-gray-100"
+              class="rounded-lg shadow-xl w-full h-48 md:h-80 object-contain bg-gray-100 border-2 border-gray-200"
             />
           </div>
         </div>
@@ -122,7 +122,7 @@ import { siteConfig } from '../config';
   </section>
 
   <!-- Service 2: Rubbish Clearance & Removals - Light sage background (hidden on mobile) -->
-  <section class="hidden md:block py-16 bg-bg-sage">
+  <section class="hidden md:block py-12 bg-bg-sage border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
@@ -130,35 +130,35 @@ import { siteConfig } from '../config';
             <img 
               src="/DeezGarden/assets/images/rubbish removal 1.jpg" 
               alt="Rubbish Clearance and Removals Services" 
-              class="rounded-lg shadow-lg w-full h-48 md:h-80 object-contain bg-gray-100"
+              class="rounded-lg shadow-xl w-full h-48 md:h-80 object-contain bg-gray-100 border-2 border-gray-200"
             />
           </div>
           <div>
-            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Rubbish Clearance and Removals</h3>
+            <h3 class="text-xl md:text-2xl font-extrabold mb-3 md:mb-4 tracking-tight">Rubbish Clearance and Removals</h3>
             <p class="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
               House, garage, and garden clearances with our licensed waste carrier service. We handle everything from garden waste to full property clearances, disposing of all waste responsibly.
             </p>
             <ul class="space-y-2 mb-4 md:mb-6 text-sm md:text-base">
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Garden waste and rubbish removal</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>House and garage clearances</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Licensed waste carrier service</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Responsible waste disposal</span>
               </li>
             </ul>
             <a 
               href="/DeezGarden/services/clearance-removals/"
-              class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-green transition"
+              class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-bold hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
             >
               Learn More About Clearance Services
             </a>
@@ -169,36 +169,36 @@ import { siteConfig } from '../config';
   </section>
 
   <!-- Service 3: Man with Van & Scrap Metal - Off-white background (hidden on mobile) -->
-  <section class="hidden md:block py-16 bg-bg-light">
+  <section class="hidden md:block py-12 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <div>
-            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Man with Van and Scrap Metal</h3>
+            <h3 class="text-xl md:text-2xl font-extrabold mb-3 md:mb-4 tracking-tight">Man with Van and Scrap Metal</h3>
             <p class="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
               Removals, delivery service, and scrap metal collection across Northamptonshire. Whether you need items moved locally or scrap metal collected, we provide reliable, affordable service.
             </p>
             <ul class="space-y-2 mb-4 md:mb-6 text-sm md:text-base">
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Local removals and deliveries</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Scrap metal collection</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Furniture and appliance removal</span>
               </li>
               <li class="flex items-start">
-                <span class="text-fresh-green mr-2">✓</span>
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
                 <span>Competitive rates</span>
               </li>
             </ul>
             <a 
               href="/DeezGarden/services/man-with-van/"
-              class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-green transition"
+              class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-bold hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
             >
               Learn More About Removals
             </a>
@@ -207,7 +207,7 @@ import { siteConfig } from '../config';
             <img 
               src="/DeezGarden/assets/images/van scrap png.png" 
               alt="Man with Van and Scrap Metal Services" 
-              class="rounded-lg shadow-lg w-full h-48 md:h-80 object-cover"
+              class="rounded-lg shadow-xl w-full h-48 md:h-80 object-cover border-2 border-gray-200"
             />
           </div>
         </div>
@@ -221,10 +221,10 @@ import { siteConfig } from '../config';
   <ReviewsCarousel />
   
   <!-- Service Areas -->
-  <section class="py-6 md:py-20 bg-bg-light border-t border-light-green/20">
+  <section class="py-6 md:py-16 bg-bg-light border-t-2 border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
-      <h2 class="text-xl md:text-3xl font-bold text-center mb-2 md:mb-4">Areas We Cover</h2>
-      <p class="text-center text-sm md:text-lg mb-6 md:mb-10 max-w-2xl mx-auto text-gray-600">
+      <h2 class="text-xl md:text-3xl font-extrabold text-center mb-2 md:mb-4 tracking-tight">Areas We Cover</h2>
+      <p class="text-center text-sm md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto text-gray-600">
         Serving Northampton and throughout Northamptonshire
       </p>
       
@@ -237,7 +237,7 @@ import { siteConfig } from '../config';
           {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => (
             <a 
               href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-white p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold shadow-sm hover:shadow-md border border-gray-200 text-base"
+              class="bg-white p-4 rounded-lg hover:bg-fresh-green hover:text-white transition-all font-bold shadow-md hover:shadow-lg border-2 border-gray-200 hover:border-fresh-green text-base"
             >
               {area}
             </a>
@@ -247,7 +247,7 @@ import { siteConfig } from '../config';
         <div class="text-center mt-8">
           <a 
             href="/DeezGarden/areas/"
-            class="text-fresh-green font-semibold hover:text-deep-green transition text-lg"
+            class="text-fresh-green font-bold hover:text-deep-green transition text-lg"
           >
             View All Coverage Areas →
           </a>
@@ -255,17 +255,17 @@ import { siteConfig } from '../config';
       </div>
       
       <!-- Dual CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-8 md:mt-12">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-6 md:mt-10">
         <a 
           href={`tel:${siteConfig.phone}`}
-          class="inline-flex items-center gap-2 bg-fresh-green text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl hover:bg-deep-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg w-full sm:w-auto justify-center"
+          class="inline-flex items-center gap-2 bg-fresh-green text-white font-extrabold rounded-lg transition-all shadow-lg hover:shadow-xl hover:bg-deep-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg w-full sm:w-auto justify-center border-2 border-fresh-green hover:border-deep-green"
         >
           <span>📞</span>
           <span>Call Now</span>
         </a>
         <button 
           type="button"
-          class="quote-cta-btn inline-flex items-center gap-2 bg-deep-green text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl hover:bg-fresh-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg border-2 border-fresh-green w-full sm:w-auto justify-center cursor-pointer"
+          class="quote-cta-btn inline-flex items-center gap-2 bg-deep-green text-white font-extrabold rounded-lg transition-all shadow-lg hover:shadow-xl hover:bg-fresh-green px-5 py-3 md:px-8 md:py-4 text-sm md:text-lg border-2 border-deep-green hover:border-fresh-green w-full sm:w-auto justify-center cursor-pointer"
         >
           <span>💬</span>
           <span>Get a Free Quote</span>
@@ -275,17 +275,17 @@ import { siteConfig } from '../config';
   </section>
   
   <!-- Why Choose Us - Dee'z Gardens Information Section -->
-  <section class="py-8 md:py-20 bg-warm-white">
+  <section class="py-6 md:py-12 bg-warm-white border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-6 md:mb-10">
-          <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-4">Why Choose {siteConfig.name}?</h2>
+        <div class="text-center mb-4 md:mb-8">
+          <h2 class="text-xl md:text-3xl font-extrabold mb-2 md:mb-3 tracking-tight">Why Choose {siteConfig.name}?</h2>
           <p class="text-gray-600 text-sm md:text-lg max-w-2xl mx-auto">
             Your local, trusted garden and clearance specialists serving Northamptonshire
           </p>
         </div>
         
-        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-light-green/20">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
           <WhyChooseUsCompact />
         </div>
       </div>
