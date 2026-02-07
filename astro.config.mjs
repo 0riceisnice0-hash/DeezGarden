@@ -4,8 +4,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://0riceisnice0-hash.github.io',
-  base: '/DeezGarden',
+  site: 'https://deezgardens.co.uk',
+  base: '/',
   integrations: [
     tailwind(),
     sitemap({
