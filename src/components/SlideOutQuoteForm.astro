@@ -150,11 +150,8 @@ import { siteConfig } from '../config';
       panel.classList.remove('translate-x-full');
       panel.setAttribute('aria-hidden', 'false');
       overlay.classList.remove('hidden');
-      // Use requestAnimationFrame for smooth transition
-      requestAnimationFrame(() => {
-        overlay.classList.remove('opacity-0');
-        overlay.classList.add('opacity-100');
-      });
+      overlay.classList.remove('opacity-0');
+      overlay.classList.add('opacity-100');
       panelTab.classList.add('hidden');
       document.body.style.overflow = 'hidden';
     }
