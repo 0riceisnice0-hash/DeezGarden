@@ -6,6 +6,7 @@ interface Props {
   location?: string;
   subtitle?: string;
   showCTA?: boolean;
+  showQuoteButton?: boolean;
   heroImage?: string;
 }
 
@@ -14,6 +15,7 @@ const {
   location = siteConfig.location, 
   subtitle,
   showCTA = true,
+  showQuoteButton = false,
   heroImage 
 } = Astro.props;
 
@@ -48,13 +50,22 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <p class="text-xs sm:text-sm md:text-lg lg:text-xl mb-3 md:mb-8 text-white drop-shadow-md">Serving {location}</p>
     
     {showCTA && (
-      <div class="mt-2 md:mt-8">
+      <div class="mt-2 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
         <a 
           href={`tel:${siteConfig.phone}`}
           class="inline-block bg-white text-deep-green px-4 py-2 md:px-8 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-gray-100 transition shadow-lg w-auto"
         >
           Call {siteConfig.phoneFormatted}
         </a>
+        {showQuoteButton && (
+          <button 
+            type="button"
+            id="hero-quote-btn"
+            class="inline-block bg-fresh-green text-white px-4 py-2 md:px-8 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-deep-green transition shadow-lg border-2 border-white w-auto cursor-pointer"
+          >
+            Get a Free Quote
+          </button>
+        )}
       </div>
     )}
   </div>

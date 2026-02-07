@@ -10,6 +10,8 @@ import AreasCompact from '../components/AreasCompact.astro';
 import WhyChooseUsCompact from '../components/WhyChooseUsCompact.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
+import SlideOutQuoteForm from '../components/SlideOutQuoteForm.astro';
+import ReviewsCarousel from '../components/ReviewsCarousel.astro';
 import { siteConfig } from '../config';
 ---
 
@@ -19,10 +21,14 @@ import { siteConfig } from '../config';
 >
   <Header slot="header" />
   
+  <!-- Slide-out Quote Form -->
+  <SlideOutQuoteForm />
+  
   <Hero 
     title="Professional Garden & Clearance Services"
-    subtitle="Transforming gardens across Northamptonshire"
+    subtitle="Garden maintenance, clearance, and landscaping across Northamptonshire"
     heroImage="hero.jpg"
+    showQuoteButton={true}
   />
   
   <TrustBadges />
@@ -210,6 +216,9 @@ import { siteConfig } from '../config';
   </section>
   
   <CallToAction />
+  
+  <!-- Customer Reviews Carousel -->
+  <ReviewsCarousel />
   
   <!-- Service Areas -->
   <section class="py-4 md:py-16 bg-gradient-to-b from-white to-light-green/5">

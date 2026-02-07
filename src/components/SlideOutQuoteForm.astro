@@ -1,0 +1,189 @@
+---
+// Slide-out quote form panel that reuses the Contact page form
+import { siteConfig } from '../config';
+---
+
+<!-- Slide-out Panel Tab (visible when closed) -->
+<div id="quote-panel-tab" class="fixed right-0 top-1/2 -translate-y-1/2 z-40 cursor-pointer">
+  <button 
+    type="button"
+    id="quote-tab-btn"
+    class="bg-fresh-green text-white py-3 px-2 rounded-l-lg font-bold text-xs md:text-sm shadow-lg hover:bg-deep-green transition"
+    style="writing-mode: vertical-rl; text-orientation: mixed;"
+    aria-label="Open quote form"
+  >
+    Get a Free Quote
+  </button>
+</div>
+
+<!-- Overlay (for closing when clicking outside) -->
+<div 
+  id="quote-overlay" 
+  class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300"
+  aria-hidden="true"
+></div>
+
+<!-- Slide-out Panel -->
+<div 
+  id="quote-panel" 
+  class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
+  aria-hidden="true"
+>
+  <!-- Panel Header -->
+  <div class="bg-fresh-green text-white p-4 flex justify-between items-center sticky top-0 z-10">
+    <h2 class="text-lg font-bold">Get a Free Quote</h2>
+    <button 
+      type="button"
+      id="quote-close-btn"
+      class="text-white hover:text-gray-200 transition p-1"
+      aria-label="Close quote form"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Panel Content - Reusing the exact Contact page form -->
+  <div class="p-4 md:p-6">
+    <p class="text-sm text-gray-600 mb-4">
+      Fill out the form below and we'll get back to you as soon as possible.
+    </p>
+    
+    <!-- Contact Form (exact copy from Contact page) -->
+    <form 
+      action="https://formspree.io/f/xgvekqvb"
+      method="POST"
+      class="space-y-3 md:space-y-4"
+    >
+      <div>
+        <label for="slideout-name" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Your Name *</label>
+        <input 
+          type="text"
+          id="slideout-name"
+          name="name"
+          required
+          class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base"
+          placeholder="John Smith"
+        >
+      </div>
+      
+      <div>
+        <label for="slideout-email" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Your Email *</label>
+        <input 
+          type="email"
+          id="slideout-email"
+          name="email"
+          required
+          class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base"
+          placeholder="john@example.com"
+        >
+      </div>
+      
+      <div>
+        <label for="slideout-phone" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Your Phone</label>
+        <input 
+          type="tel"
+          id="slideout-phone"
+          name="phone"
+          class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base"
+          placeholder="07XXX XXXXXX"
+        >
+      </div>
+      
+      <div>
+        <label for="slideout-service" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Service Required</label>
+        <select 
+          id="slideout-service"
+          name="service"
+          class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base"
+        >
+          <option value="">Please select...</option>
+          <option value="Garden Maintenance">Garden Maintenance</option>
+          <option value="Garden Renovation">Garden Renovation</option>
+          <option value="Clearance">Rubbish Clearance</option>
+          <option value="Man with Van">Man with Van</option>
+          <option value="Scrap Metal">Scrap Metal Collection</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="slideout-message" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Your Message *</label>
+        <textarea 
+          id="slideout-message"
+          name="message"
+          rows="3"
+          required
+          class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base"
+          placeholder="Please provide details about the work you need..."
+        ></textarea>
+      </div>
+      
+      <button 
+        type="submit"
+        class="w-full bg-fresh-green text-white px-6 py-2.5 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-deep-green transition"
+      >
+        Send Message
+      </button>
+      
+      <p class="text-xs md:text-sm text-gray-600 text-center">
+        Or call us directly on <a href={`tel:${siteConfig.phone}`} class="text-fresh-green font-semibold">{siteConfig.phoneFormatted}</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Wait for DOM to be ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const panel = document.getElementById('quote-panel');
+    const overlay = document.getElementById('quote-overlay');
+    const tabBtn = document.getElementById('quote-tab-btn');
+    const closeBtn = document.getElementById('quote-close-btn');
+    const heroQuoteBtn = document.getElementById('hero-quote-btn');
+    const panelTab = document.getElementById('quote-panel-tab');
+    
+    function openPanel() {
+      if (!panel || !overlay || !panelTab) return;
+      
+      panel.classList.remove('translate-x-full');
+      panel.setAttribute('aria-hidden', 'false');
+      overlay.classList.remove('hidden');
+      // Use requestAnimationFrame for smooth transition
+      requestAnimationFrame(() => {
+        overlay.classList.remove('opacity-0');
+        overlay.classList.add('opacity-100');
+      });
+      panelTab.classList.add('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePanel() {
+      if (!panel || !overlay || !panelTab) return;
+      
+      panel.classList.add('translate-x-full');
+      panel.setAttribute('aria-hidden', 'true');
+      overlay.classList.remove('opacity-100');
+      overlay.classList.add('opacity-0');
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+      }, 300);
+      panelTab.classList.remove('hidden');
+      document.body.style.overflow = '';
+    }
+    
+    // Event listeners
+    tabBtn?.addEventListener('click', openPanel);
+    closeBtn?.addEventListener('click', closePanel);
+    overlay?.addEventListener('click', closePanel);
+    heroQuoteBtn?.addEventListener('click', openPanel);
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && panel && !panel.classList.contains('translate-x-full')) {
+        closePanel();
+      }
+    });
+  });
+</script>
