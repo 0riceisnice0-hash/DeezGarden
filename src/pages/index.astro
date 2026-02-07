@@ -277,16 +277,32 @@ import { siteConfig } from '../config';
   <!-- Why Choose Us - Dee'z Gardens Information Section -->
   <section class="py-6 md:py-12 bg-warm-white border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-4 md:mb-8">
-          <h2 class="text-xl md:text-3xl font-extrabold mb-2 md:mb-3 tracking-tight">Why Choose {siteConfig.name}?</h2>
-          <p class="text-gray-600 text-sm md:text-lg max-w-2xl mx-auto">
-            Your local, trusted garden and clearance specialists serving Northamptonshire
-          </p>
-        </div>
-        
-        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
-          <WhyChooseUsCompact />
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
+          <!-- Text Content - Left Side -->
+          <div>
+            <div class="mb-4 md:mb-6">
+              <h2 class="text-xl md:text-3xl font-extrabold mb-2 md:mb-3 tracking-tight">Why Choose {siteConfig.name}?</h2>
+              <p class="text-gray-600 text-sm md:text-lg">
+                Your local, trusted garden and clearance specialists serving Northamptonshire
+              </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-4 md:p-8 border-2 border-fresh-green/20">
+              <WhyChooseUsCompact />
+            </div>
+          </div>
+          
+          <!-- Image - Right Side -->
+          <div class="relative order-first lg:order-last">
+            <div class="overflow-hidden rounded-2xl shadow-xl">
+              <img 
+                src="/DeezGarden/assets/images/chainsaw.jpg" 
+                alt="Professional garden work with chainsaw" 
+                class="w-full h-64 md:h-[420px] object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
