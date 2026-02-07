@@ -42,7 +42,7 @@ const reasons = [
   <div class="space-y-5">
     {reasons.map((reason, index) => (
       <div class={`pl-4 border-l-4 ${index % 2 === 0 ? 'border-fresh-green' : 'border-deep-green'}`}>
-        <h3 class="text-lg font-extrabold mb-1">{reason.title}</h3>
+        <h3 class="text-base font-extrabold mb-1">{reason.title}</h3>
         <p class="text-gray-700 text-sm leading-relaxed">{reason.description}</p>
       </div>
     ))}
