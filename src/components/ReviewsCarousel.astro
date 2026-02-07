@@ -1,0 +1,266 @@
+---
+// Reviews carousel component - uses the same reviews from the reviews page
+// Automatically scrolls, supports swipe on mobile, and has arrows on desktop
+
+const reviews = [
+  {
+    title: "Excellent Garden Maintenance",
+    service: "Garden Maintenance - Northampton",
+    text: "Very professional service. They transformed our overgrown garden and now maintain it regularly. Always on time and tidy work. Highly recommend!",
+    reviewer: "Local Customer, Northampton",
+    rating: 5
+  },
+  {
+    title: "Fantastic Clearance Service",
+    service: "House Clearance - Kettering",
+    text: "Needed a full garage clearance and they made it so easy. Fair price, arrived when they said they would, and cleared everything quickly. Very pleased.",
+    reviewer: "Local Customer, Kettering",
+    rating: 5
+  },
+  {
+    title: "Reliable Man with Van",
+    service: "Removals - Wellingborough",
+    text: "Used them for a house move and they were brilliant. Careful with our furniture, friendly, and made the whole process stress-free.",
+    reviewer: "Local Customer, Wellingborough",
+    rating: 5
+  },
+  {
+    title: "Professional Landscaping",
+    service: "Landscaping - Rushden",
+    text: "Had a new patio installed and landscaping done. The quality of work is excellent and they finished on time. Garden looks amazing now!",
+    reviewer: "Local Customer, Rushden",
+    rating: 5
+  },
+  {
+    title: "Great Communication",
+    service: "Garden Clearance - Daventry",
+    text: "Really appreciate the clear communication throughout. They explained everything, arrived on time, and the price was exactly as quoted.",
+    reviewer: "Local Customer, Daventry",
+    rating: 5
+  }
+];
+---
+
+<section class="py-4 md:py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-xl md:text-3xl font-bold text-center mb-2 md:mb-4">What Our Customers Say</h2>
+    <p class="text-center text-sm md:text-lg mb-4 md:mb-8 max-w-2xl mx-auto text-gray-600">
+      Read reviews from our satisfied customers across Northamptonshire
+    </p>
+    
+    <!-- Carousel Container -->
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Left Arrow (Desktop) -->
+      <button 
+        type="button"
+        id="reviews-prev"
+        class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 z-10 w-10 h-10 bg-white rounded-full shadow-lg items-center justify-center text-fresh-green hover:bg-fresh-green hover:text-white transition"
+        aria-label="Previous review"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      
+      <!-- Right Arrow (Desktop) -->
+      <button 
+        type="button"
+        id="reviews-next"
+        class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 z-10 w-10 h-10 bg-white rounded-full shadow-lg items-center justify-center text-fresh-green hover:bg-fresh-green hover:text-white transition"
+        aria-label="Next review"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      
+      <!-- Reviews Track -->
+      <div class="overflow-hidden">
+        <div 
+          id="reviews-track" 
+          class="flex transition-transform duration-500 ease-in-out"
+          style="touch-action: pan-y pinch-zoom;"
+        >
+          {reviews.map((review, index) => (
+            <div 
+              class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-3"
+              data-review-index={index}
+            >
+              <div class="bg-bg-light p-4 md:p-6 rounded-lg shadow-md h-full flex flex-col">
+                <!-- Stars -->
+                <div class="flex gap-0.5 mb-2">
+                  {[...Array(review.rating)].map(() => (
+                    <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+                
+                <!-- Title & Service -->
+                <h3 class="font-bold text-sm md:text-base mb-1">{review.title}</h3>
+                <p class="text-xs text-gray-500 mb-2">{review.service}</p>
+                
+                <!-- Review Text -->
+                <p class="text-gray-700 italic text-sm md:text-base flex-grow mb-3">
+                  "{review.text}"
+                </p>
+                
+                <!-- Reviewer -->
+                <p class="text-xs text-gray-600">— {review.reviewer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Dots Indicator -->
+      <div class="flex justify-center gap-2 mt-4">
+        {reviews.map((_, index) => (
+          <button 
+            type="button"
+            class="review-dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 transition-colors hover:bg-fresh-green"
+            data-dot-index={index}
+            aria-label={`Go to review ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+    </div>
+    
+    <!-- View All Reviews Link -->
+    <div class="text-center mt-4 md:mt-8">
+      <a 
+        href="/DeezGarden/reviews/"
+        class="text-fresh-green font-semibold hover:text-deep-green transition text-sm md:text-lg"
+      >
+        View All Reviews →
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('reviews-track');
+    const prevBtn = document.getElementById('reviews-prev');
+    const nextBtn = document.getElementById('reviews-next');
+    const dots = document.querySelectorAll('.review-dot');
+    
+    if (!track) return;
+    
+    const reviewCards = track.children;
+    const totalReviews = reviewCards.length;
+    let currentIndex = 0;
+    let autoScrollInterval = null;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    // Calculate visible cards based on screen size
+    function getVisibleCards() {
+      if (window.innerWidth >= 1024) return 3; // lg
+      if (window.innerWidth >= 768) return 2;  // md
+      return 1; // mobile
+    }
+    
+    function updateCarousel() {
+      if (!track) return;
+      
+      const visibleCards = getVisibleCards();
+      const maxIndex = Math.max(0, totalReviews - visibleCards);
+      currentIndex = Math.min(currentIndex, maxIndex);
+      
+      const cardWidth = 100 / visibleCards;
+      const translateX = -currentIndex * cardWidth;
+      track.style.transform = `translateX(${translateX}%)`;
+      
+      // Update dots
+      dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+          dot.classList.remove('bg-gray-300');
+          dot.classList.add('bg-fresh-green');
+        } else {
+          dot.classList.remove('bg-fresh-green');
+          dot.classList.add('bg-gray-300');
+        }
+      });
+    }
+    
+    function nextSlide() {
+      const visibleCards = getVisibleCards();
+      const maxIndex = Math.max(0, totalReviews - visibleCards);
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      updateCarousel();
+    }
+    
+    function prevSlide() {
+      const visibleCards = getVisibleCards();
+      const maxIndex = Math.max(0, totalReviews - visibleCards);
+      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      updateCarousel();
+    }
+    
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+    
+    function resetAutoScroll() {
+      stopAutoScroll();
+      startAutoScroll();
+    }
+    
+    // Event listeners for arrows
+    prevBtn?.addEventListener('click', () => {
+      prevSlide();
+      resetAutoScroll();
+    });
+    
+    nextBtn?.addEventListener('click', () => {
+      nextSlide();
+      resetAutoScroll();
+    });
+    
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+        resetAutoScroll();
+      });
+    });
+    
+    // Touch/Swipe support for mobile
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      stopAutoScroll();
+    }, { passive: true });
+    
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      
+      // Minimum swipe distance of 50px
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      startAutoScroll();
+    }, { passive: true });
+    
+    // Pause on hover (desktop)
+    track.addEventListener('mouseenter', stopAutoScroll);
+    track.addEventListener('mouseleave', startAutoScroll);
+    
+    // Handle resize
+    window.addEventListener('resize', updateCarousel);
+    
+    // Initialize
+    updateCarousel();
+    startAutoScroll();
+  });
+</script>
