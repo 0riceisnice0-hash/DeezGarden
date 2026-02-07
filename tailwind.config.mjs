@@ -4,12 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'deep-green': '#2f6b3f',
-        'fresh-green': '#4caf50',
-        'light-green': '#8bc34a',
-        'bg-light': '#f7f9f6',
-        'text-dark': '#1f1f1f',
+        'deep-green': '#1e5631',
+        'fresh-green': '#3da349',
+        'light-green': '#7cb342',
+        'bg-light': '#f8faf7',
+        'bg-cream': '#fdfcf8',
+        'bg-sage': '#f0f5ee',
+        'text-dark': '#1a1a1a',
         'accent-yellow': '#f4c430',
+        'warm-white': '#fcfcfa',
       },
     },
   },
