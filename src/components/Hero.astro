@@ -55,20 +55,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-10 text-white/85 drop-shadow-md font-normal">Serving {location}</p>
     
     {showCTA && (
-      <div class="mt-4 md:mt-8 flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center">
+      <div class={`mt-4 md:mt-8 flex justify-center items-center ${compact ? 'flex-row gap-3' : 'flex-col sm:flex-row gap-4 sm:gap-5'}`}>
         <a 
           href={`tel:${siteConfig.phone}`}
-          class="inline-block bg-white text-deep-green px-6 py-3 md:px-10 md:py-5 rounded-lg font-bold text-base md:text-lg hover:bg-accent-yellow hover:text-text-dark transition-all shadow-xl hover:shadow-2xl w-auto border-2 border-white hover:border-accent-yellow tracking-tight"
+          class={`inline-block bg-white text-deep-green rounded-lg font-bold hover:bg-accent-yellow hover:text-text-dark transition-all shadow-xl hover:shadow-2xl w-auto border-2 border-white hover:border-accent-yellow tracking-tight ${compact ? 'px-4 py-2 text-sm' : 'px-6 py-3 md:px-10 md:py-5 text-base md:text-lg'}`}
         >
-          📞 Call {siteConfig.phoneFormatted}
+          📞 {compact ? 'Call Now' : `Call ${siteConfig.phoneFormatted}`}
         </a>
         {showQuoteButton && (
           <button 
             type="button"
             id="hero-quote-btn"
-            class="inline-block bg-fresh-green text-white px-6 py-3 md:px-10 md:py-5 rounded-lg font-bold text-base md:text-lg hover:bg-light-green transition-all shadow-xl hover:shadow-2xl border-2 border-white w-auto cursor-pointer tracking-tight"
+            class={`inline-block bg-fresh-green text-white rounded-lg font-bold hover:bg-light-green transition-all shadow-xl hover:shadow-2xl border-2 border-white w-auto cursor-pointer tracking-tight ${compact ? 'px-4 py-2 text-sm' : 'px-6 py-3 md:px-10 md:py-5 text-base md:text-lg'}`}
           >
-            💬 Get a Free Quote
+            💬 {compact ? 'Get Quote' : 'Get a Free Quote'}
           </button>
         )}
       </div>
