@@ -69,7 +69,7 @@ import { siteConfig, services } from '../../config';
               <p class="text-sm text-gray-700 text-center mb-3">{service.description}</p>
               <div class="text-center">
                 <a 
-                  href={\`/DeezGarden/services/\${service.slug}/\`}
+                  href={\`/services/\${service.slug}/\`}
                   class="text-fresh-green font-semibold hover:text-deep-green text-sm"
                 >
                   Learn More →
@@ -123,7 +123,7 @@ import { siteConfig, services } from '../../config';
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           {${JSON.stringify(area.nearby)}.map((nearbyArea: string) => (
             <a 
-              href={\`/DeezGarden/areas/\${nearbyArea.toLowerCase().replace(/ /g, '-')}/\`}
+              href={\`/areas/\${nearbyArea.toLowerCase().replace(/ /g, '-')}/\`}
               class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm"
             >
               {nearbyArea}
@@ -131,7 +131,7 @@ import { siteConfig, services } from '../../config';
           ))}
         </div>
         <div class="mt-6">
-          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
+          <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green">
             View all areas →
           </a>
         </div>

@@ -71,7 +71,7 @@ import { siteConfig } from '../../config';
             <div class="flex flex-wrap gap-2 md:gap-3">
               {siteConfig.primaryAreas.map((area) => (
                 <a 
-                  href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+                  href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
                   class="bg-fresh-green/10 text-deep-green px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold hover:bg-fresh-green hover:text-white transition text-xs md:text-base"
                 >
                   {area}
@@ -87,7 +87,7 @@ import { siteConfig } from '../../config';
             <div class="flex flex-wrap gap-2 md:gap-3">
               {siteConfig.secondaryAreas.map((area) => (
                 <a 
-                  href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+                  href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
                   class="bg-light-green/10 text-deep-green px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold hover:bg-fresh-green hover:text-white transition text-xs md:text-base"
                 >
                   {area}
@@ -103,7 +103,7 @@ import { siteConfig } from '../../config';
             <div class="flex flex-wrap gap-2 md:gap-3">
               {siteConfig.extendedAreas.map((area) => (
                 <a 
-                  href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+                  href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
                   class="bg-gray-100 text-deep-green px-3 py-1.5 md:px-4 md:py-2 rounded-full font-semibold hover:bg-fresh-green hover:text-white transition text-xs md:text-base"
                 >
                   {area}
@@ -126,7 +126,7 @@ import { siteConfig } from '../../config';
           We're constantly expanding our service area. If your location isn't listed above, please get in touch!
         </p>
         <a 
-          href="/DeezGarden/contact/"
+          href="/contact/"
           class="inline-block bg-fresh-green text-white px-4 py-2.5 md:px-8 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-deep-green transition w-full sm:w-auto"
         >
           Contact Us

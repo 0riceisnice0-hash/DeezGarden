@@ -11,7 +11,7 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas];
   <div class="flex flex-wrap justify-center gap-2 px-4" id="areas-visible">
     {primaryAreas.map(area => (
       <a 
-        href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+        href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
         class="bg-white px-3 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-200 hover:bg-fresh-green hover:text-white hover:border-fresh-green transition"
       >
         {area}
@@ -23,7 +23,7 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas];
   <div class="hidden flex-wrap justify-center gap-2 px-4 mt-2" id="areas-hidden">
     {siteConfig.secondaryAreas.map(area => (
       <a 
-        href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+        href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
         class="bg-white px-3 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-200 hover:bg-fresh-green hover:text-white hover:border-fresh-green transition"
       >
         {area}

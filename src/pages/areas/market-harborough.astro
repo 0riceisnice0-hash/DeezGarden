@@ -50,9 +50,9 @@ const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => {
             const images = [
-              "/DeezGarden/assets/images/before and after lawn 1.jpg",
-              "/DeezGarden/assets/images/rubbish removal 1.jpg",
-              "/DeezGarden/assets/images/van scrap png.png"
+              "/assets/images/before and after lawn 1.jpg",
+              "/assets/images/rubbish removal 1.jpg",
+              "/assets/images/van scrap png.png"
             ];
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
@@ -67,7 +67,7 @@ const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
                   <h4 class="font-bold text-base md:text-lg mb-2 text-deep-green min-h-[2.5rem] md:min-h-[3rem]">{service.title}</h4>
                   <p class="text-xs md:text-sm text-gray-700 mb-3 flex-grow">{service.description}</p>
                   <a 
-                    href={`/DeezGarden/services/${service.slug}/`}
+                    href={`/services/${service.slug}/`}
                     class="inline-block bg-fresh-green text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-deep-green transition w-full text-center mt-auto"
                   >
                     Learn More
@@ -129,7 +129,7 @@ const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {nearbyAreas.map((nearbyArea: string) => (
             <a 
-              href={`/DeezGarden/areas/${nearbyArea.toLowerCase().replace(/ /g, '-')}/`}
+              href={`/areas/${nearbyArea.toLowerCase().replace(/ /g, '-')}/`}
               class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
             >
               {nearbyArea}
@@ -137,7 +137,7 @@ const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
           ))}
         </div>
         <div class="mt-4 md:mt-6">
-          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
+          <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
             View all areas →
           </a>
         </div>

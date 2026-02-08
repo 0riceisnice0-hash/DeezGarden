@@ -114,7 +114,7 @@ import { siteConfig } from '../../config';
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
           {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
             <a 
-              href={`/DeezGarden/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
               class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
             >
               {area}
@@ -122,7 +122,7 @@ import { siteConfig } from '../../config';
           ))}
         </div>
         <div class="text-center mt-4 md:mt-6">
-          <a href="/DeezGarden/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
+          <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
             View all areas →
           </a>
         </div>
