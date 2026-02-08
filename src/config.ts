@@ -24,7 +24,7 @@ export const siteConfig = {
   extendedAreas: ["Bedford", "Rugby", "Leicester", "Peterborough", "Coventry"],
   
   // SEO
-  baseUrl: "https://0riceisnice0-hash.github.io/DeezGarden",
+  baseUrl: "https://deezgardens.co.uk",
   description: "Professional garden maintenance, clearance, and landscaping services in Northampton and surrounding areas. Fully insured with licensed waste carrier.",
 };
 
