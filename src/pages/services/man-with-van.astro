@@ -6,110 +6,213 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Man with Van and Scrap Metal Collection in Northampton"
-  description="Reliable man with van service for removals, deliveries, and scrap metal collection in Northampton. Competitive rates. Call 07305 195098 for a quote."
+  title="Man with Van Northampton - Removals, Deliveries & Scrap Metal Collection"
+  description="Reliable man with van service in Northampton & Northamptonshire. Removals, furniture delivery, scrap metal collection. Competitive rates. Call 07305 195098 for a quote."
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     title="Man with Van and Scrap Metal"
     subtitle="Reliable removals and scrap collection across Northamptonshire"
     heroImage="hero.jpg"
     showCTA={true}
+    showQuoteButton={true}
   />
   
   <TrustBadges />
   
-  <section class="py-4 md:py-16">
+  <!-- Introduction Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <div class="prose max-w-none">
-          <h2 class="text-lg md:text-2xl">Man with Van Service in Northampton</h2>
-          <p class="text-sm md:text-lg">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <h2 class="text-xl md:text-3xl font-extrabold text-deep-green mb-4 md:mb-6 tracking-tight text-center">Man with Van Service in Northampton</h2>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             Need items moved, delivered, or collected? {siteConfig.name} provides a reliable man with van service across Northampton and Northamptonshire. Whether it's house removals, furniture delivery, or scrap metal collection, we're here to help.
           </p>
-          
-          <h3 class="text-base md:text-xl">Our Man with Van Services Include:</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 not-prose">
-            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
-              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Removals & Deliveries</h4>
-              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
-                <li>✓ Small house removals</li>
-                <li>✓ Flat and apartment moves</li>
-                <li>✓ Furniture delivery and collection</li>
-                <li>✓ eBay and Facebook Marketplace pickups</li>
-                <li>✓ Single item transport</li>
-              </ul>
-            </div>
-            
-            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
-              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Scrap Metal Collection</h4>
-              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
-                <li>✓ Scrap metal collection</li>
-                <li>✓ Old appliance removal</li>
-                <li>✓ Boiler and radiator removal</li>
-                <li>✓ Copper and brass collection</li>
-                <li>✓ Commercial scrap collection</li>
-              </ul>
-            </div>
-          </div>
-          
-          <h3 class="text-base md:text-xl">Why Choose Our Man with Van Service?</h3>
-          <p>
-            We understand that you need a reliable, trustworthy service when moving your belongings or having items delivered. Our team provides professional, careful handling of all items, whether it's valuable furniture or scrap metal.
-          </p>
-          
-          <div class="bg-fresh-green/10 p-4 md:p-6 rounded-lg not-prose">
-            <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">What Sets Us Apart:</h4>
-            <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
-              <li>✓ Reliable and punctual service</li>
-              <li>✓ Fully insured for your peace of mind</li>
-              <li>✓ Competitive, transparent pricing</li>
-              <li>✓ Careful handling of your items</li>
-              <li>✓ Local knowledge of Northamptonshire</li>
-              <li>✓ Friendly, professional service</li>
-            </ul>
-          </div>
-          
-          <h3 class="text-base md:text-xl">Scrap Metal Collection</h3>
-          <p>
-            We provide scrap metal collection services for both domestic and commercial customers. Whether you have old appliances, copper piping, brass fittings, or any other scrap metal, we'll collect it and ensure it's recycled properly.
-          </p>
-          <p>
-            Common items we collect:
-          </p>
-          <ul>
-            <li>Old boilers and radiators</li>
-            <li>Washing machines and tumble dryers</li>
-            <li>Cookers and ovens</li>
-            <li>Copper pipes and wiring</li>
-            <li>Brass taps and fittings</li>
-            <li>Steel and iron items</li>
-            <li>Aluminium</li>
-            <li>Commercial scrap metal</li>
-          </ul>
-          
-          <h3 class="text-base md:text-xl">Coverage Area</h3>
-          <p>
-            We cover Northampton and all surrounding areas, including trips to nearby towns and cities. Whether you're moving within Northampton or need items transported to or from Leicester, Milton Keynes, or Bedford, we can help.
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
+            From single item transport to small house moves, our friendly, professional service makes moving easy. Competitive rates with no hidden fees.
           </p>
         </div>
       </div>
     </div>
   </section>
   
-  <CallToAction text="Get Your Free Man with Van Quote" />
+  <!-- Our Services Grid -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Man with Van Services</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <!-- Removals & Deliveries Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-fresh-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-fresh-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🚐</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Removals & Deliveries</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Reliable transport for all your moving and delivery needs.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Small house removals</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Flat and apartment moves</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Furniture delivery and collection</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>eBay and Facebook Marketplace pickups</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Single item transport</li>
+            </ul>
+          </div>
+          
+          <!-- Scrap Metal Collection Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-deep-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-deep-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">⚙️</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Scrap Metal Collection</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Free collection of scrap metal from domestic and commercial premises.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Scrap metal collection</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Old appliance removal</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Boiler and radiator removal</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Copper and brass collection</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Commercial scrap collection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
-  <section class="py-4 md:py-16 bg-white">
+  <!-- What We Collect (Scrap Metal) -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Scrap Metal We Collect</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🔥</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Boilers</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Old boilers & radiators</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🧺</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">White Goods</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Washers, dryers, cookers</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🔧</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Copper & Brass</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Pipes, taps, fittings</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🏗️</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Steel & Iron</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Structural metal items</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🪟</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Aluminium</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Frames, sheets, parts</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🚗</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Car Parts</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Metal components</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🏢</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Commercial</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Business scrap metal</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🔌</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Cables</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Copper wiring</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction showDualCTA={true} />
+  
+  <!-- Why Choose Us -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-8 text-center">Man with Van Service Areas</h2>
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Why Choose Our Man with Van Service?</h2>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">⏰</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Reliable & Punctual</h4>
+              <p class="text-xs md:text-sm text-gray-600 mt-1">We arrive on time</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🛡️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fully Insured</h4>
+              <p class="text-xs md:text-sm text-gray-600 mt-1">Complete peace of mind</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">💰</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fair Pricing</h4>
+              <p class="text-xs md:text-sm text-gray-600 mt-1">Transparent, competitive rates</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🤝</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Careful Handling</h4>
+              <p class="text-xs md:text-sm text-gray-600 mt-1">Your items treated with care</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">📍</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Local Knowledge</h4>
+              <p class="text-xs md:text-sm text-gray-600 mt-1">We know Northamptonshire</p>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">😊</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Friendly Service</h4>
+              <p class="text-xs md:text-sm text-gray-600 mt-1">Professional and approachable</p>
+            </div>
+          </div>
+          
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center">
+            We understand that you need a reliable, trustworthy service when moving your belongings. Our team provides professional, careful handling of all items, whether it's valuable furniture or scrap metal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Coverage Area -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Man with Van Service Areas</h2>
         <p class="text-center text-sm md:text-base mb-4 md:mb-8">
-          Serving Northampton and surrounding areas:
+          We cover Northampton and all surrounding areas, including trips to nearby towns and cities like Leicester, Milton Keynes, and Bedford:
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
           {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
@@ -123,7 +226,24 @@ import { siteConfig } from '../../config';
         </div>
         <div class="text-center mt-4 md:mt-6">
           <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
-            View all areas →
+            View all areas we cover →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Services -->
+  <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-base md:text-xl font-bold mb-4 md:mb-6">Related Services You May Need</h3>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <a href="/services/clearance-removals/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Rubbish Clearance →
+          </a>
+          <a href="/services/garden-maintenance/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Garden Maintenance →
           </a>
         </div>
       </div>
@@ -143,11 +263,17 @@ import { siteConfig } from '../../config';
     "@type": "LocalBusiness",
     "name": siteConfig.name,
     "telephone": siteConfig.phone,
-    "email": siteConfig.email
+    "email": siteConfig.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northampton",
+      "addressRegion": "Northamptonshire",
+      "addressCountry": "GB"
+    }
   },
   "areaServed": siteConfig.primaryAreas.map(area => ({
     "@type": "City",
     "name": area
   })),
-  "description": "Reliable man with van service for removals, deliveries, and scrap metal collection in Northampton and surrounding areas."
+  "description": "Reliable man with van service for removals, deliveries, and scrap metal collection in Northampton and Northamptonshire."
 })} />

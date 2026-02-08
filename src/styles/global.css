@@ -162,3 +162,19 @@ iframe {
     font-size: 0.875rem;
   }
 }
+
+/* Subtle pulse animation for quote button */
+@keyframes pulse-subtle {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(61, 163, 73, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(61, 163, 73, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+}
