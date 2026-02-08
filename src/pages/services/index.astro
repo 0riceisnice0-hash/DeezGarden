@@ -6,14 +6,17 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 ---
 
 <BaseLayout 
-  title="Our Services"
-  description="Professional garden maintenance, clearance, landscaping, and removals services in Northampton. Fully insured and licensed waste carrier."
+  title="Our Services | Garden Maintenance, Clearance, Landscaping & More | Northampton"
+  description="Professional garden maintenance, rubbish clearance, landscaping, man with van & scrap metal services in Northampton & Northamptonshire. Fully insured, licensed waste carrier. Free quotes."
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     heroImage="hero.jpg"

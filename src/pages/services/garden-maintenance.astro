@@ -6,88 +6,185 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Garden Renovations and Maintenance in Northampton"
-  description="Professional garden maintenance, lawn mowing, hedge trimming, and garden renovations in Northampton. Fully insured service with free quotes. Call 07305 195098."
+  title="Garden Maintenance & Landscaping Northampton | Lawn Care, Hedge Trimming"
+  description="Professional garden maintenance in Northampton & Northamptonshire. Lawn mowing, hedge trimming, landscaping & garden renovations. Fully insured. Free quotes - call 07305 195098."
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     title="Garden Renovations and Maintenance"
     subtitle="Professional garden care across Northamptonshire"
     heroImage="hero.jpg"
     showCTA={true}
+    showQuoteButton={true}
   />
   
   <TrustBadges />
   
-  <section class="py-4 md:py-16">
+  <!-- Introduction Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <div class="prose max-w-none">
-          <h2 class="text-lg md:text-2xl">Professional Garden Maintenance in Northampton</h2>
-          <p class="text-sm md:text-lg">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <h2 class="text-xl md:text-3xl font-extrabold text-deep-green mb-4 md:mb-6 tracking-tight text-center">Professional Garden Maintenance in Northampton</h2>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             Whether you need regular garden maintenance to keep your outdoor space looking its best, or a complete renovation to transform an overgrown or neglected garden, {siteConfig.name} provides professional, reliable service across Northampton and the surrounding areas.
           </p>
-          
-          <h3 class="text-base md:text-xl">Our Garden Maintenance Services Include:</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 not-prose">
-            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
-              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Regular Maintenance</h4>
-              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
-                <li>✓ Grass cutting and lawn care</li>
-                <li>✓ Hedge trimming and shaping</li>
-                <li>✓ Border maintenance and weeding</li>
-                <li>✓ Seasonal tidy-ups</li>
-                <li>✓ Leaf clearance</li>
-              </ul>
-            </div>
-            
-            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
-              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Garden Renovations</h4>
-              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
-                <li>✓ Overgrown garden clearance</li>
-                <li>✓ Landscaping and design</li>
-                <li>✓ Fencing and gates</li>
-                <li>✓ Patios and paving</li>
-                <li>✓ Turfing and lawn creation</li>
-              </ul>
-            </div>
-          </div>
-          
-          <h3 class="text-base md:text-xl">Additional Garden Services</h3>
-          <ul>
-            <li>Jet washing for patios, driveways, and paths</li>
-            <li>Decking installation and maintenance</li>
-            <li>Artificial grass installation</li>
-            <li>Garden waste removal</li>
-            <li>Tree and shrub pruning</li>
-            <li>Planting and bedding</li>
-          </ul>
-          
-          <h3 class="text-base md:text-xl">Why Choose Us for Garden Maintenance?</h3>
-          <p>
-            Based in Northampton, we understand the local climate and what gardens need to thrive in Northamptonshire. Our team is fully insured and experienced in all aspects of garden care, from simple grass cutting to complete garden transformations.
-          </p>
-          <p>
-            We pride ourselves on reliable service, tidy work, and clear communication. Whether you need weekly grass cutting during the growing season or a one-off renovation project, we're here to help.
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
+            From weekly lawn care to complete garden transformations, our fully insured team delivers quality workmanship with tidy, reliable service every time.
           </p>
         </div>
       </div>
     </div>
   </section>
   
-  <CallToAction text="Get Your Free Garden Quote" />
+  <!-- Our Services Grid -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Garden Maintenance Services</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <!-- Regular Maintenance Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-fresh-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-fresh-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🌿</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Regular Maintenance</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Keep your garden looking beautiful all year round with our regular maintenance services.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Grass cutting and lawn care</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Hedge trimming and shaping</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Border maintenance and weeding</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Seasonal tidy-ups</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Leaf clearance</li>
+            </ul>
+          </div>
+          
+          <!-- Garden Renovations Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-deep-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-deep-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🏡</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Garden Renovations</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Transform your outdoor space with our complete garden renovation services.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Overgrown garden clearance</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Landscaping and design</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Fencing and gates</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Patios and paving</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Turfing and lawn creation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
-  <section class="py-4 md:py-16 bg-white">
+  <!-- Additional Services -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Additional Garden Services</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">💧</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Jet Washing</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Patios, driveways & paths</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🪵</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Decking</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Installation & maintenance</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🌱</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Artificial Grass</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Professional installation</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🗑️</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Waste Removal</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Garden waste disposal</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🌳</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Tree & Shrub Care</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Pruning & maintenance</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🌸</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Planting</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Bedding & borders</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction showDualCTA={true} />
+  
+  <!-- Why Choose Us -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-8 text-center">Areas We Cover for Garden Maintenance</h2>
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Why Choose Us for Garden Maintenance?</h2>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🛡️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fully Insured</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">📍</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Local Experts</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">⭐</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Quality Work</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">💬</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Clear Quotes</h4>
+            </div>
+          </div>
+          
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center">
+            Based in Northampton, we understand the local climate and what gardens need to thrive in Northamptonshire. Our team is fully insured and experienced in all aspects of garden care. We pride ourselves on reliable service, tidy work, and clear communication.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Areas We Cover -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Garden Maintenance Across Northamptonshire</h2>
         <p class="text-center text-sm md:text-base mb-4 md:mb-8">
-          We provide garden maintenance and renovation services throughout Northampton and the surrounding areas, including:
+          We provide professional garden maintenance and landscaping services throughout Northampton and surrounding areas:
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
           {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
@@ -101,7 +198,24 @@ import { siteConfig } from '../../config';
         </div>
         <div class="text-center mt-4 md:mt-6">
           <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
-            View all areas →
+            View all areas we cover →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Services -->
+  <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-base md:text-xl font-bold mb-4 md:mb-6">Related Services You May Need</h3>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <a href="/services/clearance-removals/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Rubbish Clearance →
+          </a>
+          <a href="/services/man-with-van/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Man with Van →
           </a>
         </div>
       </div>
@@ -116,16 +230,22 @@ import { siteConfig } from '../../config';
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Garden Maintenance and Renovation",
+  "serviceType": "Garden Maintenance and Landscaping",
   "provider": {
     "@type": "LocalBusiness",
     "name": siteConfig.name,
     "telephone": siteConfig.phone,
-    "email": siteConfig.email
+    "email": siteConfig.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northampton",
+      "addressRegion": "Northamptonshire",
+      "addressCountry": "GB"
+    }
   },
   "areaServed": siteConfig.primaryAreas.map(area => ({
     "@type": "City",
     "name": area
   })),
-  "description": "Professional garden maintenance, lawn care, hedge trimming, and garden renovations in Northampton and surrounding areas."
+  "description": "Professional garden maintenance, lawn mowing, hedge trimming, landscaping and garden renovations in Northampton and Northamptonshire."
 })} />

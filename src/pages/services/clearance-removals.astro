@@ -6,110 +6,242 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Rubbish Clearance and Removals in Northampton"
-  description="Licensed waste carrier providing rubbish clearance, house clearances, garage clearances, and waste removal in Northampton. Fully insured. Call 07305 195098."
+  title="Rubbish Clearance & House Clearances Northampton | Licensed Waste Carrier"
+  description="Licensed waste carrier providing rubbish clearance, house clearances, garage clearances & garden waste removal in Northampton & Northamptonshire. Fully insured. Call 07305 195098."
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     title="Rubbish Clearance and Removals"
     subtitle="Licensed waste carrier serving Northamptonshire"
     heroImage="hero.jpg"
     showCTA={true}
+    showQuoteButton={true}
   />
   
   <TrustBadges />
   
-  <section class="py-4 md:py-16">
+  <!-- Introduction Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <div class="prose max-w-none">
-          <h2 class="text-lg md:text-2xl">Professional Waste Removal and Clearance Services</h2>
-          <p class="text-sm md:text-lg">
-            {siteConfig.name} is a fully licensed waste carrier providing professional rubbish clearance and removal services across Northampton and Northamptonshire. From garden waste to house clearances, we handle all types of waste disposal legally and responsibly.
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <h2 class="text-xl md:text-3xl font-extrabold text-deep-green mb-4 md:mb-6 tracking-tight text-center">Professional Waste Removal & Clearance Services</h2>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
+            {siteConfig.name} is a fully licensed waste carrier providing professional rubbish clearance and removal services across Northampton and Northamptonshire. From garden waste to complete house clearances, we handle all types of waste disposal legally and responsibly.
           </p>
-          
-          <h3 class="text-base md:text-xl">Our Clearance Services Include:</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 not-prose">
-            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
-              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Residential Clearances</h4>
-              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
-                <li>✓ House clearances (full or partial)</li>
-                <li>✓ Garage clearances</li>
-                <li>✓ Shed and outbuilding clearance</li>
-                <li>✓ Loft clearances</li>
-                <li>✓ Garden waste removal</li>
-              </ul>
+          <div class="flex items-center justify-center gap-4 mt-6 p-4 bg-fresh-green/10 rounded-lg">
+            <span class="text-2xl md:text-3xl">📋</span>
+            <div>
+              <p class="font-bold text-deep-green text-sm md:text-base">Licensed Waste Carrier</p>
+              <p class="text-xs md:text-sm text-gray-600">All waste disposed of legally at licensed facilities</p>
             </div>
-            
-            <div class="bg-bg-light p-4 md:p-6 rounded-lg">
-              <h4 class="font-bold text-base md:text-lg mb-2 md:mb-3 text-deep-green">Waste Removal</h4>
-              <ul class="space-y-1 md:space-y-2 text-sm md:text-base">
-                <li>✓ General rubbish clearance</li>
-                <li>✓ Garden waste disposal</li>
-                <li>✓ Furniture removal</li>
-                <li>✓ White goods disposal</li>
-                <li>✓ Construction waste</li>
-              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Clearance Services Grid -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Clearance Services</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <!-- Residential Clearances Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-fresh-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-fresh-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🏠</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Residential Clearances</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Complete property clearance services for homes and outbuildings.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>House clearances (full or partial)</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Garage clearances</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Shed and outbuilding clearance</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Loft clearances</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Garden waste removal</li>
+            </ul>
+          </div>
+          
+          <!-- Waste Removal Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-deep-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-deep-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🗑️</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Waste Removal</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Professional waste disposal for all types of materials.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>General rubbish clearance</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Garden waste disposal</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Furniture removal</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>White goods disposal</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Construction waste</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- What We Can Clear -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">What We Can Clear</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🛋️</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Furniture</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Old sofas, beds & more</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🌿</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Garden Waste</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Grass, branches, soil</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🧊</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">White Goods</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Fridges, washers, dryers</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">📺</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Electronics</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">TVs, computers, cables</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🏗️</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Construction</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Renovation debris</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">📦</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">General Junk</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Household rubbish</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🏢</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Office Clearance</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Commercial waste</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🏛️</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Estate Clearance</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Full property clear-outs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction showDualCTA={true} />
+  
+  <!-- How It Works -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">How Our Clearance Service Works</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2">
+          <div class="bg-white rounded-xl p-4 md:p-6 text-center shadow-md relative">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-fresh-green text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg md:text-xl">1</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-2">Contact Us</h4>
+            <p class="text-xs md:text-sm text-gray-600">Call or message with details</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 md:p-6 text-center shadow-md">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-fresh-green text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg md:text-xl">2</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-2">Free Quote</h4>
+            <p class="text-xs md:text-sm text-gray-600">No-obligation estimate</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 md:p-6 text-center shadow-md">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-fresh-green text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg md:text-xl">3</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-2">Book a Time</h4>
+            <p class="text-xs md:text-sm text-gray-600">Convenient scheduling</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 md:p-6 text-center shadow-md">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-fresh-green text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg md:text-xl">4</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-2">We Clear</h4>
+            <p class="text-xs md:text-sm text-gray-600">Professional removal</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 md:p-6 text-center shadow-md">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-deep-green text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg md:text-xl">5</div>
+            <h4 class="font-bold text-sm md:text-base text-deep-green mb-2">Legal Disposal</h4>
+            <p class="text-xs md:text-sm text-gray-600">Licensed facilities</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Choose Us -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Why Choose {siteConfig.name} for Clearances?</h2>
+        
+        <div class="bg-bg-light rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">📋</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Licensed Carrier</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🛡️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fully Insured</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">💰</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fair Pricing</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">♻️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Eco-Friendly</h4>
             </div>
           </div>
           
-          <h3 class="text-base md:text-xl">Licensed Waste Carrier</h3>
-          <p>
-            We are a fully licensed waste carrier, which means we handle all waste disposal legally and responsibly. We'll provide you with the proper documentation and ensure all waste is disposed of at licensed facilities.
-          </p>
-          <p>
-            Unlike unlicensed operators, you can have complete peace of mind that your waste won't end up fly-tipped, and you won't face any legal issues.
-          </p>
-          
-          <h3 class="text-base md:text-xl">What We Can Clear</h3>
-          <ul>
-            <li>General household rubbish and junk</li>
-            <li>Garden waste (grass, branches, soil, etc.)</li>
-            <li>Old furniture and appliances</li>
-            <li>White goods (fridges, washing machines, etc.)</li>
-            <li>Electrical items and electronics</li>
-            <li>Construction and renovation waste</li>
-            <li>Office clearances</li>
-            <li>Estate clearances</li>
-          </ul>
-          
-          <h3 class="text-base md:text-xl">How It Works</h3>
-          <ol>
-            <li><strong>Contact Us:</strong> Call or message us with details of what needs clearing</li>
-            <li><strong>Free Quote:</strong> We'll provide a no-obligation quote</li>
-            <li><strong>Book a Time:</strong> Choose a convenient time for the clearance</li>
-            <li><strong>We Clear:</strong> Our team arrives and clears everything away</li>
-            <li><strong>Legal Disposal:</strong> All waste disposed of properly at licensed facilities</li>
-          </ol>
-          
-          <h3 class="text-base md:text-xl">Why Choose {siteConfig.name} for Clearances?</h3>
-          <p>
-            With many years of experience in waste clearance across Northampton, we provide a professional, reliable service at competitive prices. We're fully insured and operate with all the necessary licences, giving you complete peace of mind.
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center mb-4">
+            Unlike unlicensed operators, you can have complete peace of mind that your waste won't end up fly-tipped, and you won't face any legal issues. We provide proper documentation and ensure all waste is disposed of at licensed facilities.
           </p>
         </div>
       </div>
     </div>
   </section>
   
-  <CallToAction text="Book Your Clearance Today" />
-  
-  <section class="py-4 md:py-16 bg-white">
+  <!-- Areas We Cover -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-lg md:text-3xl font-bold mb-4 md:mb-8 text-center">Clearance Services Throughout Northamptonshire</h2>
+        <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Clearance Services Across Northamptonshire</h2>
         <p class="text-center text-sm md:text-base mb-4 md:mb-8">
-          We provide rubbish clearance and waste removal services across:
+          We provide professional rubbish clearance and waste removal services throughout:
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
           {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
             <a 
               href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
-              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
+              class="bg-white p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base shadow-sm"
             >
               {area}
             </a>
@@ -117,7 +249,24 @@ import { siteConfig } from '../../config';
         </div>
         <div class="text-center mt-4 md:mt-6">
           <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
-            View all areas →
+            View all areas we cover →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Services -->
+  <section class="py-6 md:py-12 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-base md:text-xl font-bold mb-4 md:mb-6">Related Services You May Need</h3>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <a href="/services/garden-maintenance/" class="bg-bg-light px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Garden Maintenance →
+          </a>
+          <a href="/services/man-with-van/" class="bg-bg-light px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Man with Van →
           </a>
         </div>
       </div>
@@ -137,11 +286,17 @@ import { siteConfig } from '../../config';
     "@type": "LocalBusiness",
     "name": siteConfig.name,
     "telephone": siteConfig.phone,
-    "email": siteConfig.email
+    "email": siteConfig.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northampton",
+      "addressRegion": "Northamptonshire",
+      "addressCountry": "GB"
+    }
   },
   "areaServed": siteConfig.primaryAreas.map(area => ({
     "@type": "City",
     "name": area
   })),
-  "description": "Licensed waste carrier providing professional rubbish clearance, house clearances, and waste removal services in Northampton and surrounding areas."
+  "description": "Licensed waste carrier providing professional rubbish clearance, house clearances, garage clearances and waste removal services in Northampton and Northamptonshire."
 })} />
