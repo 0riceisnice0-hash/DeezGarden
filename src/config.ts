@@ -26,6 +26,14 @@ export const siteConfig = {
   // SEO
   baseUrl: "https://deezgardens.co.uk",
   description: "Professional garden maintenance, clearance, and landscaping services in Northampton and surrounding areas. Fully insured with licensed waste carrier.",
+  
+  // Open Graph / Social sharing image
+  ogImage: {
+    path: "/assets/images/hero.jpg",
+    width: 1536,
+    height: 1024,
+    type: "image/jpeg",
+  },
 };
 
 export const services = [
