@@ -7,19 +7,6 @@ import CallToAction from '../components/CallToAction.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 import SlideOutQuoteForm from '../components/SlideOutQuoteForm.astro';
 import { siteConfig } from '../config';
-
-// Define all gallery images for the lightbox
-const galleryImages = [
-  { src: "/assets/images/before and after lawn 1.jpg", alt: "Garden clearance showing beautifully maintained lawn in Northampton" },
-  { src: "/assets/images/renovation1.jpg", alt: "Overgrown garden before clearance and renovation" },
-  { src: "/assets/images/renovation1 after.jpg", alt: "Beautiful garden after professional landscaping transformation" },
-  { src: "/assets/images/before after renovation 2.jpg", alt: "Garden renovation with landscaping work in Northamptonshire" },
-  { src: "/assets/images/before after renovation 3.jpg", alt: "Landscaping project with new paving and planting" },
-  { src: "/assets/images/jet washing.jpg", alt: "Professional jet washing service for patios and driveways" },
-  { src: "/assets/images/rubbish before and after 2.jpg", alt: "Rubbish clearance before and after in Northampton" },
-  { src: "/assets/images/rubbish before and after 3.jpg", alt: "Professional garden waste removal service" },
-  { src: "/assets/images/rubbish before and after 4.jpg", alt: "Garden waste clearance and disposal completed" },
-];
 ---
 
 <BaseLayout 
@@ -74,6 +61,9 @@ const galleryImages = [
               alt="Garden clearance before renovation work"
               class="w-full h-full object-cover"
             />
+            <div class="absolute top-2 left-2 md:top-4 md:left-4 bg-fresh-green text-white px-2 py-1 md:px-4 md:py-2 rounded-md font-bold text-xs md:text-lg shadow-lg">
+              BEFORE
+            </div>
             <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
               <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
             </div>
@@ -84,6 +74,9 @@ const galleryImages = [
               alt="Garden clearance after transformation"
               class="w-full h-full object-cover"
             />
+            <div class="absolute top-2 left-2 md:top-4 md:left-4 bg-deep-green text-white px-2 py-1 md:px-4 md:py-2 rounded-md font-bold text-xs md:text-lg shadow-lg">
+              AFTER
+            </div>
             <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
               <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
             </div>
@@ -104,7 +97,7 @@ const galleryImages = [
           Complete garden renovations including lawn installation, planting, and paving.
         </p>
         
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 mb-2 md:mb-6">
           <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="3">
             <img 
               src="/assets/images/before after renovation 2.jpg"
@@ -125,7 +118,36 @@ const galleryImages = [
               <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
             </div>
           </button>
-          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden col-span-2 md:col-span-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="5">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="5">
+            <img 
+              src="/assets/images/before and after renovation 3 before.jpg"
+              alt="Garden before renovation 3 - overgrown state"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute top-2 left-2 md:top-4 md:left-4 bg-fresh-green text-white px-2 py-1 md:px-4 md:py-2 rounded-md font-bold text-xs md:text-lg shadow-lg">
+              BEFORE
+            </div>
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="6">
+            <img 
+              src="/assets/images/before and after renovation 3 after.jpg"
+              alt="Garden after renovation 3 - beautiful transformation"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute top-2 left-2 md:top-4 md:left-4 bg-deep-green text-white px-2 py-1 md:px-4 md:py-2 rounded-md font-bold text-xs md:text-lg shadow-lg">
+              AFTER
+            </div>
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition flex items-center justify-center">
+              <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
+            </div>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="7">
             <img 
               src="/assets/images/jet washing.jpg"
               alt="Professional jet washing and garden maintenance"
@@ -150,7 +172,7 @@ const galleryImages = [
         </p>
         
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
-          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="6">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="8">
             <img 
               src="/assets/images/rubbish before and after 2.jpg"
               alt="Rubbish clearance before and after showing cleared garden"
@@ -160,7 +182,7 @@ const galleryImages = [
               <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
             </div>
           </button>
-          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="7">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="9">
             <img 
               src="/assets/images/rubbish before and after 3.jpg"
               alt="Professional waste removal service transformation"
@@ -170,7 +192,7 @@ const galleryImages = [
               <span class="text-white opacity-0 hover:opacity-100 text-2xl md:text-4xl">🔍</span>
             </div>
           </button>
-          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="8">
+          <button type="button" class="gallery-item relative rounded-lg shadow-md hover:shadow-xl transition h-32 md:h-80 overflow-hidden bg-gray-100 col-span-2 md:col-span-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-fresh-green" data-index="10">
             <img 
               src="/assets/images/rubbish before and after 4.jpg"
               alt="Garden waste clearance and disposal completed"
@@ -272,6 +294,8 @@ const galleryImages = [
     { src: "/assets/images/renovation1 after.jpg", alt: "Garden clearance after transformation" },
     { src: "/assets/images/before after renovation 2.jpg", alt: "Garden renovation showing beautiful landscaping work" },
     { src: "/assets/images/before after renovation 3.jpg", alt: "Landscaping transformation with new paving and plants" },
+    { src: "/assets/images/before and after renovation 3 before.jpg", alt: "Garden before renovation 3 - overgrown state" },
+    { src: "/assets/images/before and after renovation 3 after.jpg", alt: "Garden after renovation 3 - beautiful transformation" },
     { src: "/assets/images/jet washing.jpg", alt: "Professional jet washing and garden maintenance" },
     { src: "/assets/images/rubbish before and after 2.jpg", alt: "Rubbish clearance before and after showing cleared garden" },
     { src: "/assets/images/rubbish before and after 3.jpg", alt: "Professional waste removal service transformation" },
