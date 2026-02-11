@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout 
+  title="Property Maintenance Services Northampton - Gutter Cleaning, Insulation, Plastering"
+  description="Professional property maintenance in Northampton & Northamptonshire. Gutter cleaning, loft insulation, plastering & patch repairs. Fully insured. Free quotes - call 07305 195098."
+>
+  <Header slot="header" />
+  
+  <SlideOutQuoteForm />
+  
+  <Hero 
+    title="Property Maintenance Services"
+    subtitle="Practical property care across Northamptonshire"
+    heroImage="hero.jpg"
+    showCTA={true}
+    showQuoteButton={true}
+  />
+  
+  <TrustBadges />
+  
+  <!-- Introduction Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <h2 class="text-xl md:text-3xl font-extrabold text-deep-green mb-4 md:mb-6 tracking-tight text-center">Professional Property Maintenance in Northampton</h2>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
+            From clearing blocked gutters to topping up your loft insulation or fixing patchy plasterwork, {siteConfig.name} provides reliable, hands-on property maintenance services across Northampton and the surrounding areas.
+          </p>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
+            We take care of the practical jobs that keep your property in great condition — all carried out by our fully insured team with a tidy, professional finish every time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sub Service 1: Gutter Cleaning -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
+          <div>
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-fresh-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🏠</span>
+              </div>
+              <h2 class="text-lg md:text-2xl font-extrabold tracking-tight">Gutter Cleaning</h2>
+            </div>
+            <p class="text-sm md:text-lg text-gray-700 mb-4 md:mb-6">
+              Blocked gutters can cause serious damage to your property. We provide thorough gutter cleaning to keep water flowing freely and protect your home.
+            </p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Clear blocked gutters and downpipes</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Full debris removal from guttering</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Downpipe flushing and flow checks</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Tidy finish with all waste removed</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Visual inspection for damage or leaks</li>
+            </ul>
+          </div>
+          <div class="relative order-first lg:order-last">
+            <img 
+              src="/assets/images/gutter.jpg" 
+              alt="Gutter Cleaning Service" 
+              class="rounded-lg shadow-xl w-full h-48 md:h-80 object-cover border-2 border-gray-200"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub Service 2: Insulation -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
+          <div class="relative order-first">
+            <img 
+              src="/assets/images/loft.jpg" 
+              alt="Loft Insulation Service" 
+              class="rounded-lg shadow-xl w-full h-48 md:h-80 object-cover border-2 border-gray-200"
+            />
+          </div>
+          <div>
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-deep-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🧣</span>
+              </div>
+              <h2 class="text-lg md:text-2xl font-extrabold tracking-tight">Insulation</h2>
+            </div>
+            <p class="text-sm md:text-lg text-gray-700 mb-4 md:mb-6">
+              Improve your home's warmth and energy efficiency with professional loft insulation services. We help reduce heat loss and keep your energy bills down.
+            </p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Loft insulation top-ups</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Improving warmth and energy efficiency</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Reducing drafts and heat loss</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Advice on insulation options</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Tidy, professional installation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub Service 3: Plastering -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
+          <div>
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-fresh-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🔨</span>
+              </div>
+              <h2 class="text-lg md:text-2xl font-extrabold tracking-tight">Plastering</h2>
+            </div>
+            <p class="text-sm md:text-lg text-gray-700 mb-4 md:mb-6">
+              Whether it's a small patch repair or a wall that needs re-skimming, we deliver a smooth, quality finish that's ready for painting or decorating.
+            </p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Patch repairs and hole filling</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Small plastering jobs</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Smooth finish ready for paint</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Wall re-skimming</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Ceiling repairs</li>
+            </ul>
+          </div>
+          <div class="relative order-first lg:order-last">
+            <img 
+              src="/assets/images/plastering.jpg" 
+              alt="Plastering Service" 
+              class="rounded-lg shadow-xl w-full h-48 md:h-80 object-cover border-2 border-gray-200"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction showDualCTA={true} />
+  
+  <!-- Why Choose Us -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Why Choose Us for Property Maintenance?</h2>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🛡️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fully Insured</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">📍</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Local Experts</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">⭐</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Quality Work</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">💬</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Clear Quotes</h4>
+            </div>
+          </div>
+          
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center">
+            Based in Northampton, our fully insured team handles all property maintenance jobs with care and professionalism. We pride ourselves on reliable service, tidy workmanship, and clear communication from start to finish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Areas We Cover -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Property Maintenance Across Northamptonshire</h2>
+        <p class="text-center text-sm md:text-base mb-4 md:mb-8">
+          We provide professional property maintenance services throughout Northampton and surrounding areas:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
+          {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
+            <a 
+              href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        <div class="text-center mt-4 md:mt-6">
+          <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
+            View all areas we cover →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Services -->
+  <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-base md:text-xl font-bold mb-4 md:mb-6">Related Services You May Need</h3>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <a href="/services/garden-maintenance/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Garden Maintenance →
+          </a>
+          <a href="/services/clearance-removals/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Rubbish Clearance →
+          </a>
+          <a href="/services/man-with-van/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Man with Van →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <HeroCTA />
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Property Maintenance",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.name,
+    "telephone": siteConfig.phone,
+    "email": siteConfig.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northampton",
+      "addressRegion": "Northamptonshire",
+      "addressCountry": "GB"
+    }
+  },
+  "areaServed": siteConfig.primaryAreas.map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  "description": "Professional property maintenance including gutter cleaning, loft insulation, and plastering services in Northampton and Northamptonshire."
+})} />
