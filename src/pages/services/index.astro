@@ -138,7 +138,7 @@ import { siteConfig, services } from '../../config';
   </section>
 
   <!-- Service 3: Man with Van & Scrap Metal -->
-  <section class="py-4 md:py-12 bg-bg-light">
+  <section class="py-4 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
@@ -183,6 +183,53 @@ import { siteConfig, services } from '../../config';
       </div>
     </div>
   </section>
+
+  <!-- Service 4: Property Maintenance Services -->
+  <section class="py-4 md:py-12 bg-bg-sage">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
+          <div class="relative order-first">
+            <img 
+              src="/assets/images/house.jpg" 
+              alt="Property Maintenance Services" 
+              class="rounded-lg shadow-xl w-full h-40 md:h-80 object-cover border-2 border-gray-200"
+            />
+          </div>
+          <div>
+            <h2 class="text-lg md:text-2xl font-extrabold mb-2 md:mb-4 tracking-tight">Property Maintenance Services</h2>
+            <p class="text-sm md:text-lg text-gray-700 mb-3 md:mb-6">
+              Practical property jobs including gutter cleaning, insulation, and plastering.
+            </p>
+            <ul class="space-y-1 md:space-y-2 mb-3 md:mb-6 text-xs md:text-base">
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
+                <span>Gutter cleaning and maintenance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
+                <span>Loft insulation top-ups</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
+                <span>Plastering and patch repairs</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-fresh-green mr-2 font-bold">✓</span>
+                <span>Smooth finish ready for paint</span>
+              </li>
+            </ul>
+            <a 
+              href="/services/property-maintenance/"
+              class="inline-block bg-fresh-green text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold text-sm md:text-base hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
+            >
+              View Full Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <CallToAction showDualCTA={true} />
   
@@ -191,8 +238,8 @@ import { siteConfig, services } from '../../config';
     <div class="container mx-auto px-4">
       <h2 class="text-lg md:text-3xl font-extrabold text-center mb-4 md:mb-10 tracking-tight">Complete Service List</h2>
       
-      <div class="max-w-4xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
           <div class="bg-bg-light p-4 md:p-6 rounded-lg border-l-4 border-fresh-green shadow-md">
             <h3 class="text-base md:text-xl font-extrabold mb-2 md:mb-4 text-fresh-green">Garden Services</h3>
             <ul class="space-y-1 md:space-y-2 text-xs md:text-base font-medium">
@@ -218,6 +265,20 @@ import { siteConfig, services } from '../../config';
               <li>✓ Removals and deliveries</li>
               <li>✓ Scrap metal collection</li>
               <li>✓ Licensed waste carrier</li>
+            </ul>
+          </div>
+          
+          <div class="bg-bg-light p-4 md:p-6 rounded-lg border-l-4 border-fresh-green shadow-md">
+            <h3 class="text-base md:text-xl font-extrabold mb-2 md:mb-4 text-fresh-green">Property Maintenance</h3>
+            <ul class="space-y-1 md:space-y-2 text-xs md:text-base font-medium">
+              <li>✓ Gutter cleaning</li>
+              <li>✓ Downpipe clearing</li>
+              <li>✓ Loft insulation top-ups</li>
+              <li>✓ Insulation advice</li>
+              <li>✓ Plastering patch repairs</li>
+              <li>✓ Small plastering jobs</li>
+              <li>✓ Smooth finish for painting</li>
+              <li>✓ General property upkeep</li>
             </ul>
           </div>
         </div>

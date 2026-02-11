@@ -58,4 +58,11 @@ export const services = [
     description: "Removals, delivery service, and scrap metal collection across Northamptonshire",
     icon: "",
   },
+  {
+    id: "property-maintenance",
+    title: "Property Maintenance Services",
+    slug: "property-maintenance",
+    description: "Practical property jobs including gutter cleaning, insulation, and plastering",
+    icon: "",
+  },
 ];
