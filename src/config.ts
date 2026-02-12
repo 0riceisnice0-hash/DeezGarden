@@ -13,6 +13,7 @@ export const siteConfig = {
     insured: true,
     licensedWasteCarrier: true,
     friendlyProfessional: true,
+    acceptsCardAndApplePay: true,
   },
   
   // Opening hours (for schema markup)

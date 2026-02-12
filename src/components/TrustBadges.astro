@@ -15,6 +15,10 @@ if (siteConfig.trust.friendlyProfessional) {
   badges.push({ text: 'Friendly Professional Service' });
 }
 
+if (siteConfig.trust.acceptsCardAndApplePay) {
+  badges.push({ text: 'Card & Apple Pay Accepted' });
+}
+
 // Only show component if there are badges
 if (badges.length === 0) return null;
 ---
