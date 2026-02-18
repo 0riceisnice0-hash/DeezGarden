@@ -563,15 +563,16 @@ import { siteConfig } from '../config';
   }
 
   function stopCarousel() {
-    if (carouselTimer) {
+    if (carouselTimer !== undefined) {
       clearInterval(carouselTimer);
+      carouselTimer = undefined;
     }
   }
 
   // Add click handlers to dots
   carouselDots.forEach((dot) => {
     dot.addEventListener('click', () => {
-      const slideIndex = parseInt(dot.getAttribute('data-slide') || '0', 10);
+      const slideIndex = parseInt((dot as HTMLElement).dataset.slide || '0', 10);
       goToSlide(slideIndex);
       stopCarousel();
       startCarousel(); // Restart auto-advance after manual interaction
