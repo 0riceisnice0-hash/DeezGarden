@@ -11,8 +11,8 @@ import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Man with Van Northampton - Removals, Deliveries & Scrap Metal Collection"
-  description="Reliable man with van service in Northampton & Northamptonshire. Removals, furniture delivery, scrap metal collection. Competitive rates. Call 07305 195098 for a quote."
+  title="Man with Van Northampton | Removals, Deliveries & Scrap Metal Collection"
+  description="Reliable man with van service in Northampton & Northamptonshire. House removals, furniture delivery, scrap metal collection & clearances. Fully insured, competitive rates. Call 07305 195098."
 >
   <Header slot="header" />
   
@@ -259,6 +259,8 @@ import { siteConfig } from '../../config';
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Man with Van and Removals",
+  "name": "Man with Van & Scrap Metal Collection Northampton",
+  "url": `${siteConfig.baseUrl}/services/man-with-van/`,
   "provider": {
     "@type": "LocalBusiness",
     "name": siteConfig.name,
@@ -271,9 +273,20 @@ import { siteConfig } from '../../config';
       "addressCountry": "GB"
     }
   },
-  "areaServed": siteConfig.primaryAreas.map(area => ({
+  "areaServed": [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => ({
     "@type": "City",
     "name": area
   })),
-  "description": "Reliable man with van service for removals, deliveries, and scrap metal collection in Northampton and Northamptonshire."
+  "description": "Reliable man with van service for house removals, furniture deliveries, and scrap metal collection in Northampton and Northamptonshire. Fully insured, competitive rates.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Man with Van & Scrap Metal Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Removals" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furniture Delivery & Collection" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Scrap Metal Collection" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Single Item Transport" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "eBay & Marketplace Pickups" } }
+    ]
+  }
 })} />
