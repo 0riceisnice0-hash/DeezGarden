@@ -13,8 +13,8 @@ const nearbyAreas = ["Wellingborough", "Kettering", "Northampton", "Bedford"];
 ---
 
 <BaseLayout 
-  title={`Garden Maintenance & Clearance Services in ${areaName}`}
-  description={`Professional garden maintenance, clearance, and landscaping services in ${areaName}, Northamptonshire. Fully insured. Call ${siteConfig.phone} for a free quote.`}
+  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
+  description={`Professional gardener in ${areaName}, Northamptonshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
@@ -153,16 +153,38 @@ const nearbyAreas = ["Wellingborough", "Kettering", "Northampton", "Bedford"];
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": siteConfig.name,
-  "description": "Professional garden maintenance and clearance services in Rushden",
+  "name": `${siteConfig.name} - ${areaName}`,
+  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
+  "telephone": siteConfig.phone,
+  "email": siteConfig.email,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Northampton",
+    "addressRegion": "Northamptonshire",
+    "addressCountry": "GB"
+  },
   "areaServed": {
     "@type": "City",
-    "name": "Rushden",
-    "containedIn": {
-      "@type": "AdministrativeArea",
-      "name": "Northamptonshire"
-    }
+    "name": areaName
   },
-  "telephone": siteConfig.phone,
-  "email": siteConfig.email
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": `Services in ${areaName}`,
+    "itemListElement": services.map(service => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description
+      }
+    }))
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "priceRange": "££"
 })} />

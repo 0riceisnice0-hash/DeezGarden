@@ -11,8 +11,8 @@ import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Garden Maintenance & Landscaping Northampton - Lawn Care, Hedge Trimming"
-  description="Professional garden maintenance in Northampton & Northamptonshire. Lawn mowing, hedge trimming, landscaping & garden renovations. Fully insured. Free quotes - call 07305 195098."
+  title="Garden Maintenance Northampton | Lawn Mowing, Hedge Trimming & Landscaping"
+  description="Professional garden maintenance & landscaping in Northampton & Northamptonshire. Lawn mowing, hedge trimming, garden renovations & clearances. Fully insured gardener. Free quotes - call 07305 195098."
 >
   <Header slot="header" />
   
@@ -231,6 +231,8 @@ import { siteConfig } from '../../config';
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Garden Maintenance and Landscaping",
+  "name": "Garden Maintenance & Landscaping Northampton",
+  "url": `${siteConfig.baseUrl}/services/garden-maintenance/`,
   "provider": {
     "@type": "LocalBusiness",
     "name": siteConfig.name,
@@ -243,9 +245,21 @@ import { siteConfig } from '../../config';
       "addressCountry": "GB"
     }
   },
-  "areaServed": siteConfig.primaryAreas.map(area => ({
+  "areaServed": [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => ({
     "@type": "City",
     "name": area
   })),
-  "description": "Professional garden maintenance, lawn mowing, hedge trimming, landscaping and garden renovations in Northampton and Northamptonshire."
+  "description": "Professional garden maintenance, lawn mowing, hedge trimming, landscaping and garden renovations in Northampton and Northamptonshire. Fully insured gardener providing regular maintenance and one-off garden transformations.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Garden Maintenance Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lawn Mowing & Lawn Care" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hedge Trimming & Pruning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garden Renovation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landscaping & Garden Design" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fencing & Patios" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jet Washing" } }
+    ]
+  }
 })} />

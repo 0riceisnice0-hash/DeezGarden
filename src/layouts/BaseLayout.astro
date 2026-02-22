@@ -1,5 +1,5 @@
 ---
-import { siteConfig } from '../config';
+import { siteConfig, services } from '../config';
 import '../styles/global.css';
 
 interface Props {
@@ -7,11 +7,13 @@ interface Props {
   description?: string;
   canonical?: string;
   noindex?: boolean;
+  schema?: Record<string, unknown>;
 }
 
-const { title, description = siteConfig.description, canonical, noindex = false } = Astro.props;
+const { title, description = siteConfig.description, canonical, noindex = false, schema } = Astro.props;
 const fullTitle = title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
 const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl).toString();
+const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas, ...siteConfig.extendedAreas];
 ---
 
 <!DOCTYPE html>
@@ -25,7 +27,16 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl
   <meta name="description" content={description}>
   <link rel="canonical" href={canonicalURL}>
   
-  {noindex && <meta name="robots" content="noindex, nofollow">}
+  {noindex ? <meta name="robots" content="noindex, nofollow"> : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">}
+  
+  <!-- Geo meta tags for local SEO -->
+  <meta name="geo.region" content="GB-NTH">
+  <meta name="geo.placename" content="Northampton">
+  <meta name="geo.position" content="52.2405;-0.9027">
+  <meta name="ICBM" content="52.2405, -0.9027">
+  
+  <!-- Theme color -->
+  <meta name="theme-color" content="#16a34a">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -38,6 +49,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl
   <meta property="og:image:width" content={String(siteConfig.ogImage.width)}>
   <meta property="og:image:height" content={String(siteConfig.ogImage.height)}>
   <meta property="og:image:type" content={siteConfig.ogImage.type}>
+  <meta property="og:image:alt" content={`${siteConfig.name} - Professional Garden & Clearance Services in Northampton`}>
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -59,7 +71,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Schema.org JSON-LD -->
+  <!-- Schema.org JSON-LD - LocalBusiness -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -69,22 +81,35 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl
     "url": siteConfig.baseUrl,
     "telephone": siteConfig.phone,
     "email": siteConfig.email,
+    "image": `${siteConfig.baseUrl}${siteConfig.ogImage.path}`,
+    "logo": `${siteConfig.baseUrl}/favicon.svg`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Northampton",
       "addressRegion": "Northamptonshire",
       "addressCountry": "GB"
     },
-    "areaServed": [
-      ...siteConfig.primaryAreas.map(area => ({
-        "@type": "City",
-        "name": area
-      })),
-      ...siteConfig.secondaryAreas.map(area => ({
-        "@type": "City",
-        "name": area
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.2405,
+      "longitude": -0.9027
+    },
+    "areaServed": allAreas.map(area => ({
+      "@type": "City",
+      "name": area
+    })),
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Garden & Property Services",
+      "itemListElement": services.map(service => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description
+        }
       }))
-    ],
+    },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -92,8 +117,14 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl
       "closes": "18:00"
     },
     "sameAs": [siteConfig.facebook],
-    "priceRange": "££"
+    "priceRange": "££",
+    "paymentAccepted": "Cash, Credit Card, Apple Pay",
+    "currenciesAccepted": "GBP",
+    "knowsLanguage": "en"
   })} />
+
+  <!-- Page-specific schema -->
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body>
   <slot name="header" />

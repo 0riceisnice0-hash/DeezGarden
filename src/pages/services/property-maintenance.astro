@@ -11,8 +11,8 @@ import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Property Maintenance Services Northampton - Gutter Cleaning, Insulation, Plastering"
-  description="Professional property maintenance in Northampton & Northamptonshire. Gutter cleaning, loft insulation, plastering & patch repairs. Fully insured. Free quotes - call 07305 195098."
+  title="Property Maintenance Northampton | Gutter Cleaning, Insulation & Plastering"
+  description="Professional property maintenance in Northampton & Northamptonshire. Gutter cleaning, loft insulation top-ups, plastering & patch repairs. Fully insured, quality workmanship. Free quotes - call 07305 195098."
 >
   <Header slot="header" />
   
@@ -250,6 +250,8 @@ import { siteConfig } from '../../config';
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Property Maintenance",
+  "name": "Property Maintenance Services Northampton",
+  "url": `${siteConfig.baseUrl}/services/property-maintenance/`,
   "provider": {
     "@type": "LocalBusiness",
     "name": siteConfig.name,
@@ -262,9 +264,20 @@ import { siteConfig } from '../../config';
       "addressCountry": "GB"
     }
   },
-  "areaServed": siteConfig.primaryAreas.map(area => ({
+  "areaServed": [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => ({
     "@type": "City",
     "name": area
   })),
-  "description": "Professional property maintenance including gutter cleaning, loft insulation, and plastering services in Northampton and Northamptonshire."
+  "description": "Professional property maintenance including gutter cleaning, loft insulation top-ups, and plastering services in Northampton and Northamptonshire. Fully insured, quality workmanship.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Property Maintenance Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutter Cleaning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Downpipe Clearing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Loft Insulation Top-ups" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plastering & Patch Repairs" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceiling Repairs" } }
+    ]
+  }
 })} />

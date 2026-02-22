@@ -11,7 +11,7 @@ import { siteConfig, services } from '../../config';
 ---
 
 <BaseLayout 
-  title="Our Services - Garden Maintenance, Clearance, Landscaping & More"
+  title="Garden & Clearance Services Northampton | Maintenance, Landscaping & Removals"
   description="Professional garden maintenance, rubbish clearance, landscaping, man with van & scrap metal services in Northampton & Northamptonshire. Fully insured, licensed waste carrier. Free quotes."
 >
   <Header slot="header" />
@@ -294,6 +294,8 @@ import { siteConfig, services } from '../../config';
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ItemList",
+  "name": "Garden & Property Services in Northampton",
+  "url": `${siteConfig.baseUrl}/services/`,
   "itemListElement": services.map((service, index) => ({
     "@type": "ListItem",
     "position": index + 1,
@@ -301,6 +303,7 @@ import { siteConfig, services } from '../../config';
       "@type": "Service",
       "name": service.title,
       "description": service.description,
+      "url": `${siteConfig.baseUrl}/services/${service.slug}/`,
       "provider": {
         "@type": "LocalBusiness",
         "name": siteConfig.name

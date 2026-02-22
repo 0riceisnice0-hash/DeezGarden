@@ -11,8 +11,8 @@ import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Rubbish Clearance & House Clearances Northampton - Licensed Waste Carrier"
-  description="Licensed waste carrier providing rubbish clearance, house clearances, garage clearances & garden waste removal in Northampton & Northamptonshire. Fully insured. Call 07305 195098."
+  title="Rubbish Clearance Northampton | House Clearance & Waste Removal"
+  description="Licensed waste carrier providing rubbish clearance, house clearances, garage clearances & garden waste removal in Northampton & Northamptonshire. Fully insured, responsible disposal. Call 07305 195098."
 >
   <Header slot="header" />
   
@@ -282,6 +282,8 @@ import { siteConfig } from '../../config';
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Rubbish Clearance and Waste Removal",
+  "name": "Rubbish Clearance & House Clearance Northampton",
+  "url": `${siteConfig.baseUrl}/services/clearance-removals/`,
   "provider": {
     "@type": "LocalBusiness",
     "name": siteConfig.name,
@@ -294,9 +296,21 @@ import { siteConfig } from '../../config';
       "addressCountry": "GB"
     }
   },
-  "areaServed": siteConfig.primaryAreas.map(area => ({
+  "areaServed": [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => ({
     "@type": "City",
     "name": area
   })),
-  "description": "Licensed waste carrier providing professional rubbish clearance, house clearances, garage clearances and waste removal services in Northampton and Northamptonshire."
+  "description": "Licensed waste carrier providing professional rubbish clearance, house clearances, garage clearances, garden waste removal and responsible waste disposal in Northampton and Northamptonshire.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Clearance & Waste Removal Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Clearance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garage Clearance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garden Waste Removal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rubbish Clearance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furniture Removal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estate Clearance" } }
+    ]
+  }
 })} />
