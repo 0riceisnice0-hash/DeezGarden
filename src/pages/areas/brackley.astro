@@ -13,15 +13,15 @@ const nearbyAreas = ["Towcester", "Northampton", "Banbury", "Buckingham"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Northamptonshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | House Clearance, Hedge Cutting, Landscaping`}
+  description={`Garden clearance, house clearance, hedge cutting, vegetation clearance & site clearance in ${areaName}, Northamptonshire. Professional, fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Northamptonshire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Garden clearance, house clearance, hedge cutting & landscaping"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +31,44 @@ const nearbyAreas = ["Towcester", "Northampton", "Banbury", "Buckingham"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Clearance & Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} provides professional garden clearance, house clearance, hedge cutting, vegetation clearance, site clearance, and landscaping services throughout {areaName} and the surrounding areas. Based in Northampton, we regularly serve customers across {areaName} and South Northamptonshire with reliable, high-quality workmanship.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          Whether you need an overgrown garden cleared, a hedge cut and shaped, a house clearance, site clearance before a build, or a full garden renovation — we're your local team in {areaName}.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brackley-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">House Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Full and partial house clearances in {areaName} and surrounding villages. Licensed waste carrier — all items disposed of legally and responsibly.</p>
+            <a href="/services/clearance-removals/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Overgrown garden clearance, vegetation clearance and garden waste removal across {areaName}. We clear brambles, shrubs, weeds and more.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Professional hedge cutting and trimming in {areaName}. All hedge types including Leylandii, laurel, privet and box. Clippings removed and disposed of.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Site Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Vegetation clearance and site clearance in {areaName} for development and building projects. Full strip of overgrowth, all waste removed.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,13 +185,13 @@ const nearbyAreas = ["Towcester", "Northampton", "Banbury", "Buckingham"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, house clearance, hedge cutting, vegetation clearance, site clearance and landscaping in ${areaName}, Northamptonshire. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
+    "addressLocality": areaName,
     "addressRegion": "Northamptonshire",
     "addressCountry": "GB"
   },
