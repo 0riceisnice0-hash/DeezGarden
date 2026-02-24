@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout 
+  title="Landscaping Northampton | Garden Design, Patios, Fencing & Turfing"
+  description="Professional landscaping in Northampton & Northamptonshire. Garden design, patios, paving, fencing, turfing, artificial grass & complete garden transformations. Fully insured. Free quotes - call 07305 195098."
+>
+  <Header slot="header" />
+  
+  <SlideOutQuoteForm />
+  
+  <Hero 
+    title="Landscaping & Garden Design"
+    subtitle="Complete garden transformations across Northamptonshire"
+    heroImage="hero.jpg"
+    showCTA={true}
+    showQuoteButton={true}
+  />
+  
+  <TrustBadges />
+  
+  <!-- Introduction Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <h2 class="text-xl md:text-3xl font-extrabold text-deep-green mb-4 md:mb-6 tracking-tight text-center">Professional Landscaping in Northampton</h2>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
+            Whether you want to transform an overgrown plot into a beautiful outdoor space, redesign your garden from scratch, or add practical features like a patio, fencing, or lawn, {siteConfig.name} provides professional landscaping services across Northampton and the wider Northamptonshire area.
+          </p>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
+            From initial design through to final planting, our fully insured team handles every aspect of the project — delivering quality workmanship and a finish you'll be proud of.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Landscaping Services Grid -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Landscaping Services</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <!-- Patios & Paving Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-fresh-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-fresh-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🧱</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Patios & Paving</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Create a stunning outdoor entertaining space with a professionally laid patio.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Block paving and slabs</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Natural stone patios</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Driveways and paths</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Edging and borders</li>
+            </ul>
+          </div>
+          
+          <!-- Lawn & Turfing Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-deep-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-deep-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🌿</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Lawn & Turfing</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Get the perfect lawn with professional turfing or artificial grass installation.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>New lawn turfing</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Lawn seeding</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Artificial grass fitting</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Lawn levelling and preparation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Additional Landscaping Services -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">More Landscaping & Garden Design Services</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🪵</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Fencing & Gates</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Supply & installation</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🏡</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Garden Design</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Full redesigns & makeovers</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🌸</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Planting & Borders</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Flowers, shrubs & trees</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🪨</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Gravel & Shingle</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Low maintenance solutions</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">🪴</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Raised Beds</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Vegetable & flower beds</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <span class="text-2xl md:text-3xl mb-2 block">💧</span>
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Jet Washing</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Patios, drives & paths</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction showDualCTA={true} />
+  
+  <!-- Why Choose Us -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Why Choose Us for Landscaping?</h2>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🛡️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fully Insured</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">📍</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Local Experts</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">⭐</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Quality Work</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">💬</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Free Quotes</h4>
+            </div>
+          </div>
+          
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center">
+            Based in Northampton, we've been transforming gardens across Northamptonshire for years. Our fully insured team brings craftsmanship and attention to detail to every landscaping project — no matter the size.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Areas We Cover -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Landscaping Across Northamptonshire</h2>
+        <p class="text-center text-sm md:text-base mb-4 md:mb-8">
+          We provide professional landscaping and garden design services throughout Northampton and surrounding areas:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
+          {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
+            <a 
+              href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        <div class="text-center mt-4 md:mt-6">
+          <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
+            View all areas we cover →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Services -->
+  <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-base md:text-xl font-bold mb-4 md:mb-6">Related Services You May Need</h3>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <a href="/services/garden-maintenance/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Garden Maintenance →
+          </a>
+          <a href="/services/garden-clearance/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Garden Clearance →
+          </a>
+          <a href="/services/hedge-cutting/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Hedge Cutting →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <HeroCTA />
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Garden Landscaping and Design",
+  "name": "Landscaping & Garden Design Northampton",
+  "url": `${siteConfig.baseUrl}/services/landscaping/`,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.name,
+    "telephone": siteConfig.phone,
+    "email": siteConfig.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northampton",
+      "addressRegion": "Northamptonshire",
+      "addressCountry": "GB"
+    }
+  },
+  "areaServed": [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  "description": "Professional garden landscaping and design in Northampton and Northamptonshire. Patios, paving, turfing, fencing, artificial grass, garden makeovers and complete garden transformations. Fully insured.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Landscaping Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patio & Paving Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Turfing & Lawn Creation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Artificial Grass Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fencing & Gate Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garden Design & Makeovers" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planting & Borders" } }
+    ]
+  }
+})} />

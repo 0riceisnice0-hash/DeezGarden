@@ -46,6 +46,27 @@ export const services = [
     icon: "",
   },
   {
+    id: "landscaping",
+    title: "Landscaping & Garden Design",
+    slug: "landscaping",
+    description: "Professional garden landscaping, design, patios, fencing, turfing and complete garden transformations across Northamptonshire",
+    icon: "",
+  },
+  {
+    id: "garden-clearance",
+    title: "Garden Clearance & Overgrown Gardens",
+    slug: "garden-clearance",
+    description: "Overgrown garden clearance, vegetation clearance, site clearance and garden waste removal throughout Northamptonshire",
+    icon: "",
+  },
+  {
+    id: "hedge-cutting",
+    title: "Hedge Cutting & Trimming",
+    slug: "hedge-cutting",
+    description: "Professional hedge cutting, trimming and shaping across Northampton and Northamptonshire",
+    icon: "",
+  },
+  {
     id: "clearance-removals",
     title: "Rubbish Clearance and Removals",
     slug: "clearance-removals",

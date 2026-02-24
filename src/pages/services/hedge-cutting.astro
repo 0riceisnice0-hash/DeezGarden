@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout 
+  title="Hedge Cutting Northampton | Professional Hedge Trimming & Shaping"
+  description="Professional hedge cutting & trimming in Northampton, Brackley and across Northamptonshire. All hedge types, any size. Fully insured, tidy finish guaranteed. Free quotes - call 07305 195098."
+>
+  <Header slot="header" />
+  
+  <SlideOutQuoteForm />
+  
+  <Hero 
+    title="Hedge Cutting & Trimming"
+    subtitle="Professional hedge cutting across Northamptonshire"
+    heroImage="hero.jpg"
+    showCTA={true}
+    showQuoteButton={true}
+  />
+  
+  <TrustBadges />
+  
+  <!-- Introduction Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <h2 class="text-xl md:text-3xl font-extrabold text-deep-green mb-4 md:mb-6 tracking-tight text-center">Professional Hedge Cutting in Northampton & Northamptonshire</h2>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
+            {siteConfig.name} provides professional hedge cutting and trimming services across Northampton, Brackley, and throughout Northamptonshire. Whether you have a small garden hedge or a large boundary hedge running the length of your property, our team will cut it neatly, safely, and responsibly — taking all the arisings away with us.
+          </p>
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
+            A well-trimmed hedge improves your kerb appeal and keeps boundaries clearly defined. We handle everything from box hedges to Leylandii, laurel, privet, beech, and everything in between.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hedge Services Grid -->
+  <section class="py-6 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Hedge Cutting Services</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <!-- Residential Hedge Cutting Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-fresh-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-fresh-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">🌿</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Residential Hedge Cutting</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Keep your garden boundaries neat and tidy with our residential hedge trimming service.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Garden hedges — any size</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Front and rear boundary hedges</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Shaped and formal hedges</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Arisings removed and disposed of</li>
+            </ul>
+          </div>
+          
+          <!-- Overgrown & Reduction Card -->
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border-l-4 border-deep-green hover:shadow-xl transition">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 md:w-14 md:h-14 bg-deep-green/10 rounded-full flex items-center justify-center mr-4">
+                <span class="text-2xl md:text-3xl">✂️</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-deep-green">Overgrown Hedges & Reduction</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base mb-4">Got a hedge that's got out of hand? We can reduce and restore it.</p>
+            <ul class="space-y-2 text-sm md:text-base">
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Height and width reduction</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Overgrown hedge restoration</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Leylandii and large hedge cutting</li>
+              <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Hedge removal if required</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hedge Types We Cut -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Hedge Types We Cut</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Leylandii</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">All heights, safe & tidy</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Laurel</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Cherry & Portuguese laurel</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Privet</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Neat, regular trimming</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Beech & Hornbeam</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Formal garden hedges</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Box</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Shaped & topiary styles</p>
+          </div>
+          <div class="bg-bg-sage rounded-lg p-4 md:p-6 text-center hover:shadow-md transition">
+            <h4 class="font-bold text-sm md:text-base text-deep-green">Mixed Hedges</h4>
+            <p class="text-xs md:text-sm text-gray-600 mt-1">Hawthorn, holly & more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <CallToAction showDualCTA={true} />
+  
+  <!-- Why Choose Us -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Why Choose Us for Hedge Cutting?</h2>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🛡️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Fully Insured</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">🗑️</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Waste Removed</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">⭐</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Tidy Finish</h4>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 md:w-16 md:h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                <span class="text-xl md:text-2xl">💬</span>
+              </div>
+              <h4 class="font-bold text-sm md:text-base text-deep-green">Free Quotes</h4>
+            </div>
+          </div>
+          
+          <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center">
+            We're local to Northampton and cover all of Northamptonshire including Brackley, Daventry, Kettering, Wellingborough, Rushden, and more. All clippings are taken away and disposed of responsibly — we leave your property exactly as we found it, but with a beautifully trimmed hedge.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Areas We Cover -->
+  <section class="py-6 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Hedge Cutting Across Northamptonshire</h2>
+        <p class="text-center text-sm md:text-base mb-4 md:mb-8">
+          We provide professional hedge cutting and trimming throughout:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
+          {[...siteConfig.primaryAreas, ...siteConfig.secondaryAreas.slice(0, 3)].map(area => (
+            <a 
+              href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`}
+              class="bg-bg-light p-3 md:p-4 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base"
+            >
+              {area}
+            </a>
+          ))}
+        </div>
+        <div class="text-center mt-4 md:mt-6">
+          <a href="/areas/" class="text-fresh-green font-semibold hover:text-deep-green text-sm md:text-base">
+            View all areas we cover →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related Services -->
+  <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-base md:text-xl font-bold mb-4 md:mb-6">Related Services You May Need</h3>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <a href="/services/garden-maintenance/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Garden Maintenance →
+          </a>
+          <a href="/services/garden-clearance/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Garden Clearance →
+          </a>
+          <a href="/services/landscaping/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Landscaping →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <HeroCTA />
+  
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Hedge Cutting and Trimming",
+  "name": "Hedge Cutting & Trimming Northampton",
+  "url": `${siteConfig.baseUrl}/services/hedge-cutting/`,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.name,
+    "telephone": siteConfig.phone,
+    "email": siteConfig.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northampton",
+      "addressRegion": "Northamptonshire",
+      "addressCountry": "GB"
+    }
+  },
+  "areaServed": [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas].map(area => ({
+    "@type": "City",
+    "name": area
+  })),
+  "description": "Professional hedge cutting, trimming and shaping in Northampton, Brackley and across Northamptonshire. All hedge types including Leylandii, laurel, privet, beech and box. Fully insured, arisings removed.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Hedge Cutting Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Hedge Cutting" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Leylandii Cutting & Reduction" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Overgrown Hedge Restoration" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formal Hedge Shaping" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hedge Removal" } }
+    ]
+  }
+})} />
