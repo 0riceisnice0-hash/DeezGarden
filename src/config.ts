@@ -28,6 +28,9 @@ export const siteConfig = {
   baseUrl: "https://deezgardens.co.uk",
   description: "Professional garden maintenance, clearance, and landscaping services in Northampton and surrounding areas. Fully insured with licensed waste carrier.",
   
+  // Formspree contact form endpoint
+  formspreeUrl: "https://formspree.io/f/mdalolve",
+
   // Open Graph / Social sharing image
   ogImage: {
     path: "/assets/images/hero.jpg",
