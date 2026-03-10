@@ -9,19 +9,19 @@ import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Towcester";
-const nearbyAreas = ["Northampton", "Brackley", "Milton Keynes", "Daventry"];
+const nearbyAreas = ["Northampton", "Brackley", "Silverstone", "Milton Keynes"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Northamptonshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | House Clearance, Hedge Cutting, Landscaping`}
+  description={`Garden clearance, house clearance, hedge cutting, vegetation clearance & site clearance in ${areaName}, Northamptonshire. Professional, fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Northamptonshire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Garden clearance, house clearance, hedge cutting & landscaping"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +31,44 @@ const nearbyAreas = ["Northampton", "Brackley", "Milton Keynes", "Daventry"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Clearance & Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} provides professional garden clearance, hedge cutting, landscaping and garden maintenance throughout {areaName} and the surrounding West Northamptonshire area. One of England's oldest towns — originally the Roman settlement of Lactodurum on Watling Street (the A5) — {areaName} is a characterful market town with a mix of Georgian and Victorian properties along its historic high street, as well as newer residential developments on the outskirts. The famous Silverstone Circuit and Towcester Racecourse put the town on the map, and we're proud to serve the local community here.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          Many of {areaName}'s period townhouses have compact walled rear gardens or mature courtyard-style plots that require careful, experienced clearance work. We also serve the surrounding villages of Cold Higham, Potterspury and Paulerspury, where larger rural gardens need regular maintenance and seasonal clearance. As a licensed waste carrier, all garden waste is removed and disposed of legally and responsibly.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Towcester-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Experienced garden clearance for {areaName}'s period properties — including the walled gardens and compact rear plots behind Georgian and Victorian townhouses on and around Watling Street. We work carefully in confined spaces and remove all waste responsibly.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Professional hedge cutting and shaping throughout {areaName} and the surrounding villages. All hedge types handled, from traditional privet and laurel to larger established hedgerows common on the rural properties near Cold Higham and Paulerspury.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Garden landscaping for {areaName} properties — from redesigning period walled gardens to creating new outdoor spaces on modern developments. Patios, turfing, raised beds, fencing and complete garden makeovers tailored to your property.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Maintenance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Regular garden maintenance for properties in {areaName} and the surrounding rural villages — lawn mowing, hedge trimming, weeding and seasonal tidy-ups. Reliable, friendly service keeping village and town gardens in perfect condition throughout the year.</p>
+            <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,13 +185,13 @@ const nearbyAreas = ["Northampton", "Brackley", "Milton Keynes", "Daventry"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, house clearance, hedge cutting, vegetation clearance, site clearance and landscaping in ${areaName}, Northamptonshire. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
+    "addressLocality": areaName,
     "addressRegion": "Northamptonshire",
     "addressCountry": "GB"
   },

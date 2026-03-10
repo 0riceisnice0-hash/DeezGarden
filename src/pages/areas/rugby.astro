@@ -9,19 +9,19 @@ import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Rugby";
-const nearbyAreas = ["Daventry", "Coventry", "Northampton", "Leicester"];
+const nearbyAreas = ["Coventry", "Northampton", "Daventry", "Kettering"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Warwickshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | House Clearance, Hedge Cutting, Landscaping`}
+  description={`Garden clearance, house clearance, hedge cutting, vegetation clearance & site clearance in ${areaName}, Warwickshire. Professional, fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Warwickshire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Garden clearance, house clearance, hedge cutting & landscaping"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +31,44 @@ const nearbyAreas = ["Daventry", "Coventry", "Northampton", "Leicester"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Clearance & Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} provides professional garden clearance, hedge cutting, garden maintenance and landscaping throughout {areaName} and the surrounding Warwickshire area. Famous as the birthplace of rugby football, {areaName} is a market town with a rich mix of property types — from the large Victorian family homes in Hillmorton and around {areaName} School with their substantial, mature gardens, to the newer residential developments in Brownsover and the Houlton garden village development on the former BT site.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          We work across all areas of {areaName} including Bilton, Newbold-on-Avon and Clifton-upon-Dunsmore. The Oxford Canal and River Avon run through the area, and we regularly clear plots near these waterways. Whether you need decades of growth cleared from a Victorian garden or a new outdoor space landscaped on the Houlton development, our team is here to help as a fully insured, licensed waste carrier.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rugby-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Specialist garden clearance for {areaName}'s Victorian properties — particularly the large, mature gardens in Hillmorton and around {areaName} School and Lawrence Sheriff School. We clear overgrown shrubs, trees, brambles and decades of accumulated waste.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Professional hedge cutting and trimming throughout {areaName} and surrounding villages. All hedge types including privet, laurel, Leylandii and established mixed hedgerows common on {areaName}'s older properties. All clippings removed.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Maintenance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Regular garden maintenance across {areaName} — lawn mowing, hedge trimming, weeding and seasonal tidy-ups. We keep gardens in Bilton, Newbold and across the town looking their best throughout the year.</p>
+            <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">New garden landscaping for properties on the Houlton development and Brownsover, as well as renovation of established gardens across {areaName}. Patios, turfing, fencing, planting and complete garden makeovers.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,14 +185,14 @@ const nearbyAreas = ["Daventry", "Coventry", "Northampton", "Leicester"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, house clearance, hedge cutting, vegetation clearance, site clearance and landscaping in ${areaName}, Warwickshire. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "Warwickshire",
     "addressCountry": "GB"
   },
   "areaServed": {

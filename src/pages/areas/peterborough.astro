@@ -9,19 +9,19 @@ import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Peterborough";
-const nearbyAreas = ["Corby", "Kettering", "Bedford", "Northampton"];
+const nearbyAreas = ["Corby", "Kettering", "Northampton", "Bedford"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Cambridgeshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | House Clearance, Hedge Cutting, Landscaping`}
+  description={`Garden clearance, house clearance, hedge cutting, vegetation clearance & site clearance in ${areaName}, Cambridgeshire. Professional, fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Cambridgeshire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Garden clearance, house clearance, hedge cutting & landscaping"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +31,44 @@ const nearbyAreas = ["Corby", "Kettering", "Bedford", "Northampton"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Clearance & Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} provides professional garden clearance, man with van, Leylandii and conifer cutting, and landscaping services throughout {areaName} and the surrounding Cambridgeshire area. One of the UK's fastest-growing cities, {areaName} has a huge range of property types — from the historic cathedral city centre to the large suburban estates of Bretton, Orton Goldhay, Orton Waterville and Woodston built between the 1960s and 1990s. Many of these properties now have mature gardens with established conifer screens and overgrown hedges that need specialist attention.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          Whether you need a full garden clearance, an overgrown Leylandii reduced, or a man with van to shift rubbish from your property, we're well equipped to help {areaName} residents. Our team works across the city and surrounding Fenland, offering the same reliable, fully insured service we provide throughout the wider region.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Peterborough-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Full overgrown garden clearance across {areaName}'s estates in Bretton, Orton Goldhay and Woodston. We clear brambles, shrubs, weeds and years of accumulated garden waste — all legally disposed of as a licensed waste carrier.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Leylandii & Conifer Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Specialist Leylandii reduction and conifer cutting throughout {areaName}. The 1960s–90s estates in Bretton and Orton are full of overgrown conifer screens — we reduce them safely, removing all arisings.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Man with Van {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Reliable man with van and rubbish removal service across {areaName}. We collect garden waste, old furniture, household junk and more — ideal for clearances near Ferry Meadows or the Queensgate area.</p>
+            <a href="/services/man-with-van/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Garden landscaping and makeovers across {areaName} — patios, turfing, fencing, raised beds and complete garden redesigns. Perfect for refreshing the mature plots of the city's established suburban estates.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -95,7 +126,7 @@ const nearbyAreas = ["Corby", "Kettering", "Bedford", "Northampton"];
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
           <div class="bg-white rounded-lg p-3 md:p-6 shadow-sm border border-gray-100 text-center">
-            <div class="text-2xl md:text-3xl mb-2">🛡️</div>
+            <div class="text-2xl md:text-3xl mb-2">��️</div>
             <h4 class="font-bold text-sm md:text-base text-deep-green mb-1">Fully Insured</h4>
             <p class="text-xs md:text-sm text-gray-600">Complete peace of mind</p>
           </div>
@@ -154,14 +185,14 @@ const nearbyAreas = ["Corby", "Kettering", "Bedford", "Northampton"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, house clearance, hedge cutting, vegetation clearance, site clearance and landscaping in ${areaName}, Cambridgeshire. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "Cambridgeshire",
     "addressCountry": "GB"
   },
   "areaServed": {
