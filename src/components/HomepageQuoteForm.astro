@@ -17,25 +17,21 @@ const serviceOptions = [
 ];
 ---
 
-<section class="bg-deep-green py-10 md:py-14" id="homepage-quote-form">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto">
-
-      <!-- Section header -->
-      <div class="text-center mb-6 md:mb-8">
-        <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-2">Get Your Free Quote</h2>
-        <p class="text-white/80 text-sm md:text-base">Tell us what you need — we'll get back to you within a few hours</p>
+<div class="w-full max-w-2xl mx-auto mt-4 md:mt-6" id="homepage-quote-form">
+    <!-- Form card -->
+    <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-4 md:p-6">
+      <!-- Form header (embedded inside the card) -->
+      <div class="text-center mb-3 md:mb-4 pb-3 border-b border-gray-100">
+        <h2 class="text-lg md:text-xl font-extrabold text-deep-green tracking-tight">Get Your Free Quote</h2>
+        <p class="text-gray-500 text-sm mt-0.5">We'll get back to you within a few hours</p>
       </div>
 
-      <!-- Form card -->
-      <div class="bg-white rounded-2xl shadow-2xl p-5 md:p-8">
-
-        <form
-          action="https://formspree.io/f/mdalolve"
-          method="POST"
-          id="homepage-quote-form-el"
-          class="space-y-5"
-        >
+      <form
+        action="https://formspree.io/f/mdalolve"
+        method="POST"
+        id="homepage-quote-form-el"
+        class="space-y-3"
+      >
           <input type="hidden" name="_next" value={thankyouUrl}>
           <input type="hidden" name="_subject" value="New quote request from Dee'z Gardens homepage">
           <!-- Hidden field that stores the selected service -->
@@ -49,7 +45,7 @@ const serviceOptions = [
                 <button
                   type="button"
                   data-service={opt.value}
-                  class="service-btn flex flex-col items-center gap-1 px-2 py-3 rounded-xl border-2 border-gray-200 bg-white hover:border-fresh-green hover:bg-green-50 transition-all text-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-fresh-green"
+                  class="service-btn flex flex-col items-center gap-1 px-2 py-2 rounded-xl border-2 border-gray-200 bg-white hover:border-fresh-green hover:bg-green-50 transition-all text-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-fresh-green"
                   aria-pressed="false"
                 >
                   <span class="text-xl md:text-2xl leading-none">{opt.emoji}</span>
@@ -115,7 +111,7 @@ const serviceOptions = [
             <button
               type="submit"
               id="hq-submit-btn"
-              class="w-full bg-fresh-green text-white font-extrabold text-base md:text-lg py-4 rounded-xl hover:bg-deep-green transition-all shadow-lg hover:shadow-xl tracking-tight flex items-center justify-center gap-2"
+              class="w-full bg-fresh-green text-white font-extrabold text-base md:text-lg py-3 rounded-xl hover:bg-deep-green transition-all shadow-lg hover:shadow-xl tracking-tight flex items-center justify-center gap-2"
             >
               <span id="hq-btn-text">Get My Free Quote →</span>
               <svg id="hq-spinner" class="hidden w-5 h-5 animate-spin text-white" fill="none" viewBox="0 0 24 24">
@@ -133,10 +129,8 @@ const serviceOptions = [
           </p>
         </form>
 
-      </div>
     </div>
-  </div>
-</section>
+</div>
 
 <style>
   .service-btn.selected {
