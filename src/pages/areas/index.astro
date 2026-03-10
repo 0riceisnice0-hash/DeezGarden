@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig } from '../../config';
 ---
 
@@ -13,6 +14,8 @@ import { siteConfig } from '../../config';
   description="Dee'z Gardens provides professional garden maintenance, rubbish clearance, landscaping & man with van services across Northampton, Wellingborough, Kettering, Rushden, Daventry and throughout Northamptonshire. Call 07305 195098."
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     heroImage="hero.jpg"

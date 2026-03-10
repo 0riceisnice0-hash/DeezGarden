@@ -6,7 +6,8 @@ export const siteConfig = {
   phoneFormatted: "07305 195098",
   email: "deez.gardensuk@gmail.com",
   facebook: "https://www.facebook.com/groups/1922611271669486",
-  whatsapp: "", // Optional - add WhatsApp link if available
+  // WhatsApp: uses UK international format (07305 195098 → +447305195098)
+  whatsapp: "https://wa.me/447305195098?text=Hi%2C%20I%27d%20like%20a%20free%20quote%20from%20Dee%27z%20Gardens.",
   
   // Trust toggles - set to true/false to show/hide
   trust: {
@@ -27,6 +28,10 @@ export const siteConfig = {
   // SEO
   baseUrl: "https://deezgardens.co.uk",
   description: "Professional garden maintenance, clearance, and landscaping services in Northampton and surrounding areas. Fully insured with licensed waste carrier.",
+  
+  // Google Analytics 4 Measurement ID — set this to your GA4 ID (e.g. "G-XXXXXXXXXX")
+  // Get your ID from https://analytics.google.com → Admin → Data Streams → your stream
+  googleAnalyticsId: "", // e.g. "G-XXXXXXXXXX"
   
   // Open Graph / Social sharing image
   ogImage: {

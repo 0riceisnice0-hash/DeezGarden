@@ -56,6 +56,8 @@ import { siteConfig } from '../config';
       method="POST"
       class="space-y-3 md:space-y-4"
     >
+      <input type="hidden" name="_next" value={`${siteConfig.baseUrl}/thank-you/`}>
+      <input type="hidden" name="_subject" value="New quote request from Dee'z Gardens website">
       <div>
         <label for="slideout-name" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Your Name *</label>
         <input 
@@ -101,8 +103,12 @@ import { siteConfig } from '../config';
           <option value="">Please select...</option>
           <option value="Garden Maintenance">Garden Maintenance</option>
           <option value="Garden Renovation">Garden Renovation</option>
-          <option value="Clearance">Rubbish Clearance</option>
+          <option value="Hedge Cutting">Hedge Cutting</option>
+          <option value="Garden Clearance">Garden Clearance</option>
+          <option value="Landscaping">Landscaping</option>
+          <option value="Rubbish Clearance">Rubbish Clearance</option>
           <option value="Man with Van">Man with Van</option>
+          <option value="Property Maintenance">Property Maintenance</option>
           <option value="Scrap Metal">Scrap Metal Collection</option>
           <option value="Other">Other</option>
         </select>
@@ -175,6 +181,11 @@ import { siteConfig } from '../config';
     closeBtn?.addEventListener('click', closePanel);
     overlay?.addEventListener('click', closePanel);
     heroQuoteBtn?.addEventListener('click', openPanel);
+    
+    // Wire up ALL .quote-cta-btn buttons site-wide (CallToAction, HeroCTA, homepage, service pages)
+    document.querySelectorAll('.quote-cta-btn').forEach(btn => {
+      btn.addEventListener('click', openPanel);
+    });
     
     // Close on escape key
     document.addEventListener('keydown', (e) => {

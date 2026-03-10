@@ -6,6 +6,7 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Corby";
@@ -17,6 +18,8 @@ const nearbyAreas = ["Kettering", "Market Harborough", "Wellingborough", "Northa
   description={`Garden clearance, hedge cutting, landscaping & property clearance in ${areaName}, North Northamptonshire. Serving Beanfield, Kingswood, Danesholme, Priors Hall & Oakley Vale. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     title={`Garden Clearance & Services in ${areaName}`}

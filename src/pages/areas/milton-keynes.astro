@@ -6,6 +6,7 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Milton Keynes";
@@ -17,6 +18,8 @@ const nearbyAreas = ["Bedford", "Northampton", "Aylesbury", "Buckingham"];
   description={`Garden clearance, Leylandii cutting, landscaping & rubbish removal in ${areaName}, Buckinghamshire. Serving Willen, Emerson Valley, Furzton, Shenley Brook End & surrounding grid squares. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     title={`Garden Clearance & Services in ${areaName}`}

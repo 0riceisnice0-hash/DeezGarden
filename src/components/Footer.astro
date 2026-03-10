@@ -19,6 +19,9 @@ import PaymentLogos from './PaymentLogos.astro';
         <div class="flex flex-wrap justify-center gap-3 text-sm">
           <a href={`tel:${siteConfig.phone}`} class="footer-link font-semibold">📞 {siteConfig.phoneFormatted}</a>
           <a href={`mailto:${siteConfig.email}`} class="footer-link">✉️ Email</a>
+          {siteConfig.whatsapp && (
+            <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" class="footer-link">💬 WhatsApp</a>
+          )}
           {siteConfig.facebook && (
             <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a>
           )}
@@ -72,6 +75,13 @@ import PaymentLogos from './PaymentLogos.astro';
           <div class="space-y-2">
             <p><a href={`tel:${siteConfig.phone}`} class="footer-link text-lg font-semibold">📞 {siteConfig.phoneFormatted}</a></p>
             <p><a href={`mailto:${siteConfig.email}`} class="footer-link break-all text-base">✉️ {siteConfig.email}</a></p>
+            {siteConfig.whatsapp && (
+              <p>
+                <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" class="footer-link text-base">
+                  💬 Message on WhatsApp
+                </a>
+              </p>
+            )}
             {siteConfig.facebook && (
               <p>
                 <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link text-base">

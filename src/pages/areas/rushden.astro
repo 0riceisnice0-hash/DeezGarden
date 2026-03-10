@@ -6,6 +6,7 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Rushden";
@@ -17,6 +18,8 @@ const nearbyAreas = ["Wellingborough", "Kettering", "Northampton", "Bedford"];
   description={`Professional garden clearance, overgrown garden clearance & garden maintenance in ${areaName}, Northamptonshire. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
+  
+  <SlideOutQuoteForm />
   
   <Hero 
     title={`Garden Clearance & Services in ${areaName}`}
