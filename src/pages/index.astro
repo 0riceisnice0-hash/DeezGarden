@@ -19,6 +19,36 @@ import { siteConfig } from '../config';
 <BaseLayout 
   title="Gardener Northampton | Garden Maintenance, Clearance & Landscaping"
   description="Dee'z Gardens - Professional gardener in Northampton offering garden maintenance, rubbish clearance, landscaping & man with van services across Northamptonshire. Fully insured, licensed waste carrier. Free quotes - call 07305 195098."
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does garden maintenance cost in Northampton?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Garden maintenance prices vary depending on garden size and the work required. We offer free, no-obligation quotes tailored to your needs. Contact us on 07305 195098 or fill in our quote form for a fast response."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you a licensed waste carrier?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Dee'z Gardens is a fully licensed waste carrier. We dispose of all garden and household waste responsibly and in compliance with UK regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which areas of Northamptonshire do you cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We cover Northampton and the wider Northamptonshire area, including Wellingborough, Kettering, Daventry, Towcester, Brackley, Rushden, and many more towns and villages."
+        }
+      }
+    ]
+  }}
 >
   <Header slot="header" />
   
@@ -30,10 +60,9 @@ import { siteConfig } from '../config';
     subtitle="Northampton's trusted gardeners — free quotes, fully insured"
     heroImage="hero.jpg"
     textAtTop={true}
-  />
-
-  <!-- Inline quote form — the primary lead-capture on the homepage -->
-  <HomepageQuoteForm />
+  >
+    <HomepageQuoteForm />
+  </Hero>
   
   <TrustBadges />
   
