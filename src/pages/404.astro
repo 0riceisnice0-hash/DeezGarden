@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../config';
+---
+
+<BaseLayout 
+  title="Page Not Found | Dee'z Gardens"
+  description="Sorry, the page you're looking for doesn't exist. Find garden maintenance, clearance and landscaping services in Northampton and Northamptonshire."
+  noindex={true}
+>
+  <Header slot="header" />
+  
+  <section class="min-h-[60vh] flex items-center bg-bg-light py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-6xl md:text-8xl mb-6">🌿</div>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-deep-green mb-4 tracking-tight">Page Not Found</h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8">
+          Sorry, we couldn't find the page you're looking for. It may have been moved or doesn't exist.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a 
+            href="/"
+            class="inline-block bg-fresh-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition shadow-lg"
+          >
+            Go to Homepage
+          </a>
+          <a 
+            href={`tel:${siteConfig.phone}`}
+            class="inline-block bg-white text-deep-green border-2 border-deep-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green hover:text-white transition shadow-lg"
+          >
+            📞 Call Us Now
+          </a>
+        </div>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-fresh-green/20">
+          <h2 class="text-xl md:text-2xl font-bold text-deep-green mb-6">Popular Pages</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <a href="/services/garden-maintenance/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Garden Maintenance
+            </a>
+            <a href="/services/hedge-cutting/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Hedge Cutting
+            </a>
+            <a href="/services/garden-clearance/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Garden Clearance
+            </a>
+            <a href="/services/landscaping/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Landscaping
+            </a>
+            <a href="/services/clearance-removals/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Rubbish Clearance
+            </a>
+            <a href="/areas/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Areas We Cover
+            </a>
+            <a href="/contact/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Contact Us
+            </a>
+            <a href="/reviews/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Reviews
+            </a>
+            <a href="/blog/" class="bg-bg-light p-3 rounded-lg hover:bg-fresh-green hover:text-white transition font-semibold text-sm md:text-base text-center">
+              Blog
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

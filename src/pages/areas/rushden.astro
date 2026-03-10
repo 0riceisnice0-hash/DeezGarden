@@ -89,7 +89,8 @@ const nearbyAreas = ["Wellingborough", "Kettering", "Northampton", "Bedford"];
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]} 
+                    src={images[index]}
+                    loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"
                   />
