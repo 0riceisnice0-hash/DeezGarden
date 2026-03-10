@@ -13,15 +13,15 @@ const nearbyAreas = ["Milton Keynes", "Northampton", "Wellingborough", "Rushden"
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Bedfordshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | Tree & Hedge Work, Garden Clearance, Landscaping`}
+  description={`Garden clearance, tree & hedge work, rubbish removal & landscaping in ${areaName}, Bedfordshire. Serving Kempston, Queens Park, De Parys Avenue, Goldington & surrounding areas. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Bedfordshire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Tree & hedge work, garden clearance, rubbish removal & landscaping"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +31,44 @@ const nearbyAreas = ["Milton Keynes", "Northampton", "Wellingborough", "Rushden"
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} serves {areaName} and the surrounding Bedfordshire area, around 30 miles south of our Northampton base. Situated on the banks of the River Great Ouse, {areaName} is home to a diverse mix of property types — Victorian terraced streets in Kempston and Queens Park, the elegant larger period homes along De Parys Avenue and in the Goldington area, and more modern housing throughout. Period properties across {areaName} frequently feature large, mature gardens with significant trees, established hedgerows and decades of accumulated growth that benefit greatly from professional attention.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          Whether you need overgrown trees and hedges professionally managed on a De Parys Avenue period home, a large garden in Kempston cleared of years of scrub and brambles, or a full landscaping project on a newer {areaName} property, our licensed, fully insured team provides first-class results and responsible waste disposal throughout the area.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bedford-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Tree & Hedge Work {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">The large period properties of De Parys Avenue, Goldington and Queens Park frequently have mature trees and established hedges requiring professional management. We handle hedge reductions, reshaping and regular cuts for all species, as well as small tree work, removing all arisings from your {areaName} property.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Large period gardens in Kempston, Queens Park and the Goldington area can accumulate substantial overgrowth over the years. We provide thorough, professional clearances — removing brambles, scrub, self-seeded vegetation and old garden structures — leaving your {areaName} garden ready for its next chapter.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Rubbish Removal {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Our licensed man-and-van service is available throughout {areaName} for fast, convenient waste collection. Garden waste, old furniture, shed contents and general household rubbish removed at short notice — fully insured and legally disposed of. Serving Kempston, Goldington, Queens Park and all {areaName} postcodes.</p>
+            <a href="/services/man-with-van/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Following a clearance or starting from scratch, we create beautifully designed outdoor spaces for {areaName} homeowners. New lawns, patio areas, raised beds and planting schemes — whether you're in a Victorian terrace near the River Great Ouse or a modern property on the outskirts of town, we deliver lasting results.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,14 +185,14 @@ const nearbyAreas = ["Milton Keynes", "Northampton", "Wellingborough", "Rushden"
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional tree and hedge work, garden clearance, rubbish removal and landscaping in ${areaName}, Bedfordshire. Serving Kempston, Queens Park, De Parys Avenue, Goldington and surrounding areas. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "Bedfordshire",
     "addressCountry": "GB"
   },
   "areaServed": {

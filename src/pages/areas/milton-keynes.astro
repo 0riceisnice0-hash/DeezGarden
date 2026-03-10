@@ -9,19 +9,19 @@ import HeroCTA from '../../components/HeroCTA.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Milton Keynes";
-const nearbyAreas = ["Northampton", "Bedford", "Towcester", "Aylesbury"];
+const nearbyAreas = ["Bedford", "Northampton", "Aylesbury", "Buckingham"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Buckinghamshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | Leylandii Cutting, Garden Clearance, Landscaping`}
+  description={`Garden clearance, Leylandii cutting, landscaping & rubbish removal in ${areaName}, Buckinghamshire. Serving Willen, Emerson Valley, Furzton, Shenley Brook End & surrounding grid squares. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Buckinghamshire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Leylandii reduction, garden clearance, landscaping & rubbish removal"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +31,44 @@ const nearbyAreas = ["Northampton", "Bedford", "Towcester", "Aylesbury"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} serves {areaName} and its many distinct residential grid squares — including Willen, Shenley Brook End, Emerson Valley, Furzton, Walton and beyond — from our Northampton base, just 20 miles north. {areaName}'s unique layout means properties from the 1970s through to the 1990s now have gardens where the original planting has long since matured and, in many cases, significantly outgrown its space. Leylandii and conifer hedges, planted in great numbers during the city's development for privacy along the grid roads, are now a leading source of garden work across the city.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          From major Leylandii reductions to full garden clearances of overgrown 1980s plots, or new landscaping on more recent {areaName} developments, our licensed team delivers reliable, professional results with all waste removed and disposed of legally. No skips or permits needed.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milton Keynes-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Leylandii Cutting & Reduction {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Leylandii is ubiquitous across {areaName}'s residential grid squares — planted for privacy in the 1970s and 80s, many now reach 20–30 feet or more. We safely reduce and reshape overgrown Leylandii and conifers across Emerson Valley, Furzton, Walton and throughout the city, restoring them to a manageable size.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Gardens in {areaName}'s 1970s and 80s grid squares often contain decades of accumulated planting that has outgrown its original design. We clear overgrown shrub beds, bramble patches, old structures and garden waste across all grid squares, leaving a clean slate for whatever comes next.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Rubbish Removal {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Our licensed man-and-van service is ideal for {areaName} residents needing quick, straightforward waste removal. Garden waste, old furniture, garage contents or general household rubbish — we load and remove it all from your {areaName} grid square property without the need for a skip or council booking.</p>
+            <a href="/services/man-with-van/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Following a clearance or on a newer {areaName} development, we design and build complete gardens tailored to your space and lifestyle. Lawns, patios, raised borders and planting schemes — our landscaping service transforms {areaName} outdoor spaces in grid squares like Willen, Shenley Brook End and beyond.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,14 +185,14 @@ const nearbyAreas = ["Northampton", "Bedford", "Towcester", "Aylesbury"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional Leylandii cutting, garden clearance, landscaping and rubbish removal in ${areaName}, Buckinghamshire. Serving Willen, Emerson Valley, Furzton, Shenley Brook End and surrounding grid squares. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "Buckinghamshire",
     "addressCountry": "GB"
   },
   "areaServed": {
