@@ -55,7 +55,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
   
   <!-- Content -->
-  <div class={`container mx-auto px-4 text-center relative z-10 ${textAtTop ? 'py-6 md:py-8 w-full' : 'py-16 md:py-24'}`}>
+  <div class={`container mx-auto px-4 text-center relative z-10 ${textAtTop ? 'pt-10 pb-12 md:pt-14 md:pb-16 w-full' : 'py-16 md:py-24'}`}>
     <h1 class={`font-extrabold text-white drop-shadow-[0_3px_6px_rgba(0,0,0,0.4)] tracking-tight ${textAtTop ? 'text-2xl sm:text-3xl md:text-4xl mb-2 md:mb-3' : 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6'}`}>{title}</h1>
     {subtitle && <p class={`text-white/95 drop-shadow-md font-medium tracking-tight max-w-3xl mx-auto ${textAtTop ? 'text-base sm:text-lg md:text-xl mb-2 md:mb-4' : 'text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-6'}`}>{subtitle}</p>}
     {!textAtTop && <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-10 text-white/85 drop-shadow-md font-normal">Serving {location}</p>}
