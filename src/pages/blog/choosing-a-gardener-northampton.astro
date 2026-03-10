@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout
+  title="How to Choose a Gardener in Northampton | Dee'z Gardens Blog"
+  description="What to look for when hiring a local gardener in Northampton — insurance, waste carrier licence, reviews, and questions to ask. Plus why Dee'z Gardens is the right choice."
+>
+  <Header slot="header" />
+
+  <div class="bg-deep-green text-white py-12 md:py-20">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-fresh-green font-semibold mb-2 text-sm md:text-base">Dee'z Gardens Blog</p>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-4xl mx-auto">How to Choose a Gardener in Northampton</h1>
+      <p class="text-white/80 mt-4 text-sm md:text-base">10 April 2025 · 5 min read</p>
+    </div>
+  </div>
+
+  <article class="py-8 md:py-16 bg-bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto prose prose-lg">
+
+        <h2>What to Look For When Hiring a Gardener</h2>
+        <p>
+          Hiring a gardener feels like it should be straightforward — but with the number of people offering garden services in Northampton, it's worth knowing what separates a reliable professional from someone who might let you down or, worse, leave you out of pocket.
+        </p>
+        <p>Here are the three most important things to check before booking anyone:</p>
+
+        <h3>Public Liability Insurance</h3>
+        <p>
+          Any professional gardener or garden services company should hold <strong>public liability insurance</strong>. This covers you if something goes wrong — a broken fence panel, a window cracked by a flying stone, or an injury on your property. Without it, you could be liable.
+        </p>
+        <p>
+          Don't be shy about asking to see proof of insurance. A reputable contractor will have it to hand and won't be offended by the question.
+        </p>
+
+        <h3>Licensed Waste Carrier Registration</h3>
+        <p>
+          If the gardener is removing green waste, soil, rubble, or any other material from your property, they must hold a <strong>Waste Carrier Licence</strong> issued by the Environment Agency. Fly-tipping is a serious and growing problem, and if your waste ends up dumped illegally, your name could be connected to it even if someone else physically tipped it.
+        </p>
+        <p>
+          You can check whether a waste carrier is registered on the <strong>Environment Agency's public register</strong> at environment.data.gov.uk. Always ask for the carrier registration number and verify it.
+        </p>
+
+        <h3>Reviews and Track Record</h3>
+        <p>
+          Look for recent reviews — ideally on Google, Facebook, or Checkatrade, where it's harder to fake or cherry-pick feedback. Read the detail of the reviews rather than just the star rating. Good reviews will mention specific aspects like punctuality, tidiness, quality of work, and communication. Be cautious of contractors with few or very old reviews.
+        </p>
+
+        <h2>Questions to Ask Before Hiring</h2>
+        <p>
+          Before confirming any booking, ask:
+        </p>
+        <ul>
+          <li>Are you fully insured with public liability cover? Can I see the policy?</li>
+          <li>Do you hold a waste carrier licence? What's the registration number?</li>
+          <li>Will you provide a written quote before starting?</li>
+          <li>What does the quote include — specifically, is waste removal included?</li>
+          <li>How do you handle unexpected issues or additional work discovered on the day?</li>
+          <li>What payment methods do you accept, and when is payment due?</li>
+        </ul>
+        <p>
+          A professional contractor will have clear and confident answers to all of these questions.
+        </p>
+
+        <h2>Why Local Matters</h2>
+        <p>
+          A local gardener has reputational skin in the game. They live and work in the same area as their customers — which means they genuinely care about doing a good job. They're also quicker to respond, easier to contact, and can often provide more competitive pricing because they're not travelling long distances.
+        </p>
+        <p>
+          A local gardener also understands the specific conditions of the area — the soil types, the common garden problems, the local weather patterns. In Northamptonshire, that means knowing how clay-heavy soils affect drainage, how to manage the specific hedge varieties common in the county, and how to advise on plants that thrive in the local climate.
+        </p>
+
+        <h2>About Dee'z Gardens</h2>
+        <p>
+          We're a Northampton-based garden and property maintenance company covering the whole of Northamptonshire. We're fully insured with public liability cover, hold a licensed waste carrier registration, and have built our reputation on honest pricing, tidy work, and reliable service.
+        </p>
+        <p>
+          We offer free, no-obligation quotes for all jobs — from a one-off garden clearance to regular weekly or fortnightly maintenance. We accept card and Apple Pay, and all work is carried out by our own team (not subcontracted).
+        </p>
+        <p>
+          Our customers rate us 5 stars on Google, and most of our work comes from word of mouth and repeat bookings — which we think says more than any website could.
+        </p>
+
+        <h2>Get in Touch</h2>
+        <p>
+          Ready to book, or just want to have a chat about what you need? We're always happy to give advice — no sales pressure, no obligation.
+        </p>
+        <p>
+          <a href="/contact/" class="text-fresh-green font-semibold hover:text-deep-green">Contact us for a free quote →</a>
+        </p>
+        <p>
+          <a href="/reviews/" class="text-fresh-green font-semibold hover:text-deep-green">Read our customer reviews →</a>
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <CallToAction />
+
+  <Footer slot="footer" />
+</BaseLayout>

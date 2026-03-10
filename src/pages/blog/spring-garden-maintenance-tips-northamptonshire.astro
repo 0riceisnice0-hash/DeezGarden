@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout
+  title="Spring Garden Maintenance Tips for Northamptonshire Gardens | Dee'z Gardens Blog"
+  description="Why spring is critical for Northamptonshire gardens — expert tips on lawn care, hedge trimming timing, and clearing up after winter. Advice from Dee'z Gardens."
+>
+  <Header slot="header" />
+
+  <div class="bg-deep-green text-white py-12 md:py-20">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-fresh-green font-semibold mb-2 text-sm md:text-base">Dee'z Gardens Blog</p>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-4xl mx-auto">Spring Garden Maintenance Tips for Northamptonshire Gardens</h1>
+      <p class="text-white/80 mt-4 text-sm md:text-base">15 March 2025 · 4 min read</p>
+    </div>
+  </div>
+
+  <article class="py-8 md:py-16 bg-bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto prose prose-lg">
+
+        <h2>Why Spring Is Critical for Northamptonshire Gardens</h2>
+        <p>
+          Spring is the most important time of year for any garden — and in Northamptonshire, where winters can be cold and wet, the work you do between March and May will determine how your outdoor space looks for the rest of the year. After months of frost, rain, and low light, lawns have thinned out, hedges have gone dormant, and borders are full of debris. Getting on top of this early makes everything easier as the season progresses.
+        </p>
+        <p>
+          Whether you have a small back garden in Northampton or a larger property out in the villages around Daventry or Brackley, the same principles apply. Here's what you should be doing this spring.
+        </p>
+
+        <h2>Lawn Care: Mowing, Scarifying, and Feeding</h2>
+        <p>
+          Your lawn is likely looking tired after winter. Before you reach for the mower, let the grass dry out a little and wait for it to start actively growing — usually when soil temperatures hit around 6–8°C, which in Northamptonshire typically means late March or early April.
+        </p>
+        <ul>
+          <li><strong>First mow:</strong> Set your mower high (around 4–5cm) for the first cut. Cutting too short too early stresses the grass and lets weeds in.</li>
+          <li><strong>Scarifying:</strong> Use a spring-tine rake or electric scarifier to remove thatch and moss. This opens up the lawn surface, improves drainage, and lets air reach the roots. Best done in April once the grass is growing strongly.</li>
+          <li><strong>Feeding:</strong> Apply a spring/summer lawn fertiliser in April or May to give your lawn the nitrogen boost it needs. Avoid feeding in cold or dry spells — the grass needs to be actively growing to take it up.</li>
+          <li><strong>Overseeding:</strong> If your lawn has bare patches, overseed after scarifying. Keep the area moist until the new grass establishes.</li>
+        </ul>
+
+        <h2>Hedge Trimming Timing: The Nesting Season Rule</h2>
+        <p>
+          This is one of the most important things to get right, and it catches a lot of people out. Under the <strong>Wildlife &amp; Countryside Act 1981</strong>, it is an offence to intentionally damage or destroy the nest of any wild bird while it is in use or being built.
+        </p>
+        <p>
+          In practice, this means you should <strong>avoid trimming hedges between March and August</strong> if there is any possibility that birds are nesting in them. The nesting season typically runs from late February or early March through to August, with peak activity in April–June.
+        </p>
+        <p>
+          If you need your hedges cut in spring, do it <strong>before mid-March</strong> — or wait until late August once the main nesting season is over. If in doubt, check the hedge carefully for active nests before cutting. We always check as part of our professional hedge cutting service.
+        </p>
+
+        <h2>Garden Clearance After Winter</h2>
+        <p>
+          Winter leaves a mess: dead stems, fallen leaves, soggy debris, and the remnants of last year's planting. Spring clearance gets your garden ready to grow.
+        </p>
+        <ul>
+          <li>Cut back dead perennial stems to make way for new growth.</li>
+          <li>Clear leaves from borders, lawns, and paths — they harbour slugs and disease.</li>
+          <li>Weed borders early while weeds are small and roots are shallow.</li>
+          <li>Tidy up any storm damage to fences, trellises, or structures.</li>
+          <li>Jet wash paths and patios to remove moss and algae before they get worse.</li>
+        </ul>
+        <p>
+          If the garden has really got away from you over winter — especially if it's a property that was left unattended — a professional garden clearance is often the quickest and most cost-effective way to start fresh.
+        </p>
+
+        <h2>Ready for Spring? We Can Help</h2>
+        <p>
+          Whether you need a one-off spring tidy or regular maintenance throughout the year, Dee'z Gardens covers all of Northamptonshire. We're local, fully insured, and we remove all green waste responsibly.
+        </p>
+        <p>
+          <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green">Find out more about our Garden Maintenance service →</a>
+        </p>
+        <p>
+          <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green">Professional Hedge Cutting in Northamptonshire →</a>
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <CallToAction />
+
+  <Footer slot="footer" />
+</BaseLayout>
