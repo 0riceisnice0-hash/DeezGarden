@@ -12,6 +12,7 @@ import HeroCTA from '../components/HeroCTA.astro';
 import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
 import SlideOutQuoteForm from '../components/SlideOutQuoteForm.astro';
 import ReviewsCarousel from '../components/ReviewsCarousel.astro';
+import HomepageQuoteForm from '../components/HomepageQuoteForm.astro';
 import { siteConfig } from '../config';
 ---
 
@@ -26,10 +27,13 @@ import { siteConfig } from '../config';
   
   <Hero 
     title="Professional Garden & Clearance Services"
-    subtitle="Garden maintenance, clearance, and landscaping across Northamptonshire"
+    subtitle="Northampton's trusted gardeners — free quotes, fully insured"
     heroImage="hero.jpg"
-    showQuoteButton={true}
+    textAtTop={true}
   />
+
+  <!-- Inline quote form — the primary lead-capture on the homepage -->
+  <HomepageQuoteForm />
   
   <TrustBadges />
   

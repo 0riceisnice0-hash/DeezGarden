@@ -1,0 +1,190 @@
+---
+import { siteConfig } from '../config';
+
+// Normalise baseUrl so there's never a double-slash before /thank-you/
+const thankyouUrl = `${siteConfig.baseUrl.replace(/\/$/, '')}/thank-you/`;
+
+// Services with emoji icons for the interactive selector
+const serviceOptions = [
+  { value: "Garden Maintenance", label: "Garden Maintenance", emoji: "🌿" },
+  { value: "Garden Clearance", label: "Garden Clearance", emoji: "🌳" },
+  { value: "Hedge Cutting", label: "Hedge Cutting", emoji: "✂️" },
+  { value: "Landscaping", label: "Landscaping", emoji: "🏗️" },
+  { value: "Rubbish Clearance", label: "Rubbish Clearance", emoji: "🚛" },
+  { value: "Man with Van", label: "Man with Van", emoji: "🚐" },
+  { value: "Property Maintenance", label: "Property Maintenance", emoji: "🔧" },
+  { value: "Other", label: "Not Sure / Other", emoji: "💬" },
+];
+---
+
+<section class="bg-deep-green py-10 md:py-14" id="homepage-quote-form">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Section header -->
+      <div class="text-center mb-6 md:mb-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-2">Get Your Free Quote</h2>
+        <p class="text-white/80 text-sm md:text-base">Tell us what you need — we'll get back to you within a few hours</p>
+      </div>
+
+      <!-- Form card -->
+      <div class="bg-white rounded-2xl shadow-2xl p-5 md:p-8">
+
+        <form
+          action="https://formspree.io/f/mdalolve"
+          method="POST"
+          id="homepage-quote-form-el"
+          class="space-y-5"
+        >
+          <input type="hidden" name="_next" value={thankyouUrl}>
+          <input type="hidden" name="_subject" value="New quote request from Dee'z Gardens homepage">
+          <!-- Hidden field that stores the selected service -->
+          <input type="hidden" name="service" id="homepage-service-value">
+
+          <!-- Step 1: Service selector -->
+          <div>
+            <p class="font-bold text-gray-800 mb-3 text-sm md:text-base">What do you need? <span class="text-red-500">*</span></p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="service-buttons" role="group" aria-label="Select service type">
+              {serviceOptions.map(opt => (
+                <button
+                  type="button"
+                  data-service={opt.value}
+                  class="service-btn flex flex-col items-center gap-1 px-2 py-3 rounded-xl border-2 border-gray-200 bg-white hover:border-fresh-green hover:bg-green-50 transition-all text-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-fresh-green"
+                  aria-pressed="false"
+                >
+                  <span class="text-xl md:text-2xl leading-none">{opt.emoji}</span>
+                  <span class="text-xs md:text-sm font-semibold text-gray-700 group-hover:text-deep-green leading-tight">{opt.label}</span>
+                </button>
+              ))}
+            </div>
+            <p id="service-error" class="text-red-500 text-xs mt-1.5 hidden">Please select a service type above.</p>
+          </div>
+
+          <!-- Name + Phone row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="hq-name" class="block text-sm font-bold text-gray-700 mb-1.5">Your Name <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="hq-name"
+                name="name"
+                required
+                placeholder="John Smith"
+                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-fresh-green focus:ring-0 transition text-sm md:text-base"
+              >
+            </div>
+            <div>
+              <label for="hq-phone" class="block text-sm font-bold text-gray-700 mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+              <input
+                type="tel"
+                id="hq-phone"
+                name="phone"
+                required
+                placeholder="07XXX XXXXXX"
+                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-fresh-green focus:ring-0 transition text-sm md:text-base"
+              >
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="hq-email" class="block text-sm font-bold text-gray-700 mb-1.5">Email Address</label>
+            <input
+              type="email"
+              id="hq-email"
+              name="email"
+              placeholder="john@example.com"
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-fresh-green focus:ring-0 transition text-sm md:text-base"
+            >
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="hq-message" class="block text-sm font-bold text-gray-700 mb-1.5">Tell us more <span class="text-gray-400 font-normal">(optional)</span></label>
+            <textarea
+              id="hq-message"
+              name="message"
+              rows="3"
+              placeholder="e.g. My garden is overgrown, roughly 20m x 10m, needs full clearance…"
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-fresh-green focus:ring-0 transition resize-none text-sm md:text-base"
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button
+              type="submit"
+              id="hq-submit-btn"
+              class="w-full bg-fresh-green text-white font-extrabold text-base md:text-lg py-4 rounded-xl hover:bg-deep-green transition-all shadow-lg hover:shadow-xl tracking-tight flex items-center justify-center gap-2"
+            >
+              <span id="hq-btn-text">Get My Free Quote →</span>
+              <svg id="hq-spinner" class="hidden w-5 h-5 animate-spin text-white" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Or call -->
+          <p class="text-center text-xs md:text-sm text-gray-500">
+            Or call us directly:
+            <a href={`tel:${siteConfig.phone}`} class="font-bold text-fresh-green hover:text-deep-green">{siteConfig.phoneFormatted}</a>
+            — Mon–Sat 8am–6pm
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-btn.selected {
+    border-color: theme('colors.fresh-green');
+    background-color: theme('colors.bg-light');
+  }
+  .service-btn.selected span:last-child {
+    color: theme('colors.deep-green');
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.service-btn');
+    const hiddenInput = document.getElementById('homepage-service-value') as HTMLInputElement | null;
+    const serviceError = document.getElementById('service-error');
+    const form = document.getElementById('homepage-quote-form-el') as HTMLFormElement | null;
+    const submitBtn = document.getElementById('hq-submit-btn') as HTMLButtonElement | null;
+    const btnText = document.getElementById('hq-btn-text');
+    const spinner = document.getElementById('hq-spinner');
+
+    // Service button selection
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('selected');
+        btn.setAttribute('aria-pressed', 'true');
+        if (hiddenInput) hiddenInput.value = btn.dataset.service || '';
+        if (serviceError) serviceError.classList.add('hidden');
+      });
+    });
+
+    // Form submit validation
+    form?.addEventListener('submit', (e) => {
+      if (!hiddenInput?.value) {
+        e.preventDefault();
+        if (serviceError) serviceError.classList.remove('hidden');
+        document.getElementById('service-buttons')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      // Show loading state
+      if (btnText) btnText.textContent = 'Sending…';
+      if (spinner) spinner.classList.remove('hidden');
+      if (submitBtn) submitBtn.disabled = true;
+    });
+  });
+</script>
