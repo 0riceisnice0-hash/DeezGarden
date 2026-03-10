@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+
+const posts = [
+  {
+    slug: 'spring-garden-maintenance-tips-northamptonshire',
+    title: 'Spring Garden Maintenance Tips for Northamptonshire Gardens',
+    description: 'Why spring is the most important season for your garden — lawn care, hedge trimming timing, and clearing up after winter in Northamptonshire.',
+    date: '15 March 2025',
+    readTime: 4,
+  },
+  {
+    slug: 'overgrown-garden-clearance-guide',
+    title: 'How to Clear an Overgrown Garden: A Complete Guide',
+    description: "Signs your garden needs professional clearance, safety considerations, and what to expect from a garden clearance service in Northampton.",
+    date: '22 March 2025',
+    readTime: 5,
+  },
+  {
+    slug: 'when-to-trim-hedges-uk',
+    title: 'When to Trim Hedges in the UK (And When NOT To)',
+    description: 'UK nesting season rules, best months for hedge trimming, different hedge types and their schedules, and why professional cutting matters.',
+    date: '1 April 2025',
+    readTime: 4,
+  },
+  {
+    slug: 'choosing-a-gardener-northampton',
+    title: 'How to Choose a Gardener in Northampton',
+    description: 'What to look for when hiring a local gardener — insurance, waste carrier licence, reviews, and the right questions to ask before booking.',
+    date: '10 April 2025',
+    readTime: 5,
+  },
+];
+---
+
+<BaseLayout
+  title="Garden Tips & Advice Blog | Dee'z Gardens Northampton"
+  description="Expert gardening tips, advice and guides from Dee'z Gardens in Northampton. Read about garden maintenance, hedge cutting, garden clearance and landscaping across Northamptonshire."
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <div class="bg-deep-green text-white py-12 md:py-20">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-fresh-green font-semibold mb-2 text-sm md:text-base">Dee'z Gardens</p>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-4xl mx-auto">Garden Tips &amp; Advice Blog</h1>
+      <p class="text-white/80 mt-4 text-sm md:text-base max-w-2xl mx-auto">Expert gardening advice, seasonal tips and guides for homeowners across Northamptonshire.</p>
+    </div>
+  </div>
+
+  <!-- Blog Post Grid -->
+  <section class="py-10 md:py-16 bg-bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {posts.map(post => (
+          <a
+            href={`/blog/${post.slug}/`}
+            class="bg-white rounded-xl shadow-lg p-6 md:p-8 border border-fresh-green/10 hover:shadow-xl hover:border-fresh-green/40 transition group flex flex-col"
+          >
+            <p class="text-fresh-green text-xs md:text-sm font-semibold mb-2">{post.date} · {post.readTime} min read</p>
+            <h2 class="text-base md:text-xl font-bold text-deep-green mb-3 group-hover:text-fresh-green transition">{post.title}</h2>
+            <p class="text-gray-600 text-sm md:text-base flex-1">{post.description}</p>
+            <span class="mt-4 inline-block text-fresh-green font-semibold text-sm md:text-base group-hover:underline">Read more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
+
+  <Footer slot="footer" />
+</BaseLayout>

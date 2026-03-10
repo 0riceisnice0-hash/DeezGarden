@@ -143,3 +143,60 @@ import SlideOutQuoteForm from '../components/SlideOutQuoteForm.astro';
   
   <Footer slot="footer" />
 </BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dee'z Gardens",
+  "url": "https://deezgardens.co.uk",
+  "telephone": "07305 195098",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "5",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "name": "Excellent Garden Maintenance",
+      "reviewBody": "Very professional service. They transformed our overgrown garden and now maintain it regularly. Always on time and tidy work. Highly recommend!",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Zachery B." },
+      "datePublished": "2024-11-05"
+    },
+    {
+      "@type": "Review",
+      "name": "Fantastic Clearance Service",
+      "reviewBody": "Needed a full garage clearance and they made it so easy. Fair price, arrived when they said they would, and cleared everything quickly. Very pleased.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Amber R." },
+      "datePublished": "2024-11-18"
+    },
+    {
+      "@type": "Review",
+      "name": "Reliable Man with Van",
+      "reviewBody": "Used them for a house move and they were brilliant. Careful with our furniture, friendly, and made the whole process stress-free.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Marcus H." },
+      "datePublished": "2024-12-02"
+    },
+    {
+      "@type": "Review",
+      "name": "Professional Landscaping",
+      "reviewBody": "Had a new patio installed and landscaping done. The quality of work is excellent and they finished on time. Garden looks amazing now!",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Jennifer W." },
+      "datePublished": "2024-12-14"
+    },
+    {
+      "@type": "Review",
+      "name": "Great Communication",
+      "reviewBody": "Really appreciate the clear communication throughout. They explained everything, arrived on time, and the price was exactly as quoted.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Daniel A." },
+      "datePublished": "2025-01-08"
+    }
+  ]
+})} />

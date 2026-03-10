@@ -19,6 +19,9 @@ import PaymentLogos from './PaymentLogos.astro';
         <div class="flex flex-wrap justify-center gap-3 text-sm">
           <a href={`tel:${siteConfig.phone}`} class="footer-link font-semibold">📞 {siteConfig.phoneFormatted}</a>
           <a href={`mailto:${siteConfig.email}`} class="footer-link">✉️ Email</a>
+          {siteConfig.whatsapp && (
+            <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" class="footer-link">💬 WhatsApp</a>
+          )}
           {siteConfig.facebook && (
             <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a>
           )}
@@ -33,6 +36,7 @@ import PaymentLogos from './PaymentLogos.astro';
             <li><a href="/" class="footer-link">Home</a></li>
             <li><a href="/services/" class="footer-link">Services</a></li>
             <li><a href="/areas/" class="footer-link">Areas</a></li>
+            <li><a href="/blog/" class="footer-link">Blog</a></li>
             <li><a href="/contact/" class="footer-link">Contact</a></li>
           </ul>
         </div>
@@ -40,7 +44,8 @@ import PaymentLogos from './PaymentLogos.astro';
           <h4 class="font-semibold mb-2 text-white text-sm">Services</h4>
           <ul class="space-y-1">
             <li><a href="/services/garden-maintenance/" class="footer-link">Gardens</a></li>
-            <li><a href="/services/clearance-removals/" class="footer-link">Clearance</a></li>
+            <li><a href="/services/hedge-cutting/" class="footer-link">Hedge Cutting</a></li>
+            <li><a href="/services/garden-clearance/" class="footer-link">Clearance</a></li>
             <li><a href="/services/man-with-van/" class="footer-link">Man with Van</a></li>
           </ul>
         </div>
@@ -70,6 +75,13 @@ import PaymentLogos from './PaymentLogos.astro';
           <div class="space-y-2">
             <p><a href={`tel:${siteConfig.phone}`} class="footer-link text-lg font-semibold">📞 {siteConfig.phoneFormatted}</a></p>
             <p><a href={`mailto:${siteConfig.email}`} class="footer-link break-all text-base">✉️ {siteConfig.email}</a></p>
+            {siteConfig.whatsapp && (
+              <p>
+                <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" class="footer-link text-base">
+                  💬 Message on WhatsApp
+                </a>
+              </p>
+            )}
             {siteConfig.facebook && (
               <p>
                 <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" class="footer-link text-base">
@@ -80,7 +92,7 @@ import PaymentLogos from './PaymentLogos.astro';
           </div>
           <div class="mt-6">
             <h4 class="font-semibold mb-2 text-base">Service Coverage</h4>
-            <p class="text-sm opacity-90">Serving Northamptonshire including Aylesbury and surrounding areas</p>
+            <p class="text-sm opacity-90">Serving Northampton and all of Northamptonshire including Daventry, Kettering, Wellingborough, Rushden and beyond</p>
           </div>
         </div>
         
@@ -91,6 +103,7 @@ import PaymentLogos from './PaymentLogos.astro';
             <li><a href="/" class="footer-link py-1 inline-block">Home</a></li>
             <li><a href="/services/" class="footer-link py-1 inline-block">Services</a></li>
             <li><a href="/areas/" class="footer-link py-1 inline-block">Areas We Cover</a></li>
+            <li><a href="/blog/" class="footer-link py-1 inline-block">Blog</a></li>
             <li><a href="/reviews/" class="footer-link py-1 inline-block">Reviews</a></li>
             <li><a href="/gallery/" class="footer-link py-1 inline-block">Gallery</a></li>
             <li><a href="/contact/" class="footer-link py-1 inline-block">Contact</a></li>
@@ -102,6 +115,9 @@ import PaymentLogos from './PaymentLogos.astro';
           <h3 class="text-xl font-bold mb-4 text-white">Our Services</h3>
           <ul class="space-y-2">
             <li><a href="/services/garden-maintenance/" class="footer-link py-1 inline-block">Garden Maintenance</a></li>
+            <li><a href="/services/hedge-cutting/" class="footer-link py-1 inline-block">Hedge Cutting</a></li>
+            <li><a href="/services/garden-clearance/" class="footer-link py-1 inline-block">Garden Clearance</a></li>
+            <li><a href="/services/landscaping/" class="footer-link py-1 inline-block">Landscaping</a></li>
             <li><a href="/services/clearance-removals/" class="footer-link py-1 inline-block">Clearance & Removals</a></li>
             <li><a href="/services/man-with-van/" class="footer-link py-1 inline-block">Man with Van</a></li>
           </ul>

@@ -52,6 +52,16 @@ export default defineConfig({
           item.priority = 0.6;
           item.changefreq = 'monthly';
         }
+        // Blog pages
+        else if (url.includes('/blog/') && !url.endsWith('/blog/')) {
+          item.priority = 0.7;
+          item.changefreq = 'monthly';
+        }
+        // Blog index
+        else if (url.endsWith('/blog/') || url.endsWith('/blog')) {
+          item.priority = 0.7;
+          item.changefreq = 'monthly';
+        }
         // Default
         else {
           item.priority = 0.7;

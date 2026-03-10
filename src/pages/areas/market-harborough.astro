@@ -6,22 +6,25 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Market Harborough";
-const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
+const nearbyAreas = ["Corby", "Kettering", "Leicester", "Rugby"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Leicestershire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | House Clearance, Hedge Cutting, Landscaping`}
+  description={`Garden clearance, house clearance, hedge cutting, vegetation clearance & site clearance in ${areaName}, Leicestershire. Professional, fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
+  <SlideOutQuoteForm />
+  
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Leicestershire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Garden clearance, house clearance, hedge cutting & landscaping"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +34,44 @@ const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Clearance & Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} provides professional garden clearance, hedge cutting, landscaping and garden maintenance throughout {areaName} and the surrounding Welland Valley. Sitting at the border of Leicestershire and Northamptonshire, {areaName} is an affluent commuter town with beautiful Georgian and Victorian architecture — and a reputation for beautifully maintained gardens. We serve properties across the town itself as well as the surrounding villages of Great Bowden, Little Bowden and Lubenham.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          From period garden renovations to regular upkeep for busy commuters, our team understands the high standards {areaName} homeowners expect. We also work along the Grand Union Canal corridor where many desirable canal-side properties have substantial and sometimes challenging plots. As a licensed waste carrier, all garden waste is disposed of legally and responsibly.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Harborough-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Maintenance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Regular, reliable garden maintenance for {areaName}'s busy commuter households. Lawn mowing, hedge trimming, weeding and seasonal programmes — your garden kept in top condition while you're away in the city.</p>
+            <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Professional hedge cutting and shaping throughout {areaName} and villages like Great Bowden and Lubenham. All hedge types handled — privet, laurel, box and mixed hedgerows. Clippings fully removed.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Period garden renovation and landscaping in {areaName}. We work with the character of Georgian and Victorian properties — restoring walled gardens, re-laying paving, turfing and sympathetic planting schemes.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Full garden clearance for {areaName} properties — overgrown plots, accumulated waste and unwanted garden structures all dealt with. We clear large, mature gardens on period homes and canal-side properties with care.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -50,15 +84,16 @@ const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => {
             const images = [
-              "/assets/images/before and after lawn 1.jpg",
-              "/assets/images/rubbish removal 1.jpg",
-              "/assets/images/van scrap png.png"
+              "/assets/images/before-and-after-lawn-1.jpg",
+              "/assets/images/rubbish-removal-1.jpg",
+              "/assets/images/van-scrap.png"
             ];
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]} 
+                    src={images[index]}
+                    loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"
                   />
@@ -154,14 +189,14 @@ const nearbyAreas = ["Leicester", "Kettering", "Corby", "Northampton"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, house clearance, hedge cutting, vegetation clearance, site clearance and landscaping in ${areaName}, Leicestershire. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "Leicestershire",
     "addressCountry": "GB"
   },
   "areaServed": {

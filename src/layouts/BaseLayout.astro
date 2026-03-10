@@ -1,5 +1,6 @@
 ---
 import { siteConfig, services } from '../config';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -14,6 +15,10 @@ const { title, description = siteConfig.description, canonical, noindex = false,
 const fullTitle = title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
 const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl).toString();
 const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas, ...siteConfig.extendedAreas];
+// Validate GA4 ID format to prevent any script injection (must be G- followed by alphanumeric)
+const gaId = siteConfig.googleAnalyticsId && /^G-[A-Z0-9]+$/.test(siteConfig.googleAnalyticsId)
+  ? siteConfig.googleAnalyticsId
+  : null;
 ---
 
 <!DOCTYPE html>
@@ -22,6 +27,14 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas, ...s
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content={Astro.generator}>
+  
+  <!-- Google Analytics 4 — add your Measurement ID to src/config.ts (googleAnalyticsId) -->
+  {gaId && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+      <script set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`}></script>
+    </>
+  )}
   
   <title>{fullTitle}</title>
   <meta name="description" content={description}>
@@ -123,6 +136,22 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas, ...s
     "knowsLanguage": "en"
   })} />
 
+  <!-- WebSite schema for Sitelinks Search Box eligibility -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": siteConfig.name,
+    "url": siteConfig.baseUrl,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteConfig.baseUrl}/?s={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  })} />
+
   <!-- Page-specific schema -->
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
@@ -132,5 +161,6 @@ const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas, ...s
     <slot />
   </main>
   <slot name="footer" />
+  <StickyMobileCTA />
 </body>
 </html>

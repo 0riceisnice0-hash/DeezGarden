@@ -6,22 +6,25 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Aylesbury";
-const nearbyAreas = ["Milton Keynes", "Brackley", "Bedford", "Northampton"];
+const nearbyAreas = ["Milton Keynes", "Northampton", "Buckingham", "Bedford"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Buckinghamshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | Landscaping, Hedge Cutting, Rubbish Removal`}
+  description={`Garden clearance, landscaping, hedge cutting & rubbish removal in ${areaName}, Buckinghamshire. Serving Kingsbrook, Berryfields, Prebendal Farm & surrounding areas. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
+  <SlideOutQuoteForm />
+  
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, Buckinghamshire`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Landscaping, garden clearance, hedge cutting & rubbish removal"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +34,44 @@ const nearbyAreas = ["Milton Keynes", "Brackley", "Bedford", "Northampton"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} delivers professional garden and clearance services throughout {areaName} and the surrounding Vale of Aylesbury. The county town of Buckinghamshire sits around 35 miles south of Northampton and is expanding rapidly, with large new housing developments at Kingsbrook and Berryfields joining the town's existing stock of period homes. Victorian and Edwardian properties around the historic town centre and Prebendal Farm area often feature well-established gardens in need of expert care, while newer estate homes present blank-canvas landscaping opportunities.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          From transforming a bare new-build plot on the Kingsbrook estate into a beautiful family garden to clearing years of overgrowth from a period property in the town centre, our experienced {areaName} team covers the full range of garden services — all waste removed and disposed of legally.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aylesbury-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">New-build homes on {areaName}'s expanding estates like Kingsbrook and Berryfields frequently come with unfinished, bare plots. We design and create complete gardens from scratch — lawns, raised beds, patios, pathways and planting — giving you an outdoor space to enjoy from day one.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Period homes around {areaName} town centre and the Prebendal Farm area can have large, established gardens that have become neglected over time. We remove brambles, overgrown shrubs, old structures and all garden debris — ready for replanting or landscaping.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Whether it's a neatly clipped box hedge in a town-centre garden or a sprawling mature hedgerow on a property at the edge of the Vale of Aylesbury, we cut and shape all hedge types across {areaName} and the surrounding Buckinghamshire villages, removing all clippings.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Rubbish Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Our licensed rubbish removal service collects garden waste, old furniture, broken sheds and general household junk from {areaName} properties at short notice. We load and remove everything — no skip permits needed — and dispose of all waste responsibly at licensed facilities.</p>
+            <a href="/services/man-with-van/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -50,15 +84,16 @@ const nearbyAreas = ["Milton Keynes", "Brackley", "Bedford", "Northampton"];
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => {
             const images = [
-              "/assets/images/before and after lawn 1.jpg",
-              "/assets/images/rubbish removal 1.jpg",
-              "/assets/images/van scrap png.png"
+              "/assets/images/before-and-after-lawn-1.jpg",
+              "/assets/images/rubbish-removal-1.jpg",
+              "/assets/images/van-scrap.png"
             ];
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]} 
+                    src={images[index]}
+                    loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"
                   />
@@ -154,14 +189,14 @@ const nearbyAreas = ["Milton Keynes", "Brackley", "Bedford", "Northampton"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional landscaping, garden clearance, hedge cutting and rubbish removal in ${areaName}, Buckinghamshire. Serving Kingsbrook, Berryfields, Prebendal Farm and surrounding areas. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "Buckinghamshire",
     "addressCountry": "GB"
   },
   "areaServed": {

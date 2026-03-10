@@ -6,22 +6,25 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Coventry";
-const nearbyAreas = ["Rugby", "Leicester", "Daventry", "Northampton"];
+const nearbyAreas = ["Rugby", "Nuneaton", "Kenilworth", "Daventry"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, West Midlands offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | Hedge Cutting, Garden Maintenance, Rubbish Removal`}
+  description={`Garden clearance, hedge cutting, garden maintenance & rubbish removal in ${areaName}. Serving Cheylesmore, Earlsdon, Baginton, Whitley & South Coventry. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
+  <SlideOutQuoteForm />
+  
   <Hero 
-    title={`Garden Services in ${areaName}`}
+    title={`Garden Clearance & Services in ${areaName}`}
     location={`${areaName}, West Midlands`}
-    subtitle="Professional garden and clearance services"
+    subtitle="Garden clearance, hedge cutting, maintenance & rubbish removal"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +34,44 @@ const nearbyAreas = ["Rugby", "Leicester", "Daventry", "Northampton"];
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} serves South {areaName} and surrounding neighbourhoods including Cheylesmore, Baginton, Whitley, and Kenilworth Green — areas we reach comfortably from our Northampton base, around 30 miles away. {areaName} features a rich variety of property types: post-war semi-detached homes with established front and rear gardens, Victorian terraces in Earlsdon and Chapelfields with compact but well-established plots, and newer developments near the Whitley Business Park corridor.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          Many {areaName} gardens have matured significantly over the decades, with boundary hedges, overgrown shrub beds and accumulated garden waste making professional clearance and maintenance essential. Our licensed, fully insured team handles everything from a single hedge cut to a complete garden transformation.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coventry-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Many {areaName} gardens — particularly on the post-war semi-detached estates of Cheylesmore and Whitley — have years of overgrowth to tackle. We clear brambles, scrub, old shrubs and accumulated garden debris, leaving your outdoor space usable again.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Boundary hedges on {areaName}'s semi-detached properties are a common feature and can quickly become overgrown without regular maintenance. We cut and shape all hedge types in Earlsdon, Chapelfields, Baginton and across South {areaName}, removing all clippings.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Maintenance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Keep your {areaName} garden looking its best year-round with our regular maintenance service. We handle lawn mowing, weeding, border tidying and seasonal tidy-ups for homes across South {areaName} — one-off or on a regular schedule.</p>
+            <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Rubbish Removal {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Our licensed man-and-van service collects all types of waste from {areaName} properties — old furniture, garden rubbish, garage clearances and more. No need to hire a skip; we load, transport and dispose of everything legally and responsibly.</p>
+            <a href="/services/man-with-van/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -50,15 +84,16 @@ const nearbyAreas = ["Rugby", "Leicester", "Daventry", "Northampton"];
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => {
             const images = [
-              "/assets/images/before and after lawn 1.jpg",
-              "/assets/images/rubbish removal 1.jpg",
-              "/assets/images/van scrap png.png"
+              "/assets/images/before-and-after-lawn-1.jpg",
+              "/assets/images/rubbish-removal-1.jpg",
+              "/assets/images/van-scrap.png"
             ];
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]} 
+                    src={images[index]}
+                    loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"
                   />
@@ -154,14 +189,14 @@ const nearbyAreas = ["Rugby", "Leicester", "Daventry", "Northampton"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, hedge cutting, garden maintenance and rubbish removal in ${areaName}. Serving Cheylesmore, Earlsdon, Baginton, Whitley and South Coventry. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "West Midlands",
     "addressCountry": "GB"
   },
   "areaServed": {

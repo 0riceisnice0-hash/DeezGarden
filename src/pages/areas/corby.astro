@@ -6,22 +6,25 @@ import Hero from '../../components/Hero.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
+import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
 
 const areaName = "Corby";
-const nearbyAreas = ["Kettering", "Market Harborough", "Peterborough", "Wellingborough"];
+const nearbyAreas = ["Kettering", "Market Harborough", "Wellingborough", "Northampton"];
 ---
 
 <BaseLayout 
-  title={`Gardener ${areaName} | Garden Maintenance, Clearance & Landscaping`}
-  description={`Professional gardener in ${areaName}, Northamptonshire offering garden maintenance, rubbish clearance, landscaping & man with van services. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Garden Clearance & Services ${areaName} | Hedge Cutting, Garden Clearance, Landscaping`}
+  description={`Garden clearance, hedge cutting, landscaping & property clearance in ${areaName}, North Northamptonshire. Serving Beanfield, Kingswood, Danesholme, Priors Hall & Oakley Vale. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
 >
   <Header slot="header" />
   
+  <SlideOutQuoteForm />
+  
   <Hero 
-    title={`Garden Services in ${areaName}`}
-    location={`${areaName}, Northamptonshire`}
-    subtitle="Professional garden and clearance services"
+    title={`Garden Clearance & Services in ${areaName}`}
+    location={`${areaName}, North Northamptonshire`}
+    subtitle="Garden clearance, hedge cutting, landscaping & property clearance"
     heroImage="hero.jpg"
   />
   
@@ -31,13 +34,44 @@ const nearbyAreas = ["Kettering", "Market Harborough", "Peterborough", "Wellingb
   <section class="py-4 md:py-16 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden and Clearance Services in {areaName}</h2>
+        <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout {areaName} and the surrounding areas. Based locally in Northampton, we regularly serve customers in {areaName} with reliable, high-quality service.
+          {siteConfig.name} provides professional garden and property services throughout {areaName}, North Northamptonshire's well-known steel town around 20 miles north of Northampton. {areaName}'s housing stock is distinctive — large 1950s to 1970s council-built estates including Beanfield, Kingswood and Danesholme have mature gardens where decades of growth have produced towering conifers, sprawling Leylandii hedges and heavily overgrown planting beds. Newer developments at Priors Hall and Oakley Vale, built on former steelworks land near East Carlton Country Park, offer a very different landscaping challenge.
         </p>
         <p class="text-sm md:text-lg">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in {areaName}.
+          Whether you're on an older {areaName} estate dealing with a garden that's outgrown its original planting, or on a brand-new development needing a garden created from scratch, our experienced team offers genuine expertise in both. All waste is removed and disposed of legally — no skips required.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corby-Specific Services Section -->
+  <section class="py-4 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Gardens on {areaName}'s older estates — Beanfield, Kingswood and Danesholme — have had decades to become heavily overgrown. We carry out thorough clearances, removing brambles, self-seeded trees, accumulated rubbish and overgrown shrub beds, leaving the garden ready to be reimagined.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Leylandii and conifer hedges planted for privacy on {areaName}'s 1960s estates have, in many cases, grown to considerable heights. We specialise in the safe reduction and reshaping of large conifers and Leylandii, as well as regular maintenance cuts for all hedge types across {areaName}.</p>
+            <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Property Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Full and partial property clearances in {areaName} — including house clearances, garage clearances and outbuilding clearances. Our licensed team removes all items quickly and responsibly, whether for a house move, probate, or simply reclaiming space. Covering all of {areaName} and surrounding villages.</p>
+            <a href="/services/clearance-removals/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Landscaping {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">New homes at Priors Hall Park and Oakley Vale need gardens creating from bare plots. We design and build complete gardens — lawns, borders, patios and paths — for {areaName} homeowners who want a finished outdoor space that complements their new property and the surrounding countryside near East Carlton.</p>
+            <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -50,15 +84,16 @@ const nearbyAreas = ["Kettering", "Market Harborough", "Peterborough", "Wellingb
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => {
             const images = [
-              "/assets/images/before and after lawn 1.jpg",
-              "/assets/images/rubbish removal 1.jpg",
-              "/assets/images/van scrap png.png"
+              "/assets/images/before-and-after-lawn-1.jpg",
+              "/assets/images/rubbish-removal-1.jpg",
+              "/assets/images/van-scrap.png"
             ];
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]} 
+                    src={images[index]}
+                    loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"
                   />
@@ -154,14 +189,14 @@ const nearbyAreas = ["Kettering", "Market Harborough", "Peterborough", "Wellingb
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden maintenance, rubbish clearance, landscaping and man with van services in ${areaName}. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, hedge cutting, landscaping and property clearance in ${areaName}, North Northamptonshire. Serving Beanfield, Kingswood, Danesholme, Priors Hall and Oakley Vale. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Northampton",
-    "addressRegion": "Northamptonshire",
+    "addressLocality": areaName,
+    "addressRegion": "North Northamptonshire",
     "addressCountry": "GB"
   },
   "areaServed": {

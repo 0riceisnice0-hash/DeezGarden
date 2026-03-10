@@ -197,6 +197,62 @@ import { siteConfig } from '../../config';
     </div>
   </section>
   
+  <!-- FAQ Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Hedge Cutting FAQs</h2>
+        <div class="space-y-4">
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              How much does hedge cutting cost in Northampton?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              Hedge cutting prices depend on the height, length, and type of hedge, as well as access. We offer free, no-obligation quotes — call <a href="tel:07305195098" class="text-fresh-green font-semibold">07305 195098</a> for a price. Small garden hedges start from around £40.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              When is the best time to cut hedges in the UK?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              The best time is outside the bird nesting season — ideally late August to February. Under the Wildlife & Countryside Act 1981, cutting hedges between March and August risks disturbing nesting birds. We always check for active nests before starting work.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              Do you take away the clippings?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              Yes, we remove all clippings as part of our hedge cutting service. As a licensed waste carrier, all arisings are disposed of legally and responsibly. We leave your property clean and tidy.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              Can you cut Leylandii hedges?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              Yes, we cut all hedge types including Leylandii, laurel, privet, beech, hornbeam, and box. We can also reduce the height and width of overgrown Leylandii that have got too large.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              How often should hedges be cut?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              Most formal hedges benefit from 1–2 cuts per year. Fast-growing species like privet or Leylandii may need more frequent trimming. We can advise on the right schedule for your hedge type and preferred appearance.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Related Services -->
   <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4">
@@ -221,6 +277,53 @@ import { siteConfig } from '../../config';
   
   <Footer slot="footer" />
 </BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does hedge cutting cost in Northampton?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hedge cutting prices depend on the height, length, and type of hedge, as well as access. We offer free, no-obligation quotes — call 07305 195098 for a price. Small garden hedges start from around £40."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the best time to cut hedges in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best time is outside the bird nesting season — ideally late August to February. Under the Wildlife & Countryside Act 1981, cutting hedges between March and August risks disturbing nesting birds. We always check for active nests before starting work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you take away the clippings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we remove all clippings as part of our hedge cutting service. As a licensed waste carrier, all arisings are disposed of legally and responsibly. We leave your property clean and tidy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you cut Leylandii hedges?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we cut all hedge types including Leylandii, laurel, privet, beech, hornbeam, and box. We can also reduce the height and width of overgrown Leylandii that have got too large."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should hedges be cut?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most formal hedges benefit from 1-2 cuts per year. Fast-growing species like privet or Leylandii may need more frequent trimming. We can advise on the right schedule for your hedge type and preferred appearance."
+      }
+    }
+  ]
+})} />
 
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",

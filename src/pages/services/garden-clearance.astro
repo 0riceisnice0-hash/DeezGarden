@@ -209,6 +209,62 @@ import { siteConfig } from '../../config';
       </div>
     </div>
   </section>
+
+  <!-- FAQ Section -->
+  <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Garden Clearance FAQs</h2>
+        <div class="space-y-4">
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              How much does garden clearance cost in Northampton?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              Garden clearance prices depend on the size of the garden, the level of overgrowth, and access. We offer free, no-obligation quotes — call <a href="tel:07305195098" class="text-fresh-green font-semibold">07305 195098</a> for a price. Most residential garden clearances start from around £150.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              What do you do with the garden waste after clearance?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              As a licensed waste carrier, we remove all garden waste and dispose of it legally and responsibly. You don't need to worry about skips or waste disposal — we handle everything.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              How long does a garden clearance take?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              This depends on the size and level of overgrowth. Most residential garden clearances take between half a day and a full day. Larger, more overgrown gardens or site clearances may take longer. We'll give you a time estimate when we quote.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              Do you clear Japanese knotweed?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              Japanese knotweed requires specialist treatment under Environment Agency guidelines and cannot simply be cut down and removed. If you suspect knotweed, please mention it when you contact us and we can advise accordingly.
+            </p>
+          </details>
+          <details class="bg-white rounded-xl shadow-md border border-fresh-green/20 group">
+            <summary class="p-4 md:p-6 font-bold text-sm md:text-base text-deep-green cursor-pointer list-none flex justify-between items-center">
+              Can you clear a garden before I sell my house?
+              <span class="text-fresh-green text-lg ml-2 group-open:rotate-45 transition-transform inline-block">+</span>
+            </summary>
+            <p class="px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base text-gray-700">
+              Yes, this is one of our most common requests. A tidy, cleared garden significantly improves kerb appeal and can make a real difference to a property sale. We can clear, tidy, and prepare your garden quickly.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <!-- Related Services -->
   <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
@@ -234,6 +290,53 @@ import { siteConfig } from '../../config';
   
   <Footer slot="footer" />
 </BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does garden clearance cost in Northampton?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Garden clearance prices depend on the size of the garden, the level of overgrowth, and access. We offer free, no-obligation quotes — call 07305 195098 for a price. Most residential garden clearances start from around £150."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do you do with the garden waste after clearance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As a licensed waste carrier, we remove all garden waste and dispose of it legally and responsibly. You don't need to worry about skips or waste disposal — we handle everything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a garden clearance take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This depends on the size and level of overgrowth. Most residential garden clearances take between half a day and a full day. Larger, more overgrown gardens or site clearances may take longer. We'll give you a time estimate when we quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you clear Japanese knotweed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Japanese knotweed requires specialist treatment under Environment Agency guidelines and cannot simply be cut down and removed. If you suspect knotweed, please mention it when you contact us and we can advise accordingly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you clear a garden before I sell my house?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this is one of our most common requests. A tidy, cleared garden significantly improves kerb appeal and can make a real difference to a property sale. We can clear, tidy, and prepare your garden quickly."
+      }
+    }
+  ]
+})} />
 
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",

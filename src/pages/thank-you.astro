@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../config';
+---
+
+<BaseLayout 
+  title="Thank You | Your Quote Request Has Been Received"
+  description="Thanks for getting in touch with Dee'z Gardens. We've received your quote request and will get back to you shortly."
+  noindex={true}
+>
+  <Header slot="header" />
+  
+  <section class="min-h-[70vh] flex items-center bg-bg-light py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-xl mx-auto">
+        <!-- Success Icon -->
+        <div class="w-20 h-20 md:w-24 md:h-24 bg-fresh-green rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <svg class="w-10 h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl font-extrabold text-deep-green mb-4 tracking-tight">Thank You!</h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-3">
+          We've received your message and will get back to you as soon as possible.
+        </p>
+        <p class="text-base text-gray-600 mb-8">
+          Need a faster response? Call us directly on
+          <a href={`tel:${siteConfig.phone}`} class="text-fresh-green font-bold hover:text-deep-green">
+            {siteConfig.phoneFormatted}
+          </a>
+          — we're available Monday to Saturday, 8am–6pm.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a 
+            href="/"
+            class="inline-block bg-fresh-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green transition shadow-lg"
+          >
+            Back to Homepage
+          </a>
+          <a 
+            href={`tel:${siteConfig.phone}`}
+            class="inline-block bg-white text-deep-green border-2 border-deep-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-green hover:text-white transition shadow-lg"
+          >
+            📞 Call Us Now
+          </a>
+        </div>
+        
+        <!-- What Happens Next -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-fresh-green/20 text-left">
+          <h2 class="text-lg md:text-xl font-bold text-deep-green mb-4 text-center">What happens next?</h2>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-fresh-green rounded-full flex items-center justify-center text-white font-bold flex-shrink-0 text-sm">1</div>
+              <div>
+                <p class="font-semibold text-gray-800">We review your request</p>
+                <p class="text-sm text-gray-600">We'll read through your message and assess your requirements.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-fresh-green rounded-full flex items-center justify-center text-white font-bold flex-shrink-0 text-sm">2</div>
+              <div>
+                <p class="font-semibold text-gray-800">We get back to you</p>
+                <p class="text-sm text-gray-600">We'll contact you by phone or email — usually within a few hours during working hours.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-fresh-green rounded-full flex items-center justify-center text-white font-bold flex-shrink-0 text-sm">3</div>
+              <div>
+                <p class="font-semibold text-gray-800">Free, no-obligation quote</p>
+                <p class="text-sm text-gray-600">We'll give you a clear, competitive quote with no hidden fees.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
