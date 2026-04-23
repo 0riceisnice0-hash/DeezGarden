@@ -21,6 +21,15 @@ const breadcrumbName = title.split(' | ')[0].trim();
 const gaId = siteConfig.googleAnalyticsId && /^G-[A-Z0-9]+$/.test(siteConfig.googleAnalyticsId)
   ? siteConfig.googleAnalyticsId
   : null;
+// Build address object — only include streetAddress/postalCode when the owner has filled them in
+const postalAddress: Record<string, string> = {
+  "@type": "PostalAddress",
+  "addressLocality": "Northampton",
+  "addressRegion": "Northamptonshire",
+  "addressCountry": "GB",
+};
+if (siteConfig.address.streetAddress) postalAddress["streetAddress"] = siteConfig.address.streetAddress;
+if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.address.postalCode;
 ---
 
 <!DOCTYPE html>
@@ -102,14 +111,7 @@ const gaId = siteConfig.googleAnalyticsId && /^G-[A-Z0-9]+$/.test(siteConfig.goo
     "email": siteConfig.email,
     "image": `${siteConfig.baseUrl}${siteConfig.ogImage.path}`,
     "logo": `${siteConfig.baseUrl}/favicon.svg`,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": siteConfig.address.streetAddress,
-      "addressLocality": "Northampton",
-      "addressRegion": "Northamptonshire",
-      "postalCode": siteConfig.address.postalCode,
-      "addressCountry": "GB"
-    },
+    "address": postalAddress,
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 52.2405,
