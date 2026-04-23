@@ -1,6 +1,8 @@
 ---
 import { siteConfig, services } from '../config';
+import { aggregateRating } from '../data/reviews';
 import StickyMobileCTA from '../components/StickyMobileCTA.astro';
+import HomepageQuoteForm from '../components/HomepageQuoteForm.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -58,6 +60,11 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   <meta name="geo.placename" content="Northampton">
   <meta name="geo.position" content="52.2405;-0.9027">
   <meta name="ICBM" content="52.2405, -0.9027">
+
+  <!-- Tell mobile browsers our phone numbers ARE phone numbers (improves tap-to-call UX) -->
+  <meta name="format-detection" content="telephone=yes">
+  <!-- Hint Google we're UK English -->
+  <meta http-equiv="Content-Language" content="en-GB">
   
   <!-- Theme color -->
   <meta name="theme-color" content="#16a34a">
@@ -98,8 +105,6 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Schema.org JSON-LD - LocalBusiness -->
-  <!-- TODO: add aggregateRating to the LocalBusiness schema once review data is wired up:
-       "aggregateRating": { "@type": "AggregateRating", "ratingValue": X, "reviewCount": Y } -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
@@ -116,6 +121,13 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
       "@type": "GeoCoordinates",
       "latitude": 52.2405,
       "longitude": -0.9027
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": aggregateRating.ratingValue,
+      "reviewCount": aggregateRating.reviewCount,
+      "bestRating": aggregateRating.bestRating,
+      "worstRating": aggregateRating.worstRating
     },
     "areaServed": allAreas.map(area => ({
       "@type": "City",
@@ -139,7 +151,7 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
       "opens": "08:00",
       "closes": "18:00"
     },
-    "sameAs": [siteConfig.facebook],
+    "sameAs": [siteConfig.facebook, siteConfig.googleBusinessProfile].filter(Boolean),
     "priceRange": "££",
     "paymentAccepted": "Cash, Credit Card, Apple Pay",
     "currenciesAccepted": "GBP",
@@ -184,5 +196,28 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   </main>
   <slot name="footer" />
   <StickyMobileCTA />
+  <HomepageQuoteForm />
+
+  <!-- Lead-intent click tracking: pushes events to dataLayer so they're captured the moment GA4/GTM is wired up -->
+  <script is:inline>
+    (function () {
+      window.dataLayer = window.dataLayer || [];
+      function track(name, data) {
+        try { window.dataLayer.push(Object.assign({ event: name }, data || {})); } catch (e) {}
+      }
+      document.addEventListener('click', function (e) {
+        var el = e.target instanceof Element ? e.target.closest('a,button') : null;
+        if (!el) return;
+        var href = el.getAttribute('href') || '';
+        if (href.indexOf('tel:') === 0) {
+          track('phone_click', { phone: href.replace('tel:', ''), location: window.location.pathname });
+        } else if (href.indexOf('mailto:') === 0) {
+          track('email_click', { location: window.location.pathname });
+        } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+          track('whatsapp_click', { location: window.location.pathname });
+        }
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>

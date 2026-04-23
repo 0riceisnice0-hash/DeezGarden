@@ -6,6 +6,11 @@ export const siteConfig = {
   phoneFormatted: "07305 195098",
   email: "deez.gardensuk@gmail.com",
   facebook: "https://www.facebook.com/groups/1922611271669486",
+  // Google Business Profile (Maps) listing URL — fills in `sameAs` for local SEO.
+  // Get this from your Google Business Profile share link, e.g.
+  //   https://g.page/your-business-name  OR  https://maps.app.goo.gl/...
+  // Leave empty until you have it.
+  googleBusinessProfile: "https://share.google/Iutxxn93F6DN5rOL2",
   // WhatsApp: uses UK international format (07305 195098 → +447305195098)
   whatsapp: "https://wa.me/447305195098?text=Hi%2C%20I%27d%20like%20a%20free%20quote%20from%20Dee%27z%20Gardens.",
   

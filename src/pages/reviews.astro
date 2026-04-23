@@ -5,135 +5,104 @@ import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import HeroCTA from '../components/HeroCTA.astro';
-import SlideOutQuoteForm from '../components/SlideOutQuoteForm.astro';
+import { siteConfig } from '../config';
+import { reviews, aggregateRating } from '../data/reviews';
 ---
 
 <BaseLayout 
-  title="Customer Reviews | 5-Star Gardener Northampton & Northamptonshire"
-  description="Read 5-star reviews from satisfied customers across Northampton & Northamptonshire. Professional garden maintenance, clearance & removals services. See why customers recommend Dee'z Gardens."
+  title={`Customer Reviews | ${aggregateRating.ratingValue}★ Gardener Northampton & Northamptonshire`}
+  description={`Read ${aggregateRating.reviewCount}+ genuine 5-star Google reviews of Dee'z Gardens — professional garden maintenance, clearance, landscaping & rubbish removal across Northampton & Northamptonshire. Average rating ${aggregateRating.ratingValue}/5.`}
 >
   <Header slot="header" />
-  
-  <SlideOutQuoteForm />
   
   <Hero 
     heroImage="hero.jpg"
     title="Customer Reviews"
-    subtitle="See what our customers say about us"
+    subtitle={`Rated ${aggregateRating.ratingValue}★ on Google from ${aggregateRating.reviewCount}+ real customers`}
     showQuoteButton={true}
   />
   
   <TrustBadges />
+
+  <!-- Aggregate rating banner -->
+  <section class="py-4 md:py-6 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+        <div class="flex items-center gap-2">
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-6 h-6 md:w-7 md:h-7 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
+          </div>
+          <span class="text-2xl md:text-3xl font-extrabold text-deep-green">{aggregateRating.ratingValue}</span>
+          <span class="text-gray-600 text-sm md:text-base">/ 5</span>
+        </div>
+        <span class="hidden sm:block text-gray-300">|</span>
+        <p class="text-sm md:text-base text-gray-700">
+          <strong>{aggregateRating.reviewCount}+ verified reviews</strong> on Google
+        </p>
+        {siteConfig.googleBusinessProfile && (
+          <a 
+            href={siteConfig.googleBusinessProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-fresh-green text-white font-bold px-4 py-2 rounded-lg hover:bg-deep-green transition shadow-md text-sm"
+          >
+            ⭐ Read on Google
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
   
   <section class="py-6 md:py-16 bg-bg-sage">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <p class="text-center text-sm md:text-lg mb-6 md:mb-12 text-gray-700">
-          We're proud of the service we provide. Here's what our customers say:
+          Don't take our word for it — here's what our customers are saying:
         </p>
         
-        <div class="space-y-4 md:space-y-8">
-          <!-- Review 1 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
-            <div class="flex items-center mb-2 md:mb-4">
-              <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ))}
+        <div class="space-y-4 md:space-y-6">
+          {reviews.map(review => (
+            <article class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
+              <div class="flex items-center mb-2 md:mb-4">
+                <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4" aria-label={`${review.rating} out of 5 stars`}>
+                  {[...Array(review.rating)].map(() => (
+                    <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  ))}
+                </div>
+                <div>
+                  {review.title && <h3 class="font-bold text-sm md:text-lg">{review.title}</h3>}
+                  {review.service && <p class="text-xs md:text-sm text-gray-600">{review.service}</p>}
+                </div>
               </div>
-              <div>
-                <h3 class="font-bold text-sm md:text-lg">Excellent Garden Maintenance</h3>
-                <p class="text-xs md:text-sm text-gray-600">Garden Maintenance - Northampton</p>
-              </div>
-            </div>
-            <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
-              "Very professional service. They transformed our overgrown garden and now maintain it regularly. Always on time and tidy work. Highly recommend!"
-            </p>
-            <p class="text-xs md:text-sm text-gray-600">— Zachery B., Northampton</p>
-          </div>
-          
-          <!-- Review 2 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
-            <div class="flex items-center mb-2 md:mb-4">
-              <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ))}
-              </div>
-              <div>
-                <h3 class="font-bold text-sm md:text-lg">Fantastic Clearance Service</h3>
-                <p class="text-xs md:text-sm text-gray-600">House Clearance - Kettering</p>
-              </div>
-            </div>
-            <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
-              "Needed a full garage clearance and they made it so easy. Fair price, arrived when they said they would, and cleared everything quickly. Very pleased."
-            </p>
-            <p class="text-xs md:text-sm text-gray-600">— Amber R., Kettering</p>
-          </div>
-          
-          <!-- Review 3 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
-            <div class="flex items-center mb-2 md:mb-4">
-              <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ))}
-              </div>
-              <div>
-                <h3 class="font-bold text-sm md:text-lg">Reliable Man with Van</h3>
-                <p class="text-xs md:text-sm text-gray-600">Removals - Wellingborough</p>
-              </div>
-            </div>
-            <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
-              "Used them for a house move and they were brilliant. Careful with our furniture, friendly, and made the whole process stress-free."
-            </p>
-            <p class="text-xs md:text-sm text-gray-600">— Marcus H., Wellingborough</p>
-          </div>
-          
-          <!-- Review 4 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
-            <div class="flex items-center mb-2 md:mb-4">
-              <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ))}
-              </div>
-              <div>
-                <h3 class="font-bold text-sm md:text-lg">Professional Landscaping</h3>
-                <p class="text-xs md:text-sm text-gray-600">Landscaping - Rushden</p>
-              </div>
-            </div>
-            <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
-              "Had a new patio installed and landscaping done. The quality of work is excellent and they finished on time. Garden looks amazing now!"
-            </p>
-            <p class="text-xs md:text-sm text-gray-600">— Jennifer W., Rushden</p>
-          </div>
-          
-          <!-- Review 5 -->
-          <div class="bg-white p-4 md:p-8 rounded-lg shadow-md border border-light-green/20">
-            <div class="flex items-center mb-2 md:mb-4">
-              <div class="flex gap-0.5 md:gap-1 mr-3 md:mr-4">
-                {[1,2,3,4,5].map(() => (
-                  <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ))}
-              </div>
-              <div>
-                <h3 class="font-bold text-sm md:text-lg">Great Communication</h3>
-                <p class="text-xs md:text-sm text-gray-600">Garden Clearance - Daventry</p>
-              </div>
-            </div>
-            <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
-              "Really appreciate the clear communication throughout. They explained everything, arrived on time, and the price was exactly as quoted."
-            </p>
-            <p class="text-xs md:text-sm text-gray-600">— Daniel A., Daventry</p>
-          </div>
+              <p class="text-gray-700 italic mb-2 md:mb-4 text-sm md:text-base">
+                "{review.text}"
+              </p>
+              <p class="text-xs md:text-sm text-gray-600">— {review.author}</p>
+            </article>
+          ))}
         </div>
         
         <div class="mt-8 md:mt-12 bg-white p-6 md:p-10 rounded-2xl text-center shadow-md border border-light-green/20">
-          <h3 class="text-lg md:text-2xl font-bold mb-2 md:mb-4 text-deep-green">Join Our Satisfied Customers</h3>
+          <h2 class="text-lg md:text-2xl font-bold mb-2 md:mb-4 text-deep-green">Join Our Satisfied Customers</h2>
           <p class="text-sm md:text-lg mb-4 md:mb-6 text-gray-700">
             Get in touch today for a free, no-obligation quote.
           </p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a 
+              href={`tel:${siteConfig.phone}`}
+              class="inline-flex items-center gap-2 bg-fresh-green text-white font-extrabold px-6 py-3 rounded-lg hover:bg-deep-green transition shadow-lg w-full sm:w-auto justify-center"
+            >
+              📞 Call {siteConfig.phoneFormatted}
+            </a>
+            <button 
+              type="button"
+              class="quote-cta-btn inline-flex items-center gap-2 bg-deep-green text-white font-extrabold px-6 py-3 rounded-lg hover:bg-fresh-green transition shadow-lg w-full sm:w-auto justify-center cursor-pointer"
+            >
+              💬 Get a Free Quote
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -144,59 +113,33 @@ import SlideOutQuoteForm from '../components/SlideOutQuoteForm.astro';
   <Footer slot="footer" />
 </BaseLayout>
 
+<!-- Review schema — REAL Google reviews; eligible for review-snippet rich results -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Dee'z Gardens",
-  "url": "https://deezgardens.co.uk",
-  "telephone": "07305 195098",
+  "name": siteConfig.name,
+  "url": siteConfig.baseUrl,
+  "telephone": siteConfig.phone,
+  "image": `${siteConfig.baseUrl}${siteConfig.ogImage.path}`,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Northampton",
+    "addressRegion": "Northamptonshire",
+    "addressCountry": "GB"
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "5",
-    "bestRating": "5",
-    "worstRating": "1"
+    "ratingValue": aggregateRating.ratingValue,
+    "reviewCount": aggregateRating.reviewCount,
+    "bestRating": aggregateRating.bestRating,
+    "worstRating": aggregateRating.worstRating
   },
-  "review": [
-    {
-      "@type": "Review",
-      "name": "Excellent Garden Maintenance",
-      "reviewBody": "Very professional service. They transformed our overgrown garden and now maintain it regularly. Always on time and tidy work. Highly recommend!",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Zachery B." },
-      "datePublished": "2024-11-05"
-    },
-    {
-      "@type": "Review",
-      "name": "Fantastic Clearance Service",
-      "reviewBody": "Needed a full garage clearance and they made it so easy. Fair price, arrived when they said they would, and cleared everything quickly. Very pleased.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Amber R." },
-      "datePublished": "2024-11-18"
-    },
-    {
-      "@type": "Review",
-      "name": "Reliable Man with Van",
-      "reviewBody": "Used them for a house move and they were brilliant. Careful with our furniture, friendly, and made the whole process stress-free.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Marcus H." },
-      "datePublished": "2024-12-02"
-    },
-    {
-      "@type": "Review",
-      "name": "Professional Landscaping",
-      "reviewBody": "Had a new patio installed and landscaping done. The quality of work is excellent and they finished on time. Garden looks amazing now!",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Jennifer W." },
-      "datePublished": "2024-12-14"
-    },
-    {
-      "@type": "Review",
-      "name": "Great Communication",
-      "reviewBody": "Really appreciate the clear communication throughout. They explained everything, arrived on time, and the price was exactly as quoted.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Daniel A." },
-      "datePublished": "2025-01-08"
-    }
-  ]
+  "review": reviews.map(r => ({
+    "@type": "Review",
+    "name": r.title,
+    "reviewBody": r.text,
+    "reviewRating": { "@type": "Rating", "ratingValue": r.rating, "bestRating": 5 },
+    "author": { "@type": "Person", "name": r.author },
+    "datePublished": r.datePublished
+  }))
 })} />

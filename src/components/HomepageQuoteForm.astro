@@ -306,36 +306,51 @@ const serviceOptions = [
           service: hiddenInput.value,
         });
       }
+      try { (window as any).dataLayer?.push({ event: 'generate_lead', service: hiddenInput.value, source: 'quote_modal' }); } catch {}
     });
 
-    // Auto-open: homepage only, once per session, after 50% scroll OR 40s.
-    const isHomepage = window.location.pathname === '/' || window.location.pathname === '';
+    // Auto-open: site-wide, once per session, after 60% scroll OR 35s OR exit-intent (desktop).
+    // Skipped on contact / thank-you pages where a form is already prominent.
+    const path = window.location.pathname.replace(/\/+$/, '');
+    const skipPaths = ['/contact', '/thank-you'];
+    const autoOpenAllowed = !skipPaths.some(p => path === p || path.endsWith(p));
     let alreadyDismissed = false;
     try { alreadyDismissed = sessionStorage.getItem('quote_modal_dismissed') === '1'; } catch {}
     let alreadyAutoOpened = false;
 
-    function maybeAutoOpen() {
-      if (!isHomepage || alreadyAutoOpened || alreadyDismissed || userClosedThisSession) return;
+    function maybeAutoOpen(reason: string) {
+      if (!autoOpenAllowed || alreadyAutoOpened || alreadyDismissed || userClosedThisSession) return;
       if (modal && !modal.classList.contains('hidden')) return;
       alreadyAutoOpened = true;
       openModal();
       const w = window as any;
       if (typeof w.gtag === 'function') {
-        w.gtag('event', 'auto_open_quote_modal', { event_category: 'engagement' });
+        w.gtag('event', 'auto_open_quote_modal', { event_category: 'engagement', trigger: reason });
       }
+      try { (window as any).dataLayer?.push({ event: 'auto_open_quote_modal', trigger: reason }); } catch {}
     }
 
-    if (isHomepage && !alreadyDismissed) {
-      setTimeout(maybeAutoOpen, 40000);
+    if (autoOpenAllowed && !alreadyDismissed) {
+      // Time-based trigger
+      setTimeout(() => maybeAutoOpen('time'), 35000);
+      // Scroll-based trigger
       const onScroll = () => {
         const scrolled = window.scrollY + window.innerHeight;
         const total = document.documentElement.scrollHeight;
-        if (total > 0 && scrolled / total >= 0.5) {
-          maybeAutoOpen();
+        if (total > 0 && scrolled / total >= 0.6) {
+          maybeAutoOpen('scroll');
           window.removeEventListener('scroll', onScroll);
         }
       };
       window.addEventListener('scroll', onScroll, { passive: true });
+      // Exit-intent (desktop only — mouse leaves toward top of viewport)
+      const onMouseOut = (e: MouseEvent) => {
+        if (e.clientY <= 0 && window.innerWidth >= 1024) {
+          maybeAutoOpen('exit_intent');
+          document.removeEventListener('mouseout', onMouseOut);
+        }
+      };
+      document.addEventListener('mouseout', onMouseOut);
     }
   });
 </script>
