@@ -10,7 +10,6 @@ import AreasCompact from '../components/AreasCompact.astro';
 import WhyChooseUsCompact from '../components/WhyChooseUsCompact.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
-import SlideOutQuoteForm from '../components/SlideOutQuoteForm.astro';
 import ReviewsCarousel from '../components/ReviewsCarousel.astro';
 import HomepageQuoteForm from '../components/HomepageQuoteForm.astro';
 import { siteConfig } from '../config';
@@ -52,22 +51,18 @@ import { siteConfig } from '../config';
 >
   <Header slot="header" />
   
-  <!-- Slide-out Quote Form -->
-  <SlideOutQuoteForm />
-  
   <Hero 
-    title="Professional Garden & Clearance Services"
-    subtitle="Northampton's trusted gardener — free quotes, fully insured"
+    title="Gardener in Northampton — Garden Maintenance, Clearance & Landscaping"
+    subtitle="Northampton's trusted local gardener — free quotes, fully insured"
     heroImage="hero.jpg"
-    textAtTop={true}
-  >
-    <HomepageQuoteForm />
-  </Hero>
+    showCTA={true}
+    showQuoteButton={true}
+  />
   
   <TrustBadges />
   
   <!-- Introduction Section -->
-  <section class="py-4 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
+  <section class="py-4 md:py-12 bg-bg-light">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
@@ -76,11 +71,11 @@ import { siteConfig } from '../config';
             <p class="text-sm md:text-lg mb-2 md:mb-4">
               We're a local, trusted gardening and clearance company based in Northampton, providing professional services throughout Northamptonshire.
             </p>
-            <p class="hidden md:block text-lg mb-4">
+            <p class="text-sm md:text-lg mb-2 md:mb-4">
               Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or a reliable man with van service, we're here to help. Our team is fully insured and operates as a licensed waste carrier, giving you complete peace of mind.
             </p>
             <p class="text-sm md:text-lg">
-              We pride ourselves on tidy work, clear communication, and reliability. <span class="hidden md:inline">Get in touch today for a free, no-obligation quote.</span>
+              We pride ourselves on tidy work, clear communication, and reliability. Get in touch today for a free, no-obligation quote.
             </p>
           </div>
           <div class="flex flex-col items-center">
@@ -97,7 +92,7 @@ import { siteConfig } from '../config';
   </section>
   
   <!-- Services Overview - Stacked Layout -->
-  <section class="py-2 md:py-6 bg-bg-sage border-b-2 border-fresh-green/20">
+  <section class="py-2 md:py-6 bg-bg-sage">
     <div class="container mx-auto px-4">
       <h2 class="text-lg md:text-xl font-bold text-center text-deep-green">Our Services</h2>
     </div>
@@ -143,7 +138,7 @@ import { siteConfig } from '../config';
               href="/services/garden-maintenance/"
               class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-bold hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
             >
-              Learn More About Garden Services
+              View our Northampton garden maintenance services
             </a>
           </div>
           <div class="relative order-first lg:order-last">
@@ -151,6 +146,8 @@ import { siteConfig } from '../config';
               src="/assets/images/before-and-after-lawn-1.jpg" 
               alt="Garden Renovations and Maintenance Services" 
               loading="lazy"
+              width="800"
+              height="600"
               class="rounded-lg shadow-xl w-full h-48 md:h-80 object-contain bg-gray-100 border-2 border-gray-200"
             />
           </div>
@@ -169,6 +166,8 @@ import { siteConfig } from '../config';
               src="/assets/images/rubbish-removal-1.jpg" 
               alt="Rubbish Clearance and Removals Services" 
               loading="lazy"
+              width="800"
+              height="600"
               class="rounded-lg shadow-xl w-full h-48 md:h-80 object-contain bg-gray-100 border-2 border-gray-200"
             />
           </div>
@@ -199,7 +198,7 @@ import { siteConfig } from '../config';
               href="/services/clearance-removals/"
               class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-bold hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
             >
-              Learn More About Clearance Services
+              Northampton garden clearance & rubbish removal
             </a>
           </div>
         </div>
@@ -239,7 +238,7 @@ import { siteConfig } from '../config';
               href="/services/man-with-van/"
               class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-bold hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
             >
-              Learn More About Removals
+              Man with van services in Northamptonshire
             </a>
           </div>
           <div class="relative order-first lg:order-last">
@@ -247,6 +246,8 @@ import { siteConfig } from '../config';
               src="/assets/images/van-scrap.png" 
               alt="Man with Van and Scrap Metal Services" 
               loading="lazy"
+              width="800"
+              height="600"
               class="rounded-lg shadow-xl w-full h-48 md:h-80 object-cover border-2 border-gray-200"
             />
           </div>
@@ -265,6 +266,8 @@ import { siteConfig } from '../config';
               src="/assets/images/house.jpg" 
               alt="Property Maintenance Services" 
               loading="lazy"
+              width="800"
+              height="600"
               class="rounded-lg shadow-xl w-full h-48 md:h-80 object-cover border-2 border-gray-200"
             />
           </div>
@@ -295,7 +298,7 @@ import { siteConfig } from '../config';
               href="/services/property-maintenance/"
               class="inline-block w-full sm:w-auto text-center bg-fresh-green text-white px-6 py-3 rounded-lg font-bold hover:bg-deep-green transition-all shadow-lg hover:shadow-xl border-2 border-fresh-green hover:border-deep-green"
             >
-              Learn More About Property Maintenance
+              Property maintenance services in Northampton
             </a>
           </div>
         </div>
@@ -379,9 +382,53 @@ import { siteConfig } from '../config';
       </div>
     </div>
   </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="py-6 md:py-12 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-xl md:text-3xl font-extrabold text-center mb-6 md:mb-8 tracking-tight">Frequently Asked Questions</h2>
+
+        <div class="space-y-4">
+          <details class="bg-white rounded-xl shadow-sm border-2 border-gray-100 p-4 md:p-6 group">
+            <summary class="cursor-pointer list-none flex justify-between items-center">
+              <h3 class="text-base md:text-lg font-bold text-deep-green pr-4">How much does garden maintenance cost in Northampton?</h3>
+              <span class="text-fresh-green text-xl font-bold flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-3 text-sm md:text-base text-gray-700">
+              Garden maintenance prices vary depending on garden size and the work required. We offer free, no-obligation quotes tailored to your needs. Contact us on 07305 195098 or fill in our quote form for a fast response.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm border-2 border-gray-100 p-4 md:p-6 group">
+            <summary class="cursor-pointer list-none flex justify-between items-center">
+              <h3 class="text-base md:text-lg font-bold text-deep-green pr-4">Are you a licensed waste carrier?</h3>
+              <span class="text-fresh-green text-xl font-bold flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-3 text-sm md:text-base text-gray-700">
+              Yes, Dee'z Gardens is a fully licensed waste carrier. We dispose of all garden and household waste responsibly and in compliance with UK regulations.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm border-2 border-gray-100 p-4 md:p-6 group">
+            <summary class="cursor-pointer list-none flex justify-between items-center">
+              <h3 class="text-base md:text-lg font-bold text-deep-green pr-4">Which areas of Northamptonshire do you cover?</h3>
+              <span class="text-fresh-green text-xl font-bold flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-3 text-sm md:text-base text-gray-700">
+              We cover Northampton and the wider Northamptonshire area, including Wellingborough, Kettering, Daventry, Towcester, Brackley, Rushden, and many more towns and villages.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <!-- Hero CTA before footer -->
   <HeroCTA />
+
+  <!-- Quote Form Modal -->
+  <HomepageQuoteForm />
   
   <Footer slot="footer" />
 </BaseLayout>

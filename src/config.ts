@@ -25,6 +25,12 @@ export const siteConfig = {
   secondaryAreas: ["Towcester", "Brackley", "Milton Keynes", "Market Harborough", "Corby", "Aylesbury"],
   extendedAreas: ["Bedford", "Rugby", "Leicester", "Peterborough", "Coventry"],
   
+  // Address — TODO: confirm exact street address with owner before publishing
+  address: {
+    streetAddress: "", // TODO: confirm with owner (e.g. "123 Example Street")
+    postalCode: "",    // TODO: confirm with owner (e.g. "NN1 1AA")
+  },
+
   // SEO
   baseUrl: "https://deezgardens.co.uk",
   description: "Professional garden maintenance, clearance, and landscaping services in Northampton and surrounding areas. Fully insured with licensed waste carrier.",
