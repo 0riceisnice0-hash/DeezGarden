@@ -21,6 +21,15 @@ const breadcrumbName = title.split(' | ')[0].trim();
 const gaId = siteConfig.googleAnalyticsId && /^G-[A-Z0-9]+$/.test(siteConfig.googleAnalyticsId)
   ? siteConfig.googleAnalyticsId
   : null;
+// Build address object — only include streetAddress/postalCode when the owner has filled them in
+const postalAddress: Record<string, string> = {
+  "@type": "PostalAddress",
+  "addressLocality": "Northampton",
+  "addressRegion": "Northamptonshire",
+  "addressCountry": "GB",
+};
+if (siteConfig.address.streetAddress) postalAddress["streetAddress"] = siteConfig.address.streetAddress;
+if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.address.postalCode;
 ---
 
 <!DOCTYPE html>
@@ -89,9 +98,11 @@ const gaId = siteConfig.googleAnalyticsId && /^G-[A-Z0-9]+$/.test(siteConfig.goo
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Schema.org JSON-LD - LocalBusiness -->
+  <!-- TODO: add aggregateRating to the LocalBusiness schema once review data is wired up:
+       "aggregateRating": { "@type": "AggregateRating", "ratingValue": X, "reviewCount": Y } -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "@id": siteConfig.baseUrl,
     "name": siteConfig.name,
     "description": siteConfig.description,
@@ -100,12 +111,7 @@ const gaId = siteConfig.googleAnalyticsId && /^G-[A-Z0-9]+$/.test(siteConfig.goo
     "email": siteConfig.email,
     "image": `${siteConfig.baseUrl}${siteConfig.ogImage.path}`,
     "logo": `${siteConfig.baseUrl}/favicon.svg`,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Northampton",
-      "addressRegion": "Northamptonshire",
-      "addressCountry": "GB"
-    },
+    "address": postalAddress,
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 52.2405,
