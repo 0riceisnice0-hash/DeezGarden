@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import ProjectShowcase from '../../components/ProjectShowcase.astro';
+import { siteConfig } from '../../config';
+
+const areas = ['Northampton', 'Wellingborough', 'Kettering', 'Rushden', 'Daventry', 'Towcester', 'Brackley', 'Corby'];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Patio and Paving Installation Northampton',
+  serviceType: 'Patio laying and garden paving',
+  url: `${siteConfig.baseUrl}/services/patios-paving/`,
+  description: 'Patio laying, garden paving, paths, steps, gravel and edging in Northampton and Northamptonshire.',
+  provider: { '@type': 'HomeAndConstructionBusiness', name: siteConfig.name, telephone: siteConfig.phone, url: siteConfig.baseUrl },
+  areaServed: areas.map(name => ({ '@type': 'City', name })),
+};
+---
+
+<BaseLayout title="Patios & Paving Northampton | Local Patio Installers" description="Patio and paving installers in Northampton. New patios, porcelain-style slabs, paths, steps, gravel and edging. See real local work and request a free quote." schema={schema}>
+  <Header slot="header" />
+  <Hero title="Patios & Paving in Northampton" subtitle="New patios, paths, steps, gravel and garden edging" heroImage="projects-2026/large-patio-after.webp" showCTA={true} showQuoteButton={true} />
+  <TrustBadges />
+
+  <section class="py-8 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4"><div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-7 md:gap-12 items-center">
+      <div>
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-fresh-green">Built for real gardens</p>
+        <h2 class="text-xl md:text-3xl font-extrabold">A practical patio with a clean, lasting finish</h2>
+        <p class="text-sm md:text-lg text-gray-700">We install patios and paved areas as part of complete garden makeovers across Northamptonshire. That can include clearing the old garden, preparing and levelling the ground, laying slabs, forming steps and paths, adding gravel or timber edging, and leaving the site tidy.</p>
+        <p class="text-sm md:text-lg text-gray-700">Every quote is based on the access, area, levels, materials and preparation your garden actually needs. Send photos and a postcode for the quickest starting point.</p>
+        <button type="button" class="quote-cta-btn bg-fresh-green text-white px-6 py-3 rounded-xl font-extrabold hover:bg-deep-green transition shadow-lg">Get my free patio quote</button>
+      </div>
+      <img src="/assets/images/projects-2026/porcelain-patio-path-after.webp" alt="New patio and paved path installed in a Northamptonshire garden" width="900" height="1200" class="w-full max-h-[520px] object-cover rounded-2xl shadow-xl" />
+    </div></div>
+  </section>
+
+  <section class="py-8 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4"><div class="max-w-6xl mx-auto">
+      <h2 class="text-xl md:text-3xl font-extrabold text-center">Patio and hard-landscaping work we can quote for</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-7">
+        {['New garden patios', 'Paved paths and access', 'Garden steps and levels', 'Gravel and shingle areas', 'Timber and slab edging', 'Raised beds and borders', 'Old garden clearance', 'Full garden makeovers'].map(item => <div class="bg-bg-sage rounded-xl p-4 md:p-5 font-bold text-sm md:text-base text-deep-green border border-fresh-green/15">✓ {item}</div>)}
+      </div>
+    </div></div>
+  </section>
+
+  <ProjectShowcase heading="Recent patio and landscaping work" />
+  <CallToAction showDualCTA={true} />
+
+  <section class="py-8 md:py-14 bg-bg-sage">
+    <div class="container mx-auto px-4"><div class="max-w-4xl mx-auto">
+      <h2 class="text-xl md:text-2xl font-extrabold text-center">Patio installers across Northamptonshire</h2>
+      <p class="text-center text-gray-700">Based in Northampton and covering surrounding towns. If your town is not listed, send your postcode and we will confirm availability.</p>
+      <div class="flex flex-wrap justify-center gap-2 mt-5">{areas.map(area => <a href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`} class="bg-white rounded-full px-4 py-2 text-sm font-bold shadow-sm hover:bg-fresh-green hover:text-white transition">{area}</a>)}</div>
+    </div></div>
+  </section>
+  <Footer slot="footer" />
+</BaseLayout>

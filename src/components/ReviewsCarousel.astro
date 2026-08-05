@@ -2,7 +2,6 @@
 // Reviews carousel — pulls from the single source of truth in src/data/reviews.ts
 // Automatically scrolls, supports swipe on mobile, and has arrows on desktop.
 import { reviews as allReviews, aggregateRating } from '../data/reviews';
-import { siteConfig } from '../config';
 
 // Show the most recent / strongest 6 on the homepage carousel
 const reviews = allReviews.slice(0, 6).map(r => ({

@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import ProjectShowcase from '../../components/ProjectShowcase.astro';
+import { siteConfig } from '../../config';
+
+const areas = ['Northampton', 'Wellingborough', 'Kettering', 'Rushden', 'Daventry', 'Towcester', 'Brackley', 'Corby'];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Turfing and Lawn Installation Northampton',
+  serviceType: 'Turfing, artificial lawns and lawn preparation',
+  url: `${siteConfig.baseUrl}/services/turfing-lawns/`,
+  description: 'New turf, artificial lawns, lawn preparation and complete garden makeovers in Northampton and Northamptonshire.',
+  provider: { '@type': 'HomeAndConstructionBusiness', name: siteConfig.name, telephone: siteConfig.phone, url: siteConfig.baseUrl },
+  areaServed: areas.map(name => ({ '@type': 'City', name })),
+};
+---
+
+<BaseLayout title="Turfing Northampton | New Lawns & Artificial Grass" description="Turfing and lawn installation in Northampton. New turf, artificial lawns, ground preparation, edging and complete garden makeovers. Real local work and free quotes." schema={schema}>
+  <Header slot="header" />
+  <Hero title="Turfing & New Lawns in Northampton" subtitle="Ground preparation, turf, artificial lawns and complete garden makeovers" heroImage="projects-2026/small-garden-turf-after.webp" showCTA={true} showQuoteButton={true} />
+  <TrustBadges />
+
+  <section class="py-8 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4"><div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-7 md:gap-12 items-center">
+      <img src="/assets/images/projects-2026/family-garden-turf-gravel-after.webp" alt="New family lawn with gravel and paved seating area" width="1200" height="900" class="w-full max-h-[520px] object-cover rounded-2xl shadow-xl" />
+      <div>
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-fresh-green">A fresh start for tired gardens</p>
+        <h2 class="text-xl md:text-3xl font-extrabold">New lawns prepared properly</h2>
+        <p class="text-sm md:text-lg text-gray-700">A good lawn starts below the surface. We can clear the existing plot, prepare and level the ground, form clean edges and install turf or artificial grass as part of a practical garden layout.</p>
+        <p class="text-sm md:text-lg text-gray-700">Hot, dry weather can leave established grass brown even when it is still alive. We will assess whether your lawn needs recovery work, targeted repair or a full replacement instead of selling unnecessary work.</p>
+        <button type="button" class="quote-cta-btn bg-fresh-green text-white px-6 py-3 rounded-xl font-extrabold hover:bg-deep-green transition shadow-lg">Get my free lawn quote</button>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="py-8 md:py-16 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4"><div class="max-w-6xl mx-auto">
+      <h2 class="text-xl md:text-3xl font-extrabold text-center">Lawn and turfing services</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-7">
+        {['New turf installation', 'Artificial grass', 'Ground preparation', 'Levelling and grading', 'Lawn edging', 'Tired lawn replacement', 'Garden clearance first', 'Paving and gravel layouts'].map(item => <div class="bg-bg-sage rounded-xl p-4 md:p-5 font-bold text-sm md:text-base text-deep-green border border-fresh-green/15">✓ {item}</div>)}
+      </div>
+    </div></div>
+  </section>
+
+  <ProjectShowcase heading="Recent lawn and garden transformations" />
+  <CallToAction showDualCTA={true} />
+
+  <section class="py-8 md:py-14 bg-bg-sage">
+    <div class="container mx-auto px-4"><div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-xl md:text-2xl font-extrabold">Turfing across Northamptonshire</h2>
+      <p class="text-gray-700">Send photos of the lawn, rough dimensions and your postcode for a faster quote.</p>
+      <div class="flex flex-wrap justify-center gap-2 mt-5">{areas.map(area => <a href={`/areas/${area.toLowerCase().replace(/ /g, '-')}/`} class="bg-white rounded-full px-4 py-2 text-sm font-bold shadow-sm hover:bg-fresh-green hover:text-white transition">{area}</a>)}</div>
+    </div></div>
+  </section>
+  <Footer slot="footer" />
+</BaseLayout>

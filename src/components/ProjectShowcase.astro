@@ -1,0 +1,120 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  full?: boolean;
+  heading?: string;
+}
+
+const {
+  full = false,
+  heading = "Recent landscaping transformations in Northamptonshire",
+} = Astro.props;
+
+const base = '/assets/images/projects-2026';
+const projects = [
+  {
+    title: 'Overgrown garden to modern outdoor space',
+    copy: 'Clearance, ground preparation, porcelain-style paving, steps, edging, gravel and a practical low-maintenance finish.',
+    before: `${base}/overgrown-landscaping-before.webp`,
+    after: `${base}/porcelain-patio-steps-after.webp`,
+    beforeAlt: 'Overgrown garden before a landscaping transformation in Northamptonshire',
+    afterAlt: 'Completed landscaped garden with new paving and steps in Northamptonshire',
+  },
+  {
+    title: 'Small garden turf and paving makeover',
+    copy: 'A compact family garden rebuilt with a level lawn, paved seating area, timber edging and clean access paths.',
+    before: `${base}/small-garden-before.webp`,
+    after: `${base}/small-garden-turf-after.webp`,
+    beforeAlt: 'Small garden before new turf and paving were installed',
+    afterAlt: 'Small garden after professional turfing and paving installation',
+  },
+];
+
+const extraWork = [
+  { src: `${base}/large-patio-after.webp`, alt: 'Large newly laid garden patio in Northamptonshire', label: 'Patios & paving' },
+  { src: `${base}/gravel-paving-raised-beds-after.webp`, alt: 'Landscaped garden with gravel, paving and raised timber beds', label: 'Gravel & raised beds' },
+  { src: `${base}/family-garden-turf-gravel-after.webp`, alt: 'Family garden makeover with turf, gravel and paving', label: 'Complete makeovers' },
+  { src: `${base}/landscaping-steps-turf-after.webp`, alt: 'Garden renovation with new steps and artificial lawn', label: 'Steps & lawns' },
+  { src: `${base}/porcelain-patio-path-after.webp`, alt: 'New porcelain-style paved garden path', label: 'Paths & access' },
+  { src: `${base}/landscaping-turf-paving-after.webp`, alt: 'Finished garden landscaping with turf and paved seating area', label: 'Turf & paving' },
+];
+---
+
+<section class="py-8 md:py-16 bg-white border-b-2 border-fresh-green/20" aria-labelledby="recent-projects-heading">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-6 md:mb-10">
+        <p class="text-xs md:text-sm font-extrabold uppercase tracking-[0.18em] text-fresh-green mb-2">Real local work</p>
+        <h2 id="recent-projects-heading" class="text-xl md:text-3xl font-extrabold tracking-tight mb-3">{heading}</h2>
+        <p class="text-sm md:text-lg text-gray-700">See the finish before you book. These are genuine Dee'z Gardens projects, from first clearance to the completed landscaping.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8">
+        {projects.map((project) => (
+          <article class="rounded-2xl overflow-hidden bg-bg-sage border border-fresh-green/20 shadow-lg">
+            <div class="grid grid-cols-2">
+              <figure class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                <img src={project.before} alt={project.beforeAlt} loading="lazy" decoding="async" width="900" height="1200" class="w-full h-full object-cover" />
+                <figcaption class="absolute top-3 left-3 bg-black/75 text-white text-xs font-extrabold px-3 py-1.5 rounded-full">BEFORE</figcaption>
+              </figure>
+              <figure class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                <img src={project.after} alt={project.afterAlt} loading="lazy" decoding="async" width="1200" height="900" class="w-full h-full object-cover" />
+                <figcaption class="absolute top-3 left-3 bg-deep-green text-white text-xs font-extrabold px-3 py-1.5 rounded-full">AFTER</figcaption>
+              </figure>
+            </div>
+            <div class="p-5 md:p-6">
+              <h3 class="text-lg md:text-xl font-extrabold mb-2">{project.title}</h3>
+              <p class="text-sm md:text-base text-gray-700 mb-0">{project.copy}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {full && (
+        <>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 mt-6 md:mt-10">
+            {extraWork.map((item) => (
+              <figure class="relative rounded-xl overflow-hidden shadow-md aspect-[4/3] bg-gray-100 group">
+                <img src={item.src} alt={item.alt} loading="lazy" decoding="async" width="1200" height="900" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent text-white font-bold text-xs md:text-sm p-3 pt-10">{item.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-8 md:mt-12">
+            <article class="rounded-2xl overflow-hidden bg-deep-green text-white shadow-xl">
+              <video controls playsinline preload="metadata" poster={`${base}/landscaping-video-poster.webp`} class="w-full aspect-video object-cover" aria-label="Watch a complete landscaping transformation">
+                <source src="/assets/videos/landscaping-transformation-northampton.mp4" type="video/mp4" />
+              </video>
+              <div class="p-5 md:p-6">
+                <h3 class="text-white text-lg md:text-xl font-extrabold mb-2">From clearance to finished landscaping</h3>
+                <p class="text-white/85 text-sm md:text-base mb-0">Watch the full process: clearing, groundworks, levels, edging, paving and the finished garden.</p>
+              </div>
+            </article>
+            <article class="rounded-2xl overflow-hidden bg-deep-green text-white shadow-xl">
+              <video controls playsinline preload="metadata" poster={`${base}/clearance-video-poster.webp`} class="w-full aspect-video object-cover" aria-label="Watch an overgrown garden clearance">
+                <source src="/assets/videos/overgrown-garden-clearance-northampton.mp4" type="video/mp4" />
+              </video>
+              <div class="p-5 md:p-6">
+                <h3 class="text-white text-lg md:text-xl font-extrabold mb-2">Overgrown garden clearance</h3>
+                <p class="text-white/85 text-sm md:text-base mb-0">Heavy vegetation cut back, waste gathered and the plot made ready for its next stage.</p>
+              </div>
+            </article>
+          </div>
+        </>
+      )}
+
+      <div class="mt-7 md:mt-10 rounded-2xl bg-bg-sage border-2 border-fresh-green/25 p-5 md:p-7 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-center md:text-left">
+          <h3 class="text-lg md:text-xl font-extrabold mb-1">Planning a garden transformation?</h3>
+          <p class="text-sm md:text-base text-gray-700 mb-0">Send a few photos for a free, no-obligation quote. We cover Northampton and surrounding towns.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <button type="button" class="quote-cta-btn bg-fresh-green text-white px-6 py-3 rounded-xl font-extrabold hover:bg-deep-green transition shadow-lg whitespace-nowrap">Get a free quote</button>
+          <a href={`tel:${siteConfig.phone}`} class="bg-white text-deep-green border-2 border-deep-green px-6 py-3 rounded-xl font-extrabold hover:bg-deep-green hover:text-white transition text-center whitespace-nowrap">Call {siteConfig.phoneFormatted}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

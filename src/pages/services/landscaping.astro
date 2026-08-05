@@ -7,26 +7,29 @@ import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
+import ProjectShowcase from '../../components/ProjectShowcase.astro';
 import { siteConfig } from '../../config';
 ---
 
 <BaseLayout 
-  title="Landscaping Northampton | Garden Design, Patios, Fencing & Turfing"
-  description="Professional landscaping in Northampton & Northamptonshire. Garden design, patios, paving, fencing, turfing, artificial grass & complete garden transformations. Fully insured. Free quotes - call 07305 195098."
+  title="Landscaping Northampton | Patios, Paving, Turf & Makeovers"
+  description="Local landscapers in Northampton for patios, paving, turfing, artificial grass, gravel, raised beds and complete garden makeovers. See real projects and get a free quote."
 >
   <Header slot="header" />
   
   <SlideOutQuoteForm />
   
   <Hero 
-    title="Landscaping & Garden Design"
-    subtitle="Complete garden transformations across Northamptonshire"
-    heroImage="hero.jpg"
+    title="Landscaping in Northampton"
+    subtitle="Patios, paving, lawns and complete garden makeovers — see our real work"
+    heroImage="projects-2026/family-garden-turf-gravel-after.webp"
     showCTA={true}
     showQuoteButton={true}
   />
   
   <TrustBadges />
+
+  <ProjectShowcase full={true} />
   
   <!-- Introduction Section -->
   <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">
@@ -38,7 +41,7 @@ import { siteConfig } from '../../config';
             Whether you want to transform an overgrown plot into a beautiful outdoor space, redesign your garden from scratch, or add practical features like a patio, fencing, or lawn, {siteConfig.name} provides professional landscaping services across Northampton and the wider Northamptonshire area.
           </p>
           <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
-            From initial design through to final planting, our fully insured team handles every aspect of the project — delivering quality workmanship and a finish you'll be proud of.
+            From the first clearance and ground preparation through to the final paving, turf, gravel and tidy-up, our fully insured team keeps the project straightforward and delivers a finish you'll be proud of.
           </p>
         </div>
       </div>
@@ -168,8 +171,8 @@ import { siteConfig } from '../../config';
             </div>
           </div>
           
-          <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center">
-            Based in Northampton, we've been transforming gardens across Northamptonshire for years. Our fully insured team brings craftsmanship and attention to detail to every landscaping project — no matter the size.
+            <p class="text-sm md:text-lg text-gray-700 leading-relaxed text-center">
+            Based in Northampton, our fully insured local team brings careful preparation, tidy workmanship and attention to detail to every landscaping project — no matter the size.
           </p>
         </div>
       </div>
@@ -217,6 +220,12 @@ import { siteConfig } from '../../config';
           </a>
           <a href="/services/hedge-cutting/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
             Hedge Cutting →
+          </a>
+          <a href="/services/patios-paving/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Patios & Paving →
+          </a>
+          <a href="/services/turfing-lawns/" class="bg-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-sm md:text-base text-deep-green hover:bg-fresh-green hover:text-white transition shadow-md">
+            Turfing & Lawns →
           </a>
         </div>
       </div>

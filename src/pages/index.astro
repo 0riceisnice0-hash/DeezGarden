@@ -11,13 +11,13 @@ import WhyChooseUsCompact from '../components/WhyChooseUsCompact.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
 import ReviewsCarousel from '../components/ReviewsCarousel.astro';
-import HomepageQuoteForm from '../components/HomepageQuoteForm.astro';
+import ProjectShowcase from '../components/ProjectShowcase.astro';
 import { siteConfig } from '../config';
 ---
 
 <BaseLayout 
-  title="Gardener Northampton | Garden Maintenance, Clearance & Landscaping"
-  description="Dee'z Gardens - Professional gardener in Northampton offering garden maintenance, rubbish clearance, landscaping & man with van services across Northamptonshire. Fully insured, licensed waste carrier. Free quotes - call 07305 195098."
+  title="Landscaping & Garden Services Northampton | Free Quotes"
+  description="Landscaping, patios, paving, turfing, garden clearance and maintenance in Northampton. See real local transformations. Fully insured, licensed waste carrier. Free quotes."
   schema={{
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -52,14 +52,16 @@ import { siteConfig } from '../config';
   <Header slot="header" />
   
   <Hero 
-    title="Gardener in Northampton — Garden Maintenance, Clearance & Landscaping"
-    subtitle="Rated 5★ on Google · Free quotes · Fully insured local team"
-    heroImage="hero.jpg"
+    title="Landscaping & Garden Transformations in Northampton"
+    subtitle="Patios · paving · turfing · clearances · maintenance · free quotes"
+    heroImage="projects-2026/family-garden-turf-gravel-after.webp"
     showCTA={true}
     showQuoteButton={true}
   />
   
   <TrustBadges />
+
+  <ProjectShowcase heading="Landscaping, not just basic garden work" />
   
   <!-- Introduction Section -->
   <section class="py-4 md:py-12 bg-bg-light">
@@ -67,12 +69,12 @@ import { siteConfig } from '../config';
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
           <div>
-            <h2 class="text-xl md:text-3xl font-extrabold mb-3 md:mb-6 tracking-tight">Welcome to {siteConfig.name}</h2>
+            <h2 class="text-xl md:text-3xl font-extrabold mb-3 md:mb-6 tracking-tight">A local landscaping team for the whole garden</h2>
             <p class="text-sm md:text-lg mb-2 md:mb-4">
-              We're a local, trusted gardening and clearance company based in Northampton, providing professional services throughout Northamptonshire.
+              {siteConfig.name} handles complete garden transformations across Northampton and Northamptonshire — from the first clearance and ground preparation to paving, turf, gravel, edging and the finished tidy-up.
             </p>
             <p class="text-sm md:text-lg mb-2 md:mb-4">
-              Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or a reliable man with van service, we're here to help. Our team is fully insured and operates as a licensed waste carrier, giving you complete peace of mind.
+              Need the garden brought back under control first? We also clear overgrown plots, remove garden waste as a licensed carrier, cut hedges and provide one-off or regular maintenance.
             </p>
             <p class="text-sm md:text-lg">
               We pride ourselves on tidy work, clear communication, and reliability. Get in touch today for a free, no-obligation quote.
@@ -80,10 +82,10 @@ import { siteConfig } from '../config';
           </div>
           <div class="flex flex-col items-center">
             <BeforeAfterSlider 
-              beforeImage="renovation1.jpg" 
-              afterImage="renovation1-after.jpg"
-              beforeAlt="Garden before renovation"
-              afterAlt="Garden after renovation"
+              beforeImage="projects-2026/overgrown-landscaping-before.webp"
+              afterImage="projects-2026/porcelain-patio-steps-after.webp"
+              beforeAlt="Overgrown garden before landscaping in Northamptonshire"
+              afterAlt="Finished landscaped garden with new patio and steps"
             />
           </div>
         </div>

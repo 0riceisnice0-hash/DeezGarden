@@ -11,21 +11,30 @@ import { siteConfig, services } from '../../config';
 ---
 
 <BaseLayout 
-  title="Garden & Clearance Services Northampton | Maintenance, Landscaping & Removals"
-  description="Professional garden maintenance, rubbish clearance, landscaping, man with van & scrap metal services in Northampton & Northamptonshire. Fully insured, licensed waste carrier. Free quotes."
+  title="Landscaping & Garden Services Northampton | All Services"
+  description="Landscaping, patios, paving, turfing, garden clearance, hedge cutting and maintenance in Northampton. Explore every service, see real work and get a free quote."
 >
   <Header slot="header" />
   
   <SlideOutQuoteForm />
   
   <Hero 
-    heroImage="hero.jpg"
-    title="Our Services"
-    subtitle="Complete garden and clearance solutions"
+    heroImage="projects-2026/small-garden-makeover-after.webp"
+    title="Landscaping & Garden Services"
+    subtitle="From overgrown clearance to patios, turf and the complete finished garden"
     showQuoteButton={true}
   />
   
   <TrustBadges />
+
+  <section class="py-5 md:py-8 bg-white border-b-2 border-fresh-green/20">
+    <div class="container mx-auto px-4"><div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3">
+      <a href="/services/landscaping/" class="rounded-xl bg-deep-green text-white p-4 md:p-5 font-extrabold hover:bg-fresh-green transition shadow-md">Complete landscaping →</a>
+      <a href="/services/patios-paving/" class="rounded-xl bg-bg-sage text-deep-green p-4 md:p-5 font-extrabold hover:bg-fresh-green hover:text-white transition shadow-md">Patios & paving →</a>
+      <a href="/services/turfing-lawns/" class="rounded-xl bg-bg-sage text-deep-green p-4 md:p-5 font-extrabold hover:bg-fresh-green hover:text-white transition shadow-md">Turfing & lawns →</a>
+      <a href="/services/garden-clearance/" class="rounded-xl bg-bg-sage text-deep-green p-4 md:p-5 font-extrabold hover:bg-fresh-green hover:text-white transition shadow-md">Garden clearance →</a>
+    </div></div>
+  </section>
   
   <!-- Intro Section - Redesigned -->
   <section class="py-6 md:py-12 bg-bg-sage border-b-2 border-fresh-green/20">
@@ -33,9 +42,9 @@ import { siteConfig, services } from '../../config';
       <div class="max-w-4xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 border-2 border-fresh-green/20">
           <div class="text-center">
-            <h2 class="text-lg md:text-2xl font-extrabold text-deep-green mb-3 md:mb-4 tracking-tight">Professional Garden & Clearance Solutions</h2>
+            <h2 class="text-lg md:text-2xl font-extrabold text-deep-green mb-3 md:mb-4 tracking-tight">One team from clearance to finished landscaping</h2>
             <p class="text-sm md:text-lg text-gray-700 leading-relaxed">
-              At {siteConfig.name}, we offer a comprehensive range of services to keep your outdoor spaces looking their best. From regular garden maintenance to complete renovations, rubbish clearance, and reliable man with van services — we're your trusted local partner for all your outdoor needs.
+              {siteConfig.name} can take a garden from an overgrown starting point to a practical finished space. Choose complete landscaping, patios and paving, turfing and lawns, garden clearance, hedge cutting or ongoing maintenance. We also provide licensed rubbish clearance and property services.
             </p>
           </div>
         </div>

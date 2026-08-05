@@ -5,36 +5,36 @@ import { services as configServices } from '../config';
 // Extend config services with mobile-specific data
 const services = [
   {
-    ...configServices[0],
-    title: "Garden Renovations & Maintenance",
-    description: "Complete garden care including lawn mowing, hedge trimming, and general upkeep.",
-    image: "/assets/images/before-and-after-lawn-1.jpg",
-    link: `/services/${configServices[0].slug}/`,
-    features: ["Lawn mowing", "Hedge trimming", "Garden clearances", "Landscaping"]
-  },
-  {
     ...configServices[1],
-    title: "Rubbish Clearance & Removals",
-    description: "House, garage, and garden clearances with our licensed waste carrier service.",
-    image: "/assets/images/rubbish-removal-1.jpg",
+    title: "Landscaping & Garden Makeovers",
+    description: "Patios, paving, turf, gravel, raised beds and complete garden transformations.",
+    image: "/assets/images/projects-2026/family-garden-turf-gravel-after.webp",
     link: `/services/${configServices[1].slug}/`,
-    features: ["Garden waste", "House clearances", "Licensed carrier", "Responsible disposal"]
+    features: ["Patios & paving", "Turfing", "Garden makeovers"]
   },
   {
     ...configServices[2],
-    title: "Man with Van & Scrap Metal",
-    description: "Removals, delivery service, and scrap metal collection across Northamptonshire.",
-    image: "/assets/images/van-scrap.png",
+    title: "Overgrown Garden Clearance",
+    description: "Heavy vegetation, brambles and garden waste cleared by a licensed waste carrier.",
+    image: "/assets/images/projects-2026/overgrown-clearance-before.webp",
     link: `/services/${configServices[2].slug}/`,
-    features: ["Local removals", "Scrap metal", "Furniture removal", "Competitive rates"]
+    features: ["Overgrown plots", "Vegetation", "Waste removed"]
   },
   {
-    ...configServices[3],
-    title: "Property Maintenance Services",
-    description: "Practical property jobs including gutter cleaning, insulation, and plastering.",
-    image: "/assets/images/house.jpg",
-    link: `/services/${configServices[3].slug}/`,
-    features: ["Gutter cleaning", "Insulation", "Plastering"]
+    ...configServices[0],
+    title: "Garden Maintenance",
+    description: "One-off or regular mowing, hedge trimming, pruning, weeding and garden tidy-ups.",
+    image: "/assets/images/before-and-after-lawn-1.jpg",
+    link: `/services/${configServices[0].slug}/`,
+    features: ["Lawn mowing", "Hedge trimming", "Regular visits"]
+  },
+  {
+    ...configServices[4],
+    title: "Rubbish Clearance & Removals",
+    description: "House, garage and garden clearances with responsible disposal.",
+    image: "/assets/images/rubbish-removal-1.jpg",
+    link: `/services/${configServices[4].slug}/`,
+    features: ["Garden waste", "House clearances", "Licensed carrier"]
   }
 ];
 ---
@@ -48,6 +48,8 @@ const services = [
             <img 
               src={service.image} 
               alt={service.title}
+              loading="lazy"
+              decoding="async"
               class="w-full h-full object-cover"
             />
           </div>
