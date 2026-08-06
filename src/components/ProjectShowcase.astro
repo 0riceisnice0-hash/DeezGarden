@@ -14,22 +14,40 @@ const {
 const base = '/assets/images/projects-2026';
 const projects = [
   {
-    title: 'Overgrown garden to modern outdoor space',
-    copy: 'Clearance, ground preparation, porcelain-style paving, steps, edging, gravel and a practical low-maintenance finish.',
-    before: `${base}/overgrown-landscaping-before.webp`,
+    title: 'Overgrown garden to porcelain patio and lawn',
+    copy: 'A full clearance followed by ground preparation, porcelain-style paving, broad steps, timber edging and a new low-maintenance lawn.',
+    before: `${base}/garden-clearance-before.webp`,
     after: `${base}/porcelain-patio-steps-after.webp`,
-    beforeAlt: 'Overgrown garden before a landscaping transformation in Northamptonshire',
-    afterAlt: 'Completed landscaped garden with new paving and steps in Northamptonshire',
+    beforeAlt: 'Overgrown brick-walled garden before clearance and landscaping',
+    afterAlt: 'The same garden after porcelain-style paving, steps and a new lawn',
   },
   {
-    title: 'Small garden turf and paving makeover',
-    copy: 'A compact family garden rebuilt with a level lawn, paved seating area, timber edging and clean access paths.',
-    before: `${base}/small-garden-before.webp`,
+    title: 'Overgrown plot to two-level patio',
+    copy: 'Heavy growth removed and the ground rebuilt into a large, practical two-level paved garden with clean access and defined edges.',
+    before: `${base}/overgrown-landscaping-before.webp`,
+    after: `${base}/large-patio-after.webp`,
+    beforeAlt: 'Large overgrown garden before clearance and patio installation',
+    afterAlt: 'The same garden after a large two-level patio was installed',
+  },
+  {
+    title: 'Full clearance, steps and artificial lawn',
+    copy: 'An unusable overgrown garden transformed with a porcelain-style patio, wide steps, timber retaining edges and artificial grass.',
+    before: `${base}/overgrown-clearance-before.webp`,
+    after: `${base}/artificial-lawn-patio-after.webp`,
+    beforeAlt: 'Sunny overgrown garden before a complete landscaping makeover',
+    afterAlt: 'The same garden after new paving, steps and artificial lawn installation',
+  },
+  {
+    title: 'Small family garden: plan to finished lawn',
+    copy: 'The proposed layout became a level new lawn with timber borders, paved access and stepping paths around the family play area.',
+    before: `${base}/garden-design-plan.webp`,
     after: `${base}/small-garden-turf-after.webp`,
-    beforeAlt: 'Small garden before new turf and paving were installed',
-    afterAlt: 'Small garden after professional turfing and paving installation',
+    beforeAlt: 'Small family garden with the new lawn and path layout marked out',
+    afterAlt: 'The same family garden after new turf, timber edging and paths were installed',
   },
 ];
+
+const visibleProjects = full ? projects : projects.slice(0, 3);
 
 const extraWork = [
   { src: `${base}/large-patio-after.webp`, alt: 'Large newly laid garden patio in Northamptonshire', label: 'Patios & paving' },
@@ -51,7 +69,7 @@ const extraWork = [
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8">
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <article class="rounded-2xl overflow-hidden bg-bg-sage border border-fresh-green/20 shadow-lg">
             <div class="grid grid-cols-2">
               <figure class="relative aspect-[4/5] overflow-hidden bg-gray-100">
@@ -59,7 +77,7 @@ const extraWork = [
                 <figcaption class="absolute top-3 left-3 bg-black/75 text-white text-xs font-extrabold px-3 py-1.5 rounded-full">BEFORE</figcaption>
               </figure>
               <figure class="relative aspect-[4/5] overflow-hidden bg-gray-100">
-                <img src={project.after} alt={project.afterAlt} loading="lazy" decoding="async" width="1200" height="900" class="w-full h-full object-cover" />
+                <img src={project.after} alt={project.afterAlt} loading="lazy" decoding="async" width="900" height="1200" class="w-full h-full object-cover" />
                 <figcaption class="absolute top-3 left-3 bg-deep-green text-white text-xs font-extrabold px-3 py-1.5 rounded-full">AFTER</figcaption>
               </figure>
             </div>
@@ -84,7 +102,7 @@ const extraWork = [
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-8 md:mt-12">
             <article class="rounded-2xl overflow-hidden bg-deep-green text-white shadow-xl">
-              <video controls playsinline preload="metadata" poster={`${base}/landscaping-video-poster.webp`} class="w-full aspect-video object-cover" aria-label="Watch a complete landscaping transformation">
+              <video controls playsinline preload="none" poster={`${base}/landscaping-video-poster.webp`} class="w-full aspect-video object-cover" aria-label="Watch a complete landscaping transformation">
                 <source src="/assets/videos/landscaping-transformation-northampton.mp4" type="video/mp4" />
               </video>
               <div class="p-5 md:p-6">
@@ -93,7 +111,7 @@ const extraWork = [
               </div>
             </article>
             <article class="rounded-2xl overflow-hidden bg-deep-green text-white shadow-xl">
-              <video controls playsinline preload="metadata" poster={`${base}/clearance-video-poster.webp`} class="w-full aspect-video object-cover" aria-label="Watch an overgrown garden clearance">
+              <video controls playsinline preload="none" poster={`${base}/clearance-video-poster.webp`} class="w-full aspect-video object-cover" aria-label="Watch an overgrown garden clearance">
                 <source src="/assets/videos/overgrown-garden-clearance-northampton.mp4" type="video/mp4" />
               </video>
               <div class="p-5 md:p-6">

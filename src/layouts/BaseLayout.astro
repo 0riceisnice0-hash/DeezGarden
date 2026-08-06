@@ -1,6 +1,5 @@
 ---
 import { siteConfig, services } from '../config';
-import { aggregateRating } from '../data/reviews';
 import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 import HomepageQuoteForm from '../components/HomepageQuoteForm.astro';
 import '../styles/global.css';
@@ -11,11 +10,19 @@ interface Props {
   canonical?: string;
   noindex?: boolean;
   schema?: Record<string, unknown>;
+  image?: string;
 }
 
-const { title, description = siteConfig.description, canonical, noindex = false, schema } = Astro.props;
-const fullTitle = title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
+const { title, description = siteConfig.description, canonical, noindex = false, schema, image } = Astro.props;
+// Keep search titles concise; long, descriptive page titles do not need a second brand suffix.
+const fullTitle = title === siteConfig.name || title.includes(siteConfig.name) || title.length > 52
+  ? title
+  : `${title} | ${siteConfig.name}`;
+const metaDescription = description.length > 160
+  ? `${description.slice(0, 157).replace(/\s+\S*$/, '')}...`
+  : description;
 const canonicalURL = canonical || new URL(Astro.url.pathname, siteConfig.baseUrl).toString();
+const socialImage = new URL(image || siteConfig.ogImage.path, siteConfig.baseUrl).toString();
 const allAreas = [...siteConfig.primaryAreas, ...siteConfig.secondaryAreas, ...siteConfig.extendedAreas];
 // Clean page name for breadcrumbs: strip any branding suffix (e.g. "Page Title | Dee'z Gardens" → "Page Title")
 const breadcrumbName = title.split(' | ')[0].trim();
@@ -50,7 +57,7 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   )}
   
   <title>{fullTitle}</title>
-  <meta name="description" content={description}>
+  <meta name="description" content={metaDescription}>
   <link rel="canonical" href={canonicalURL}>
   
   {noindex ? <meta name="robots" content="noindex, nofollow"> : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">}
@@ -74,11 +81,11 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content={fullTitle}>
-  <meta property="og:description" content={description}>
+  <meta property="og:description" content={metaDescription}>
   <meta property="og:url" content={canonicalURL}>
   <meta property="og:site_name" content={siteConfig.name}>
   <meta property="og:locale" content="en_GB">
-  <meta property="og:image" content={`${siteConfig.baseUrl}${siteConfig.ogImage.path}`}>
+  <meta property="og:image" content={socialImage}>
   <meta property="og:image:width" content={String(siteConfig.ogImage.width)}>
   <meta property="og:image:height" content={String(siteConfig.ogImage.height)}>
   <meta property="og:image:type" content={siteConfig.ogImage.type}>
@@ -87,8 +94,8 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={fullTitle}>
-  <meta name="twitter:description" content={description}>
-  <meta name="twitter:image" content={`${siteConfig.baseUrl}${siteConfig.ogImage.path}`}>
+  <meta name="twitter:description" content={metaDescription}>
+  <meta name="twitter:image" content={socialImage}>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -98,11 +105,6 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-  
-  <!-- Google Fonts - Inter for professional typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Schema.org JSON-LD - LocalBusiness -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -114,20 +116,13 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
     "url": siteConfig.baseUrl,
     "telephone": siteConfig.phone,
     "email": siteConfig.email,
-    "image": `${siteConfig.baseUrl}${siteConfig.ogImage.path}`,
+    "image": socialImage,
     "logo": `${siteConfig.baseUrl}/favicon.svg`,
     "address": postalAddress,
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 52.2405,
       "longitude": -0.9027
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": aggregateRating.ratingValue,
-      "reviewCount": aggregateRating.reviewCount,
-      "bestRating": aggregateRating.bestRating,
-      "worstRating": aggregateRating.worstRating
     },
     "areaServed": allAreas.map(area => ({
       "@type": "City",
@@ -162,8 +157,24 @@ if (siteConfig.address.postalCode) postalAddress["postalCode"] = siteConfig.addr
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteConfig.baseUrl}/#website`,
     "name": siteConfig.name,
     "url": siteConfig.baseUrl
+  })} />
+
+  <!-- Current-page entity and its primary project image -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonicalURL}#webpage`,
+    "url": canonicalURL,
+    "name": fullTitle,
+    "description": metaDescription,
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "contentUrl": socialImage
+    },
+    "isPartOf": { "@id": `${siteConfig.baseUrl}/#website` }
   })} />
 
   <!-- Page-specific schema -->
