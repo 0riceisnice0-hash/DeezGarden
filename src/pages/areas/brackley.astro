@@ -8,6 +8,7 @@ import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig, services } from '../../config';
+import QuickQuoteBand from '../../components/QuickQuoteBand.astro';
 
 const areaName = "Brackley";
 const nearbyAreas = ["Towcester", "Northampton", "Daventry", "Aylesbury"];
@@ -29,6 +30,7 @@ const nearbyAreas = ["Towcester", "Northampton", "Daventry", "Aylesbury"];
   />
   
   <TrustBadges />
+  <QuickQuoteBand service="garden clearance or landscaping in Brackley" />
   
   <!-- Introduction Section -->
   <section class="py-4 md:py-16 bg-bg-light">
@@ -52,9 +54,9 @@ const nearbyAreas = ["Towcester", "Northampton", "Daventry", "Aylesbury"];
         <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
-            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">House Clearance {areaName}</h3>
-            <p class="text-sm md:text-base text-gray-700 mb-3">Full and partial house clearances in {areaName} and surrounding villages. Licensed waste carrier — all items disposed of legally and responsibly.</p>
-            <a href="/services/clearance-removals/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Vegetation & Site Clearance {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">Vegetation clearance in {areaName} for overgrown gardens, plots and sites. We cut back brambles, shrubs and weeds, clear the ground and remove the green waste.</p>
+            <a href="/services/garden-clearance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">See our clearance service →</a>
           </div>
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
             <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Clearance {areaName}</h3>

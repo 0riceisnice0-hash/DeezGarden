@@ -66,11 +66,12 @@ const serviceOptions = [
           <input type="hidden" name="_next" value={thankyouUrl}>
           <input type="hidden" name="_subject" value="New quote request from Dee'z Gardens homepage">
           <!-- Hidden field that stores the selected service -->
-          <input type="hidden" name="service" id="homepage-service-value">
+          <input type="hidden" name="service" id="homepage-service-value" value="Not specified">
+          <input type="hidden" name="landing_page" id="homepage-landing-page">
 
           <!-- Step 1: Service selector -->
           <div>
-            <p class="font-bold text-gray-800 mb-3 text-sm md:text-base">What do you need? <span class="text-red-500">*</span></p>
+            <p class="font-bold text-gray-800 mb-3 text-sm md:text-base">What do you need? <span class="text-gray-400 font-normal">(optional)</span></p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="service-buttons" role="group" aria-label="Select service type">
               {serviceOptions.map(opt => (
                 <button
@@ -84,7 +85,6 @@ const serviceOptions = [
                 </button>
               ))}
             </div>
-            <p id="service-error" class="text-red-500 text-xs mt-1.5 hidden">Please select a service type above.</p>
           </div>
 
           <!-- Name + Phone row -->
@@ -110,8 +110,8 @@ const serviceOptions = [
                 required
                 autocomplete="tel"
                 inputmode="tel"
-                pattern="^(\+44\s?|0)7\d{3}\s?\d{6}$"
-                title="Please enter a valid UK mobile number (e.g. 07XXX XXXXXX)"
+                pattern="^[0-9+() -]{7,20}$"
+                title="Please enter a valid phone number"
                 placeholder="07XXX XXXXXX"
                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-fresh-green focus:ring-0 transition text-sm md:text-base text-gray-900"
               >
@@ -183,7 +183,7 @@ const serviceOptions = [
               id="hq-submit-btn"
               class="w-full bg-fresh-green text-white font-extrabold text-base md:text-lg py-3.5 rounded-xl hover:bg-deep-green transition-all shadow-lg hover:shadow-xl tracking-tight flex items-center justify-center gap-2"
             >
-              <span id="hq-btn-text">Send My Free Quote — Reply within 2hrs ✓</span>
+              <span id="hq-btn-text">Send My Free Quote Request</span>
               <svg id="hq-spinner" class="hidden w-5 h-5 animate-spin text-white" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
@@ -237,13 +237,28 @@ const serviceOptions = [
     const closeBtn = document.getElementById('quote-modal-close');
     const buttons = document.querySelectorAll<HTMLButtonElement>('.service-btn');
     const hiddenInput = document.getElementById('homepage-service-value') as HTMLInputElement | null;
-    const serviceError = document.getElementById('service-error');
     const form = document.getElementById('homepage-quote-form-el') as HTMLFormElement | null;
     const submitBtn = document.getElementById('hq-submit-btn') as HTMLButtonElement | null;
     const btnText = document.getElementById('hq-btn-text');
     const spinner = document.getElementById('hq-spinner');
+    const landingPage = document.getElementById('homepage-landing-page') as HTMLInputElement | null;
 
-    let userClosedThisSession = false;
+    if (landingPage) landingPage.value = window.location.href;
+
+    const serviceByPath: Record<string, string> = {
+      '/services/garden-clearance': 'Garden Clearance',
+      '/services/garden-maintenance': 'Garden Maintenance',
+      '/services/hedge-cutting': 'Hedge Cutting',
+      '/services/landscaping': 'Landscaping',
+      '/services/patios-paving': 'Patio or Paving',
+      '/services/turfing-lawns': 'Turfing or New Lawn',
+      '/services/clearance-removals': 'Rubbish Clearance',
+      '/services/man-with-van': 'Man with Van',
+      '/services/property-maintenance': 'Property Maintenance',
+    };
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+    const inferredService = serviceByPath[currentPath];
+    if (hiddenInput && inferredService) hiddenInput.value = inferredService;
 
     function openModal() {
       if (!modal) return;
@@ -259,15 +274,17 @@ const serviceOptions = [
       if (!modal) return;
       modal.classList.add('hidden');
       document.body.style.overflow = '';
-      userClosedThisSession = true;
       try { sessionStorage.setItem('quote_modal_dismissed', '1'); } catch {}
     }
 
     backdrop?.addEventListener('click', closeModal);
     closeBtn?.addEventListener('click', closeModal);
 
-    document.querySelectorAll('.quote-cta-btn').forEach(btn => {
-      btn.addEventListener('click', openModal);
+    document.querySelectorAll<HTMLElement>('.quote-cta-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (hiddenInput && btn.dataset.service) hiddenInput.value = btn.dataset.service;
+        openModal();
+      });
     });
 
     document.getElementById('hero-quote-btn')?.addEventListener('click', openModal);
@@ -287,72 +304,23 @@ const serviceOptions = [
         btn.classList.add('selected');
         btn.setAttribute('aria-pressed', 'true');
         if (hiddenInput) hiddenInput.value = btn.dataset.service || '';
-        if (serviceError) serviceError.classList.add('hidden');
       });
     });
 
-    form?.addEventListener('submit', (e) => {
-      if (!hiddenInput?.value) {
-        e.preventDefault();
-        if (serviceError) serviceError.classList.remove('hidden');
-        document.getElementById('service-buttons')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
+    form?.addEventListener('submit', () => {
       if (btnText) btnText.textContent = 'Sending…';
       if (spinner) spinner.classList.remove('hidden');
       if (submitBtn) submitBtn.disabled = true;
+      const selectedService = hiddenInput?.value || 'Not specified';
       const w = window as any;
       if (typeof w.gtag === 'function') {
         w.gtag('event', 'generate_lead', {
           event_category: 'conversion',
-          service: hiddenInput.value,
+          service: selectedService,
         });
       }
-      try { (window as any).dataLayer?.push({ event: 'generate_lead', service: hiddenInput.value, source: 'quote_modal' }); } catch {}
+      try { (window as any).dataLayer?.push({ event: 'generate_lead', service: selectedService, source: 'quote_modal' }); } catch {}
     });
 
-    // Auto-open: site-wide, once per session, after 60% scroll OR 35s OR exit-intent (desktop).
-    // Skipped on contact / thank-you pages where a form is already prominent.
-    const path = window.location.pathname.replace(/\/+$/, '');
-    const skipPaths = ['/contact', '/thank-you'];
-    const autoOpenAllowed = !skipPaths.some(p => path === p || path.endsWith(p));
-    let alreadyDismissed = false;
-    try { alreadyDismissed = sessionStorage.getItem('quote_modal_dismissed') === '1'; } catch {}
-    let alreadyAutoOpened = false;
-
-    function maybeAutoOpen(reason: string) {
-      if (!autoOpenAllowed || alreadyAutoOpened || alreadyDismissed || userClosedThisSession) return;
-      if (modal && !modal.classList.contains('hidden')) return;
-      alreadyAutoOpened = true;
-      openModal();
-      const w = window as any;
-      if (typeof w.gtag === 'function') {
-        w.gtag('event', 'auto_open_quote_modal', { event_category: 'engagement', trigger: reason });
-      }
-      try { (window as any).dataLayer?.push({ event: 'auto_open_quote_modal', trigger: reason }); } catch {}
-    }
-
-    if (autoOpenAllowed && !alreadyDismissed) {
-      // Time-based trigger
-      setTimeout(() => maybeAutoOpen('time'), 35000);
-      // Scroll-based trigger
-      const onScroll = () => {
-        const scrolled = window.scrollY + window.innerHeight;
-        const total = document.documentElement.scrollHeight;
-        if (total > 0 && scrolled / total >= 0.6) {
-          maybeAutoOpen('scroll');
-          window.removeEventListener('scroll', onScroll);
-        }
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      // Exit-intent (desktop only — mouse leaves toward top of viewport)
-      const onMouseOut = (e: MouseEvent) => {
-        if (e.clientY <= 0 && window.innerWidth >= 1024) {
-          maybeAutoOpen('exit_intent');
-          document.removeEventListener('mouseout', onMouseOut);
-        }
-      };
-      document.addEventListener('mouseout', onMouseOut);
-    }
   });
 </script>

@@ -9,6 +9,7 @@ import HeroCTA from '../../components/HeroCTA.astro';
 import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import ProjectShowcase from '../../components/ProjectShowcase.astro';
 import { siteConfig } from '../../config';
+import QuickQuoteBand from '../../components/QuickQuoteBand.astro';
 ---
 
 <BaseLayout 
@@ -29,6 +30,8 @@ import { siteConfig } from '../../config';
   />
   
   <TrustBadges />
+
+  <QuickQuoteBand service="landscaping" />
 
   <ProjectShowcase full={true} />
   
@@ -71,6 +74,7 @@ import { siteConfig } from '../../config';
               <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Driveways and paths</li>
               <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Edging and borders</li>
             </ul>
+            <a href="/services/patios-paving/" class="inline-block mt-5 text-fresh-green font-bold hover:text-deep-green">Patio & paving details →</a>
           </div>
           
           <!-- Lawn & Turfing Card -->
@@ -88,6 +92,7 @@ import { siteConfig } from '../../config';
               <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Artificial grass fitting</li>
               <li class="flex items-start"><span class="text-fresh-green mr-2 font-bold">✓</span>Lawn levelling and preparation</li>
             </ul>
+            <a href="/services/turfing-lawns/" class="inline-block mt-5 text-fresh-green font-bold hover:text-deep-green">Turfing & lawn details →</a>
           </div>
         </div>
       </div>

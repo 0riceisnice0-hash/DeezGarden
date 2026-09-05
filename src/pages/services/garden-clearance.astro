@@ -8,11 +8,12 @@ import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
 import SlideOutQuoteForm from '../../components/SlideOutQuoteForm.astro';
 import { siteConfig } from '../../config';
+import QuickQuoteBand from '../../components/QuickQuoteBand.astro';
 ---
 
 <BaseLayout 
-  title="Garden Clearance Northampton | Overgrown Garden & Vegetation Clearance"
-  description="Professional garden clearance in Northampton & Northamptonshire. Overgrown garden clearance, vegetation clearance, site clearance & garden waste removal. Licensed waste carrier. Free quotes - call 07305 195098."
+  title="Garden Clearance Northampton | Overgrown Gardens"
+  description="Garden clearance in Northampton for overgrown gardens, brambles, vegetation and green waste. Licensed waste carrier. Send photos for a free quote."
   image="/assets/images/projects-2026/garden-clearance-before.webp"
 >
   <Header slot="header" />
@@ -20,14 +21,16 @@ import { siteConfig } from '../../config';
   <SlideOutQuoteForm />
   
   <Hero 
-    title="Garden Clearance & Overgrown Gardens"
-    subtitle="Vegetation clearance and garden waste removal across Northamptonshire"
-    heroImage="hero.jpg"
+    title="Garden Clearance in Northampton"
+    subtitle="Overgrown gardens, brambles and waste cleared by a licensed waste carrier"
+    heroImage="projects-2026/garden-clearance-before.webp"
     showCTA={true}
     showQuoteButton={true}
   />
   
   <TrustBadges />
+
+  <QuickQuoteBand service="garden clearance" />
   
   <!-- Introduction Section -->
   <section class="py-6 md:py-16 bg-bg-sage border-b-2 border-fresh-green/20">

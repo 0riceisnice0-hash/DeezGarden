@@ -2,7 +2,7 @@
 export const siteConfig = {
   name: "Dee'z Gardens",
   location: "Northampton, Northamptonshire, England",
-  phone: "07305 195098",
+  phone: "+447305195098",
   phoneFormatted: "07305 195098",
   email: "deez.gardensuk@gmail.com",
   facebook: "https://www.facebook.com/groups/1922611271669486",

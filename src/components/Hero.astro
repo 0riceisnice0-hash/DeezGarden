@@ -18,7 +18,7 @@ const {
   location = siteConfig.location, 
   subtitle,
   showCTA = true,
-  showQuoteButton = false,
+  showQuoteButton = true,
   heroImage,
   compact = false,
   textAtTop = false
@@ -29,7 +29,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : `${import.meta.env.BASE_URL}/`;
 ---
 
-<section class={`relative text-white flex ${textAtTop ? 'items-start' : 'items-center'} ${compact ? 'min-h-[30vh] md:min-h-[35vh]' : 'min-h-[60vh] md:min-h-[75vh]'}`}>
+<section class={`relative text-white flex ${textAtTop ? 'items-start' : 'items-center'} ${compact ? 'min-h-[30vh] md:min-h-[35vh]' : 'min-h-[52vh] md:min-h-[62vh]'}`}>
   <!-- Background Image -->
   {heroImage && (
     <img 
@@ -78,6 +78,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
           </button>
         )}
       </div>
+    )}
+    {showCTA && !textAtTop && siteConfig.whatsapp && (
+      <p class="mt-4 text-sm md:text-base text-white/90 drop-shadow-md">Prefer messaging? Send garden photos on WhatsApp for a faster quote.</p>
     )}
     <slot />
   </div>

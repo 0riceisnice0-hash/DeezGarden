@@ -1,0 +1,32 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  service?: string;
+}
+
+const { service = 'garden work' } = Astro.props;
+const whatsappUrl = `https://wa.me/447305195098?text=${encodeURIComponent(`Hi, I'd like a free quote for ${service}. I can send photos of the job.`)}`;
+---
+
+<aside class="bg-deep-green text-white border-y-4 border-fresh-green" aria-label="Get a free quote">
+  <div class="container mx-auto px-4 py-5 md:py-7">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+      <div class="text-center lg:text-left">
+        <p class="text-xl md:text-2xl font-extrabold text-white mb-1">Get a free quote for {service}</p>
+        <p class="text-sm md:text-base text-white/90 mb-0">Send a few photos and your postcode for a faster estimate. No obligation.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full lg:w-auto">
+        <a href={`tel:${siteConfig.phone}`} class="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-5 py-3 font-extrabold text-deep-green hover:bg-accent-yellow transition">
+          Call {siteConfig.phoneFormatted}
+        </a>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#25D366] px-5 py-3 font-extrabold text-white hover:bg-[#1da851] transition">
+          Send photos on WhatsApp
+        </a>
+        <button type="button" data-service={service} class="quote-cta-btn inline-flex min-h-12 items-center justify-center rounded-xl border-2 border-white bg-fresh-green px-5 py-3 font-extrabold text-white hover:bg-white hover:text-deep-green transition">
+          Request a callback
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>

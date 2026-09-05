@@ -7,6 +7,7 @@ import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import ProjectShowcase from '../../components/ProjectShowcase.astro';
 import { siteConfig } from '../../config';
+import QuickQuoteBand from '../../components/QuickQuoteBand.astro';
 
 const areas = ['Northampton', 'Wellingborough', 'Kettering', 'Rushden', 'Daventry', 'Towcester', 'Brackley', 'Corby'];
 const schema = {
@@ -25,6 +26,7 @@ const schema = {
   <Header slot="header" />
   <Hero title="Patios & Paving in Northampton" subtitle="New patios, paths, steps, gravel and garden edging" heroImage="projects-2026/large-patio-after.webp" showCTA={true} showQuoteButton={true} />
   <TrustBadges />
+  <QuickQuoteBand service="a new patio or paving" />
 
   <section class="py-8 md:py-16 bg-bg-light border-b-2 border-fresh-green/20">
     <div class="container mx-auto px-4"><div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-7 md:gap-12 items-center">

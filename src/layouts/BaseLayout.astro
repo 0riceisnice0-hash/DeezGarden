@@ -15,7 +15,7 @@ interface Props {
 
 const { title, description = siteConfig.description, canonical, noindex = false, schema, image } = Astro.props;
 // Keep search titles concise; long, descriptive page titles do not need a second brand suffix.
-const fullTitle = title === siteConfig.name || title.includes(siteConfig.name) || title.length > 52
+const fullTitle = title === siteConfig.name || title.includes(siteConfig.name) || title.length > 45
   ? title
   : `${title} | ${siteConfig.name}`;
 const metaDescription = description.length > 160
