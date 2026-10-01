@@ -38,7 +38,7 @@ export const siteConfig = {
 
   // SEO
   baseUrl: "https://deezgardens.co.uk",
-  description: "Professional landscaping, patios, paving, turfing, garden clearance and maintenance in Northampton and surrounding areas. Fully insured with licensed waste carrier.",
+  description: "Landscaping, patio installation, turfing and complete garden renovations in Northampton and surrounding towns. Quoted projects, fully insured.",
   
   // Google Analytics 4 Measurement ID — set this to your GA4 ID (e.g. "G-XXXXXXXXXX")
   // Get your ID from https://analytics.google.com → Admin → Data Streams → your stream
@@ -55,10 +55,10 @@ export const siteConfig = {
 
 export const services = [
   {
-    id: "garden-maintenance",
-    title: "Garden Renovations and Maintenance",
-    slug: "garden-maintenance",
-    description: "Complete garden care including lawn mowing, hedge trimming, and general upkeep",
+    id: "garden-renovations",
+    title: "Garden Renovations",
+    slug: "garden-renovations",
+    description: "Quoted garden renovations with clearance, ground preparation, patios, turf and edging",
     icon: "",
   },
   {

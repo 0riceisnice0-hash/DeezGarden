@@ -15,6 +15,7 @@ const base = '/assets/images/projects-2026';
 const projects = [
   {
     title: 'Overgrown garden to porcelain patio and lawn',
+    href: '/projects/patio-steps-and-lawn/',
     copy: 'A full clearance followed by ground preparation, porcelain-style paving, broad steps, timber edging and a new low-maintenance lawn.',
     before: `${base}/garden-clearance-before.webp`,
     after: `${base}/porcelain-patio-steps-after.webp`,
@@ -23,6 +24,7 @@ const projects = [
   },
   {
     title: 'Overgrown plot to two-level patio',
+    href: '/projects/two-level-patio/',
     copy: 'Heavy growth removed and the ground rebuilt into a large, practical two-level paved garden with clean access and defined edges.',
     before: `${base}/overgrown-landscaping-before.webp`,
     after: `${base}/large-patio-after.webp`,
@@ -31,6 +33,7 @@ const projects = [
   },
   {
     title: 'Full clearance, steps and artificial lawn',
+    href: '/projects/artificial-lawn-garden-makeover/',
     copy: 'An unusable overgrown garden transformed with a porcelain-style patio, wide steps, timber retaining edges and artificial grass.',
     before: `${base}/overgrown-clearance-before.webp`,
     after: `${base}/artificial-lawn-patio-after.webp`,
@@ -39,6 +42,7 @@ const projects = [
   },
   {
     title: 'Small family garden: plan to finished lawn',
+    href: '/services/turfing-lawns/',
     copy: 'The proposed layout became a level new lawn with timber borders, paved access and stepping paths around the family play area.',
     before: `${base}/garden-design-plan.webp`,
     after: `${base}/small-garden-turf-after.webp`,
@@ -84,6 +88,7 @@ const extraWork = [
             <div class="p-5 md:p-6">
               <h3 class="text-lg md:text-xl font-extrabold mb-2">{project.title}</h3>
               <p class="text-sm md:text-base text-gray-700 mb-0">{project.copy}</p>
+              <a href={project.href} class="inline-block mt-4 font-bold text-deep-green underline">View the work and project details →</a>
             </div>
           </article>
         ))}

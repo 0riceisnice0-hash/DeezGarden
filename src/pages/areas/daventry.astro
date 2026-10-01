@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import ProjectServices from '../../components/ProjectServices.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
@@ -14,21 +15,23 @@ const nearbyAreas = ["Northampton", "Rugby", "Brackley", "Towcester"];
 ---
 
 <BaseLayout 
-  title={`Gardeners ${areaName} | Clearance, Hedges & Landscaping`}
-  description={`Garden clearance, hedge cutting, landscaping & rubbish removal in ${areaName}, West Northamptonshire. Serving Monksmoor, Middlemore & surrounding villages. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Landscaping ${areaName} | Patios & Garden Makeovers`}
+  description={`Landscaping in ${areaName}: patios, paving, turf, artificial lawns and full garden makeovers. See our work and request a free project quote.`}
 >
   <Header slot="header" />
   
   <SlideOutQuoteForm />
   
   <Hero 
-    title={`Garden Clearance & Services in ${areaName}`}
+    title={`Landscaping & Garden Makeovers in ${areaName}`}
     location={`${areaName}, West Northamptonshire`}
-    subtitle="Hedge cutting, garden clearance & landscaping for new and mature gardens"
-    heroImage="hero.jpg"
+    subtitle="Patios, paving, new lawns and quoted garden renovation projects"
+    heroImage="projects-2026/family-garden-turf-gravel-after.webp"
   />
   
   <TrustBadges />
+  <ProjectServices />
+  <section class="py-5 bg-white"><div class="container mx-auto px-4 max-w-4xl text-center"><p class="font-semibold text-deep-green">Landscaping installations and one-off jobs quoted for the agreed work. Hourly gardening and regular mowing are not offered.</p></div></section>
   
   <!-- Introduction Section -->
   <section class="py-4 md:py-16 bg-bg-light">
@@ -36,7 +39,7 @@ const nearbyAreas = ["Northampton", "Rugby", "Brackley", "Towcester"];
       <div class="max-w-4xl mx-auto">
         <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden and property services throughout {areaName} and its surrounding villages. Situated around 12 miles west of Northampton, Daventry is a market town with a wide mix of properties — from Victorian and Edwardian terraces near the town centre to newer housing estates at Monksmoor and Middlemore. Many older properties close to {areaName} Country Park and the reservoir boast mature gardens with established hedgerows that benefit from regular professional attention.
+          {siteConfig.name} provides professional garden and property services throughout {areaName} and its surrounding villages. Situated around 12 miles west of Northampton, Daventry is a market town with a wide mix of properties — from Victorian and Edwardian terraces near the town centre to newer housing estates at Monksmoor and Middlemore. Many older properties close to {areaName} Country Park and the reservoir boast mature gardens with established hedgerows that benefit from a considered renovation.
         </p>
         <p class="text-sm md:text-lg">
           Whether you need overgrown boundary hedges cut back, a mature garden cleared, or a brand-new garden on a Monksmoor estate landscaped from scratch, our experienced team delivers reliable results throughout {areaName} and the surrounding rural villages.
@@ -53,7 +56,7 @@ const nearbyAreas = ["Northampton", "Rugby", "Brackley", "Towcester"];
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
             <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
-            <p class="text-sm md:text-base text-gray-700 mb-3">Many properties in and around {areaName} have long-established boundary hedgerows that require regular reduction and shaping. We cut all hedge types — Leylandii, privet, hawthorn and laurel — with all clippings removed and disposed of responsibly.</p>
+            <p class="text-sm md:text-base text-gray-700 mb-3">We quote for garden renovation and installation work in {areaName}, including new patios, lawns, gravel, paths and timber edging. Send photos, approximate measurements and access details so we can discuss the scope of your project.</p>
             <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
           </div>
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
@@ -82,17 +85,12 @@ const nearbyAreas = ["Northampton", "Rugby", "Brackley", "Towcester"];
       <div class="max-w-6xl mx-auto">
         <h3 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Our Services in {areaName}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {services.map((service, index) => {
-            const images = [
-              "/assets/images/before-and-after-lawn-1.jpg",
-              "/assets/images/rubbish-removal-1.jpg",
-              "/assets/images/van-scrap.png"
-            ];
+          {services.map((service) => {
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]}
+                    src={service.slug === "landscaping" ? "/assets/images/projects-2026/family-garden-turf-gravel-after.webp" : service.slug === "garden-renovations" ? "/assets/images/projects-2026/artificial-lawn-patio-after.webp" : "/assets/images/projects-2026/garden-clearance-before.webp"}
                     loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"

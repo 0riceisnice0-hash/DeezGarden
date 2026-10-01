@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import QuickQuoteBand from '../../components/QuickQuoteBand.astro';
+import { landscapingProjects } from '../../data/projects';
+import { siteConfig } from '../../config';
+export function getStaticPaths() { return landscapingProjects.map(project=>({params:{slug:project.slug},props:{project}})); }
+const { project } = Astro.props;
+const url = `${siteConfig.baseUrl}/projects/${project.slug}/`;
+const schema = {'@context':'https://schema.org','@type':'CreativeWork',name:project.title,description:project.summary,url,image:[project.before,project.after].map(file=>`${siteConfig.baseUrl}/assets/images/projects-2026/${file}`),creator:{'@id':siteConfig.baseUrl}};
+---
+<BaseLayout title={`${project.title} | Dee'z Gardens`} description={project.summary} image={`/assets/images/projects-2026/${project.after}`} schema={schema}>
+  <Header slot="header" />
+  <section class="py-10 bg-bg-sage"><div class="container mx-auto px-4 max-w-5xl">
+    <a href="/projects/" class="text-deep-green font-bold underline">All landscaping projects</a>
+    <h1 class="text-3xl md:text-4xl font-extrabold mt-5 mb-4">{project.title}</h1><p class="text-lg text-gray-700 mb-7">{project.summary}</p>
+    <div class="grid sm:grid-cols-2 gap-5">{[{image:project.before,alt:project.beforeAlt,label:'Before'},{image:project.after,alt:project.afterAlt,label:'After'}].map(photo=><figure><img src={`/assets/images/projects-2026/${photo.image}`} alt={photo.alt} width="900" height="1200" class="w-full aspect-[3/4] object-cover rounded-xl" /><figcaption class="font-bold text-deep-green py-3">{photo.label}</figcaption></figure>)}</div>
+    <h2 class="text-2xl font-bold mt-5 mb-4">The garden transformation</h2><p class="text-gray-700 mb-5">{project.detail}</p>
+    <h2 class="text-2xl font-bold mb-3">Features in the finished project</h2><ul class="list-disc pl-6 space-y-2">{project.features.map(feature=><li>{feature}</li>)}</ul>
+    <h2 class="text-2xl font-bold mt-7 mb-3">Planning something similar?</h2><p class="mb-5">Your garden may need different preparation, materials or access arrangements. Send photos, approximate measurements and a postcode. We will discuss what is included and quote for your project.</p><a href={project.service} class="font-bold text-deep-green underline">Explore the installation service</a>
+  </div></section>
+  <QuickQuoteBand service="a garden makeover like this" />
+  <Footer slot="footer" />
+</BaseLayout>

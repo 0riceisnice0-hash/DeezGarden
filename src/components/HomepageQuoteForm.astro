@@ -6,12 +6,12 @@ const thankyouUrl = `${siteConfig.baseUrl.replace(/\/$/, '')}/thank-you/`;
 
 // Services with emoji icons for the interactive selector
 const serviceOptions = [
-  { value: "Garden Maintenance", label: "Garden Maintenance", emoji: "🌿" },
-  { value: "Garden Clearance", label: "Garden Clearance", emoji: "🌳" },
-  { value: "Hedge Cutting", label: "Hedge Cutting", emoji: "✂️" },
-  { value: "Landscaping", label: "Landscaping", emoji: "🏗️" },
+  { value: "Landscaping", label: "Full Garden Makeover", emoji: "🏗️" },
+  { value: "Garden Renovation", label: "Garden Renovation", emoji: "🌿" },
   { value: "Patio or Paving", label: "Patio / Paving", emoji: "🧱" },
   { value: "Turfing or New Lawn", label: "Turf / New Lawn", emoji: "🌱" },
+  { value: "Garden Clearance", label: "Garden Clearance", emoji: "🌳" },
+  { value: "Hedge Cutting", label: "Hedge Reduction", emoji: "✂️" },
   { value: "Rubbish Clearance", label: "Rubbish Clearance", emoji: "🚛" },
   { value: "Man with Van", label: "Man with Van", emoji: "🚐" },
   { value: "Property Maintenance", label: "Property Maintenance", emoji: "🔧" },
@@ -47,8 +47,8 @@ const serviceOptions = [
     <div class="p-4 md:p-6" id="homepage-quote-form">
       <!-- Form header -->
       <div class="text-center mb-3 md:mb-4 pb-3 border-b border-gray-100">
-        <h2 id="quote-modal-title" class="text-lg md:text-2xl font-extrabold text-deep-green tracking-tight">Get Your Free Quote</h2>
-        <p class="text-gray-600 text-xs md:text-sm mt-1">Mon–Sat 8am–6pm · No spam, just a quote</p>
+        <h2 id="quote-modal-title" class="text-lg md:text-2xl font-extrabold text-deep-green tracking-tight">Get Your Free Project Quote</h2>
+        <p class="text-gray-600 text-xs md:text-sm mt-1">Quoted projects and installations. Hourly gardening and regular mowing are not offered.</p>
         <!-- Trust strip -->
         <div class="flex flex-wrap justify-center gap-x-3 gap-y-1 mt-2 text-[11px] md:text-xs text-gray-500 font-semibold">
           <span class="inline-flex items-center gap-1"><span class="text-fresh-green">✓</span> Free &amp; no-obligation</span>
@@ -64,7 +64,7 @@ const serviceOptions = [
         class="space-y-3"
       >
           <input type="hidden" name="_next" value={thankyouUrl}>
-          <input type="hidden" name="_subject" value="New quote request from Dee'z Gardens homepage">
+          <input type="hidden" name="_subject" value="New project quote request from Dee'z Gardens website">
           <!-- Hidden field that stores the selected service -->
           <input type="hidden" name="service" id="homepage-service-value" value="Not specified">
           <input type="hidden" name="landing_page" id="homepage-landing-page">
@@ -110,7 +110,6 @@ const serviceOptions = [
                 required
                 autocomplete="tel"
                 inputmode="tel"
-                pattern="^[0-9+() -]{7,20}$"
                 title="Please enter a valid phone number"
                 placeholder="07XXX XXXXXX"
                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-fresh-green focus:ring-0 transition text-sm md:text-base text-gray-900"
@@ -145,6 +144,10 @@ const serviceOptions = [
             >
           </div>
 
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div><label for="hq-budget" class="block text-sm font-bold text-gray-700 mb-1.5">Project budget <span class="font-normal text-gray-400">(optional)</span></label><input id="hq-budget" name="project_budget" type="text" placeholder="A rough range, or not sure yet" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm text-gray-900" /></div>
+            <div><label for="hq-timing" class="block text-sm font-bold text-gray-700 mb-1.5">Preferred timing <span class="font-normal text-gray-400">(optional)</span></label><input id="hq-timing" name="preferred_timing" type="text" placeholder="When would you like the work done?" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm text-gray-900" /></div>
+          </div>
           <!-- How did you hear about us (optional) -->
           <div>
             <label for="hq-referral-source" class="block text-sm font-bold text-gray-700 mb-1.5">How Did You Hear About Us? <span class="text-gray-400 font-normal">(optional)</span></label>
@@ -247,7 +250,8 @@ const serviceOptions = [
 
     const serviceByPath: Record<string, string> = {
       '/services/garden-clearance': 'Garden Clearance',
-      '/services/garden-maintenance': 'Garden Maintenance',
+      '/services/garden-maintenance': 'Garden Renovation',
+      '/services/garden-renovations': 'Garden Renovation',
       '/services/hedge-cutting': 'Hedge Cutting',
       '/services/landscaping': 'Landscaping',
       '/services/patios-paving': 'Patio or Paving',

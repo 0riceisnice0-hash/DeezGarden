@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import ProjectServices from '../../components/ProjectServices.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
@@ -14,21 +15,23 @@ const nearbyAreas = ["Northampton", "Brackley", "Daventry", "Milton Keynes"];
 ---
 
 <BaseLayout 
-  title={`Garden Clearance ${areaName} | Landscaping & Hedges`}
-  description={`Garden clearance, house clearance, hedge cutting, vegetation clearance & site clearance in ${areaName}, Northamptonshire. Professional, fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Landscaping ${areaName} | Patios & Garden Makeovers`}
+  description={`Landscaping in ${areaName}: patios, paving, turf, artificial lawns and full garden makeovers. See our work and request a free project quote.`}
 >
   <Header slot="header" />
   
   <SlideOutQuoteForm />
   
   <Hero 
-    title={`Garden Clearance & Services in ${areaName}`}
+    title={`Landscaping & Garden Makeovers in ${areaName}`}
     location={`${areaName}, Northamptonshire`}
-    subtitle="Garden clearance, house clearance, hedge cutting & landscaping"
-    heroImage="hero.jpg"
+    subtitle="Patios, paving, new lawns and quoted garden renovation projects"
+    heroImage="projects-2026/family-garden-turf-gravel-after.webp"
   />
   
   <TrustBadges />
+  <ProjectServices />
+  <section class="py-5 bg-white"><div class="container mx-auto px-4 max-w-4xl text-center"><p class="font-semibold text-deep-green">Landscaping installations and one-off jobs quoted for the agreed work. Hourly gardening and regular mowing are not offered.</p></div></section>
   
   <!-- Introduction Section -->
   <section class="py-4 md:py-16 bg-bg-light">
@@ -36,7 +39,7 @@ const nearbyAreas = ["Northampton", "Brackley", "Daventry", "Milton Keynes"];
       <div class="max-w-4xl mx-auto">
         <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Clearance & Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden clearance, hedge cutting, landscaping and garden maintenance throughout {areaName} and the surrounding West Northamptonshire area. One of England's oldest towns — originally the Roman settlement of Lactodurum on Watling Street (the A5) — {areaName} is a characterful market town with a mix of Georgian and Victorian properties along its historic high street, as well as newer residential developments on the outskirts. The famous Silverstone Circuit and Towcester Racecourse put the town on the map, and we're proud to serve the local community here.
+          {siteConfig.name} provides professional garden clearance, hedge cutting, landscaping and garden renovations throughout {areaName} and the surrounding West Northamptonshire area. One of England's oldest towns — originally the Roman settlement of Lactodurum on Watling Street (the A5) — {areaName} is a characterful market town with a mix of Georgian and Victorian properties along its historic high street, as well as newer residential developments on the outskirts. The famous Silverstone Circuit and Towcester Racecourse put the town on the map, and we're proud to serve the local community here.
         </p>
         <p class="text-sm md:text-lg">
           Many of {areaName}'s period townhouses have compact walled rear gardens or mature courtyard-style plots that require careful, experienced clearance work. We also serve the surrounding villages of Cold Higham, Potterspury and Paulerspury, where larger rural gardens need regular maintenance and seasonal clearance. As a licensed waste carrier, all garden waste is removed and disposed of legally and responsibly.
@@ -67,9 +70,9 @@ const nearbyAreas = ["Northampton", "Brackley", "Daventry", "Milton Keynes"];
             <a href="/services/landscaping/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
           </div>
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
-            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Maintenance {areaName}</h3>
-            <p class="text-sm md:text-base text-gray-700 mb-3">Regular garden maintenance for properties in {areaName} and the surrounding rural villages — lawn mowing, hedge trimming, weeding and seasonal tidy-ups. Reliable, friendly service keeping village and town gardens in perfect condition throughout the year.</p>
-            <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">garden renovations {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">We quote for garden renovation and installation work in {areaName}, including new patios, lawns, gravel, paths and timber edging. Send photos, approximate measurements and access details so we can discuss the scope of your project.</p>
+            <a href="/services/garden-renovations/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
           </div>
         </div>
       </div>
@@ -82,17 +85,12 @@ const nearbyAreas = ["Northampton", "Brackley", "Daventry", "Milton Keynes"];
       <div class="max-w-6xl mx-auto">
         <h3 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Our Services in {areaName}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {services.map((service, index) => {
-            const images = [
-              "/assets/images/before-and-after-lawn-1.jpg",
-              "/assets/images/rubbish-removal-1.jpg",
-              "/assets/images/van-scrap.png"
-            ];
+          {services.map((service) => {
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]}
+                    src={service.slug === "landscaping" ? "/assets/images/projects-2026/family-garden-turf-gravel-after.webp" : service.slug === "garden-renovations" ? "/assets/images/projects-2026/artificial-lawn-patio-after.webp" : "/assets/images/projects-2026/garden-clearance-before.webp"}
                     loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"

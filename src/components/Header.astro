@@ -29,10 +29,10 @@ const currentPath = stripBase(Astro.url.pathname);
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-6">
         <a href={withBase('/')} class={`hover:text-fresh-green transition ${currentPath === '/' ? 'text-fresh-green font-semibold' : ''}`}>Home</a>
-        <a href={withBase('/services/')} class={`hover:text-fresh-green transition ${currentPath.includes('/services') ? 'text-fresh-green font-semibold' : ''}`}>Garden Services</a>
+        <a href={withBase('/services/landscaping/')} class={`hover:text-fresh-green transition ${currentPath.includes('/services') ? 'text-fresh-green font-semibold' : ''}`}>Landscaping</a>
         <a href={withBase('/areas/')} class={`hover:text-fresh-green transition ${currentPath.includes('/areas') ? 'text-fresh-green font-semibold' : ''}`}>Areas</a>
         <a href={withBase('/reviews/')} class={`hover:text-fresh-green transition ${currentPath.includes('/reviews') ? 'text-fresh-green font-semibold' : ''}`}>Reviews</a>
-        <a href={withBase('/gallery/')} class={`hover:text-fresh-green transition ${currentPath.includes('/gallery') ? 'text-fresh-green font-semibold' : ''}`}>Gallery</a>
+        <a href={withBase('/projects/')} class={`hover:text-fresh-green transition ${currentPath.includes('/projects') ? 'text-fresh-green font-semibold' : ''}`}>Our Work</a>
         <a href={withBase('/blog/')} class={`hover:text-fresh-green transition ${currentPath.includes('/blog') ? 'text-fresh-green font-semibold' : ''}`}>Blog</a>
         <a href={withBase('/contact/')} class={`hover:text-fresh-green transition ${currentPath.includes('/contact') ? 'text-fresh-green font-semibold' : ''}`}>Contact</a>
         <a href={`tel:${siteConfig.phone}`} class="bg-fresh-green text-white px-6 py-2 rounded-lg hover:bg-deep-green transition font-semibold">
@@ -71,10 +71,10 @@ const currentPath = stripBase(Astro.url.pathname);
     <div class="container mx-auto px-4 py-4">
       <div class="flex flex-col space-y-1">
         <a href={withBase('/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath === '/' ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Home</a>
-        <a href={withBase('/services/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/services') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Garden Services</a>
+        <a href={withBase('/services/landscaping/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/services') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Landscaping</a>
         <a href={withBase('/areas/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/areas') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Areas</a>
         <a href={withBase('/reviews/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/reviews') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Reviews</a>
-        <a href={withBase('/gallery/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/gallery') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Gallery</a>
+        <a href={withBase('/projects/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/projects') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Our Work</a>
         <a href={withBase('/blog/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/blog') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Blog</a>
         <a href={withBase('/contact/')} class={`py-3 px-4 rounded-lg hover:bg-gray-50 hover:text-fresh-green transition text-lg ${currentPath.includes('/contact') ? 'text-fresh-green font-semibold bg-green-50' : ''}`}>Contact</a>
         <div class="pt-2 mt-2 mb-2 border-t border-gray-100">

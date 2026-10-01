@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      filter: (page) => !page.endsWith('/thank-you/') && !page.endsWith('/404/'),
+      filter: (page) => !page.endsWith('/thank-you/') && !page.endsWith('/404/') && !page.endsWith('/services/garden-maintenance/'),
       serialize(item) {
         const url = item.url;
         // Homepage gets highest priority

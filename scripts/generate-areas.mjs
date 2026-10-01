@@ -38,26 +38,26 @@ import { siteConfig, services } from '../../config';
 ---
 
 <BaseLayout 
-  title="Garden Maintenance & Clearance Services in ${area.name}"
-  description="Professional garden maintenance, clearance, and landscaping services in ${area.name}, ${area.county}. Fully insured. Call 07305 195098 for a free quote."
+  title="Landscaping ${area.name} | Patios & Garden Makeovers"
+  description="Landscaping, patios, new lawns and garden renovations in ${area.name}, ${area.county}. Fully insured. Get a project quote."
 >
   <Header slot="header" />
   
   <Hero 
-    title="Garden Services in ${area.name}"
+    title="Landscaping & Garden Makeovers in ${area.name}"
     location="${area.name}, ${area.county}"
-    subtitle="Professional garden and clearance services"
+    subtitle="Patios, paving, new lawns and complete garden renovations"
   />
   
   <section class="py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">Garden and Clearance Services in ${area.name}</h2>
+        <h2 class="text-3xl font-bold mb-6">Landscaping Projects in ${area.name}</h2>
         <p class="text-lg mb-4">
-          {siteConfig.name} provides professional garden maintenance, clearance, and removals services throughout ${area.name} and the surrounding areas. Based locally in Northampton, we regularly serve customers in ${area.name} with reliable, high-quality service.
+          {siteConfig.name} provides landscaping installations and garden renovations in ${area.name} and the surrounding areas. Based in Northampton, we quote for the work, preparation and materials included in your project.
         </p>
         <p class="text-lg mb-6">
-          Whether you need regular garden maintenance, a complete garden renovation, rubbish clearance, or man with van services, we're here to help residents and businesses in ${area.name}.
+          Discuss a new patio, lawn or complete garden renovation. We do not offer hourly gardening or routine mowing. One-off garden clearance can be quoted separately or included in a makeover.
         </p>
         
         <h3 class="text-2xl font-bold mb-4">Our Services in ${area.name}</h3>
@@ -96,7 +96,7 @@ import { siteConfig, services } from '../../config';
           
           <h3>What We Offer</h3>
           <ul>
-            <li>Garden maintenance and lawn care</li>
+            <li>New lawn installations and ground preparation</li>
             <li>Garden renovations and landscaping</li>
             <li>Rubbish and garden waste clearance</li>
             <li>House and garage clearances</li>
@@ -146,7 +146,7 @@ import { siteConfig, services } from '../../config';
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": siteConfig.name,
-  "description": "Professional garden maintenance and clearance services in ${area.name}",
+  "description": "Landscaping installations and garden renovations in ${area.name}",
   "areaServed": {
     "@type": "City",
     "name": "${area.name}",

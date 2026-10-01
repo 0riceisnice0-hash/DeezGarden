@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import ProjectServices from '../../components/ProjectServices.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
@@ -14,21 +15,23 @@ const nearbyAreas = ["Rugby", "Leicester", "Northampton", "Daventry"];
 ---
 
 <BaseLayout 
-  title={`Garden Clearance ${areaName} | Maintenance & Hedges`}
-  description={`Garden clearance, hedge cutting, garden maintenance & rubbish removal in ${areaName}. Serving Cheylesmore, Earlsdon, Baginton, Whitley & South Coventry. Fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Landscaping ${areaName} | Patios & Garden Makeovers`}
+  description={`Landscaping in ${areaName}: patios, paving, turf, artificial lawns and full garden makeovers. See our work and request a free project quote.`}
 >
   <Header slot="header" />
   
   <SlideOutQuoteForm />
   
   <Hero 
-    title={`Garden Clearance & Services in ${areaName}`}
+    title={`Landscaping & Garden Makeovers in ${areaName}`}
     location={`${areaName}, West Midlands`}
-    subtitle="Garden clearance, hedge cutting, maintenance & rubbish removal"
-    heroImage="hero.jpg"
+    subtitle="Patios, paving, new lawns and quoted garden renovation projects"
+    heroImage="projects-2026/family-garden-turf-gravel-after.webp"
   />
   
   <TrustBadges />
+  <ProjectServices />
+  <section class="py-5 bg-white"><div class="container mx-auto px-4 max-w-4xl text-center"><p class="font-semibold text-deep-green">Landscaping installations and one-off jobs quoted for the agreed work. Hourly gardening and regular mowing are not offered.</p></div></section>
   
   <!-- Introduction Section -->
   <section class="py-4 md:py-16 bg-bg-light">
@@ -62,9 +65,9 @@ const nearbyAreas = ["Rugby", "Leicester", "Northampton", "Daventry"];
             <a href="/services/hedge-cutting/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
           </div>
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
-            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Maintenance {areaName}</h3>
-            <p class="text-sm md:text-base text-gray-700 mb-3">Keep your {areaName} garden looking its best year-round with our regular maintenance service. We handle lawn mowing, weeding, border tidying and seasonal tidy-ups for homes across South {areaName} — one-off or on a regular schedule.</p>
-            <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">garden renovations {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">We quote for garden renovation and installation work in {areaName}, including new patios, lawns, gravel, paths and timber edging. Send photos, approximate measurements and access details so we can discuss the scope of your project.</p>
+            <a href="/services/garden-renovations/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
           </div>
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
             <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Rubbish Removal {areaName}</h3>
@@ -82,17 +85,12 @@ const nearbyAreas = ["Rugby", "Leicester", "Northampton", "Daventry"];
       <div class="max-w-6xl mx-auto">
         <h3 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Our Services in {areaName}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {services.map((service, index) => {
-            const images = [
-              "/assets/images/before-and-after-lawn-1.jpg",
-              "/assets/images/rubbish-removal-1.jpg",
-              "/assets/images/van-scrap.png"
-            ];
+          {services.map((service) => {
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]}
+                    src={service.slug === "landscaping" ? "/assets/images/projects-2026/family-garden-turf-gravel-after.webp" : service.slug === "garden-renovations" ? "/assets/images/projects-2026/artificial-lawn-patio-after.webp" : "/assets/images/projects-2026/garden-clearance-before.webp"}
                     loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"
@@ -189,7 +187,7 @@ const nearbyAreas = ["Rugby", "Leicester", "Northampton", "Daventry"];
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": `${siteConfig.name} - ${areaName}`,
-  "description": `Professional garden clearance, hedge cutting, garden maintenance and rubbish removal in ${areaName}. Serving Cheylesmore, Earlsdon, Baginton, Whitley and South Coventry. Fully insured, licensed waste carrier.`,
+  "description": `Professional garden clearance, hedge cutting, garden renovations and rubbish removal in ${areaName}. Serving Cheylesmore, Earlsdon, Baginton, Whitley and South Coventry. Fully insured, licensed waste carrier.`,
   "url": `${siteConfig.baseUrl}/areas/${areaName.toLowerCase().replace(/ /g, '-')}/`,
   "telephone": siteConfig.phone,
   "email": siteConfig.email,

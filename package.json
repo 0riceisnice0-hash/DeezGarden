@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "sync:images": "node scripts/sync-images.mjs",
-    "build": "npm run sync:images && astro check && astro build",
+    "build": "npm run sync:images && astro check && astro build && npm run audit:seo",
+    "audit:seo": "node scripts/audit-seo.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

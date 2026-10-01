@@ -10,17 +10,17 @@ import { siteConfig } from '../config';
 ---
 
 <BaseLayout 
-  title="Contact Us | Free Garden & Clearance Quotes Northampton"
-  description="Contact Dee'z Gardens for a free quote on garden maintenance, landscaping, rubbish clearance or man with van services in Northampton & Northamptonshire. Call 07305 195098 or email us today."
+  title="Landscaping Quotes Northampton | Contact Dee'z Gardens"
+  description="Request a landscaping quote in Northampton for a patio, new lawn or garden makeover. Send photos, postcode and project details. Call 07305 195098."
 >
   <Header slot="header" />
   
   <SlideOutQuoteForm />
   
   <Hero 
-    heroImage="chainsaw.jpg"
-    title="Contact Us"
-    subtitle="Get a free, no-obligation quote"
+    heroImage="projects-2026/family-garden-turf-gravel-after.webp"
+    title="Get Your Landscaping Project Quote"
+    subtitle="Tell us about your patio, new lawn or garden makeover"
     showQuoteButton={true}
   />
   
@@ -139,9 +139,10 @@ import { siteConfig } from '../config';
             </div>
           </div>
           
+          <p class="mb-4 text-sm font-semibold text-deep-green">We quote for landscaping, installations and one-off jobs. Hourly gardening and regular mowing are not offered.</p>
           <!-- Contact Form -->
           <div class="order-1 md:order-2">
-            <h2 class="text-lg md:text-2xl font-bold mb-3 md:mb-6">Get a Free Quote</h2>
+            <h2 class="text-lg md:text-2xl font-bold mb-3 md:mb-6">Get a Free Project Quote</h2>
 
             <!-- Risk reversal / promise strip -->
             <ul class="grid grid-cols-2 gap-2 mb-4 text-xs md:text-sm">
@@ -191,7 +192,6 @@ import { siteConfig } from '../config';
                   id="phone"
                   name="phone"
                   required
-                  pattern="^[0-9+() -]{7,20}$"
                   title="Please enter a valid phone number"
                   class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base text-gray-900"
                   placeholder="07XXX XXXXXX"
@@ -206,7 +206,8 @@ import { siteConfig } from '../config';
                   class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base text-gray-900"
                 >
                   <option value="">Please select...</option>
-                  <option value="Garden Maintenance">Garden Maintenance</option>
+                  <option value="Patio or Paving">Patio / Paving</option>
+                  <option value="Turf or Artificial Lawn">Turf / Artificial Lawn</option>
                   <option value="Garden Renovation">Garden Renovation</option>
                   <option value="Hedge Cutting">Hedge Cutting</option>
                   <option value="Garden Clearance">Garden Clearance</option>
@@ -238,13 +239,13 @@ import { siteConfig } from '../config';
               </div>
               
               <div>
-                <label for="message" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Tell us about the job <span class="text-gray-400 font-normal">(optional)</span></label>
+                <label for="message" class="block font-semibold mb-1 md:mb-2 text-xs md:text-base">Tell us about your project <span class="text-gray-400 font-normal">(optional)</span></label>
                 <textarea 
                   id="message"
                   name="message"
                   rows="3"
                   class="w-full px-3 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green text-sm md:text-base text-gray-900"
-                  placeholder="e.g. Garden roughly 20m x 10m, needs full clearance and a tidy lawn cut..."
+                  placeholder="e.g. New patio and lawn, roughly 8m x 5m. Side access available. Preferred timing and budget..."
                 ></textarea>
               </div>
               

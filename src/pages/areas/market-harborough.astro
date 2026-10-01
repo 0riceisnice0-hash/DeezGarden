@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Hero from '../../components/Hero.astro';
+import ProjectServices from '../../components/ProjectServices.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import HeroCTA from '../../components/HeroCTA.astro';
@@ -14,21 +15,23 @@ const nearbyAreas = ["Corby", "Kettering", "Leicester", "Rugby"];
 ---
 
 <BaseLayout 
-  title={`Garden Clearance ${areaName} | Hedges & Landscaping`}
-  description={`Garden clearance, house clearance, hedge cutting, vegetation clearance & site clearance in ${areaName}, Leicestershire. Professional, fully insured, licensed waste carrier. Free quotes - call 07305 195098.`}
+  title={`Landscaping ${areaName} | Patios & Garden Makeovers`}
+  description={`Landscaping in ${areaName}: patios, paving, turf, artificial lawns and full garden makeovers. See our work and request a free project quote.`}
 >
   <Header slot="header" />
   
   <SlideOutQuoteForm />
   
   <Hero 
-    title={`Garden Clearance & Services in ${areaName}`}
+    title={`Landscaping & Garden Makeovers in ${areaName}`}
     location={`${areaName}, Leicestershire`}
-    subtitle="Garden clearance, house clearance, hedge cutting & landscaping"
-    heroImage="hero.jpg"
+    subtitle="Patios, paving, new lawns and quoted garden renovation projects"
+    heroImage="projects-2026/family-garden-turf-gravel-after.webp"
   />
   
   <TrustBadges />
+  <ProjectServices />
+  <section class="py-5 bg-white"><div class="container mx-auto px-4 max-w-4xl text-center"><p class="font-semibold text-deep-green">Landscaping installations and one-off jobs quoted for the agreed work. Hourly gardening and regular mowing are not offered.</p></div></section>
   
   <!-- Introduction Section -->
   <section class="py-4 md:py-16 bg-bg-light">
@@ -36,11 +39,9 @@ const nearbyAreas = ["Corby", "Kettering", "Leicester", "Rugby"];
       <div class="max-w-4xl mx-auto">
         <h2 class="text-xl md:text-3xl font-bold mb-3 md:mb-6">Garden Clearance & Services in {areaName}</h2>
         <p class="text-sm md:text-lg mb-2 md:mb-4">
-          {siteConfig.name} provides professional garden clearance, hedge cutting, landscaping and garden maintenance throughout {areaName} and the surrounding Welland Valley. Sitting at the border of Leicestershire and Northamptonshire, {areaName} is an affluent commuter town with beautiful Georgian and Victorian architecture — and a reputation for beautifully maintained gardens. We serve properties across the town itself as well as the surrounding villages of Great Bowden, Little Bowden and Lubenham.
+          {siteConfig.name} provides professional garden clearance, hedge cutting, landscaping and garden renovations throughout {areaName} and the surrounding Welland Valley. Sitting at the border of Leicestershire and Northamptonshire, {areaName} is an affluent commuter town with beautiful Georgian and Victorian architecture — and a reputation for beautifully maintained gardens. We serve properties across the town itself as well as the surrounding villages of Great Bowden, Little Bowden and Lubenham.
         </p>
-        <p class="text-sm md:text-lg">
-          From period garden renovations to regular upkeep for busy commuters, our team understands the high standards {areaName} homeowners expect. We also work along the Grand Union Canal corridor where many desirable canal-side properties have substantial and sometimes challenging plots. As a licensed waste carrier, all garden waste is disposed of legally and responsibly.
-        </p>
+        <p class="text-sm md:text-lg">We quote for garden renovation and installation work in {areaName}, including new patios, lawns, gravel, paths and timber edging. Send photos, approximate measurements and access details so we can discuss the scope of your project.</p>
       </div>
     </div>
   </section>
@@ -52,9 +53,9 @@ const nearbyAreas = ["Corby", "Kettering", "Leicester", "Rugby"];
         <h2 class="text-lg md:text-2xl font-extrabold text-center mb-6 md:mb-10 tracking-tight">Our Key Services in {areaName}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-fresh-green">
-            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Garden Maintenance {areaName}</h3>
-            <p class="text-sm md:text-base text-gray-700 mb-3">Regular, reliable garden maintenance for {areaName}'s busy commuter households. Lawn mowing, hedge trimming, weeding and seasonal programmes — your garden kept in top condition while you're away in the city.</p>
-            <a href="/services/garden-maintenance/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
+            <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">garden renovations {areaName}</h3>
+            <p class="text-sm md:text-base text-gray-700 mb-3">We quote for garden renovation and installation work in {areaName}, including new patios, lawns, gravel, paths and timber edging. Send photos, approximate measurements and access details so we can discuss the scope of your project.</p>
+            <a href="/services/garden-renovations/" class="text-fresh-green font-semibold hover:text-deep-green text-sm">Learn more →</a>
           </div>
           <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-deep-green">
             <h3 class="text-base md:text-lg font-bold text-deep-green mb-2">Hedge Cutting {areaName}</h3>
@@ -82,17 +83,12 @@ const nearbyAreas = ["Corby", "Kettering", "Leicester", "Rugby"];
       <div class="max-w-6xl mx-auto">
         <h3 class="text-lg md:text-2xl font-bold mb-4 md:mb-8 text-center">Our Services in {areaName}</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {services.map((service, index) => {
-            const images = [
-              "/assets/images/before-and-after-lawn-1.jpg",
-              "/assets/images/rubbish-removal-1.jpg",
-              "/assets/images/van-scrap.png"
-            ];
+          {services.map((service) => {
             return (
               <div class="bg-bg-light rounded-xl overflow-hidden shadow-md hover:shadow-lg transition flex flex-col h-full">
                 <div class="h-32 md:h-48 overflow-hidden flex-shrink-0">
                   <img 
-                    src={images[index]}
+                    src={service.slug === "landscaping" ? "/assets/images/projects-2026/family-garden-turf-gravel-after.webp" : service.slug === "garden-renovations" ? "/assets/images/projects-2026/artificial-lawn-patio-after.webp" : "/assets/images/projects-2026/garden-clearance-before.webp"}
                     loading="lazy"
                     alt={service.title}
                     class="w-full h-full object-cover"

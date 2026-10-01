@@ -1,0 +1,22 @@
+---
+import { siteConfig } from '../config';
+export const projectQuestions = [
+  {question:'How much does landscaping cost in Northampton?',answer:'The quote depends on the garden size, access, existing levels, clearance, ground preparation and chosen materials. Send photos, your postcode and a description of the finished garden you want. We discuss the scope and provide a quote for the agreed project.'},
+  {question:'Do you offer an hourly gardener or regular mowing?',answer:"Dee'z Gardens focuses on landscaping, installation and quoted garden projects. We do not offer hourly gardening, weekly mowing or ongoing routine maintenance. For a patio, new lawn, garden renovation or one-off clearance, request a project quote."},
+  {question:'Can you clear the garden and do the landscaping?',answer:'Yes. We can quote for clearance, waste removal and ground preparation alongside the new patio, lawn, paths, edging and other agreed features. You can also request a standalone clearance.'},
+  {question:'What should I send for a landscaping quote?',answer:'Send your postcode, a few wide photos, approximate measurements, details of access to the back garden and the features you would like. Tell us your preferred timing and any budget range so we can discuss suitable options.'},
+];
+---
+<section class="py-8 md:py-14 bg-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-7">From your idea to a quoted garden project</h2>
+    <ol class="grid md:grid-cols-3 gap-5 mb-9">
+      <li class="bg-bg-sage p-6 rounded-xl"><h3 class="font-bold text-xl mb-2">1. Show us the garden</h3><p>Send photos and your postcode. Explain what you want to change: a patio, lawn, steps or a full makeover.</p></li>
+      <li class="bg-bg-sage p-6 rounded-xl"><h3 class="font-bold text-xl mb-2">2. Agree the work</h3><p>We discuss access, levels, preparation and materials, and arrange a visit where needed to establish the scope.</p></li>
+      <li class="bg-bg-sage p-6 rounded-xl"><h3 class="font-bold text-xl mb-2">3. Get your project quote</h3><p>Review the work included and the price before booking. Availability and timing are confirmed for your job.</p></li>
+    </ol>
+    <h2 class="text-2xl font-extrabold text-center mb-5">Landscaping quote questions</h2>
+    <div class="space-y-3">{projectQuestions.map(item => <details class="rounded-xl border border-fresh-green/20 bg-bg-light p-5"><summary class="font-bold text-deep-green cursor-pointer">{item.question}</summary><p class="mt-3 text-gray-700">{item.answer}</p></details>)}</div>
+    <div class="text-center mt-7"><a href={siteConfig.whatsapp} class="inline-block bg-deep-green text-white font-bold rounded-xl px-6 py-3">Send garden photos on WhatsApp</a><p class="mt-4"><a href="/blog/planning-a-garden-makeover/" class="text-deep-green font-bold underline">Read our garden makeover planning guide</a></p></div>
+  </div>
+</section>

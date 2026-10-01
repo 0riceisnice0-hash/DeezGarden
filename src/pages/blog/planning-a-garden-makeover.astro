@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import QuickQuoteBand from '../../components/QuickQuoteBand.astro';
+import { siteConfig } from '../../config';
+const title='Planning a Garden Makeover in Northampton';
+const description='Plan a garden makeover: layout, patios, turf, access, levels and project quotes. Practical guidance from Dee\'z Gardens in Northampton.';
+const schema={'@context':'https://schema.org','@type':'Article',headline:title,description,author:{'@type':'Organization',name:siteConfig.name,url:siteConfig.baseUrl},datePublished:'2026-10-01',dateModified:'2026-10-01',mainEntityOfPage:siteConfig.baseUrl+'/blog/planning-a-garden-makeover/'};
+---
+<BaseLayout title={title} description={description} schema={schema}>
+  <Header slot="header" />
+  <article class="py-10 md:py-14 bg-bg-light"><div class="container mx-auto px-4 max-w-4xl">
+    <p class="text-fresh-green font-bold mb-3">Garden renovation advice · 1 October 2026</p>
+    <h1 class="text-3xl md:text-4xl font-extrabold mb-6">{title}</h1>
+    <p class="text-lg mb-7">A garden makeover starts with the result you want, then works back to the clearance, preparation and installations needed to get there. A useful brief helps a landscaper quote for the whole job and makes different proposals easier to compare.</p>
+    <h2 class="text-2xl font-bold mb-3">Decide how you want to use the space</h2><p class="mb-6">List the things your garden needs to do: seating near the house, somewhere for children to play, a route to the shed, room for plants or easier upkeep. Mark where each feature could fit. A smaller patio in the right place can be more useful than paving a large area without thinking about access and furniture.</p>
+    <h2 class="text-2xl font-bold mb-3">Choose the surfaces together</h2><p class="mb-6"><a href="/services/patios-paving/" class="underline text-deep-green">Patios and paved paths</a>, a <a href="/services/turfing-lawns/" class="underline text-deep-green">new turf or artificial lawn</a>, gravel and borders work as one layout. Consider where furniture will sit, how people will reach each area and what you will need to look after afterwards. Artificial grass also needs cleaning and care; discuss the practical trade-offs before choosing a surface.</p>
+    <h2 class="text-2xl font-bold mb-3">Show the starting point and the access</h2><p class="mb-6">Send wide photographs of the garden from the house and the far end, plus photos of side gates, narrow passages and steps. Give approximate length and width measurements. Access affects how old material is removed and how new materials reach the garden. Mention anything you want retained, such as an existing tree, shed or paved area.</p>
+    <h2 class="text-2xl font-bold mb-3">Include levels and preparation in the conversation</h2><p class="mb-6">The visible finish is only part of a landscaping job. Removing existing surfaces, clearing vegetation, preparing the ground and dealing with changes in level affect the scope. Show any slopes, steps or areas where water collects. Ask what preparation and waste removal are included rather than comparing only the final surface.</p>
+    <h2 class="text-2xl font-bold mb-3">Discuss your budget and preferred timing</h2><p class="mb-6">A rough budget range helps the discussion about materials and how much work can be included. If the full makeover is beyond the current budget, ask whether a defined phase would work and how it relates to the later layout. Availability, materials and the work involved need to be confirmed before a start date is agreed.</p>
+    <h2 class="text-2xl font-bold mb-3">Compare quotes for the same work</h2><p class="mb-6">Check the areas, materials, clearance, preparation, edging, steps and waste removal described in each quote. Identify what is excluded and ask how changes would be handled. A project quote is for an agreed result and scope. Dee'z Gardens focuses on landscaping installations and quoted garden projects; hourly gardening and regular mowing are not offered.</p>
+    <h2 class="text-2xl font-bold mb-3">Use completed projects to explain your idea</h2><p class="mb-6">Look at <a href="/projects/" class="underline text-deep-green">our matched before-and-after projects</a> for examples of paved levels, steps, timber edging and lawn areas. Tell us which features suit your garden. The photos show our work, but your own garden will need its own assessment and quote.</p>
+    <p class="mb-5">For <a href="/services/garden-renovations/" class="underline text-deep-green">garden renovations in Northampton</a> and surrounding towns, send your postcode, photos and a short description of what you want to change.</p>
+  </div></article>
+  <QuickQuoteBand service="your garden makeover" />
+  <Footer slot="footer" />
+</BaseLayout>

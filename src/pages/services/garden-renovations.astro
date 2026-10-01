@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import TrustBadges from '../../components/TrustBadges.astro';
+import ProjectShowcase from '../../components/ProjectShowcase.astro';
+import ProjectServices from '../../components/ProjectServices.astro';
+import ProjectPlanning from '../../components/ProjectPlanning.astro';
+import QuickQuoteBand from '../../components/QuickQuoteBand.astro';
+import { siteConfig } from '../../config';
+const schema={'@context':'https://schema.org','@type':'Service',name:'Garden Renovations Northampton',serviceType:'Garden renovation and makeover',url:siteConfig.baseUrl+'/services/garden-renovations/',provider:{'@id':siteConfig.baseUrl},areaServed:{'@type':'AdministrativeArea',name:'Northamptonshire'}};
+---
+<BaseLayout title="Garden Renovations Northampton | Complete Makeovers" description="Garden renovations in Northampton: clearance, ground preparation, patios, turf, steps, gravel and edging. Real transformations and free project quotes." schema={schema}>
+  <Header slot="header" />
+  <Hero title="Garden Renovations in Northampton" subtitle="Rebuild a tired or overgrown garden into a space that works for you" heroImage="projects-2026/artificial-lawn-patio-after.webp" />
+  <TrustBadges />
+  <QuickQuoteBand service="a garden renovation" />
+  <section class="py-8 md:py-14 bg-bg-sage"><div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-2xl md:text-3xl font-bold mb-5">A makeover built around your garden</h2>
+    <p class="mb-4">A renovation can change the whole layout or rebuild the parts that no longer work. We quote for the clearance, preparation and installations your garden needs, including patios, paths, lawn areas, gravel, steps, timber edging and raised beds.</p>
+    <p class="mb-4">Start with how you want to use the space: somewhere to sit, a family lawn, easier access or fewer areas to weed. Photos of the full garden and the side access help us understand the starting point.</p>
+    <h2 class="text-2xl font-bold mb-3">Quoted projects and installations</h2>
+    <p>We focus on garden renovations and landscaping projects. We do not offer hourly gardening, regular mowing or routine maintenance visits. If you found us while looking for garden maintenance, we can help with a larger renovation or a separately quoted clearance.</p>
+  </div></section>
+  <ProjectShowcase full={true} />
+  <ProjectServices />
+  <ProjectPlanning />
+  <Footer slot="footer" />
+</BaseLayout>
