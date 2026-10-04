@@ -30,6 +30,10 @@ for (const file of files) {
   }
 }
 const sitemap = fs.readFileSync(path.join(root, 'sitemap-0.xml'), 'utf8');
+// Client-confirmed pairing: retain the existing URL but not the incorrect patio after-photo.
+const correctedProject = fs.readFileSync(path.join(root, 'projects/two-level-patio/index.html'), 'utf8');
+if (!correctedProject.includes('/projects-2026/gravel-paving-raised-beds-after.webp')) errors.push('Corrected project is missing the confirmed gravel/raised-beds after photo');
+if (correctedProject.includes('/projects-2026/large-patio-after.webp')) errors.push('Corrected project still contains the incorrect patio after photo');
 if (sitemap.includes('/services/garden-maintenance/')) errors.push('Sitemap contains retired maintenance page');
 for (const route of ['/services/garden-renovations/', '/projects/', '/blog/planning-a-garden-makeover/']) {
   if (!sitemap.includes(route)) errors.push(`Sitemap missing ${route}`);
